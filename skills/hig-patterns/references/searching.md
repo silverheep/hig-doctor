@@ -5,39 +5,65 @@ source: https://developer.apple.com/design/human-interface-guidelines/searching
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/searching.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Searching
 
+To search for content within an app, people generally expect to use a [Search fields](https://developer.apple.com/design/human-interface-guidelines/search-fields). When it makes sense, you can personalize the search experience by using what you know about how people interact with your app. For example, you might display recent searches, search suggestions, completions, or corrections based on terms people searched earlier in your app.
+
+In some cases, people appreciate the ability to scope a search or filter the results. For example, people might want to search for items by specifying attributes like creation date, file size, or file type. For guidance, see [Scope bars and tokens](https://developer.apple.com/design/human-interface-guidelines/search-fields#Scope-bars-and-tokens). You can also help people find content within an open document or file by implementing ways to find content in a window or page in your iOS, iPadOS, or macOS app.
+
+In iOS, iPadOS, and macOS, Spotlight helps people find content across all apps in the system and on the web. When you index and provide information about your app’s content, people can use Spotlight to find content your app contains without opening it first. For guidance, see [Systemwide search](https://developer.apple.com/design/human-interface-guidelines/searching#Systemwide-search).
+
 ## Best practices
 
-**If search is important, consider making it a primary action.**
+**If search is important, give it a primary position in your app or view.** For example, in the Notes app, a search field is in the bottom toolbar alongside other important actions. In apps that use tab bars, like Photos and Apple TV, search is a dedicated tab.
 
-**Aim to make your app’s content searchable through a single location.**
+**Aim to make your app’s content searchable through a single location.** People appreciate having one clearly identified location they can use to find anything they’re looking for in your app. For apps with clearly distinct sections, it may still be useful to offer a local search. For example, search acts as a filter on the current view when searching your songs and albums in the iOS Music app.
 
-**Use placeholder text to indicate what content is searchable.**
+**Clearly display the current scope of a search.** Use a descriptive placeholder text, a [Scope bars and tokens](https://developer.apple.com/design/human-interface-guidelines/search-fields#Scope-bars-and-tokens), or a title to help reinforce what someone is currently searching. For example, in the Mail app there is always a clear reference to the mailbox someone is searching.
 
-**Clearly display the current scope of a search.**
+**Provide suggestions to make searching easier.** When you display a personʼs recent searches before they start typing or offer predictive search suggestions while they’re typing, you can help people search faster and type less. For developer guidance, see [searchSuggestions(_:)](https://developer.apple.com/documentation/SwiftUI/View/searchSuggestions(_:)).
 
-**Provide suggestions to make searching easier.**
-
-**Take privacy into consideration before displaying search history.**
+**Take privacy into consideration before displaying search history.** People might not appreciate having their search history appear where others might see it. If you do show search history, provide a way for people to clear it if they want.
 
 ## Systemwide search
 
-**Make your app’s content searchable in Spotlight.**
+**Make your app’s content searchable in Spotlight.** You can share content with Spotlight by making it indexable and specifying descriptive attributes known as *metadata*. Spotlight extracts, stores, and organizes this information to allow for fast, comprehensive searches.
 
-**Define metadata for custom file types you handle.**
+**Define metadata for custom file types you handle.** Supply a Spotlight File Importer plug-in that describes the types of metadata your file format contains. For developer guidance, see [CSImportExtension](https://developer.apple.com/documentation/CoreSpotlight/CSImportExtension).
 
-**Use Spotlight to offer advanced file-search capabilities within the context of your app.**
+**Use Spotlight to offer advanced file-search capabilities within the context of your app.** For example, you might include a button that instantly initiates a Spotlight search based on the current selection. You might then display a custom view that presents the search results or a filtered subset of them.
 
-**Prefer using the system-provided open and save views.**
+**Prefer using the system-provided open and save views.** The system-provided open and save views generally include a built-in search field that people can use to search and filter the entire system. For related guidance, see [File management](https://developer.apple.com/design/human-interface-guidelines/file-management).
 
-**Implement a Quick Look generator if your app produces custom file types.**
+**Implement a Quick Look generator if your app produces custom file types.** A Quick Look generator helps Spotlight and other apps show previews of your documents. For developer guidance, see [Quick Look](https://developer.apple.com/documentation/QuickLook).
+
+## Platform considerations
+
+*No additional considerations for iOS, iPadOS, macOS, tvOS, visionOS, or watchOS.*
+
+## Resources
+
+#### Related
+
+[Search fields](https://developer.apple.com/design/human-interface-guidelines/search-fields)
+
+#### Developer documentation
+
+[Adding your app’s content to Spotlight indexes](https://developer.apple.com/documentation/CoreSpotlight/adding-your-app-s-content-to-spotlight-indexes) — Core Spotlight
+
+#### Videos
+
+## Change log
+
+| Date | Changes |
+| --- | --- |
+| June 8, 2026 | Updated terminology and refined best practices. |
+| June 9, 2025 | Updated best practices with general guidance from Search fields, and reorganized guidance for systemwide search. |
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/searching
-

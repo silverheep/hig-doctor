@@ -5,25 +5,34 @@ Current versions of all skills. Agents can compare against local versions to che
 | Skill | Version | Last Updated |
 |-------|---------|--------------|
 | hig-project-context | 1.0.0 | 2025-02-02 |
-| hig-platforms | 1.0.0 | 2025-02-02 |
-| hig-foundations | 1.0.0 | 2025-02-02 |
-| hig-patterns | 1.0.0 | 2025-02-02 |
-| hig-components-content | 1.0.0 | 2025-02-02 |
-| hig-components-layout | 1.0.0 | 2025-02-02 |
-| hig-components-menus | 1.0.0 | 2025-02-02 |
-| hig-components-search | 1.0.0 | 2025-02-02 |
-| hig-components-dialogs | 1.0.0 | 2025-02-02 |
-| hig-components-controls | 1.0.0 | 2025-02-02 |
-| hig-components-status | 1.0.0 | 2025-02-02 |
-| hig-components-system | 1.0.0 | 2025-02-02 |
-| hig-inputs | 1.0.0 | 2025-02-02 |
-| hig-technologies | 1.0.0 | 2025-02-02 |
+| hig-platforms | 2.0.0 | 2026-06-11 |
+| hig-foundations | 2.0.0 | 2026-06-11 |
+| hig-patterns | 2.0.0 | 2026-06-11 |
+| hig-components-content | 2.0.0 | 2026-06-11 |
+| hig-components-layout | 2.0.0 | 2026-06-11 |
+| hig-components-menus | 2.0.0 | 2026-06-11 |
+| hig-components-search | 2.0.0 | 2026-06-11 |
+| hig-components-dialogs | 2.0.0 | 2026-06-11 |
+| hig-components-controls | 2.0.0 | 2026-06-11 |
+| hig-components-status | 2.0.0 | 2026-06-11 |
+| hig-components-system | 2.0.0 | 2026-06-11 |
+| hig-inputs | 2.0.0 | 2026-06-11 |
+| hig-technologies | 2.0.0 | 2026-06-11 |
 
 ## HIG Source
 
-Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) as of February 2, 2025.
+Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) as of June 11, 2026.
 
 ## Recent Changes
+
+### 2026-06-11
+- **Full HIG re-scan (first content refresh since the Feb 2025 snapshot)** — major version bump (2.0.0) for all HIG content skills:
+  - Rebuilt the entire reference corpus from Apple's live DocC JSON via the new `scripts/hig-ingest/` pipeline (`crawl.py` → `diff.py` → `convert.py` → `generate.py`), which walks the static JSON API rather than scraping JS-rendered HTML.
+  - Reference files now reproduce Apple's full prose (intro context, guideline statements with rationale, lists, links) instead of the prior bold-only "structured index" skeleton. Imagery is still omitted; attribution + canonical-footer retained.
+  - Captures the WWDC 2025 "Liquid Glass" overhaul across components, materials, and platforms.
+  - New topics: `design-principles` (foundations), `snippets` (components/system experiences).
+  - Renamed/merged: `spatial-interactions` → `nearby-interactions` (old file removed).
+  - Apple reorganized Components into sub-groups (Content, Layout and organization, Menus and actions, Navigation and search, Presentation, Selection and input, Status, System experiences) — these are navigation pages mapped to existing skills.
 
 ### 2026-04-24
 - **Tooling rework** (no change to skill content versions):

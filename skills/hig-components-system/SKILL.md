@@ -1,6 +1,6 @@
 ---
 name: hig-components-system
-version: 1.0.0
+version: 2.0.0
 description: >-
   Apple HIG guidance for system experience components: widgets, live activities,
   notifications, complications, home screen quick actions, top shelf, watch faces,
@@ -61,6 +61,7 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [app-clips.md](references/app-clips.md) | App Clips | Instant use, lightweight, focused task, NFC/QR |
 | [watch-faces.md](references/watch-faces.md) | Watch faces | Custom complications, face sharing |
 | [app-shortcuts.md](references/app-shortcuts.md) | App Shortcuts | Siri, Spotlight, voice triggers |
+| [snippets.md](references/snippets.md) | Snippets | App Intents result/confirmation views in Siri, Spotlight, Shortcuts |
 
 ## Output Format
 

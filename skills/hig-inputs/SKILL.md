@@ -1,6 +1,6 @@
 ---
 name: hig-inputs
-version: 1.0.0
+version: 2.0.0
 description: >-
   Apple HIG guidance for input methods and interaction patterns: gestures, Apple Pencil,
   keyboards, game controllers, pointers, Digital Crown, eye tracking, focus system,
@@ -62,7 +62,6 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [pointing-devices.md](references/pointing-devices.md) | Pointer/trackpad | Hover, cursor morphing, trackpad gestures |
 | [digital-crown.md](references/digital-crown.md) | Digital Crown | Scrolling, value adjustment, haptic detents |
 | [eyes.md](references/eyes.md) | Eye tracking | Look and tap, gaze targeting, hit target sizing |
-| [spatial-interactions.md](references/spatial-interactions.md) | Spatial input | Hand gestures, direct manipulation, immersive input |
 | [focus-and-selection.md](references/focus-and-selection.md) | Focus system | tvOS/visionOS navigation, focus indicators, groups |
 | [remotes.md](references/remotes.md) | Remotes | Touch surface, clickpad, simple interactions |
 | [gyro-and-accelerometer.md](references/gyro-and-accelerometer.md) | Motion sensors | Gyroscope, accelerometer, calibration, gaming |

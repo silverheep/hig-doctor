@@ -1,6 +1,6 @@
 ---
 name: hig-foundations
-version: 1.0.0
+version: 2.0.0
 description: >-
   Apple Human Interface Guidelines design foundations. Use this skill when the user asks about
   "HIG color", "Apple typography", "SF Symbols", "dark mode guidelines", "accessible design",
@@ -44,6 +44,7 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [branding.md](references/branding.md) | Branding | Integrating brand identity within Apple's design language, subtle branding, custom tints |
 | [color.md](references/color.md) | Color | System colors, Dynamic Colors, semantic colors, custom palettes, contrast ratios |
 | [dark-mode.md](references/dark-mode.md) | Dark Mode | Elevated surfaces, semantic colors, adapted palettes, vibrancy, testing in both modes |
+| [design-principles.md](references/design-principles.md) | Design principles | Foundational cross-platform principles guiding HIG guidance: purpose, clarity, deference, depth |
 | [icons.md](references/icons.md) | Icons | Glyph icons, SF Symbols integration, custom icon design, icon weights, optical alignment |
 | [images.md](references/images.md) | Images | Image resolution, @2x/@3x assets, vector assets, image accessibility |
 | [immersive-experiences.md](references/immersive-experiences.md) | Immersive Experiences | AR/VR design, spatial immersion, comfort zones, progressive immersion levels |

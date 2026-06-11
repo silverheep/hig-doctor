@@ -5,37 +5,63 @@ source: https://developer.apple.com/design/human-interface-guidelines/pop-up-but
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Pop-up buttons
 
+After people choose an item from a pop-up button’s menu, the menu closes, and the button can update its content to indicate the current selection.
+
 ## Best practices
 
-**Use a pop-up button to present a flat list of mutually exclusive options or states.**
+**Use a pop-up button to present a flat list of mutually exclusive options or states.** A pop-up button helps people make a choice that affects their content or the surrounding view. Use a [pull-down button](https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons) instead if you need to:
 
-  * Offer a list of actions
+* Offer a list of actions
+* Let people select multiple items
+* Include a submenu
 
-  * Let people select multiple items
+**Provide a useful default selection.** A pop-up button can update its content to identify the current selection, but if people haven’t made a selection yet, it shows the default item you specify. When possible, make the default selection an item that most people are likely to want.
 
-  * Include a submenu
+**Give people a way to predict a pop-up button’s options without opening it.** For example, you can use an introductory label or a button label that describes the button’s effect, giving context to the options.
 
-**Provide a useful default selection.**
+**Consider using a pop-up button when space is limited and you don’t need to display all options all the time.** Pop-up buttons are a space-efficient way to present a wide array of choices.
 
-**Give people a way to predict a pop-up button’s options without opening it.**
-
-**Consider using a pop-up button when space is limited and you don’t need to display all options all the time.**
-
-**If necessary, include a Custom option in a pop-up button’s menu to provide additional items that are useful in some situations.**
+**If necessary, include a Custom option in a pop-up button’s menu to provide additional items that are useful in some situations.** Offering a Custom option can help you avoid cluttering the interface with items or controls that people need only occasionally. You can also display explanatory text below the list to help people understand how the options work.
 
 ## Platform considerations
 
+*No additional considerations for iOS, macOS, or visionOS. Not supported in tvOS or watchOS.*
+
 ### iPadOS
 
-**Within a popover or modal view, consider using a pop-up button instead of a disclosure indicator to present multiple options for a list item.**
+**Within a popover or modal view, consider using a pop-up button instead of a disclosure indicator to present multiple options for a list item.** For example, people can quickly choose an option from the pop-up button’s menu without navigating to a detail view. Consider using a pop-up button in this scenario when you have a fairly small, well-defined set of options that work well in a menu.
+
+## Resources
+
+#### Related
+
+[Pull-down buttons](https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons)
+
+[Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons)
+
+[Menus](https://developer.apple.com/design/human-interface-guidelines/menus)
+
+#### Developer documentation
+
+[MenuPickerStyle](https://developer.apple.com/documentation/SwiftUI/MenuPickerStyle)  — SwiftUI
+
+[changesSelectionAsPrimaryAction](https://developer.apple.com/documentation/UIKit/UIButton/changesSelectionAsPrimaryAction) — UIKit
+
+[NSPopUpButton](https://developer.apple.com/documentation/AppKit/NSPopUpButton) — AppKit
+
+## Change log
+
+| Date | Changes |
+| --- | --- |
+| October 24, 2023 | Added artwork. |
+| September 14, 2022 | Added a guideline on using a pop-up button in a popover or modal view in iPadOS. |
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons
-

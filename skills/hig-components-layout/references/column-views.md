@@ -5,21 +5,44 @@ source: https://developer.apple.com/design/human-interface-guidelines/column-vie
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/column-views.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Column views
 
+Each column represents one level of the hierarchy and contains horizontal rows of data items. Within a column, any parent item that contains nested child items is marked with a triangle icon. When people select a parent, the next column displays its children. People can continue navigating in this way until they reach an item with no children, and can also navigate back up the hierarchy to explore other branches of data.
+
+> **Note:** If you need to manage the presentation of hierarchical content in your iPadOS or visionOS app, consider using a [Split views](https://developer.apple.com/design/human-interface-guidelines/split-views).
+
 ## Best practices
 
-**Show the root level of your data hierarchy in the first column.**
+Consider using a column view when you have a deep data hierarchy in which people tend to navigate back and forth frequently between levels, and you don’t need the sorting capabilities that a [Lists and tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables) provides. For example, Finder offers a column view (in addition to icon, list, and gallery views) for navigating directory structures.
 
-**Consider showing information about the selected item when there are no nested items to display.**
+**Show the root level of your data hierarchy in the first column.** People know they can quickly scroll back to the first column to begin navigating the hierarchy from the top again.
 
-**Let people resize columns.**
+**Consider showing information about the selected item when there are no nested items to display.** The Finder, for example, shows a preview of the selected item and information like the creation date, modification date, file type, and size.
+
+**Let people resize columns.** This is especially important if the names of some data items are too long to fit within the default column width.
+
+## Platform considerations
+
+*Not supported in iOS, iPadOS, tvOS, visionOS, or watchOS.*
+
+## Resources
+
+#### Related
+
+[Lists and tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables)
+
+[Outline views](https://developer.apple.com/design/human-interface-guidelines/outline-views)
+
+[Split views](https://developer.apple.com/design/human-interface-guidelines/split-views)
+
+#### Developer documentation
+
+[NSBrowser](https://developer.apple.com/documentation/AppKit/NSBrowser) — AppKit
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/column-views
-

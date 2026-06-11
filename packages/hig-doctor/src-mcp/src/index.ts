@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 import { audit } from "../../src-termcast/src/audit";
 import pkg from "../package.json";
 
-const HIG_SNAPSHOT_DATE = "2025-02-02";
+const HIG_SNAPSHOT_DATE = "2026-06-11";
 const HIG_SOURCE_URL = "https://developer.apple.com/design/human-interface-guidelines/";
 const MODULE_DIR = dirname(fileURLToPath(import.meta.url));
 

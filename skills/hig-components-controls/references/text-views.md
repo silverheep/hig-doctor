@@ -5,27 +5,58 @@ source: https://developer.apple.com/design/human-interface-guidelines/text-views
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/text-views.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Text views
 
+Text views can be any height and allow scrolling when the content extends outside of the view. By default, content within a text view is aligned to the leading edge and uses the system label color. In iOS, iPadOS, and visionOS, if a text view is editable, a keyboard appears when people select the view.
+
 ## Best practices
 
-**Use a text view when you need to display text that’s long, editable, or in a special format.**
+**Use a text view when you need to display text that’s long, editable, or in a special format.** Text views differ from [Text fields](https://developer.apple.com/design/human-interface-guidelines/text-fields) and [Labels](https://developer.apple.com/design/human-interface-guidelines/labels) in that they provide the most options for displaying specialized text and receiving text input. If you need to display a small amount of text, it’s simpler to use a label or — if the text is editable — a text field.
 
-**Keep text legible.**
+**Keep text legible.** Although you can use multiple fonts, colors, and alignments in creative ways, it’s essential to maintain the readability of your content. It’s a good idea to adopt Dynamic Type so your text still looks good if people change text size on their device. Be sure to test your content with accessibility options turned on, such as bold text. For guidance, see [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility) and [Typography](https://developer.apple.com/design/human-interface-guidelines/typography).
 
-**Make useful text selectable.**
+**Make useful text selectable.** If a text view contains useful information such as an error message, a serial number, or an IP address, consider letting people select and copy it for pasting elsewhere.
 
 ## Platform considerations
 
+*No additional considerations for macOS, visionOS, or watchOS.*
+
 ### iOS, iPadOS
 
-**Show the appropriate keyboard type.**
+**Show the appropriate keyboard type.** Several different keyboard types are available, each designed to facilitate a different type of input. To streamline data entry, the keyboard you display when editing a text view needs to be appropriate for the type of content. For guidance, see [Virtual keyboards](https://developer.apple.com/design/human-interface-guidelines/virtual-keyboards).
+
+### tvOS
+
+You can display text in tvOS using a text view. Because text input in tvOS is minimal by design, tvOS uses [Text fields](https://developer.apple.com/design/human-interface-guidelines/text-fields) for editable text instead.
+
+## Resources
+
+#### Related
+
+[Labels](https://developer.apple.com/design/human-interface-guidelines/labels)
+
+[Text fields](https://developer.apple.com/design/human-interface-guidelines/text-fields)
+
+[Combo boxes](https://developer.apple.com/design/human-interface-guidelines/combo-boxes)
+
+#### Developer documentation
+
+[Text](https://developer.apple.com/documentation/SwiftUI/Text) — SwiftUI
+
+[UITextView](https://developer.apple.com/documentation/UIKit/UITextView) — UIKit
+
+[NSTextView](https://developer.apple.com/documentation/AppKit/NSTextView) — AppKit
+
+## Change log
+
+| Date | Changes |
+| --- | --- |
+| June 5, 2023 | Updated guidance to reflect changes in watchOS 10. |
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/text-views
-

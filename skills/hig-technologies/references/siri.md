@@ -5,255 +5,134 @@ source: https://developer.apple.com/design/human-interface-guidelines/siri
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/siri.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Siri
 
-  * Ask Siri to perform a system-defined task that your app supports, like send a message, play a song, or start a workout.
+Siri is a personal assistant that helps people get information and perform quick actions throughout the system and the apps they use. People interact with Siri in a variety of ways, like using their voice, swiping down from the Dynamic Island, or in the Siri app.
 
-  * Run a _shortcut_ , which is a way to accelerate actions your app defines through onscreen interactions or by voice.
+On supported devices, Siri AI introduces a version of Siri powered by Apple Intelligence. When an app integrates its content and features with Apple Intelligence, people can use the natural language awareness and contextual understanding of Siri to initiate the app’s actions from anywhere in the system, interact with content on screen, and quickly reach features that would otherwise require navigating deep into the app.
 
-  * Use the Shortcuts app to adjust what a shortcut does, including combining several actions to perform one multistep shortcut.
+For example, someone can say “Send a message to Marisa in *AppName*” from anywhere in the system, and Siri can help them complete that task in a contextually appropriate way. With a photo visible on screen, someone can say “Add this photo to my Landscapes album,” then follow up with “And email it to Josh,” which opens an email compose view and adds Josh as the recipient. Saying “Make this black and white” to convert an image to grayscale can also be faster than navigating through menus to find the same command.
 
-  * Tap a _suggestion_ to perform a shortcut with your app (Siri can _suggest_ shortcuts that people might want to perform, based on their current context and the information you provide).
+## Getting your app to work with Siri
 
-  * Use Siri to control an accessory that integrates with your app.
+By default, the system doesn’t have specific awareness of what an app can do or the information it contains. In order for an app to work with Siri, the app has to make its features and content available to Apple Intelligence using the [App Intents](https://developer.apple.com/documentation/AppIntents) framework.
 
-  * Identify key tasks in your app that people might want to perform on a regular basis.
+When an app implements intents, the system can expose the things the app can do (the app’s actions, or *intents*) and its content (the app’s *entities*) in system experiences where it makes sense. This makes the app’s actions and content available to features that build on Apple Intelligence, such as Siri, Spotlight, and the Shortcuts app. For developer guidance, see [Getting started with the App Intents framework](https://developer.apple.com/documentation/AppIntents/getting-started-with-the-app-intents-framework).
 
-  * Drive engagement by telling the system about your app’s key tasks and by supporting suggestions.
+To get the most out of Siri, an app can additionally associate its features and content with app *[App schema domains](https://developer.apple.com/documentation/AppIntents/app-schema-domains)*: preset templates for functionality that the system already understands. Apps in common domain areas like email, music, or photos can use the system’s existing knowledge to access built-in logic for handling requests through a wider range of options with natural conversation and deeper contextual understanding. For developer guidance, see [Apple Intelligence and Siri AI](https://developer.apple.com/documentation/AppIntents/apple-intelligence-and-siri-ai) and [Making actions and content discoverable by Apple Intelligence](https://developer.apple.com/documentation/AppIntents/making-actions-and-content-discoverable-by-apple-intelligence).
 
-  * For actions that people can perform through voice interaction, design functional conversational flows that feel natural.
+### Sharing contextual information
 
-  * Explore the various ways people might perform your app’s tasks — such as in a hands-free situation — and the devices they might be using, such as Apple Watch or iPad.
+In addition to exposing actions and content with schemas, an app can offer a more personalized experience by giving the system contextual information about its content and features.
 
-## Integrating your app with Siri
+An app can tell the system what’s onscreen by annotating its views and other content with app entities. This gives the system information Siri needs to improve contextual interaction based on what someone is interacting with. For example, when someone refers to parts of your app’s content (like buttons or onscreen graphics) during a Siri conversation, Siri can use the annotations your app provides to understand what the person means. For developer guidance, see [Providing contextual cues to Apple Intelligence and Siri](https://developer.apple.com/documentation/AppIntents/providing-contextual-cues-to-apple-intelligence-and-siri).
 
-### Provide information about actions and support suggestions
+To provide content information to the system, an app can donate entities to the on-device Spotlight index, which makes the app’s information available to someone searching in Spotlight or with Siri. For developer guidance, see [Defining app entities for your custom data types](https://developer.apple.com/documentation/AppIntents/defining-app-entities-for-your-custom-data-types) and [Making app entities available in Spotlight](https://developer.apple.com/documentation/AppIntents/making-app-entities-available-in-spotlight).
 
-  * Shortly before 7:30 a.m., Siri might suggest the _order coffee_ action to people who use the coffee app every morning.
+An app can also tell the system about actions a person takes while using it by donating the actions as intents. This helps Siri anticipate future actions a person might want to take, and surface them through various system experiences at appropriate times. Examples of actions an app can donate include things like a person’s recent activity or items that a person has indicated an interest in. For developer guidance, see [Donating your app’s data and actions to the system](https://developer.apple.com/documentation/AppIntents/donating-your-apps-data-and-actions-to-the-system).
 
-  * After people use a box office–type app to buy tickets to a movie, Siri might remind them to turn on Do Not Disturb shortly before showtime.
+## Best practices
 
-  * Siri might suggest an automation that starts a workout in a person’s favorite workout app and plays their favorite workout playlist as they enter their usual gym.
+**Identify your app’s most popular actions, and when and where they occur.** Understanding the contexts where those actions are relevant, such as in a hands-free environment or on a particular device, can help you prioritize which actions and content to expose as app intents and entities, and inform how you design a great Siri experience.
 
-  * When people enter the airport after a home-bound flight, Siri might suggest they request a ride home from their favorite ride-sharing app.
+**Use familiar terms for your content and actions.** When you create an app intent or entity, you choose the terminology that represents it. For example, you could refer to an audio file as a track, a song, or a podcast. Using language for your features and content that people are most likely to recognize makes interacting with your app through Siri more natural and intuitive.
 
-## System intents
+**Offer relevant content.** Instead of telling Spotlight about all of your app’s content, consider things that are particularly relevant to someone’s personal context — things they’ve recently searched for, their favorite items or bookmarks, or the content of a wishlist. Some app categories, like email or messaging, might have a good reason to consider their entire catalog as relevant information; it can be appropriate to provide expanded access in those cases.
 
-### Design responses to system intents
+**Don’t advertise.** Don’t include advertisements, marketing, or in-app purchase sales pitches in content that Siri delivers.
 
-**Whenever possible, complete requests without leaving Siri.**
+**Only provide a custom response if built-in responses don’t meet your app’s needs.** Siri is designed to anticipate a wide variety of natural language requests and respond helpfully without additional configuration.
 
-**When a request has a financial impact, default to the safest and least expensive option.**
+## Customizing your app’s experience with Siri
 
-**When people request media playback from your app, consider providing alternative results if the request is ambiguous.**
+For apps with many common feature sets, existing [App schema domains](https://developer.apple.com/documentation/AppIntents/app-schema-domains) provide the built-in functionality that they need to expose their actions and content to Apple Intelligence and Siri without any additional work. If your app’s functionality falls outside of these areas, *App Shortcuts* offer a way to expose custom actions to the system for Siri to access. For design guidance, see [App Shortcuts](https://developer.apple.com/design/human-interface-guidelines/app-shortcuts). For developer guidance, see [App Shortcuts](https://developer.apple.com/documentation/AppIntents/app-shortcuts).
 
-**On Apple Watch, design a streamlined workflow that requires minimal interaction.**
+To customize the experience of an action or a piece of content associated with an existing schema, an app can define additional optional properties as part of an intent or entity that can contextually enhance the response that Siri provides. An app could present a playback control [Snippets](https://developer.apple.com/design/Human-Interface-Guidelines/snippets) that Siri can display as an audio file plays, for example. For developer guidance, see [Displaying static and interactive snippets](https://developer.apple.com/documentation/AppIntents/displaying-static-and-interactive-snippets).
 
-### Enhance the voice experience for system intents
+> **Note:** Siri is powered by Apple Intelligence to provide contextually relevant responses. Because responses can appear in a wide variety of contexts, some of which aren’t visual, optional intent or entity properties that an app defines may not always appear as part of a response.
 
-**Create example requests.**
+When you provide additional custom properties as part of your schema responses, consider the following guidelines.
 
-**Define custom vocabulary that people use with your app.**
+**Write response dialogue that’s clear and descriptive.** An effective response clearly conveys what happens when Siri performs the action. If you ask follow-up questions, be sure to customize the default dialogue for clarity. For example, “Which soup?” is clearer than “Which one?”
 
-**Consider defining alternative app names.**
+**Keep responses as succinct as possible.** People might interact with Siri frequently, so they may hear the same response multiple times when answering follow-up questions or dealing with errors. Use the context of the current conversation to remove as many details as possible. Avoid including unnecessary words or attempts at humor, because both can become irritating over time.
 
-### Design a custom interface for a system intent
+**Provide responses that Siri can deliver audibly and visually.** This lets Siri decide which communication method works best for the current situation. For example, if someone using iPhone asks for the weather, the forecast appears onscreen; if they’re using AirPods, Siri speaks the forecast instead. Make sure the voice response can stand alone and that it doesn’t depend on visual elements to fill in essential information.
 
-**Avoid including extraneous or redundant information.**
+**Design inclusive interactions.** Create welcoming interactions for everyone by avoiding specific pronouns when they’re not necessary. For example, in response to “Send a message to my best friend,” instead of saying “What’s his or her name?” say “Who should I send it to?” or “To who?” For guidance, see [Writing](https://developer.apple.com/design/human-interface-guidelines/writing) and [Inclusion](https://developer.apple.com/design/human-interface-guidelines/inclusion).
 
-**Make sure people can still perform the action without viewing your custom interface.**
+**Ask an open-ended question when the full list of options is too long.** If the full list of options is too long for Siri to read in a timely way, follow up with an open-ended question to narrow the scope or get additional detail. For example, “What kind of shoes are you interested in?” in response to a request for the available shoes in a shopping app.
 
-**Use ample margins and padding in your custom interface.**
+**Keep responses device-independent whenever possible.** People can initiate a Siri request on one device and have it take effect on another, so device-specific wording can easily become confusing or misleading. If you must reference a specific device in a response, make sure it’s accurate and makes sense in context.
 
-**Minimize the height of your interface.**
+**Omit your app name from responses.** The system already provides verbal and visual attribution for your app when responding to people.
 
-**Refrain from displaying your app name or icon.**
+**Use appropriate language and respect parental controls.** Don’t include offensive language in dialogue text that you provide. Many families use parental controls to restrict explicit content and other material that’s based on specific rating levels. Be aware that Siri may also respond aloud, and others nearby might hear the response.
 
-## Custom intents
-
-### Custom intent categories and responses
-
-  * Confirmation. Confirms that people still want to perform the action.
-
-  * Success. Indicates that the action has been initiated.
-
-  * Error. Tells people that the action can’t be completed.
-
-### Design a custom intent
-
-**If your app’s action requires a custom intent, pick the category that most closely matches the action.**
-
-**Design custom intents that accelerate common, useful tasks.**
-
-**Ensure that your intent works well in every scenario.**
-
-**In general, design custom intents for tasks that aren’t overly complex.**
-
-**Design your intents to be long-lived.**
-
-**Don’t request permission to use Siri.**
-
-**Support background operation.**
-
-### Help people customize their requests
-
-**Design intents that require as few follow-up questions as possible.**
-
-**List the smallest number of options possible, and sort the items in a way that makes sense.**
-
-**Make sure each follow-up question is meaningful.**
-
-**Design parameters that are easy for people to understand and use.**
-
-**Ask for confirmation only when necessary.**
-
-**Support follow-up questions when it makes sense.**
-
-**Prioritize the options you offer based on the context in which people run your shortcut.**
-
-**Consider adjusting the parameter values you offer when people set up your shortcut.**
-
-  * You can find and present parameter values that are relevant to the context people are in while they’re setting up the shortcut. For example, if people use the Shortcuts app to choose a value for a store-location parameter, the parameter can dynamically generate a list of stores that are currently closest to the device.
-
-  * You can present a comprehensive list of parameter values. When people set up a shortcut, having an extensive list of parameter values can help them create the shortcut they want. In contrast, when people use a shortcut to accelerate an action, they generally prefer the convenience of having a shorter list of choices.
-
-### Enhance the voice experience for custom intents
-
-**Aim to create conversational interactions.**
-
-**Help people understand errors and failures.**
-
-**Strive for engaging voice responses.**
-
-**Create voice responses that are concise, descriptive, and effective in voice-driven scenarios.**
-
-**Avoid unnecessary repetition.**
-
-**Help conversations with Siri feel natural.**
-
-**Exclude your app name.**
-
-**Don’t attempt to mimic or manipulate Siri.**
-
-**Be appropriate and respect parental controls.**
-
-**Avoid using personal pronouns.**
-
-**Consider letting people view more options in your app.**
-
-**Keep responses device-independent.**
-
-**Don’t advertise.**
-
-## Shortcuts and suggestions
-
-  * Siri can suggest a shortcut for an action people have performed at least once by offering it in search results, on the lock screen, and in the Shortcuts app.
-
-  * Your app can supply a shortcut for an action that people haven’t done yet but might want to do in the future, so that the Shortcuts app can suggest it or it can appear on the [Siri watch face](https://support.apple.com/guide/watch/faces-and-features-apde9218b440/watchos#apdcc88df92c).
-
-  * People can use the Shortcuts app to view all their shortcuts and even combine actions from different apps into multistep shortcuts.
-
-  * People can also use the Shortcuts app to automate a shortcut by defining the conditions that can run it, like time of day or current location.
-
-### Make app actions widely available
-
-  * In search results
-
-  * Throughout the Shortcuts app
-
-  * On the lock screen as a Siri Suggestion
-
-  * Within the Now Playing view (for recently played media content)
-
-  * During Wind Down
-
-**Make a donation every time people perform the action.**
-
-**Only donate actions that people actually perform.**
-
-**Remove donations for actions that require corresponding data.**
-
-**If your app handles reservations, consider donating them to the system.**
-
-### Create shortcut titles and subtitles
-
-**Be concise but descriptive.**
-
-**Start titles with a verb and use sentence-style capitalization without punctuation.**
-
-**Lead with important information.**
-
-**Exclude your app name.**
-
-**Localize titles and subtitles.**
-
-**Consider providing a custom image for a more engaging suggestion.**
-
-  * 60x60 pt (180x180 px @ 3x) to display in an iOS app
-
-  * 34x34 pt (68x68 px @2x) to display on the Siri watch face on the 44mm Apple Watch (watchOS scales down the image for smaller watches)
-
-### Provide default phrases for shortcuts
-
-**Keep phrases short and memorable.**
-
-**Make sure the phrases you suggest are accurate and specific.**
-
-**Don’t commandeer core Siri commands.**
-
-### Make shortcuts customizable
-
-**Provide a parameter summary for each custom intent you support.**
-
-**Craft a short parameter summary that’s clearly related to your intent’s title.**
-
-**Aim for a parameter summary that reads like a sentence.**
-
-**Provide multiple parameter summaries when necessary.**
-
-**Provide output parameters for information that people can use in a multistep shortcut.**
-
-**Consider defining an input parameter.**
-
-**Help people distinguish among different variations of the same action.**
-
-**Avoid providing multiple actions that perform the same basic task.**
+**Help people understand errors and failures.** The system provides some default error descriptions, but it’s best to enhance error responses so that they’re specific to the current situation. For example, if the chicken noodle soup is sold out, an error like “Sorry, we’re out of chicken noodle soup” is much clearer than “Sorry, we can’t complete your order.”
 
 ## Editorial guidelines
 
-**Use correct capitalization and punctuation when using the term _Hey Siri_.**
+**Refer to Siri by name.** Don’t reference Siri using pronouns like *she*, *him*, or *her*. Ideally, just use the word *Siri*. For example, “After you add a shortcut to Siri, you can run the shortcut anytime by asking Siri.” For additional guidance, see [Guidelines for Using Apple Trademarks](https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html).
 
-**In a localized context, translate only the word _Hey_ in the phrase _Hey Siri_.**
+**Be aware that the system reserves important actions and phrases for Siri.** Never impersonate Siri, attempt to reproduce the functionality that Siri provides, or provide a response that appears to come from Apple. Don’t use reserved phrases like “Call 911” or “Hey Siri.”
 
-### Referring to Shortcuts
+**In a localized context, translate only the word *Hey* in the phrase “Hey Siri.”** As an Apple trademark, *Siri* is never translated. Here is a list of acceptable translations for the phrase “Hey Siri”:
 
-**When referring to the Shortcuts feature or app, always typeset with a capital S and make sure that _Shortcuts_ is plural.**
+| Locale code | “Hey Siri” translation | Locale code | “Hey Siri” translation |
+| --- | --- | --- | --- |
+| ar_AE | يا Siri | fr_CA | Dis Siri |
+| ar_SA | يا Siri | fr_CH | Dis Siri |
+| da_DK | Hej Siri | fr_FR | Dis Siri |
+| de_AT | Hey Siri | it_CH | Ehi Siri |
+| de_CH | Hey Siri | it_IT | Ehi Siri |
+| de_DE | Hey Siri | ja_JP | Hey Siri |
+| en_AU | Hey Siri | ko_KR | Siri야 |
+| en_CA | Hey Siri | ms_MY | Hai Siri |
+| en_GB | Hey Siri | nb_NO | Hei Siri |
+| en_IE | Hey Siri | nl_BE | Hé, Siri |
+| en_IN | Hey Siri | nl_NL | Hé Siri |
+| en_NZ | Hey Siri | no_NO | Hei Siri |
+| en_SG | Hey Siri | pt_BR | E aí Siri |
+| en_US | Hey Siri | ru_RU | привет Siri |
+| en_ZA | Hey Siri | sv_SE | Hej Siri |
+| es_CL | Oye Siri | th_TH | หวัดดี Siri |
+| es_ES | Oye Siri | tr_TR | Hey Siri |
+| es_MX | Oye Siri | zh_CN | 嘿Siri |
+| es_US | Oye Siri | zh_HK | 喂 Siri |
+| fi_FI | Hei Siri | zh_TW | 嘿 Siri |
+| fr_BE | Dis Siri |  |  |
 
-**When referring to individual shortcuts (that is, not the feature or the Shortcuts app), use lowercase.**
+## Resources
 
-**Use the right terminology when describing how people can use Shortcuts in your app.**
+#### Related
 
-### Referring to Apple products
+[App Shortcuts](https://developer.apple.com/design/human-interface-guidelines/app-shortcuts)
 
-**Adhere to Apple’s trademark guidelines.**
+[Snippets](https://developer.apple.com/design/human-interface-guidelines/snippets)
 
-  * Use Apple product names in singular form only; don’t make Apple product names possessive.
+#### Developer documentation
 
-  * Don’t translate Apple, Siri, or any other Apple trademark.
+[App Intents](https://developer.apple.com/documentation/AppIntents)
 
-  * Don’t use category descriptors. For example, say iPad, not tablet.
+[App schema domains](https://developer.apple.com/documentation/AppIntents/app-schema-domains)
 
-  * Don’t indicate any kind of sponsorship, partnership, or endorsement from Apple.
+[Apple Intelligence and Siri AI](https://developer.apple.com/documentation/AppIntents/apple-intelligence-and-siri-ai)
 
-  * Attribute Apple, Siri, and all other Apple trademarks with the correct credit lines wherever legal information appears within your app.
+#### Videos
 
-  * Refer to Apple devices and operating systems only in technical specifications or compatibility descriptions.
+## Change log
+
+| Date | Changes |
+| --- | --- |
+| June 8, 2026 | Revised for Siri AI. |
+| June 5, 2023 | Removed Add to Siri guidance. Added references to the new [App Shortcuts](https://developer.apple.com/design/human-interface-guidelines/app-shortcuts) page. |
+| May 2, 2023 | Consolidated guidance into one page. |
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/siri
-
