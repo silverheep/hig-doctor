@@ -5,25 +5,50 @@ source: https://developer.apple.com/design/human-interface-guidelines/boxes
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/boxes.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Boxes
 
+By default, a box uses a visible border or background color to separate its contents from the rest of the interface. A box can also include a title.
+
 ## Best practices
 
-**Prefer keeping a box relatively small in comparison with its containing view.**
+**Prefer keeping a box relatively small in comparison with its containing view.** As a box’s size gets close to the size of the containing window or screen, it becomes less effective at communicating the separation of grouped content, and it can crowd other content.
 
-**Consider using padding and alignment to communicate additional grouping within a box.**
+**Consider using padding and alignment to communicate additional grouping within a box.** A box’s border is a distinct visual element — adding nested boxes to define subgroups can make your interface feel busy and constrained.
 
 ## Content
 
-**Provide a succinct introductory title if it helps clarify the box’s contents.**
+**Provide a succinct introductory title if it helps clarify the box’s contents.** The appearance of a box helps people understand that its contents are related, but it might make sense to provide more detail about the relationship. Also, a title can help VoiceOver users predict the content they encounter within the box.
 
-**If you need a title, write a brief phrase that describes the contents.**
+**If you need a title, write a brief phrase that describes the contents.** Use sentence-style capitalization. Avoid ending punctuation unless you use a box in a settings pane, where you append a colon to the title.
+
+## Platform considerations
+
+*No additional considerations for visionOS. Not supported in tvOS or watchOS.*
+
+### iOS, iPadOS
+
+By default, iOS and iPadOS use the secondary and tertiary background [colors](https://developer.apple.com/design/human-interface-guidelines/color) in boxes.
+
+### macOS
+
+By default, macOS displays a box’s title above it.
+
+## Resources
+
+#### Related
+
+[Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+
+#### Developer documentation
+
+[GroupBox](https://developer.apple.com/documentation/SwiftUI/GroupBox) — SwiftUI
+
+[NSBox](https://developer.apple.com/documentation/AppKit/NSBox) — AppKit
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/boxes
-

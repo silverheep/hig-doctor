@@ -5,25 +5,40 @@ source: https://developer.apple.com/design/human-interface-guidelines/shazamkit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/shazamkit.
-> This file is a structured index of that content, snapshot 2025-02-02.
-> Apple HIG text and imagery are © Apple Inc.; this repository provides organization and cross-referencing for AI agent consumption only.
+> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # ShazamKit
 
-  * Enhancing experiences with graphics that correspond with the genre of currently playing music
+You can use ShazamKit to provide features like:
 
-  * Making media content accessible to people with hearing disabilities by providing closed captions or sign language that syncs with the audio
+* Enhancing experiences with graphics that correspond with the genre of currently playing music
+* Making media content accessible to people with hearing disabilities by providing closed captions or sign language that syncs with the audio
+* Synchronizing in-app experiences with virtual content in contexts like online learning and retail
 
-  * Synchronizing in-app experiences with virtual content in contexts like online learning and retail
+If you need the device microphone to get audio samples for your app to recognize, you must request access to it. As with all types of permission requests, it’s important to help people understand why you’re asking for access. For guidance, see [Privacy](https://developer.apple.com/design/human-interface-guidelines/privacy).
 
 ## Best practices
 
-**Stop recording as soon as possible.**
+After you receive permission to access the microphone for features that use ShazamKit, follow these guidelines.
 
-**Let people opt in to storing your app’s recognized songs to their iCloud library.**
+**Stop recording as soon as possible.** When people allow your app to record audio for recognition, they don’t expect the microphone to stay on. To help preserve privacy, only record for as long as it takes to get the sample you need.
+
+**Let people opt in to storing your app’s recognized songs to their iCloud library.** If your app can store recognized songs to iCloud, give people a way to first approve this action. Even though both the Music Recognition control and the Shazam app show your app as the source of the recognized song, people appreciate having control over which apps can store content in their library.
+
+## Platform considerations
+
+*No additional considerations for iOS, iPadOS, macOS, tvOS, visionOS, or watchOS.*
+
+## Resources
+
+#### Developer documentation
+
+[ShazamKit](https://developer.apple.com/documentation/ShazamKit)
+
+#### Videos
 
 ---
 
 <!-- hig-doctor:canonical-footer -->
 For the complete guidance, including worked examples and illustrations, see the canonical page: https://developer.apple.com/design/human-interface-guidelines/shazamkit
-

@@ -1,6 +1,6 @@
 ---
 name: hig-components-dialogs
-version: 1.0.0
+version: 2.0.0
 description: >-
   Apple HIG guidance for presentation components including alerts, action sheets,
   popovers, sheets, and digit entry views. Use this skill when the user says
