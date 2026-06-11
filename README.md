@@ -2,7 +2,7 @@
 
 Agent-native Apple Human Interface Guidelines: a structured index of Apple's HIG delivered as Claude Skills, with an MCP server and a universal compliance auditor as the verification loop. Built for AI coding agents; usable by humans.
 
-- **Skills corpus** — 14 skills and 156 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot dated 2025-02-02; canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
+- **Skills corpus** — 14 skills and 157 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot dated 2026-06-11 (includes the WWDC 2025 "Liquid Glass" overhaul); canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 - **MCP server** — stdio Model Context Protocol server exposing `hig_list_skills`, `hig_lookup`, and `hig_audit` for Claude Desktop, Cursor, Windsurf, and Claude Code.
 - **Audit CLI** — universal HIG compliance scanner across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, HTML). Emits severity-bucketed markdown/JSON with a pass/fail CI gate.
 
@@ -231,7 +231,14 @@ hig-doctor/
 
 ## Content maintenance
 
-Skills content is a frozen snapshot dated 2025-02-02. The `annual-hig-rescan.yml` workflow opens a tracking issue each June after WWDC to prompt diffing Apple's live HIG against this snapshot, updating changed topics, and tagging a new release. The re-scan is a human-in-the-loop process — Apple's HIG pages are JS-rendered and not safely automatable.
+Skills content is a snapshot dated 2026-06-11. Refreshes are driven by the `scripts/hig-ingest/` pipeline, which walks Apple's static DocC render JSON (`developer.apple.com/tutorials/data/design/human-interface-guidelines/<slug>.json`) — the HIG pages are JS-rendered, but the underlying JSON is static and complete, so the scan is automatable end to end:
+
+1. `crawl.py` — BFS-walks the JSON tree from the section roots, caches every topic, emits a manifest.
+2. `diff.py` — diffs Apple's live topic set against the local corpus (added / removed / renamed).
+3. `convert.py` — renders a topic's DocC JSON to reference markdown (full prose; imagery omitted).
+4. `generate.py` — regenerates the whole corpus into a staging tree, reusing the existing slug→skill placement.
+
+The `annual-hig-rescan.yml` workflow still opens a tracking issue each June after WWDC as a reminder to run the pipeline, review the diff, and tag a new release.
 
 Each reference file carries an attribution block and canonical source URL in its frontmatter. Apple-hosted screenshots have been stripped to reduce IP transfer; retain the source link and open Apple's page when visual context is needed.
 

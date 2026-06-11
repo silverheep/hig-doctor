@@ -23,7 +23,7 @@ export function GET() {
   lines.push("# Apple HIG Skills");
   lines.push("");
   lines.push(
-    "> Apple Human Interface Guidelines as agent skills for AI coding agents. Snapshot from February 2025, structured for progressive disclosure. Raw markdown is available for every topic — append `.md` or use the `/raw/<slug>` endpoint.",
+    "> Apple Human Interface Guidelines as agent skills for AI coding agents. Snapshot from June 2026 (includes the WWDC 2025 Liquid Glass design language), structured for progressive disclosure. Raw markdown is available for every topic — append `.md` or use the `/raw/<slug>` endpoint.",
   );
   lines.push("");
   lines.push(
