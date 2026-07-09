@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/branding
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/branding.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Branding
@@ -45,6 +45,8 @@ In addition to expressing your brand in your [app icon](https://developer.apple.
 [Color](https://developer.apple.com/design/human-interface-guidelines/color)
 
 #### Videos
+
+* [Communicate your brand identity on iOS](https://developer.apple.com/videos/play/wwdc2026/251)
 
 ---
 

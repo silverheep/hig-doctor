@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/app-icons
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/app-icons.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # App icons
@@ -132,6 +132,9 @@ App icons support the following color spaces:
 [Configuring your app icon using an asset catalog](https://developer.apple.com/documentation/Xcode/configuring-your-app-icon)
 
 #### Videos
+
+* [Say hello to the new look of app icons](https://developer.apple.com/videos/play/wwdc2025/220)
+* [Create icons with Icon Composer](https://developer.apple.com/videos/play/wwdc2025/361)
 
 ## Change log
 

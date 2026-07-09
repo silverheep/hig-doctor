@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/web-views
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/web-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Web views
@@ -33,6 +33,8 @@ For example, Mail uses a web view to show HTML content in messages.
 [WKWebView](https://developer.apple.com/documentation/WebKit/WKWebView) — WebKit
 
 #### Videos
+
+* [Explore WKWebView additions](https://developer.apple.com/videos/play/wwdc2021/10032)
 
 ---
 

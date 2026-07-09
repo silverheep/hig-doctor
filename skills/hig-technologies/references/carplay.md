@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/carplay
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/carplay.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # CarPlay
@@ -110,6 +110,9 @@ A CarPlay app needs to handle errors gracefully and report them to people only w
 [CarPlay App Programming Guide](https://developer.apple.com/carplay/documentation/CarPlay-App-Programming-Guide.pdf)
 
 #### Videos
+
+* [Rev up your CarPlay app](https://developer.apple.com/videos/play/wwdc2026/212)
+* [Turbocharge your app for CarPlay](https://developer.apple.com/videos/play/wwdc2025/216)
 
 ## Change log
 

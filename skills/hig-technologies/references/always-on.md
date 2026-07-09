@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/always-on
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/always-on.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Always On
@@ -44,6 +44,10 @@ On both devices, the system displays notifications while in Always On, and peopl
 [Designing your app for the Always On state](https://developer.apple.com/documentation/watchOS-Apps/designing-your-app-for-the-always-on-state) — watchOS apps
 
 #### Videos
+
+* [What's new in watchOS 8](https://developer.apple.com/videos/play/wwdc2021/10002)
+* [Build a workout app for Apple Watch](https://developer.apple.com/videos/play/wwdc2021/10009)
+* [What's new in SwiftUI](https://developer.apple.com/videos/play/wwdc2021/10018)
 
 ## Change log
 

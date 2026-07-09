@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/tab-bars
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/tab-bars.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Tab bars
@@ -112,6 +112,9 @@ In visionOS, a tab bar is always vertical, floating in a position that’s fixed
 [Elevating your iPad app with a tab bar and sidebar](https://developer.apple.com/documentation/UIKit/elevating-your-ipad-app-with-a-tab-bar-and-sidebar) — UIKit
 
 #### Videos
+
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
 
 ## Change log
 

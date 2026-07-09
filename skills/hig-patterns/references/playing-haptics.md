@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/playing-ha
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/playing-haptics.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Playing haptics
@@ -87,6 +87,24 @@ Apple Watch Series 4 and later provides haptic feedback for the Digital Crown, w
 
 watchOS defines the following set of haptics, each of which conveys a specific meaning to people.
 
+**Notification.** Tells the person that something significant or out of the ordinary has happened and requires their attention. The system plays this same haptic when a local or remote notification arrives.
+
+**Up.** Tells the person that an important value increased above a significant threshold.
+
+**Down.** Tells the person that an important value decreased below a significant threshold.
+
+**Success.** Tells the person that an action completed successfully.
+
+**Failure.** Tells the person that an action failed.
+
+**Retry.** Tells the person that an action failed but they can retry it.
+
+**Start.** Tells the person that an activity started. Use this haptic when starting a timer or any other activity that a person can explicitly start and stop. The stop haptic usually follows this haptic.
+
+**Stop.** Tells the person that an activity stopped. Use this haptic when stopping a timer or other activity that the person previously started.
+
+**Click.** Provides the sensation of a dial clicking, helping you communicate progress at predefined increments or intervals. Overusing the click haptic tends to diminish its utility and can even be confusing when clicks overlap each other.
+
 ## Resources
 
 #### Related
@@ -100,6 +118,9 @@ watchOS defines the following set of haptics, each of which conveys a specific m
 [Core Haptics](https://developer.apple.com/documentation/CoreHaptics)
 
 #### Videos
+
+* [Practice audio haptic design](https://developer.apple.com/videos/play/wwdc2021/10278)
+* [Introducing Core Haptics](https://developer.apple.com/videos/play/wwdc2019/520)
 
 ## Change log
 

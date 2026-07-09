@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/collaborat
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/collaboration-and-sharing.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Collaboration and sharing
@@ -61,6 +61,10 @@ In your SwiftUI app running in watchOS, use [ShareLink](https://developer.apple.
 [ShareLink](https://developer.apple.com/documentation/SwiftUI/ShareLink) — SwiftUI
 
 #### Videos
+
+* [Design for Collaboration with Messages](https://developer.apple.com/videos/play/wwdc2022/10015)
+* [Enhance collaboration experiences with Messages](https://developer.apple.com/videos/play/wwdc2022/10095)
+* [Integrate your custom collaboration app with Messages](https://developer.apple.com/videos/play/wwdc2022/10093)
 
 ## Change log
 

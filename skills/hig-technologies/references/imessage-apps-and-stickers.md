@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/imessage-a
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/imessage-apps-and-stickers.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # iMessage apps and stickers
@@ -84,6 +84,8 @@ A sticker file must be 500 KB or smaller in size. For each supported format, the
 [Adding Sticker packs and iMessage apps to the system Stickers app, Messages camera, and FaceTime](https://developer.apple.com/documentation/Messages/adding-sticker-packs-and-imessage-apps-to-the-system-stickers-app-messages-camera-and-facetime) — Messages
 
 #### Videos
+
+* [Express Yourself!](https://developer.apple.com/videos/play/wwdc2017/820)
 
 ## Change log
 

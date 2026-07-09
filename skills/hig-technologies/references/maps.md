@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/maps
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/maps.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Maps
@@ -134,6 +134,9 @@ For developer guidance, see [WKInterfaceMap](https://developer.apple.com/documen
 [Indoor Mapping Data Format](https://register.apple.com/resources/imdf/)
 
 #### Videos
+
+* [Go further with MapKit](https://developer.apple.com/videos/play/wwdc2025/204)
+* [Unlock the power of places with MapKit](https://developer.apple.com/videos/play/wwdc2024/10097)
 
 ## Change log
 

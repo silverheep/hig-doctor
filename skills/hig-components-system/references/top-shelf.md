@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/top-shelf
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/top-shelf.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Top Shelf
@@ -119,6 +119,8 @@ Use the following size for a scrolling inset banner image:
 [Apple Design Resources](https://developer.apple.com/design/resources/#tvos-apps)
 
 #### Videos
+
+* [Mastering the Living Room With tvOS](https://developer.apple.com/videos/play/wwdc2019/211)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: hig-components-system
-version: 2.0.0
+version: 2.1.0
 description: >-
   Apple HIG guidance for system experience components: widgets, live activities,
   notifications, complications, home screen quick actions, top shelf, watch faces,

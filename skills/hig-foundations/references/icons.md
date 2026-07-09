@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/icons
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/icons.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Icons
@@ -194,6 +194,8 @@ To create a custom document icon, you can supply any combination of background f
 [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols)
 
 #### Videos
+
+* [Designing Glyphs](https://developer.apple.com/videos/play/wwdc2017/823)
 
 ## Change log
 

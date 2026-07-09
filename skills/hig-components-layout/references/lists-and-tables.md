@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/lists-and-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/lists-and-tables.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Lists and tables
@@ -85,6 +85,8 @@ Sometimes, people need to work with complex data in a multicolumn table or a spr
 [NSTableView](https://developer.apple.com/documentation/AppKit/NSTableView) — AppKit
 
 #### Videos
+
+* [Stacks, Grids, and Outlines in SwiftUI](https://developer.apple.com/videos/play/wwdc2020/10031)
 
 ## Change log
 

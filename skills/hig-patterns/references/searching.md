@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/searching
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/searching.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Searching
@@ -55,6 +55,8 @@ In iOS, iPadOS, and macOS, Spotlight helps people find content across all apps i
 [Adding your app’s content to Spotlight indexes](https://developer.apple.com/documentation/CoreSpotlight/adding-your-app-s-content-to-spotlight-indexes) — Core Spotlight
 
 #### Videos
+
+* [Design intuitive search experiences](https://developer.apple.com/videos/play/wwdc2026/292)
 
 ## Change log
 

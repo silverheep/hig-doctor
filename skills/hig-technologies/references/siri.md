@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/siri
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/siri.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Siri
@@ -123,6 +123,10 @@ When you provide additional custom properties as part of your schema responses, 
 [Apple Intelligence and Siri AI](https://developer.apple.com/documentation/AppIntents/apple-intelligence-and-siri-ai)
 
 #### Videos
+
+* [Build intelligent Siri experiences with App Schemas](https://developer.apple.com/videos/play/wwdc2026/240)
+* [Discover new capabilities in the App Intents framework](https://developer.apple.com/videos/play/wwdc2026/345)
+* [Explore advanced App Intents features for Siri and Apple Intelligence](https://developer.apple.com/videos/play/wwdc2026/343)
 
 ## Change log
 

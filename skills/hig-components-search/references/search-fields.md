@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/search-fie
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/search-fields.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Search fields
@@ -130,6 +130,10 @@ When someone taps the search field, the system displays a text-input control tha
 [NSSearchField](https://developer.apple.com/documentation/AppKit/NSSearchField) — AppKit
 
 #### Videos
+
+* [Design intuitive search experiences](https://developer.apple.com/videos/play/wwdc2026/292)
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
+* [Discoverable design](https://developer.apple.com/videos/play/wwdc2021/10126)
 
 ## Change log
 

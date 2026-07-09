@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/onboarding
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/onboarding.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Onboarding
@@ -55,6 +55,10 @@ Ideally, people can understand your app or game simply by experiencing it, but i
 [Offering help](https://developer.apple.com/design/human-interface-guidelines/offering-help)
 
 #### Videos
+
+* [Discoverable design](https://developer.apple.com/videos/play/wwdc2021/10126)
+* [Designing Award Winning Apps and Games](https://developer.apple.com/videos/play/wwdc2019/802)
+* [Love at First Launch](https://developer.apple.com/videos/play/wwdc2017/816)
 
 ## Change log
 

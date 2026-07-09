@@ -1,6 +1,6 @@
 ---
 name: hig-components-layout
-version: 2.0.0
+version: 2.1.0
 description: >-
   Apple Human Interface Guidelines for layout and navigation components. Use this skill when the user
   asks about "sidebar", "split view", "tab bar", "tab view", "scroll view", "window design", "panel",

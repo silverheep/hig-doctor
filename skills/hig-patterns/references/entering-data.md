@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/entering-d
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/entering-data.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Entering data
@@ -56,6 +56,8 @@ Entering information can be a tedious process regardless of the interaction meth
 [Input events](https://developer.apple.com/documentation/SwiftUI/Input-events) — SwiftUI
 
 #### Videos
+
+* [What's new in UIKit](https://developer.apple.com/videos/play/wwdc2021/10059)
 
 ## Change log
 

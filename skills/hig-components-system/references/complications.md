@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/complicati
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/complications.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Complications
@@ -254,6 +254,10 @@ As you design icons and images for an extra large complication, use the followin
 [WidgetKit](https://developer.apple.com/documentation/WidgetKit)
 
 #### Videos
+
+* [Design widgets for the Smart Stack on Apple Watch](https://developer.apple.com/videos/play/wwdc2023/10309)
+* [Go further with Complications in WidgetKit](https://developer.apple.com/videos/play/wwdc2022/10051)
+* [Complications and widgets: Reloaded](https://developer.apple.com/videos/play/wwdc2022/10050)
 
 ## Change log
 

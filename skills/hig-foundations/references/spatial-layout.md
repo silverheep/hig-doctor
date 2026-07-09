@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/spatial-la
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/spatial-layout.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Spatial layout
@@ -87,6 +87,10 @@ To learn more about windows and volumes in visionOS, see [visionOS](https://deve
 [Adding 3D content to your app](https://developer.apple.com/documentation/visionOS/adding-3d-content-to-your-app) — visionOS
 
 #### Videos
+
+* [Meet SwiftUI spatial layout](https://developer.apple.com/videos/play/wwdc2025/273)
+* [Principles of spatial design](https://developer.apple.com/videos/play/wwdc2023/10072)
+* [Design for spatial user interfaces](https://developer.apple.com/videos/play/wwdc2023/10076)
 
 ## Change log
 

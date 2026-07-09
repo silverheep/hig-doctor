@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/game-cente
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/game-center.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Game Center
@@ -77,6 +77,26 @@ Achievements give players an added incentive to stay engaged with your game. Gam
 
 **Create artwork in the appropriate size and format.** The system applies a circular mask to your achievement image, so be sure to keep content centered. Use the following specifications to create images.
 
+**iOS, iPadOS, macOS, visionOS**
+
+| Attribute | Value |
+| --- | --- |
+| Format | PNG, TIF, or JPG |
+| Color space | sRGB or P3 |
+| Resolution | 72 DPI (minimum) |
+| Image size | 512x512 pt (1024x1024 px @2x) |
+| Mask diameter | 512 pt (1024 px @2x) |
+
+**tvOS**
+
+| Attribute | Value |
+| --- | --- |
+| Format | PNG, TIF, or JPG |
+| Color space | sRGB or P3 |
+| Resolution | 72 DPI (minimum) |
+| Image size | 320x320 pt (640x640 px @2x) |
+| Mask diameter | 200 pt (400 px @2x) |
+
 ## Leaderboards
 
 Leaderboards are a great way to encourage friendly competition within your game. When you adopt Game Center, players can easily check their ranking against friends and global players as well as receive notifications when their friends challenge them or pass their score on a leaderboard. You can take advantage of the system-designed UI or present leaderboard information within custom UI. For developer guidance, see [Encourage progress and competition with leaderboards](https://developer.apple.com/documentation/GameKit/encourage-progress-and-competition-with-leaderboards).
@@ -103,6 +123,27 @@ Leaderboards are a great way to encourage friendly competition within your game.
 **Add leaderboard images.** Leaderboard artwork gives you another opportunity to reinforce your game’s visual aesthetic. Aim to create a unique image for each leaderboard in your game that reflects and showcases the gameplay involved in leaderboard ranking. Leaderboards appear across the system, promoting ways for players to engage and compete with friends, and having compelling images helps attract players and gives them a sense of the experience.
 
 For games that run in iOS, iPadOS, and macOS, use a single image for your leaderboard image. For games that run in tvOS, provide a set of images that animate when the artwork is in focus. To learn more about focus effects, see [Focus and selection](https://developer.apple.com/design/human-interface-guidelines/focus-and-selection). For help creating focusable images, download the tvOS template from [Apple Design Resources](https://developer.apple.com/design/resources/#tvos-apps). Use the following specifications to create leaderboard artwork.
+
+**iOS, iPadOS, macOS**
+
+| Attribute | Value |
+| --- | --- |
+| Format | JPEG, JPG, or PNG |
+| Color space | sRGB or P3 |
+| Resolution | 72 DPI (minimum) |
+| Image size | 512x512 pt (1024x1024 px @2x) |
+| Cropped area | 512x312 pt (1024x624 px @2x) |
+
+**tvOS**
+
+| Attribute | Value |
+| --- | --- |
+| Format | PNG, TIF, or JPG |
+| Color space | sRGB or P3 |
+| Resolution | 72 DPI (minimum) |
+| Image size | 659x371 pt (1318x742 px @2x) |
+| Focused size | 618x348 pt (1236x696 px @2x) |
+| Unfocused size | 548x309 pt (1096x618 px @2x) |
 
 > **Note:** Be mindful of how cropping might affect your leaderboard artwork. In iOS, iPadOS, and macOS, the system crops artwork for leaderboards that are part of a leaderboard set. In tvOS, the focus effect on leaderboard artwork may crop your images at the edges of some layers. Make sure your primary content stays comfortably visible in both these scenarios.
 
@@ -194,6 +235,9 @@ Game Center supports both real-time and turn-based multiplayer activities that m
 [Game Porting Toolkit](https://developer.apple.com/games/game-porting-toolkit/)
 
 #### Videos
+
+* [Get started with Game Center](https://developer.apple.com/videos/play/wwdc2025/214)
+* [Engage players with the Apple Games app](https://developer.apple.com/videos/play/wwdc2025/215)
 
 ## Change log
 

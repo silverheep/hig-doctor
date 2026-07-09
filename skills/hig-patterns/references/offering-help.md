@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/offering-h
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/offering-help.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Offering help
@@ -77,6 +77,8 @@ A *tooltip* (called a *help tag* in user documentation) displays a small, transi
 [NSHelpManager](https://developer.apple.com/documentation/AppKit/NSHelpManager) — AppKit
 
 #### Videos
+
+* [Make features discoverable with TipKit](https://developer.apple.com/videos/play/wwdc2023/10229)
 
 ## Change log
 

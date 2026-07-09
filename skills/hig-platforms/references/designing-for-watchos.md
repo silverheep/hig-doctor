@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for watchOS
@@ -50,6 +50,8 @@ Great Apple Watch experiences are streamlined and specialized, and integrate the
 [watchOS Pathway](https://developer.apple.com/watchos/get-started/)
 
 #### Videos
+
+* [What’s new in watchOS 26](https://developer.apple.com/videos/play/wwdc2025/334)
 
 ## Change log
 

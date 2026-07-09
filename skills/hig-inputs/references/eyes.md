@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/eyes
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/eyes.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Eyes
@@ -83,6 +83,10 @@ As an example that shows what a custom hover effect can and can’t do, consider
 [Adopting best practices for privacy and user preferences](https://developer.apple.com/documentation/visionOS/adopting-best-practices-for-privacy) — visionOS
 
 #### Videos
+
+* [Design hover interactions for visionOS](https://developer.apple.com/videos/play/wwdc2025/303)
+* [Design for spatial input](https://developer.apple.com/videos/play/wwdc2023/10073)
+* [Design considerations for vision and motion](https://developer.apple.com/videos/play/wwdc2023/10078)
 
 ## Change log
 

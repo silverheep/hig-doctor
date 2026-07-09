@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/notificati
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/notifications.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Notifications
@@ -133,6 +133,9 @@ People can double-tap to respond to notifications on supported devices. When a p
 [User Notifications](https://developer.apple.com/documentation/UserNotifications)
 
 #### Videos
+
+* [Send communication and Time Sensitive notifications](https://developer.apple.com/videos/play/wwdc2021/10091)
+* [The Push Notifications primer](https://developer.apple.com/videos/play/wwdc2020/10095)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/design-pri
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/design-principles.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Design principles
@@ -129,6 +129,8 @@ People remember how a product makes them feel. Think about the emotions that are
 ## Resources
 
 #### Videos
+
+* [Principles of great design](https://developer.apple.com/videos/play/wwdc2026/250)
 
 ## Change log
 

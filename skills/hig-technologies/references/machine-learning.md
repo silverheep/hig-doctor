@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/machine-le
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/machine-learning.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Machine learning
@@ -295,6 +295,9 @@ An important part of the design process is to identify the scenarios where limit
 [Core ML](https://developer.apple.com/documentation/CoreML)
 
 #### Videos
+
+* [Explore prompt design & safety for on-device foundation models](https://developer.apple.com/videos/play/wwdc2025/248)
+* [Discover machine learning & AI frameworks on Apple platforms](https://developer.apple.com/videos/play/wwdc2025/360)
 
 ## Change log
 

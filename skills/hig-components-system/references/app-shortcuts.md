@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/app-shortc
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/app-shortcuts.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # App Shortcuts
@@ -88,6 +88,10 @@ App Shortcuts aren’t supported in macOS. However, actions you create for your 
 [Defining app entities for your custom data types](https://developer.apple.com/documentation/AppIntents/defining-app-entities-for-your-custom-data-types) — App Intents
 
 #### Videos
+
+* [What’s new in Shortcuts](https://developer.apple.com/videos/play/wwdc2026/310)
+* [Design interactive snippets](https://developer.apple.com/videos/play/wwdc2025/281)
+* [Get to know App Intents](https://developer.apple.com/videos/play/wwdc2025/244)
 
 ## Change log
 

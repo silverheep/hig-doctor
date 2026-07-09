@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/widgets
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/widgets.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Widgets
@@ -319,6 +319,8 @@ As you design your widgets, use the following values for guidance.
 | 1192x1590 * | Canvas | 188x188 | 412x188 | 412x412 | 860x412 |
 |  | Device | 188x188 | 412x188 | 412x412 | 860x412 |
 
+** When Display Zoom is set to More Space.*
+
 ### visionOS dimensions
 
 | Widget | Size in pt | Size in mm (scaled to 100%) |
@@ -352,6 +354,10 @@ As you design your widgets, use the following values for guidance.
 [Developing a WidgetKit strategy](https://developer.apple.com/documentation/WidgetKit/Developing-a-WidgetKit-strategy) — WidgetKit
 
 #### Videos
+
+* [WidgetKit foundations](https://developer.apple.com/videos/play/wwdc2026/277)
+* [What’s new in widgets](https://developer.apple.com/videos/play/wwdc2025/278)
+* [Design widgets for visionOS](https://developer.apple.com/videos/play/wwdc2025/255)
 
 ## Change log
 

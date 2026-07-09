@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/sign-in-wi
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Sign in with Apple
@@ -183,6 +183,10 @@ To coordinate with your app design, you can change:
 [Displaying Sign in with Apple buttons on the web](https://developer.apple.com/documentation/signinwithapple/displaying-sign-in-with-apple-buttons-on-the-web) — Sign in with Apple
 
 #### Videos
+
+* [Move beyond passwords](https://developer.apple.com/videos/play/wwdc2021/10106)
+* [Simplify sign in for your tvOS apps](https://developer.apple.com/videos/play/wwdc2021/10279)
+* [Introducing Sign In with Apple](https://developer.apple.com/videos/play/wwdc2019/706)
 
 ## Change log
 

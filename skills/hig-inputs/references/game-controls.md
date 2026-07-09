@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/game-contr
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/game-controls.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Game controls
@@ -109,6 +109,10 @@ Keyboard players appreciate using keyboard bindings to speed up their interactio
 [Game Controller](https://developer.apple.com/documentation/GameController)
 
 #### Videos
+
+* [Make your game great with touch](https://developer.apple.com/videos/play/wwdc2026/358)
+* [Design advanced games for Apple platforms](https://developer.apple.com/videos/play/wwdc2024/10085)
+* [Explore game input in visionOS](https://developer.apple.com/videos/play/wwdc2024/10094)
 
 ## Change log
 

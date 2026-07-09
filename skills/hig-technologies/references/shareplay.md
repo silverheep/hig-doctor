@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/shareplay
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/shareplay.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # SharePlay
@@ -101,6 +101,10 @@ Sometimes, it makes sense to adjust the shared context of a shared activity so e
 [Group Activities](https://developer.apple.com/documentation/GroupActivities)
 
 #### Videos
+
+* [Share visionOS experiences with nearby people](https://developer.apple.com/videos/play/wwdc2025/318)
+* [Design spatial SharePlay experiences](https://developer.apple.com/videos/play/wwdc2023/10075)
+* [Add SharePlay to your app](https://developer.apple.com/videos/play/wwdc2023/10239)
 
 ## Change log
 

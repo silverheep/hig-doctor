@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/nearby-int
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/nearby-interactions.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Nearby interactions
@@ -59,6 +59,9 @@ On Apple Watch, Nearby Interaction APIs provide a peer device’s distance. Also
 [Nearby Interaction](https://developer.apple.com/documentation/NearbyInteraction)
 
 #### Videos
+
+* [Design for spatial interaction](https://developer.apple.com/videos/play/wwdc2021/10245)
+* [Meet Nearby Interaction](https://developer.apple.com/videos/play/wwdc2020/10668)
 
 ## Change log
 

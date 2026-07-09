@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for iPadOS
@@ -46,6 +46,10 @@ Great iPad experiences integrate the platform and device capabilities that peopl
 [iPadOS Pathway](https://developer.apple.com/ipados/get-started/)
 
 #### Videos
+
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
+* [Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219)
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
 
 ---
 

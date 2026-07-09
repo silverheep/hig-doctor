@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/file-manag
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/file-management.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # File management
@@ -113,6 +113,8 @@ For example, you can use a Finder Sync extension to:
 [Documents](https://developer.apple.com/documentation/SwiftUI/Documents) — SwiftUI
 
 #### Videos
+
+* [Build document-based apps in SwiftUI](https://developer.apple.com/videos/play/wwdc2020/10039)
 
 ## Change log
 

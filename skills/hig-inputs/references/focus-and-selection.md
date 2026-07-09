@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/focus-and-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/focus-and-selection.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Focus and selection
@@ -94,6 +94,10 @@ visionOS supports the same focus system as in iPadOS and tvOS, letting people us
 [About focus interactions for Apple TV](https://developer.apple.com/documentation/UIKit/about-focus-interactions-for-apple-tv) — UIKit
 
 #### Videos
+
+* [Design for spatial input](https://developer.apple.com/videos/play/wwdc2023/10073)
+* [Design for spatial user interfaces](https://developer.apple.com/videos/play/wwdc2023/10076)
+* [Design for the iPadOS pointer](https://developer.apple.com/videos/play/wwdc2020/10640)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/sidebars
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/sidebars.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Sidebars
@@ -79,6 +79,8 @@ A sidebar’s row height, text, and glyph size depend on its overall size, which
 [NSSplitViewController](https://developer.apple.com/documentation/AppKit/NSSplitViewController) — AppKit
 
 #### Videos
+
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/managing-a
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/managing-accounts.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Managing accounts
@@ -92,6 +92,9 @@ Use iCloud synchronization to provide access to the Keychain, letting people aut
 [Supporting passkeys](https://developer.apple.com/documentation/AuthenticationServices/supporting-passkeys) — Authentication Services
 
 #### Videos
+
+* [What’s new in passkeys](https://developer.apple.com/videos/play/wwdc2025/279)
+* [What’s new in device management](https://developer.apple.com/videos/play/wwdc2024/10143)
 
 ---
 

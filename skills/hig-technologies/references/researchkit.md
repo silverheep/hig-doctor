@@ -5,12 +5,14 @@ source: https://developer.apple.com/design/human-interface-guidelines/researchki
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/researchkit.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # ResearchKit
 
 The ResearchKit framework provides predesigned screens and transitions that make it easy to design and build an engaging custom research app. For developer guidance, see [Research & Care > ResearchKit](https://www.researchandcare.org/researchkit/).
+
+*These guidelines are for informational purposes only and don’t constitute legal advice. Contact an attorney to obtain advice with respect to the development of a research app and any applicable laws.*
 
 ## Creating the onboarding experience
 
@@ -86,6 +88,10 @@ ResearchKit offers a profile screen you can use to let participants manage perso
 [ResearchKit GitHub project](https://github.com/ResearchKit/ResearchKit)
 
 #### Videos
+
+* [What's new in CareKit](https://developer.apple.com/videos/play/wwdc2020/10151)
+* [Build a research and care app, part 1: Setup onboarding](https://developer.apple.com/videos/play/wwdc2021/10068)
+* [ResearchKit and CareKit Reimagined](https://developer.apple.com/videos/play/wwdc2019/217)
 
 ## Change log
 

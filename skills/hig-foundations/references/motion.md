@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/motion
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/motion.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Motion
@@ -83,6 +83,10 @@ SwiftUI provides a powerful and streamlined way to add motion to your app. If yo
 [Animating views and transitions](https://developer.apple.com/tutorials/SwiftUI/animating-views-and-transitions) — SwiftUI
 
 #### Videos
+
+* [Enhance your UI animations and transitions](https://developer.apple.com/videos/play/wwdc2024/10145)
+* [Create custom visual effects with SwiftUI](https://developer.apple.com/videos/play/wwdc2024/10151)
+* [Design considerations for vision and motion](https://developer.apple.com/videos/play/wwdc2023/10078)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-macos.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for macOS
@@ -49,6 +49,10 @@ Great Mac experiences integrate the platform and device capabilities that people
 [macOS Pathway](https://developer.apple.com/macos/get-started/)
 
 #### Videos
+
+* [Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219)
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
+* [Build an AppKit app with the new design](https://developer.apple.com/videos/play/wwdc2025/310)
 
 ---
 

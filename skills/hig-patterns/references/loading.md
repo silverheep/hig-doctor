@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/loading
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/loading.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Loading
@@ -49,6 +49,8 @@ If your app or game loads assets, levels, or other content, design the behavior 
 [Background Assets](https://developer.apple.com/documentation/BackgroundAssets)
 
 #### Videos
+
+* [Discover Apple-Hosted Background Assets](https://developer.apple.com/videos/play/wwdc2025/325)
 
 ## Change log
 

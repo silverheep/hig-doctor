@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/sf-symbols
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/sf-symbols.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # SF Symbols
@@ -178,6 +178,8 @@ For guidance, see [Icons](https://developer.apple.com/design/human-interface-gui
 [Creating custom symbol images for your app](https://developer.apple.com/documentation/UIKit/creating-custom-symbol-images-for-your-app) — UIKit
 
 #### Videos
+
+* [What’s new in SF Symbols 7](https://developer.apple.com/videos/play/wwdc2025/337)
 
 ## Change log
 

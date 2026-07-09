@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/homekit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/homekit.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # HomeKit
@@ -276,6 +276,8 @@ See [Guidelines for Using Apple Trademarks](https://www.apple.com/legal/intellec
 [HomeKit](https://developer.apple.com/documentation/HomeKit)
 
 #### Videos
+
+* [Add support for Matter in your smart home app](https://developer.apple.com/videos/play/wwdc2021/10298)
 
 ## Change log
 

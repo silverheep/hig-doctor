@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/carekit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/carekit.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # CareKit
@@ -179,6 +179,9 @@ Using SF Symbols in your app gives you:
 [ResearchKit GitHub project](https://github.com/ResearchKit/ResearchKit)
 
 #### Videos
+
+* [What's new in CareKit](https://developer.apple.com/videos/play/wwdc2020/10151)
+* [Build a research and care app, part 1: Setup onboarding](https://developer.apple.com/videos/play/wwdc2021/10068)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for visionOS
@@ -61,6 +61,10 @@ Great visionOS apps and games are approachable and familiar, while offering extr
 [Creating your first visionOS app](https://developer.apple.com/documentation/visionOS/creating-your-first-visionos-app)
 
 #### Videos
+
+* [Design interactive experiences for visionOS](https://developer.apple.com/videos/play/wwdc2024/10096)
+* [Design great visionOS apps](https://developer.apple.com/videos/play/wwdc2024/10086)
+* [Principles of spatial design](https://developer.apple.com/videos/play/wwdc2023/10072)
 
 ## Change log
 

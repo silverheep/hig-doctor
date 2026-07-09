@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/accessibil
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/accessibility.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Accessibility
@@ -172,6 +172,10 @@ For additional guidance, see [Create accessible spatial experiences](https://dev
 [Overview of Accessibility Nutrition Labels](https://devcms.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels)
 
 #### Videos
+
+* [Refine accessibility for custom controls](https://developer.apple.com/videos/play/wwdc2026/220)
+* [Principles of inclusive app design](https://developer.apple.com/videos/play/wwdc2025/316)
+* [Evaluate your app for Accessibility Nutrition Labels](https://developer.apple.com/videos/play/wwdc2025/224)
 
 ## Change log
 

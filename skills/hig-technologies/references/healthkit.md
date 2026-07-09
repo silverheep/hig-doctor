@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/healthkit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/healthkit.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # HealthKit
@@ -103,6 +103,10 @@ The Apple Health icon shows that an app works with HealthKit and the Health app.
 [Protecting user privacy](https://developer.apple.com/documentation/HealthKit/protecting-user-privacy) — HealthKit
 
 #### Videos
+
+* [Deliver workout insights with HealthKit workout zones](https://developer.apple.com/videos/play/wwdc2026/207)
+* [Meet the HealthKit Medications API](https://developer.apple.com/videos/play/wwdc2025/321)
+* [Track workouts with HealthKit on iOS and iPadOS](https://developer.apple.com/videos/play/wwdc2025/322)
 
 ---
 

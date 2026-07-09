@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/multitaski
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/multitasking.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Multitasking
@@ -92,6 +92,9 @@ Only one window is active at a time in the Shared Space. When people look from o
 [Multitasking on iPad, Mac, and Apple Vision Pro](https://developer.apple.com/documentation/UIKit/multitasking-on-ipad-mac-and-apple-vision-pro) — UIKit
 
 #### Videos
+
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
+* [Make your UIKit app more flexible](https://developer.apple.com/videos/play/wwdc2025/282)
 
 ## Change log
 

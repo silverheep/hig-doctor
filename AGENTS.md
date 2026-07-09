@@ -10,7 +10,7 @@ This repository contains **Agent Skills** following the [Agent Skills specificat
 - **Creator**: Raintree
 - **GitHub**: [raintree-technology/hig-doctor](https://github.com/raintree-technology/hig-doctor)
 - **License**: MIT (structure); Apple HIG content is Apple's IP
-- **Source**: [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) (February 2025)
+- **Source**: [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) — snapshot dates per skill in [VERSIONS.md](VERSIONS.md) (last re-verified 2026-07-08)
 
 ## Repository Structure
 
@@ -38,7 +38,12 @@ hig-doctor/
 │       ├── SKILL.md           # Required skill file (<500 lines)
 │       └── references/        # HIG content files loaded on demand
 ├── website/                   # Next.js marketing site
-├── scripts/                   # Legal-hardening passes over scraped HIG content
+├── scripts/
+│   ├── hig-ingest/             # HIG re-scan pipeline over Apple's DocC JSON
+│   │   ├── crawl.py            # BFS-walk the JSON tree, cache topics, emit manifest
+│   │   ├── diff.py             # Diff live topic set against local corpus
+│   │   ├── convert.py          # Render one topic's DocC JSON to reference markdown
+│   │   └── generate.py         # Regenerate the whole corpus into a staging tree
 │   ├── legal-hardening.ts      # Strip Apple CDN images + insert attribution block (idempotent)
 │   └── legal-hardening-deep.ts # Keep headings + bold principles, drop Apple prose (destructive)
 ├── AGENTS.md                  # This file
@@ -284,10 +289,12 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Updating HIG Content
 
-When Apple updates the HIG:
+When Apple updates the HIG, use the `scripts/hig-ingest/` pipeline (see "Content maintenance" in README.md):
 
-1. Download the updated pages from Apple's HIG site
-2. Replace the relevant files in `references/`
-3. Update `SKILL.md` if new topics were added or removed
-4. Bump version in SKILL.md frontmatter and `VERSIONS.md`
-5. Update the date reference in README and AGENTS.md
+1. `python3 crawl.py --out .hig-cache-<date> --refresh` — crawl Apple's live DocC JSON
+2. `python3 diff.py --manifest .hig-cache-<date>/manifest.json --repo-root ../..` — find added/removed/renamed topics
+3. `python3 generate.py --manifest ... --cache ... --staging ... --snapshot <date> --repo-root ../..` — regenerate the corpus into staging
+4. Diff staging against `skills/*/references/` and copy over files with real content changes; place any new topics via `NEW_TOPIC_PLACEMENT` in `generate.py`
+5. Update `SKILL.md` reference indexes if topics were added or removed
+6. Bump versions in SKILL.md frontmatter and `VERSIONS.md` (with a changelog entry)
+7. Update the date references in README.md and AGENTS.md, then run `node packages/hig-doctor/src/cli.js . --verbose` and `npm test`

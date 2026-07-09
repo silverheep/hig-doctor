@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/inclusion
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/inclusion.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Inclusion
@@ -144,6 +144,10 @@ As you localize your app or game and related content, also be aware of the ways 
 [Localization](https://developer.apple.com/documentation/Xcode/localization) — Xcode
 
 #### Videos
+
+* [Principles of inclusive app design](https://developer.apple.com/videos/play/wwdc2025/316)
+* [The practice of inclusive design](https://developer.apple.com/videos/play/wwdc2021/10275)
+* [The process of inclusive design](https://developer.apple.com/videos/play/wwdc2021/10304)
 
 ---
 

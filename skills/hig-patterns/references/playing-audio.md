@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/playing-au
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/playing-audio.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Playing audio
@@ -111,6 +111,10 @@ In watchOS, the system manages audio playback. An app can play short audio clips
 [MusicKit](https://developer.apple.com/documentation/MusicKit) — MusicKit
 
 #### Videos
+
+* [Integrate MusicKit into your app](https://developer.apple.com/videos/play/wwdc2026/254)
+* [Explore immersive sound design](https://developer.apple.com/videos/play/wwdc2023/10271)
+* [Immerse your app in Spatial Audio](https://developer.apple.com/videos/play/wwdc2021/10265)
 
 ## Change log
 

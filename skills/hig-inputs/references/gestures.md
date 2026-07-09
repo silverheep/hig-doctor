@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/gestures
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/gestures.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Gestures
@@ -159,6 +159,9 @@ For guidance on supporting additional gestures and button presses on specific in
 [UITouch](https://developer.apple.com/documentation/UIKit/UITouch) — UIKit
 
 #### Videos
+
+* [Enhance your UI animations and transitions](https://developer.apple.com/videos/play/wwdc2024/10145)
+* [Design for spatial input](https://developer.apple.com/videos/play/wwdc2023/10073)
 
 ## Change log
 

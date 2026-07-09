@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/workouts
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/workouts.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Workouts
@@ -57,6 +57,10 @@ You can create a workout experience for Apple Watch, iPhone, or iPad that helps 
 [Workouts and activity rings](https://developer.apple.com/documentation/HealthKit/workouts-and-activity-rings) — HealthKit
 
 #### Videos
+
+* [Track workouts with HealthKit on iOS and iPadOS](https://developer.apple.com/videos/play/wwdc2025/322)
+* [Build custom workouts with WorkoutKit](https://developer.apple.com/videos/play/wwdc2023/10016)
+* [Build a workout app for Apple Watch](https://developer.apple.com/videos/play/wwdc2021/10009)
 
 ---
 

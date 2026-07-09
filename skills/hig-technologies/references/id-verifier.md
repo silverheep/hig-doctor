@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/id-verifie
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/id-verifier.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # ID Verifier
@@ -56,6 +56,8 @@ Depending on the needs of your app, you can use ID Verifier to make the followin
 [Adopting the Verifier API in your iPhone app](https://developer.apple.com/documentation/ProximityReader/adopting-the-verifier-api-in-your-iphone-app) — ProximityReader
 
 #### Videos
+
+* [What’s new in Wallet and Apple Pay](https://developer.apple.com/videos/play/wwdc2023/10114)
 
 ## Change log
 

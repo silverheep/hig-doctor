@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/image-view
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/image-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Image views
@@ -71,6 +71,9 @@ For guidance on presenting other 3D content in a window or volume, see [visionOS
 [NSImageView](https://developer.apple.com/documentation/AppKit/NSImageView) — AppKit
 
 #### Videos
+
+* [Support HDR images in your app](https://developer.apple.com/videos/play/wwdc2023/10181)
+* [Add rich graphics to your SwiftUI app](https://developer.apple.com/videos/play/wwdc2021/10021)
 
 ## Change log
 

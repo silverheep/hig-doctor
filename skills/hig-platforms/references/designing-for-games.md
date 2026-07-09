@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-games.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for games
@@ -21,6 +21,10 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 **Teach through play.**  Players often learn better when they discover new information and mechanics in the context of your game’s world, so it can work well to integrate configuration and onboarding flows into a playable tutorial that engages people quickly and helps them feel successful right away. If you also have a written tutorial, consider offering it as a resource players can refer to when they have questions instead of making it a prerequisite for gameplay. For guidance, see [Onboarding](https://developer.apple.com/design/human-interface-guidelines/onboarding).
 
 **Defer requests until the right time.**  You don’t want to bombard people with too many requests before they start playing, but if your game uses certain sensors on an Apple device or personalizes gameplay by accessing data like hand-tracking, you must first get the player’s permission (for guidance, see [Privacy](https://developer.apple.com/design/human-interface-guidelines/privacy)). To help people understand why you’re making such a request, integrate it into the scenario that requires the data. For example, you could ask permission to track a player’s hands between an initial cutscene and the first time they can use their hands to control the action. Also, make sure people spend quality time with your game before you ask them for a rating or review (for guidance, see [Ratings and reviews](https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews)).
+
+* [Launching](https://developer.apple.com/design/human-interface-guidelines/launching)
+* [Onboarding](https://developer.apple.com/design/human-interface-guidelines/onboarding)
+* [Loading](https://developer.apple.com/design/human-interface-guidelines/loading)
 
 ## Look stunning on every display
 
@@ -52,6 +56,10 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 
 **Design for the full-screen experience.**  People often enjoy playing a game in a distraction-free, full-screen context. In macOS, iOS, and iPadOS, full-screen mode lets people hide other apps and parts of the system UI; in visionOS, a game running in a Full Space can completely surround people, transporting them somewhere else. For guidance, see [Going full screen](https://developer.apple.com/design/human-interface-guidelines/going-full-screen).
 
+* [Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+* [Typography](https://developer.apple.com/design/human-interface-guidelines/typography)
+* [Going full screen](https://developer.apple.com/design/human-interface-guidelines/going-full-screen)
+
 ## Enable intuitive interactions
 
 **Support each platform’s default interaction method.**  For example, people generally use touch to play games on iPhone; on a Mac, players tend to expect keyboard and mouse or trackpad support; and in a visionOS game, people expect to use their eyes and hands while making indirect and direct gestures. As you work to ensure that your game supports each platform’s default interaction method, pay special attention to control sizing and menu behavior, especially when bringing your game from a pointer-based context to a touch-based one.
@@ -69,6 +77,10 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 
 **Offer touch-based game controls that embrace the touchscreen experience on iPhone and iPad.**  In iOS and iPadOS, your game can allow players to interact directly with game elements, and to control the game using virtual controls that appear on top of your game content. For design guidance, see [Touch controls](https://developer.apple.com/design/human-interface-guidelines/game-controls#Touch-controls).
 
+* [Game controls](https://developer.apple.com/design/human-interface-guidelines/game-controls)
+* [Gestures](https://developer.apple.com/design/human-interface-guidelines/gestures)
+* [Pointing devices](https://developer.apple.com/design/human-interface-guidelines/pointing-devices)
+
 ## Welcome everyone
 
 **Prioritize perceivability.**  Make sure people can perceive your game’s content whether they use sight, hearing, or touch. For example, avoid relying solely on color to convey an important detail, or providing a cutscene that doesn’t include descriptive subtitles or offer other ways to read the content. For specific guidance, see:
@@ -85,6 +97,9 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 
 **Avoid stereotypes in your stories and characters.**  Ask yourself whether you’re depicting game characters and scenarios in a way that perpetuates real-life stereotypes. For example, does your game depict enemies as having a certain race, gender, or cultural heritage? Review your game to uncover and remove biases and stereotypes and — if references to real-life cultures and languages are necessary — be sure they’re respectful.
 
+* [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)
+* [Inclusion](https://developer.apple.com/design/human-interface-guidelines/inclusion)
+
 ## Adopt Apple technologies
 
 **Integrate Game Center to help players discover your game across their devices and connect with their friends.**  [Game Center](https://developer.apple.com/game-center/) is Apple’s social gaming network, available on all platforms. Game Center lets players keep track of their progress and achievements and allows you to set up leaderboards, challenges, and multiplayer activities in your game. For design guidance, see [Game Center](https://developer.apple.com/design/human-interface-guidelines/game-center); for developer guidance, see [GameKit](https://developer.apple.com/documentation/GameKit).
@@ -96,6 +111,10 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 **Use Spatial Audio to immerse players in your game’s soundscape.**  Providing multichannel audio can help your game’s audio adapt automatically to the current device, enabling an immersive Spatial Audio experience where supported. For guidance, see [visionOS](https://developer.apple.com/design/human-interface-guidelines/playing-audio#visionOS); for developer guidance, see [Explore Spatial Audio](https://developer.apple.com/news/?id=fakg1z5b).
 
 **Take advantage of Apple technologies to enable unique gameplay mechanics.**  For example, you can integrate technologies like augmented reality, machine learning, and [HealthKit](https://developer.apple.com/documentation/HealthKit), and request access to location data and functionality like camera and microphone. For a full list of Apple technologies, features, and services, see [Technologies](https://developer.apple.com/design/human-interface-guidelines/technologies).
+
+* [Game Center](https://developer.apple.com/design/human-interface-guidelines/game-center)
+* [iCloud](https://developer.apple.com/design/human-interface-guidelines/icloud)
+* [In-app purchase](https://developer.apple.com/design/human-interface-guidelines/in-app-purchase)
 
 ## Resources
 
@@ -112,6 +131,10 @@ As you create or adapt a game for Apple platforms, learn how to integrate the fu
 [Create games for Apple platforms](https://developer.apple.com/games/)
 
 #### Videos
+
+* [Bringing Cyberpunk 2077 to Mac](https://developer.apple.com/videos/play/wwdc2026/356)
+* [Design no-code games with Reality Composer Pro 3](https://developer.apple.com/videos/play/wwdc2026/252)
+* [Level up your games](https://developer.apple.com/videos/play/wwdc2025/209)
 
 ## Change log
 

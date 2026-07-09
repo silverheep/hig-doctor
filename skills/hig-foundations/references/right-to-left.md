@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/right-to-l
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/right-to-left.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Right to left
@@ -93,6 +93,9 @@ If your custom interface icon includes a component that can imply handedness, li
 [Preparing views for localization](https://developer.apple.com/documentation/SwiftUI/Preparing-views-for-localization) — SwiftUI
 
 #### Videos
+
+* [Enhance your app’s multilingual experience](https://developer.apple.com/videos/play/wwdc2025/222)
+* [Design for Arabic](https://developer.apple.com/videos/play/wwdc2022/10034)
 
 ---
 

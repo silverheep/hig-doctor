@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/in-app-pur
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/in-app-purchase.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # In-app purchase
@@ -170,6 +170,8 @@ The sign-up screen in your watchOS app needs to display the same set of informat
 [In-App Purchase](https://developer.apple.com/documentation/StoreKit/in-app-purchase) — StoreKit
 
 #### Videos
+
+* [What’s new in Apple In-App Purchase](https://developer.apple.com/videos/play/wwdc2026/210)
 
 ## Change log
 

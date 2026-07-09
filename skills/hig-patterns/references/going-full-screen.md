@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/going-full
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/going-full-screen.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Going full screen
@@ -69,6 +69,8 @@ For additional developer guidance, see [Managing your game window for Metal in m
 [Managing your game window for Metal in macOS](https://developer.apple.com/documentation/Metal/managing-your-game-window-for-metal-in-macos) — Swift, Objective-C
 
 #### Videos
+
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
 
 ## Change log
 

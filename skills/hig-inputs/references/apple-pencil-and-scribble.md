@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/apple-penc
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Apple Pencil and Scribble
@@ -107,6 +107,10 @@ Using [PencilKit](https://developer.apple.com/documentation/PencilKit), you can 
 [PaperKit](https://developer.apple.com/documentation/PaperKit)
 
 #### Videos
+
+* [Read between the strokes with PencilKit](https://developer.apple.com/videos/play/wwdc2026/203)
+* [Unwrap PaperKit](https://developer.apple.com/videos/play/wwdc2026/372)
+* [Meet PaperKit](https://developer.apple.com/videos/play/wwdc2025/285)
 
 ## Change log
 

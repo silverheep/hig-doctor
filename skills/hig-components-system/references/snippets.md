@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/snippets
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/snippets.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Snippets
@@ -55,6 +55,8 @@ A snippet consists of the following elements:
 [App Intents](https://developer.apple.com/documentation/AppIntents)
 
 #### Videos
+
+* [Design interactive snippets](https://developer.apple.com/videos/play/wwdc2025/281)
 
 ## Change log
 

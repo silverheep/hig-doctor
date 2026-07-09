@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/augmented-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/augmented-reality.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Augmented reality
@@ -184,6 +184,9 @@ With the wearer’s [visionOS](https://developer.apple.com/design/human-interfac
 [ARKit](https://developer.apple.com/documentation/ARKit)
 
 #### Videos
+
+* [Qualities of great AR experiences](https://developer.apple.com/videos/play/wwdc2022/10131)
+* [Explore ARKit 5](https://developer.apple.com/videos/play/wwdc2021/10073)
 
 ---
 

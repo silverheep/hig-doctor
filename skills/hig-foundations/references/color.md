@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/color
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/color.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Color
@@ -216,6 +216,8 @@ In SwiftUI, the equivalent of `systemGray` is [gray](https://developer.apple.com
 [Color](https://developer.apple.com/documentation/AppKit/color) — AppKit
 
 #### Videos
+
+* [Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/launching
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/launching.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Launching
@@ -67,6 +67,9 @@ Launching begins when someone opens your app or game, includes an initial downlo
 [Responding to the launch of your app](https://developer.apple.com/documentation/UIKit/responding-to-the-launch-of-your-app) — UIKit
 
 #### Videos
+
+* [Optimizing App Launch](https://developer.apple.com/videos/play/wwdc2019/423)
+* [Love at First Launch](https://developer.apple.com/videos/play/wwdc2017/816)
 
 ## Change log
 

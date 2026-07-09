@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/voiceover
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/voiceover.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # VoiceOver
@@ -65,6 +65,10 @@ For developer guidance, see [shouldGroupAccessibilityChildren](https://developer
 [Supporting VoiceOver in your app](https://developer.apple.com/documentation/UIKit/supporting-voiceover-in-your-app)
 
 #### Videos
+
+* [Writing Great Accessibility Labels](https://developer.apple.com/videos/play/wwdc2019/254)
+* [Tailor the VoiceOver experience in your data-rich apps](https://developer.apple.com/videos/play/wwdc2021/10121)
+* [VoiceOver efficiency with custom rotors](https://developer.apple.com/videos/play/wwdc2020/10116)
 
 ## Change log
 

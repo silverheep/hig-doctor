@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/materials
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/materials.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Materials
@@ -143,6 +143,9 @@ visionOS defines three vibrancy values that help you communicate a hierarchy of 
 [NSVisualEffectView](https://developer.apple.com/documentation/AppKit/NSVisualEffectView) — AppKit
 
 #### Videos
+
+* [Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219)
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
 
 ## Change log
 

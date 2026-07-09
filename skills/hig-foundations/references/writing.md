@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/writing
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/writing.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Writing
@@ -73,6 +73,10 @@ If you need to direct someone to a setting, provide a direct link or button, rat
 [Color](https://developer.apple.com/design/human-interface-guidelines/color)
 
 #### Videos
+
+* [Craft clear names for features and labels in your app](https://developer.apple.com/videos/play/wwdc2026/290)
+* [Make a big impact with small writing changes](https://developer.apple.com/videos/play/wwdc2025/404)
+* [Writing for interfaces](https://developer.apple.com/videos/play/wwdc2022/10037)
 
 ## Change log
 

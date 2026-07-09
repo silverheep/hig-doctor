@@ -11,3 +11,6 @@ skills-lock.json
 
 # HIG ingest cache (raw DocC JSON snapshots)
 scripts/hig-ingest/.hig-cache/
+__pycache__/
+*.pyc
+scripts/hig-ingest/.hig-cache-*/

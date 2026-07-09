@@ -121,6 +121,40 @@ def render_blocks(blocks, refs, depth=0):
                 if ri == 0:
                     lines.append("| " + " | ".join("---" for _ in cells) + " |")
             lines.append("")
+        elif t == "tabNavigator":
+            # Tabbed content: mostly per-platform screenshots (render to empty,
+            # skipped), but some pages keep real specs here — e.g. the Dynamic
+            # Type size tables on typography, tvOS grid specs on layout.
+            for tab in b.get("tabs", []):
+                inner = render_blocks(tab.get("content", []), refs, depth + 1)
+                body = "\n".join(inner).strip()
+                if not body:
+                    continue
+                title = (tab.get("title") or "").strip()
+                first = body.splitlines()[0].lstrip("#>*_| ").lower()
+                if title and not first.startswith(title.lower()):
+                    lines.append(f"**{title}**")
+                    lines.append("")
+                lines.extend(body.splitlines())
+                lines.append("")
+        elif t == "small":
+            # Fine-print footnotes (e.g. the ppi note under type-size tables).
+            txt = render_inline(b.get("inlineContent", []), refs).strip()
+            if txt:
+                lines.append(f"*{txt}*")
+                lines.append("")
+        elif t == "links":
+            # Link grids in Resources sections — WWDC session videos etc.
+            # Titles + canonical URLs only; nothing hosted is reproduced.
+            for ident in b.get("items", []):
+                title, url = resolve_ref(ident, refs)
+                if title and url:
+                    lines.append(f"* [{title}]({url})")
+                elif title:
+                    lines.append(f"* {title}")
+            lines.append("")
+        # "video" is intentionally unhandled: bare asset identifiers, and the
+        # legal posture is to never reproduce Apple-hosted media.
     return lines
 
 

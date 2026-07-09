@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/live-activ
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/live-activities.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Live Activities
@@ -331,6 +331,10 @@ Live Activities in the Smart Stack use the same dimensions as watchOS widgets.
 [Developing a WidgetKit strategy](https://developer.apple.com/documentation/WidgetKit/Developing-a-WidgetKit-strategy) — WidgetKit
 
 #### Videos
+
+* [Live Activities essentials](https://developer.apple.com/videos/play/wwdc2026/223)
+* [Turbocharge your app for CarPlay](https://developer.apple.com/videos/play/wwdc2025/216)
+* [What’s new in widgets](https://developer.apple.com/videos/play/wwdc2025/278)
 
 ## Change log
 

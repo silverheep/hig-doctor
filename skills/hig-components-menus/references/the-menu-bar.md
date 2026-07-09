@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/the-menu-b
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/the-menu-bar.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # The menu bar
@@ -274,6 +274,8 @@ When necessary, the system hides menu bar extras to make room for app menus. Sim
 [NSStatusBar](https://developer.apple.com/documentation/AppKit/NSStatusBar) — AppKit
 
 #### Videos
+
+* [Elevate the design of your iPad app](https://developer.apple.com/videos/play/wwdc2025/208)
 
 ## Change log
 

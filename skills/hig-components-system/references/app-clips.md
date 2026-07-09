@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/app-clips
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/app-clips.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # App Clips
@@ -280,6 +280,9 @@ For more information about using Apple trademarks, see [Guidelines for Using App
 [App Store Connect](https://appstoreconnect.apple.com/)
 
 #### Videos
+
+* [What's new in App Clips](https://developer.apple.com/videos/play/wwdc2021/10012)
+* [Build light and fast App Clips](https://developer.apple.com/videos/play/wwdc2021/10013)
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/airplay
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/airplay.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # AirPlay
@@ -108,6 +108,8 @@ Use a custom color when other technology icons also appear in the same color.
 [AVKit](https://developer.apple.com/documentation/AVKit)
 
 #### Videos
+
+* [Reaching the Big Screen with AirPlay 2](https://developer.apple.com/videos/play/wwdc2019/501)
 
 ## Change log
 

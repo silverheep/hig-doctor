@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/layout
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/layout.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Layout
@@ -108,6 +108,70 @@ People can freely resize windows down to a minimum width and height, similar to 
 The following grid layouts provide an optimal viewing experience. Be sure to use appropriate spacing between unfocused rows and columns to prevent overlap when an item comes into focus.
 
 If you use the UIKit collection view flow element, the number of columns in a grid is automatically determined based on the width and spacing of your content. For developer guidance, see [UICollectionViewFlowLayout](https://developer.apple.com/documentation/UIKit/UICollectionViewFlowLayout).
+
+#### Two-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 860 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Three-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 560 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Four-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 410 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Five-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 320 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Six-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 260 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Seven-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 217 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Eight-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 184 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
+
+#### Nine-column grid
+
+| Attribute | Value |
+| --- | --- |
+| Unfocused content width | 160 pt |
+| Horizontal spacing | 40 pt |
+| Minimum vertical spacing | 100 pt |
 
 **Include additional vertical spacing for titled rows.** If a row has a title, provide enough spacing between the bottom of the previous unfocused row and the center of the title to avoid crowding. Also provide spacing between the bottom of the title and the top of the unfocused items in the row.
 
@@ -292,6 +356,10 @@ Different size class combinations apply to the full-screen experience on differe
 [Composing custom layouts with SwiftUI](https://developer.apple.com/documentation/SwiftUI/composing-custom-layouts-with-swiftui) — SwiftUI
 
 #### Videos
+
+* [Get to know the new design system](https://developer.apple.com/videos/play/wwdc2025/356)
+* [Compose custom layouts with SwiftUI](https://developer.apple.com/videos/play/wwdc2022/10056)
+* [Essential Design Principles](https://developer.apple.com/videos/play/wwdc2017/802)
 
 ## Change log
 

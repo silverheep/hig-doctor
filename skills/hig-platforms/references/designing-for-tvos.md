@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/designing-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Designing for tvOS
@@ -47,6 +47,8 @@ Great tvOS experiences integrate the platform and device capabilities that peopl
 [tvOS Pathway](https://developer.apple.com/tvos/get-started/)
 
 #### Videos
+
+* [Build SwiftUI apps for tvOS](https://developer.apple.com/videos/play/wwdc2020/10042)
 
 ## Change log
 
