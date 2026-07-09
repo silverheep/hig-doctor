@@ -19,11 +19,6 @@ export interface CategorySummary {
 const CATEGORY_TO_SKILL: Record<string, string> = {
   "foundations": "hig-foundations",
   "components-layout": "hig-components-layout",
-  "components-selection": "hig-components-selection",
-  "components-actions": "hig-components-actions",
-  "components-presentation": "hig-components-presentation",
-  "components-textinput": "hig-components-textinput",
-  "components-media": "hig-components-media",
   "components-controls": "hig-components-controls",
   "components-menus": "hig-components-menus",
   "components-dialogs": "hig-components-dialogs",
@@ -40,11 +35,6 @@ const CATEGORY_TO_SKILL: Record<string, string> = {
 const CATEGORY_LABELS: Record<string, string> = {
   "hig-foundations": "Foundations",
   "hig-components-layout": "Layout & Navigation",
-  "hig-components-selection": "Selection Controls",
-  "hig-components-actions": "Actions",
-  "hig-components-presentation": "Presentation",
-  "hig-components-textinput": "Text Input",
-  "hig-components-media": "Media",
   "hig-components-controls": "Controls",
   "hig-components-menus": "Menus & Actions",
   "hig-components-dialogs": "Dialogs & Presentations",

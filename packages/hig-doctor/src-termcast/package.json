@@ -1,7 +1,7 @@
 {
   "name": "hig-doctor",
-  "version": "1.0.0",
-  "description": "Universal Apple HIG compliance auditor — scans SwiftUI, UIKit, React, and 9 other frameworks against 348 Human Interface Guidelines rules.",
+  "version": "1.1.0",
+  "description": "Universal Apple HIG compliance auditor — scans SwiftUI, UIKit, React, and 9 other frameworks against 359 Human Interface Guidelines rules.",
   "type": "module",
   "bin": {
     "hig-doctor": "./dist/index.js"

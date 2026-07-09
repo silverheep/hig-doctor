@@ -5,6 +5,45 @@ All notable changes to `hig-doctor` (the Apple HIG audit CLI) are documented her
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-07-08
+
+Rules verified against the post-WWDC 2026 (iOS 27) Human Interface Guidelines.
+
+### Added
+
+- 11 Liquid Glass-era rules (total now **359**), grounded in the June 2026 HIG:
+  - `glassEffect` adoption (positive) and a document-scoped concern when a
+    single file applies 5+ glass effects ("use Liquid Glass sparingly").
+  - Scroll edge effects (`scrollEdgeEffectStyle` / `UIScrollEdgeEffect` /
+    `NSScrollEdgeEffectStyle`) and `backgroundExtensionEffect()` /
+    `UIBackgroundExtensionView` as positives.
+  - Tab bar minimize behavior / bottom accessory adoption (positive).
+  - Dedicated search tab (`Tab(role: .search)` / `UISearchTab`) as a positive,
+    plus a file-level nudge when `TabView` and `.searchable` coexist without one.
+  - App Intents surface: `AppShortcutsProvider` (pattern), assistant schemas
+    (`@AssistantIntent` / `@AssistantEntity` / `@AssistantEnum`, positive),
+    interactive snippets (`SnippetIntent`, positive), and `FoundationModels`
+    usage (pattern).
+
+### Changed
+
+- `hardcodedColor` now also catches hardcoded colors passed to
+  `.foregroundStyle(...)` and `.tint(...)`, not just the soft-deprecated
+  `.foregroundColor(...)`.
+- `semanticColor` no longer credits the deprecated `.accentColor` modifier;
+  it credits `Color.accentColor` and `.tint(` instead.
+- `dynamicTypeStyle` now includes visionOS `extraLargeTitle` / `extraLargeTitle2`.
+- `ignoresSafeArea` concern re-scoped: "backgrounds OK; keep controls/text in
+  safe area" — edge-to-edge content is expected under Liquid Glass.
+- Layout checklist now reads "prefer tab bar; sidebar-adaptable tab bar or
+  NavigationSplitView for complex hierarchies" (was "tabs for flat, sidebar
+  for deep").
+
+### Removed
+
+- Dead categorizer mappings and checklists for five component categories that
+  never existed as skills (selection, actions, presentation, textinput, media).
+
 ## [1.0.0] - 2026-05-28
 
 Initial public release on npm.

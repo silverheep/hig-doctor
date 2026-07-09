@@ -2,7 +2,7 @@
 
 Agent-native Apple Human Interface Guidelines: a structured index of Apple's HIG delivered as Claude Skills, with an MCP server and a universal compliance auditor as the verification loop. Built for AI coding agents; usable by humans.
 
-- **Skills corpus** — 14 skills and 157 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot dated 2026-06-11 (includes the WWDC 2025 "Liquid Glass" overhaul); canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
+- **Skills corpus** — 14 skills and 157 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot re-verified against the live HIG on 2026-07-08; includes the WWDC 2025 "Liquid Glass" overhaul and the WWDC 2026 / iOS 27 day-one updates (Siri AI, Snippets, reintroduced Design principles, Liquid Glass refinements). Canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 - **MCP server** — stdio Model Context Protocol server exposing `hig_list_skills`, `hig_lookup`, and `hig_audit` for Claude Desktop, Cursor, Windsurf, and Claude Code.
 - **Audit CLI** — universal HIG compliance scanner across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, HTML). Emits severity-bucketed markdown/JSON with a pass/fail CI gate.
 
@@ -50,7 +50,7 @@ Set `HIG_SKILLS_DIR` if you relocate the `skills/` folder.
 
 ## HIG Audit CLI
 
-Scan any project for Apple HIG compliance. Works with SwiftUI, UIKit, React, Next.js, Vue, Nuxt, Svelte, SvelteKit, Angular, React Native, Flutter, Jetpack Compose, Android XML, and plain HTML/CSS. Detects 348 patterns across accessibility, color systems, typography, responsive layout, dark mode, motion, i18n, and more.
+Scan any project for Apple HIG compliance. Works with SwiftUI, UIKit, React, Next.js, Vue, Nuxt, Svelte, SvelteKit, Angular, React Native, Flutter, Jetpack Compose, Android XML, and plain HTML/CSS. Detects 359 patterns across accessibility, color systems, typography, responsive layout, dark mode, motion, i18n, and more.
 
 Requires [Bun](https://bun.sh).
 
@@ -231,7 +231,7 @@ hig-doctor/
 
 ## Content maintenance
 
-Skills content is a snapshot dated 2026-06-11. Refreshes are driven by the `scripts/hig-ingest/` pipeline, which walks Apple's static DocC render JSON (`developer.apple.com/tutorials/data/design/human-interface-guidelines/<slug>.json`) — the HIG pages are JS-rendered, but the underlying JSON is static and complete, so the scan is automatable end to end:
+Skills content is a snapshot taken 2026-06-11, re-verified and enriched 2026-07-08 (a full re-crawl found no Apple-side prose changes; the converter gained `tabNavigator`/`small`/`links` rendering, recovering the Dynamic Type size tables, tvOS grid specs, haptic-pattern definitions, and Resources video links). Refreshes are driven by the `scripts/hig-ingest/` pipeline, which walks Apple's static DocC render JSON (`developer.apple.com/tutorials/data/design/human-interface-guidelines/<slug>.json`) — the HIG pages are JS-rendered, but the underlying JSON is static and complete, so the scan is automatable end to end:
 
 1. `crawl.py` — BFS-walks the JSON tree from the section roots, caches every topic, emits a manifest.
 2. `diff.py` — diffs Apple's live topic set against the local corpus (added / removed / renamed).

@@ -213,7 +213,7 @@ function getEvaluationChecklist(skillName: string): string[] {
       "Motion: Reduce Motion support for animations",
     ],
     "hig-components-layout": [
-      "Navigation pattern matches app structure (tabs for flat, sidebar for deep)",
+      "Navigation pattern matches app structure (prefer tab bar; sidebar-adaptable tab bar or NavigationSplitView for complex hierarchies)",
       "Adaptive layout: responds to size classes, multitasking",
       "Standard navigation components (NavigationSplitView, not deprecated NavigationView)",
       "Consistent back navigation and spatial hierarchy",
@@ -222,28 +222,6 @@ function getEvaluationChecklist(skillName: string): string[] {
       "Standard control usage (Button, Toggle, Picker, etc.)",
       "Proper button styles and roles",
       "Clear action labels and consistent interaction patterns",
-    ],
-    "hig-components-selection": [
-      "Appropriate picker and selection controls",
-      "Clear selection state feedback",
-    ],
-    "hig-components-actions": [
-      "Button hierarchy and prominence",
-      "Destructive actions clearly marked",
-      "Swipe actions follow HIG conventions",
-    ],
-    "hig-components-presentation": [
-      "Sheets for focused tasks, popovers for contextual info",
-      "Alerts used sparingly for important decisions",
-      "Confirmation dialogs for destructive actions",
-    ],
-    "hig-components-textinput": [
-      "Text fields use appropriate keyboard types",
-      "Search functionality uses .searchable where appropriate",
-    ],
-    "hig-components-media": [
-      "Image handling with proper async loading",
-      "Media playback uses system controls",
     ],
     "hig-components-menus": [
       "Context menus provide relevant actions",

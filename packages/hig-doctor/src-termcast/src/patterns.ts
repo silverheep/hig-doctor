@@ -110,16 +110,16 @@ const swiftRules: PatternRule[] = [
   { category: "components-layout", subcategory: "layout", type: "positive", pattern: "adaptiveLayout", regex: /\.adaptive\(minimum:/, fileFilter: SWIFT },
 
   // Color
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedColor", regex: /\.foregroundColor\(\.(red|blue|green|yellow|orange|purple|pink|white|black)\)/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedColor", regex: /\.(foregroundColor|foregroundStyle|tint)\(\.(red|blue|green|yellow|orange|purple|pink|white|black)\)/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedRGBColor", regex: /Color\(\s*red:/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedUIColor", regex: /UIColor\(\s*red:/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcoded Color(uiColor:)", regex: /Color\(\s*uiColor:\s*UIColor\(\s*red:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "semanticColor", regex: /\.(primary|secondary|accentColor)\b/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "semanticColor", regex: /\.(primary|secondary)\b|Color\.accentColor|\.tint\(/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "color", type: "positive", pattern: "foregroundStyle", regex: /\.foregroundStyle\(\.(primary|secondary|tertiary|quaternary)\)/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "color", type: "positive", pattern: "assetCatalogColor", regex: /Color\(\s*"[^"]+"\s*\)/, fileFilter: SWIFT },
 
   // Typography
-  { category: "foundations", subcategory: "typography", type: "positive", pattern: "dynamicTypeStyle", regex: /\.font\(\.(largeTitle|title|title2|title3|headline|subheadline|body|callout|footnote|caption|caption2)\)/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "typography", type: "positive", pattern: "dynamicTypeStyle", regex: /\.font\(\.(extraLargeTitle|extraLargeTitle2|largeTitle|title|title2|title3|headline|subheadline|body|callout|footnote|caption|caption2)\)/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedFontSize", regex: /\.font\(\.system\(size:/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedUIFont", regex: /UIFont\.\s*systemFont\(ofSize:/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "typography", type: "positive", pattern: "scaledMetric", regex: /@ScaledMetric/, fileFilter: SWIFT },
@@ -189,12 +189,27 @@ const swiftRules: PatternRule[] = [
   { category: "technologies", subcategory: "applePay", type: "pattern", pattern: "PassKit/ApplePay", regex: /import\s+PassKit|PKPaymentButton/, fileFilter: SWIFT },
   { category: "technologies", subcategory: "signInApple", type: "pattern", pattern: "SignInWithApple", regex: /ASAuthorizationAppleIDButton|SignInWithAppleButton/, fileFilter: SWIFT },
 
+  // Liquid Glass era (WWDC 2025/2026) — adoption signals for the current design system
+  { category: "foundations", subcategory: "materials", type: "positive", pattern: "glassEffect (Liquid Glass)", regex: /\.glassEffect\(/, fileFilter: SWIFT },
+  // HIG: "Use Liquid Glass effects sparingly" on custom controls (materials.md); 5+ uses in one file suggests overuse.
+  { category: "foundations", subcategory: "materials", type: "concern", pattern: "many glassEffect uses (apply Liquid Glass sparingly, only to key functional elements)", regex: /(?:\.glassEffect\([\s\S]*?){4}\.glassEffect\(/, fileFilter: SWIFT, scope: "document" },
+  { category: "components-layout", subcategory: "layout", type: "positive", pattern: "scroll edge effect", regex: /scrollEdgeEffectStyle|ScrollEdgeEffectStyle|UIScrollEdgeEffect|NSScrollEdgeEffectStyle/, fileFilter: SWIFT },
+  { category: "components-layout", subcategory: "layout", type: "positive", pattern: "backgroundExtensionEffect", regex: /\.backgroundExtensionEffect\(|\bUIBackgroundExtensionView\b/, fileFilter: SWIFT },
+  { category: "components-layout", subcategory: "navigation", type: "positive", pattern: "tab bar minimize/accessory (Liquid Glass)", regex: /tabBarMinimizeBehavior|TabViewBottomAccessory|tabViewBottomAccessory|UITabBarController\.MinimizeBehavior/, fileFilter: SWIFT },
+  { category: "components-search", subcategory: "search", type: "positive", pattern: "search tab (Tab(role: .search))", regex: /Tab\(\s*role:\s*\.search\b|\bUISearchTab\b/, fileFilter: SWIFT },
+  // HIG: search can be a dedicated tab (search-fields.md "Search as a tab", updated June 2026).
+  { category: "components-search", subcategory: "search", type: "pattern", pattern: "TabView with searchable (consider a search tab)", regex: /\bTabView\b[\s\S]*?\.searchable\(|\.searchable\([\s\S]*?\bTabView\b/, fileFilter: SWIFT, scope: "document", requireAbsent: /Tab\(\s*role:\s*\.search\b|\bUISearchTab\b/ },
+  { category: "technologies", subcategory: "appIntents", type: "pattern", pattern: "AppShortcutsProvider", regex: /\bAppShortcutsProvider\b/, fileFilter: SWIFT },
+  { category: "technologies", subcategory: "appIntents", type: "positive", pattern: "assistant schemas (Siri)", regex: /@AssistantIntent|@AssistantEntity|@AssistantEnum/, fileFilter: SWIFT },
+  { category: "components-system", subcategory: "snippets", type: "positive", pattern: "interactive snippet (SnippetIntent)", regex: /\bSnippetIntent\b/, fileFilter: SWIFT },
+  { category: "technologies", subcategory: "generativeAI", type: "pattern", pattern: "FoundationModels", regex: /import\s+FoundationModels|\bLanguageModelSession\b/, fileFilter: SWIFT },
+
   // Platforms
   { category: "platforms", subcategory: "multiplatform", type: "positive", pattern: "conditionalPlatform", regex: /#if\s+(os\(iOS\)|os\(macOS\)|os\(watchOS\)|os\(tvOS\)|os\(visionOS\))/, fileFilter: SWIFT },
 
   // UIKit concerns
   { category: "foundations", subcategory: "layout", type: "concern", pattern: "hardcoded CGRect", regex: /CGRect\(\s*x:\s*\d/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "layout", type: "concern", pattern: "ignoresSafeArea", regex: /\.ignoresSafeArea\(/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "layout", type: "concern", pattern: "ignoresSafeArea (backgrounds OK; keep controls/text in safe area)", regex: /\.ignoresSafeArea\(/, fileFilter: SWIFT },
   { category: "patterns", subcategory: "state", type: "concern", pattern: "non-private @State", regex: /@State\b(?!\s+private\b)\s+(?:var|let)\b/, fileFilter: SWIFT },
 ];
 

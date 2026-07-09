@@ -10,7 +10,7 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - website/components/AuditDemo.tsx (the "same N rules" copy)
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
-const EXPECTED_RULE_COUNT = 348;
+const EXPECTED_RULE_COUNT = 359;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
 });
@@ -57,6 +57,70 @@ describe("detectPatterns — Swift", () => {
   test("flags hardcoded CGRect", () => {
     const matches = detectPatterns(`let frame = CGRect(x: 10, y: 20, width: 100, height: 50)`, "View.swift");
     expect(matches.some(m => m.type === "concern" && m.pattern === "hardcoded CGRect")).toBe(true);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// SWIFT — Liquid Glass era (WWDC 2025/2026)
+// ════════════════════════════════════════════════════════════════
+describe("detectPatterns — Liquid Glass era", () => {
+  test("detects glassEffect as positive", () => {
+    const matches = detectPatterns(`Label("Play", systemImage: "play.fill")\n  .glassEffect(.regular, in: .capsule)`, "View.swift");
+    expect(matches.some(m => m.subcategory === "materials" && m.type === "positive" && m.pattern.startsWith("glassEffect"))).toBe(true);
+  });
+  test("flags heavy glassEffect use as concern, light use is fine", () => {
+    const line = `Text("x").glassEffect(.regular)`;
+    const heavy = detectPatterns(Array(5).fill(line).join("\n"), "View.swift");
+    expect(heavy.some(m => m.type === "concern" && m.pattern.includes("sparingly"))).toBe(true);
+    const light = detectPatterns(Array(4).fill(line).join("\n"), "View.swift");
+    expect(light.some(m => m.type === "concern" && m.pattern.includes("sparingly"))).toBe(false);
+  });
+  test("detects scroll edge effects (SwiftUI and UIKit)", () => {
+    const swiftui = detectPatterns(`ScrollView {}.scrollEdgeEffectStyle(.soft, for: .top)`, "View.swift");
+    expect(swiftui.some(m => m.pattern === "scroll edge effect" && m.type === "positive")).toBe(true);
+    const uikit = detectPatterns(`scrollView.topEdgeEffect = UIScrollEdgeEffect.Style.hard`, "VC.swift");
+    expect(uikit.some(m => m.pattern === "scroll edge effect")).toBe(true);
+  });
+  test("detects backgroundExtensionEffect (SwiftUI and UIKit)", () => {
+    const swiftui = detectPatterns(`Image("hero").backgroundExtensionEffect()`, "View.swift");
+    expect(swiftui.some(m => m.pattern === "backgroundExtensionEffect" && m.type === "positive")).toBe(true);
+    const uikit = detectPatterns(`let v = UIBackgroundExtensionView()`, "VC.swift");
+    expect(uikit.some(m => m.pattern === "backgroundExtensionEffect")).toBe(true);
+  });
+  test("detects tab bar minimize behavior and bottom accessory", () => {
+    const minimize = detectPatterns(`TabView {}.tabBarMinimizeBehavior(.onScrollDown)`, "View.swift");
+    expect(minimize.some(m => m.pattern === "tab bar minimize/accessory (Liquid Glass)")).toBe(true);
+    const accessory = detectPatterns(`TabView {}.tabViewBottomAccessory { NowPlayingBar() }`, "View.swift");
+    expect(accessory.some(m => m.pattern === "tab bar minimize/accessory (Liquid Glass)")).toBe(true);
+  });
+  test("detects a dedicated search tab as positive", () => {
+    const matches = detectPatterns(`TabView {\n  Tab(role: .search) { SearchView() }\n}`, "View.swift");
+    expect(matches.some(m => m.category === "components-search" && m.type === "positive" && m.pattern.startsWith("search tab"))).toBe(true);
+  });
+  test("nudges TabView + searchable without a search tab, once, and not when present", () => {
+    const without = `struct A: View {\n  var body: some View {\n    TabView {\n      Tab("Home") { HomeView().searchable(text: $q) }\n    }\n  }\n}`;
+    const nudges = detectPatterns(without, "View.swift").filter(m => m.pattern.includes("consider a search tab"));
+    expect(nudges.length).toBe(1);
+    const withTab = without.replace(`Tab("Home")`, `Tab(role: .search)`);
+    expect(detectPatterns(withTab, "View.swift").some(m => m.pattern.includes("consider a search tab"))).toBe(false);
+  });
+  test("detects AppShortcutsProvider", () => {
+    const matches = detectPatterns(`struct MyShortcuts: AppShortcutsProvider {`, "Shortcuts.swift");
+    expect(matches.some(m => m.pattern === "AppShortcutsProvider" && m.category === "technologies")).toBe(true);
+  });
+  test("detects assistant schemas as positive", () => {
+    const matches = detectPatterns(`@AssistantIntent(schema: .photos.openAsset)\nstruct OpenAssetIntent: OpenIntent {`, "Intents.swift");
+    expect(matches.some(m => m.pattern === "assistant schemas (Siri)" && m.type === "positive")).toBe(true);
+  });
+  test("detects interactive snippet intents as positive", () => {
+    const matches = detectPatterns(`struct CheckStatus: SnippetIntent {`, "Snippet.swift");
+    expect(matches.some(m => m.pattern === "interactive snippet (SnippetIntent)" && m.category === "components-system")).toBe(true);
+  });
+  test("detects FoundationModels usage", () => {
+    const viaImport = detectPatterns(`import FoundationModels`, "AI.swift");
+    expect(viaImport.some(m => m.pattern === "FoundationModels" && m.category === "technologies")).toBe(true);
+    const viaSession = detectPatterns(`let session = LanguageModelSession()`, "AI.swift");
+    expect(viaSession.some(m => m.pattern === "FoundationModels")).toBe(true);
   });
 });
 
