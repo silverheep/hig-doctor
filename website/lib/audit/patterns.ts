@@ -169,7 +169,7 @@ const swiftRules: PatternRule[] = [
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "caption media selection", regex: /AVMediaCharacteristic\.legible|textStyleRules/, fileFilter: SWIFT, claims: ["captions"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "audio description media selection", regex: /describesVideo/, fileFilter: SWIFT, claims: ["audio-descriptions"] },
   // Fires once per file that creates players without any caption plumbing.
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "AVPlayer without caption selection", regex: /\bAVPlayer(?:ViewController)?\b/, fileFilter: SWIFT, scope: "document", requireAbsent: /AVMediaCharacteristic\.legible|textStyleRules|selectMediaOption|select\(/, claims: ["captions"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "AVPlayer without caption selection", regex: /\bAVPlayer(?:ViewController)?\b/, fileFilter: SWIFT, scope: "document", requireAbsent: /AVMediaCharacteristic\.legible|textStyleRules|selectMediaOption|\.select\([^)]*,\s*in:/, claims: ["captions"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "VoiceOver announcement", regex: /UIAccessibility\.post\(|AccessibilityNotification\./, fileFilter: SWIFT, claims: ["voiceover"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityElement grouping", regex: /\.accessibilityElement\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
 
@@ -653,7 +653,7 @@ const reactNativeRules: PatternRule[] = [
   // Nutrition Label claim evidence
   { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "allowFontScaling false", regex: /allowFontScaling=\{?\s*false/, fileFilter: TSX_JSX, claims: ["larger-text"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "reduce motion check (RN)", regex: /AccessibilityInfo\.isReduceMotionEnabled/, fileFilter: TS_JS, claims: ["reduced-motion"] },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "font scale awareness (RN)", regex: /PixelRatio\.getFontScale|\bfontScale\b/, fileFilter: TS_JS, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "font scale awareness (RN)", regex: /PixelRatio\.getFontScale|useWindowDimensions\(\)\.fontScale/, fileFilter: TS_JS, claims: ["larger-text"] },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -689,7 +689,7 @@ const flutterRules: PatternRule[] = [
   { category: "patterns", subcategory: "i18n", type: "positive", pattern: "Flutter l10n", regex: /AppLocalizations|flutter_localizations|intl/, fileFilter: DART },
   // Nutrition Label claim evidence
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "textScaler awareness", regex: /MediaQuery\.textScalerOf|\.textScaler\b(?!:)|textScaleFactorOf/, fileFilter: DART, claims: ["larger-text"] },
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "fixed textScaleFactor", regex: /textScale(?:Factor:\s*1(?:\.0)?\b|r:\s*TextScaler\.noScaling)/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "fixed textScaleFactor", regex: /textScale(?:Factor:\s*1(?:\.0)?(?![.\d])|r:\s*TextScaler\.noScaling)/, fileFilter: DART, claims: ["larger-text"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "disableAnimations check", regex: /disableAnimations/, fileFilter: DART, claims: ["reduced-motion"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "highContrast check", regex: /highContrast/, fileFilter: DART, claims: ["sufficient-contrast"] },
   { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "boldText check", regex: /\bboldText/, fileFilter: DART, claims: ["larger-text"] },

@@ -851,6 +851,8 @@ describe("claim evidence — Swift", () => {
     expect(bad.filter(m => m.pattern === "AVPlayer without caption selection").length).toBe(1);
     const good = detectPatterns(`let p = AVPlayer(url: url)\nitem.select(option, in: group) // textStyleRules applied\nlet r = AVTextStyleRule(textMarkupAttributes: [:])\nplayer.currentItem?.textStyleRules = [r]`, "Player.swift");
     expect(good.some(m => m.pattern === "AVPlayer without caption selection")).toBe(false);
+    const unrelated = detectPatterns(`let p = AVPlayer(url: url)\nviewModel.select(item)`, "Player.swift");
+    expect(unrelated.filter(m => m.pattern === "AVPlayer without caption selection").length).toBe(1);
   });
   test("detects VoiceOver announcements and element grouping", () => {
     const m = detectPatterns(`UIAccessibility.post(notification: .announcement, argument: "Saved")\n.accessibilityElement(children: .combine)`, "V.swift");
@@ -874,6 +876,8 @@ describe("claim evidence — React Native", () => {
     const m = detectPatterns(`const rm = await AccessibilityInfo.isReduceMotionEnabled();\nconst s = PixelRatio.getFontScale();`, "App.ts");
     expect(m.find(x => x.pattern === "reduce motion check (RN)")?.claims).toEqual(["reduced-motion"]);
     expect(m.find(x => x.pattern === "font scale awareness (RN)")?.claims).toEqual(["larger-text"]);
+    const web = detectPatterns(`export const fontScale = 1.2;`, "tokens.ts");
+    expect(web.some(x => x.pattern === "font scale awareness (RN)")).toBe(false);
   });
 });
 
@@ -886,6 +890,8 @@ describe("claim evidence — Flutter", () => {
     expect(hit?.severity).toBe("serious");
     const alsoBad = detectPatterns(`textScaler: TextScaler.noScaling`, "app.dart");
     expect(alsoBad.some(x => x.pattern === "fixed textScaleFactor")).toBe(true);
+    const legit = detectPatterns(`MediaQueryData(textScaleFactor: 1.5)`, "app.dart");
+    expect(legit.some(x => x.pattern === "fixed textScaleFactor")).toBe(false);
   });
   test("detects disableAnimations, highContrast, boldText checks", () => {
     const m = detectPatterns(`if (MediaQuery.of(context).disableAnimations) {}\nfinal hc = MediaQuery.highContrastOf(context);\nfinal bold = MediaQuery.boldTextOf(context);`, "app.dart");
