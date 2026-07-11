@@ -86,8 +86,9 @@ position; test with grayscale color filters enabled.
 
 **Static analysis cannot see:** actual computed contrast ratios.
 
-**Verify manually:** run Accessibility Inspector's color contrast audit
-against WCAG ratios (4.5:1 up to 17pt text, 3:1 at 18pt+ or bold); check both
+**Verify manually:** run Accessibility Inspector's color contrast audit using Apple's guidance
+values (4.5:1 for text up to 17pt, 3:1 for 18pt+ or bold text; WCAG 1.4.3
+itself sets 3:1 only for 18pt+ regular or 14pt+ bold); check both
 light and dark appearances; test with Increase Contrast enabled.
 
 ## Reduced Motion (`reduced-motion`)

@@ -38,12 +38,12 @@ project root:
 The hig-doctor audit then checks every category (declared or not) and reports a
 readiness signal per category:
 
-- `ready-signal` — supporting code evidence, no critical contradictions
-- `partial` — supporting evidence alongside contradicting findings
-- `at-risk` — critical contradictions, or a declared/stated claim with no
-  supporting evidence
-- `no-signal` — nothing detected either way (common for Captions in apps
-  without media playback)
+- `ready-signal` — supporting code evidence and no contradicting findings
+- `partial` — supporting evidence alongside contradicting findings (none critical)
+- `at-risk` — any critical-severity contradiction; contradicting findings with no
+  supporting evidence; or a declared/stated claim with no supporting evidence
+- `no-signal` — nothing detected either way and the claim is neither declared
+  nor stated (common for Captions in apps without media playback)
 
 CI can gate on declared claims with `hig-doctor <dir> --fail-on-claims`.
 
