@@ -78,3 +78,44 @@ export async function loadDeclaredClaims(directory: string): Promise<DeclaredCla
   const deduped = [...new Set(claimsValue as NutritionLabel[])];
   return { claims: deduped, path };
 }
+
+export interface StatedClaim {
+  category: NutritionLabel;
+  file: string;
+  line: number;
+  phrase: string;
+}
+
+// Phrases in app copy that read as accessibility support claims. Deliberately
+// conservative: generic wording ("fully accessible") maps to no category.
+const CLAIM_PHRASES: ReadonlyArray<{ id: NutritionLabel; regex: RegExp }> = [
+  { id: "voiceover", regex: /\bvoice\s*-?\s*over\b/i },
+  { id: "voice-control", regex: /\bvoice\s*control\b/i },
+  { id: "larger-text", regex: /\bdynamic\s*type\b|\blarger?\s*text\b|\b(?:text|font)\s*scaling\b/i },
+  { id: "dark-interface", regex: /\bdark\s*(?:mode|theme|interface)\b/i },
+  { id: "differentiate-without-color", regex: /\bcolor[-\s]?blind|\bwithout\s+color\s+alone\b/i },
+  { id: "sufficient-contrast", regex: /\bwcag\b|\bhigh[-\s]contrast\b|\bcontrast\s*ratio\b|\bsufficient\s*contrast\b/i },
+  { id: "reduced-motion", regex: /\breduced?\s*motion\b/i },
+  { id: "captions", regex: /\b(?:closed\s*)?captions?\b|\bsubtitles\b/i },
+  { id: "audio-descriptions", regex: /\baudio\s*descriptions?\b/i },
+];
+
+// One stated claim per (category, file): the first line that mentions it.
+export function extractStatedClaims(docFiles: ScannedFile[]): StatedClaim[] {
+  const stated: StatedClaim[] = [];
+  for (const file of docFiles) {
+    const lines = file.content.split("\n");
+    const seen = new Set<NutritionLabel>();
+    for (let i = 0; i < lines.length; i++) {
+      for (const { id, regex } of CLAIM_PHRASES) {
+        if (seen.has(id)) continue;
+        const m = regex.exec(lines[i]);
+        if (m) {
+          seen.add(id);
+          stated.push({ category: id, file: file.relativePath, line: i + 1, phrase: m[0] });
+        }
+      }
+    }
+  }
+  return stated;
+}

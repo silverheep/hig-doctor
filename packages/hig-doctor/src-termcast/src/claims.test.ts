@@ -8,6 +8,7 @@ import {
   APP_STORE_FRAMEWORKS,
   loadDeclaredClaims,
   ClaimsConfigError,
+  extractStatedClaims,
 } from "./claims";
 
 async function withTempDir(fn: (dir: string) => Promise<void>) {
@@ -68,5 +69,32 @@ describe("loadDeclaredClaims", () => {
       await writeFile(join(dir, ".hig-doctor", "accessibility-claims.json"), JSON.stringify({ claims: "voiceover" }));
       expect(loadDeclaredClaims(dir)).rejects.toThrow(ClaimsConfigError);
     });
+  });
+});
+
+describe("extractStatedClaims", () => {
+  const doc = (relativePath: string, content: string) => ({ relativePath, absolutePath: "/x/" + relativePath, content });
+  test("finds category phrases with file and line", () => {
+    const claims = extractStatedClaims([doc("README.md", "# App\n\nFull VoiceOver support and Dynamic Type.\nWorks in Dark Mode.")]);
+    const ids = claims.map(c => c.category).sort();
+    expect(ids).toEqual(["dark-interface", "larger-text", "voiceover"]);
+    const vo = claims.find(c => c.category === "voiceover")!;
+    expect(vo.file).toBe("README.md");
+    expect(vo.line).toBe(3);
+    expect(vo.phrase.toLowerCase()).toContain("voiceover");
+  });
+  test("dedupes repeated mentions within a file", () => {
+    const claims = extractStatedClaims([doc("README.md", "VoiceOver.\nVoiceOver again.\nvoice over!")]);
+    expect(claims.filter(c => c.category === "voiceover").length).toBe(1);
+  });
+  test("reports the same category from different files separately", () => {
+    const claims = extractStatedClaims([
+      doc("README.md", "Supports captions."),
+      doc("fastlane/metadata/en-US/description.txt", "Closed captions available."),
+    ]);
+    expect(claims.filter(c => c.category === "captions").length).toBe(2);
+  });
+  test("empty input yields empty output", () => {
+    expect(extractStatedClaims([])).toEqual([]);
   });
 });
