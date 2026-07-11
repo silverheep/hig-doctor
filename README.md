@@ -85,7 +85,7 @@ Example output:
 | `--stdout` | Print raw audit markdown to stdout (pipe to an AI for evaluation) |
 | `--json` | Print structured results as JSON (for CI/scripts) |
 | `--fail-on <severity>` | Exit 1 if any concern at/above `critical`, `serious`, or `moderate` is found |
-| `--fail-on-claims` | Exit 1 if a declared or stated accessibility claim scans as at-risk |
+| `--fail-on-claims` | Exit 1 if a declared accessibility claim scans as at-risk |
 | `--help` | Show help |
 
 ### Severity model
