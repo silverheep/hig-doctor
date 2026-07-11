@@ -27,13 +27,14 @@ hig-doctor/
 │       │       ├── audit.ts   # Orchestrator
 │       │       ├── scanner.ts # Project file walker + framework detection
 │       │       ├── patterns.ts # Detection rules across 12 frameworks (count = RULE_COUNT)
+│       │       ├── claims.ts  # Nutrition Label claim evaluation (readiness signals)
 │       │       ├── categorizer.ts # Maps patterns to HIG categories
 │       │       └── audit-generator.ts # Markdown report builder
 │       └── src-mcp/           # MCP stdio server — published to npm as `hig-mcp` (TypeScript, Bun)
 │           └── src/index.ts   # Tools: hig_list_skills, hig_lookup, hig_audit
 ├── demos/
 │   └── remotion-hig-doctor/   # Remotion video demo of audit output
-├── skills/                    # Agent Skills (14 skills)
+├── skills/                    # Agent Skills (15 skills)
 │   └── skill-name/
 │       ├── SKILL.md           # Required skill file (<500 lines)
 │       └── references/        # HIG content files loaded on demand
@@ -67,6 +68,8 @@ hig-doctor/
   - `cd packages/hig-doctor/src-termcast && bun run audit <directory> --json`
 - Run audit tests:
   - `cd packages/hig-doctor/src-termcast && bun test`
+- Gate CI on declared accessibility claims:
+  - `cd packages/hig-doctor/src-termcast && bun run audit <directory> --fail-on-claims`
 
 ### Skill Validator (repository lint)
 - Install doctor package dependencies (for local TUI mode):
@@ -286,6 +289,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 | Components | `hig-components-*` (8 skills) | UI component guidelines |
 | Inputs | `hig-inputs` | Input methods and devices |
 | Technologies | `hig-technologies` | Apple technology integrations |
+| Audit | `hig-accessibility-audit` | Accessibility Nutrition Label readiness |
 
 ## Updating HIG Content
 
