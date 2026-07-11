@@ -18,6 +18,9 @@ export interface ScanResult {
   styleFiles: ScannedFile[];
   configFiles: ScannedFile[];
   markupFiles: ScannedFile[];
+  // App-copy documents scanned for stated accessibility claims (README,
+  // App Store metadata). Not run through detectPatterns.
+  docFiles: ScannedFile[];
   // Swift-specific (backward compat)
   swiftFiles: ScannedFile[];
   infoPlistPaths: string[];
@@ -172,7 +175,11 @@ async function walkDir(dir: string, rootDir: string, result: ScanResult, isIgnor
       const wantCode = CODE_EXTENSIONS.has(ext);
       const wantStyle = STYLE_EXTENSIONS.has(ext);
       const wantMarkup = MARKUP_EXTENSIONS.has(ext);
-      if (!isConfig && !wantCode && !wantStyle && !wantMarkup) continue;
+      const posixRel = relPath.split(sep).join("/").toLowerCase();
+      const isDoc =
+        /^readme\.(md|txt)$/i.test(entry.name) ||
+        (posixRel.includes("fastlane/metadata/") && ext === ".txt");
+      if (!isConfig && !wantCode && !wantStyle && !wantMarkup && !isDoc) continue;
 
       const content = await readText(fullPath);
       if (content === null) continue; // oversized or unreadable — skip
@@ -195,6 +202,8 @@ async function walkDir(dir: string, rootDir: string, result: ScanResult, isIgnor
       } else if (wantMarkup) {
         result.markupFiles.push(file);
         if (ext === ".storyboard" || ext === ".xib") result.storyboards.push(file);
+      } else if (isDoc) {
+        result.docFiles.push(file);
       }
     }
   }
@@ -289,6 +298,7 @@ export async function scanProject(directory: string, options: ScanOptions = {}):
     styleFiles: [],
     configFiles: [],
     markupFiles: [],
+    docFiles: [],
     swiftFiles: [],
     infoPlistPaths: [],
     assetCatalogs: [],

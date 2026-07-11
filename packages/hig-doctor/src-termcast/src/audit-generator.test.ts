@@ -11,6 +11,7 @@ function makeScanResult(overrides: Partial<ScanResult> = {}): ScanResult {
     styleFiles: [],
     configFiles: [],
     markupFiles: [],
+    docFiles: [],
     swiftFiles: [],
     infoPlistPaths: [],
     assetCatalogs: [],
