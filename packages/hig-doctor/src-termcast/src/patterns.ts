@@ -88,6 +88,8 @@ const SERIOUS_CONCERNS = new Set<string>([
   "(click) without (keydown)",
   "clickable without Role",
   "nested touchables",
+  "allowFontScaling false",
+  "fixed textScaleFactor",
 ]);
 
 export function severityFor(pattern: string): Severity {
@@ -648,6 +650,10 @@ const reactNativeRules: PatternRule[] = [
   { category: "inputs", subcategory: "gestures", type: "pattern", pattern: "Gesture handler", regex: /PanGestureHandler|TapGestureHandler|GestureDetector/, fileFilter: TSX_JSX },
   { category: "patterns", subcategory: "haptics", type: "pattern", pattern: "Haptics", regex: /Haptics\.|expo-haptics/, fileFilter: TS_JS },
   { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "nested touchables", regex: /accessible=\{true\}[\s\S]*?<Touchable/, fileFilter: TSX_JSX, claims: ["voiceover"] },
+  // Nutrition Label claim evidence
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "allowFontScaling false", regex: /allowFontScaling=\{?\s*false/, fileFilter: TSX_JSX, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "reduce motion check (RN)", regex: /AccessibilityInfo\.isReduceMotionEnabled/, fileFilter: TS_JS, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "font scale awareness (RN)", regex: /PixelRatio\.getFontScale|\bfontScale\b/, fileFilter: TS_JS, claims: ["larger-text"] },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -681,6 +687,12 @@ const flutterRules: PatternRule[] = [
   { category: "components-controls", subcategory: "controls", type: "pattern", pattern: "ElevatedButton", regex: /\bElevatedButton\b/, fileFilter: DART },
   // i18n
   { category: "patterns", subcategory: "i18n", type: "positive", pattern: "Flutter l10n", regex: /AppLocalizations|flutter_localizations|intl/, fileFilter: DART },
+  // Nutrition Label claim evidence
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "textScaler awareness", regex: /MediaQuery\.textScalerOf|\.textScaler\b(?!:)|textScaleFactorOf/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "fixed textScaleFactor", regex: /textScale(?:Factor:\s*1(?:\.0)?\b|r:\s*TextScaler\.noScaling)/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "disableAnimations check", regex: /disableAnimations/, fileFilter: DART, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "highContrast check", regex: /highContrast/, fileFilter: DART, claims: ["sufficient-contrast"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "boldText check", regex: /\bboldText/, fileFilter: DART, claims: ["larger-text"] },
 ];
 
 // ════════════════════════════════════════════════════════════════

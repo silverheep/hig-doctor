@@ -10,7 +10,7 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - website/components/AuditDemo.tsx (the "same N rules" copy)
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
-const EXPECTED_RULE_COUNT = 372;
+const EXPECTED_RULE_COUNT = 380;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
 });
@@ -856,5 +856,41 @@ describe("claim evidence — Swift", () => {
     const m = detectPatterns(`UIAccessibility.post(notification: .announcement, argument: "Saved")\n.accessibilityElement(children: .combine)`, "V.swift");
     expect(m.some(x => x.pattern === "VoiceOver announcement")).toBe(true);
     expect(m.find(x => x.pattern === "accessibilityElement grouping")?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// RN + FLUTTER — Nutrition Label claim evidence rules
+// ════════════════════════════════════════════════════════════════
+describe("claim evidence — React Native", () => {
+  test("flags allowFontScaling={false} as serious larger-text concern", () => {
+    const m = detectPatterns(`<Text allowFontScaling={false}>Hi</Text>`, "App.tsx");
+    const hit = m.find(x => x.pattern === "allowFontScaling false");
+    expect(hit?.type).toBe("concern");
+    expect(hit?.severity).toBe("serious");
+    expect(hit?.claims).toEqual(["larger-text"]);
+  });
+  test("detects RN reduce-motion and font-scale checks", () => {
+    const m = detectPatterns(`const rm = await AccessibilityInfo.isReduceMotionEnabled();\nconst s = PixelRatio.getFontScale();`, "App.ts");
+    expect(m.find(x => x.pattern === "reduce motion check (RN)")?.claims).toEqual(["reduced-motion"]);
+    expect(m.find(x => x.pattern === "font scale awareness (RN)")?.claims).toEqual(["larger-text"]);
+  });
+});
+
+describe("claim evidence — Flutter", () => {
+  test("detects textScaler awareness, flags pinned scale as serious", () => {
+    const good = detectPatterns(`final scaler = MediaQuery.textScalerOf(context);`, "app.dart");
+    expect(good.find(x => x.pattern === "textScaler awareness")?.claims).toEqual(["larger-text"]);
+    const bad = detectPatterns(`MediaQueryData(textScaleFactor: 1.0)`, "app.dart");
+    const hit = bad.find(x => x.pattern === "fixed textScaleFactor");
+    expect(hit?.severity).toBe("serious");
+    const alsoBad = detectPatterns(`textScaler: TextScaler.noScaling`, "app.dart");
+    expect(alsoBad.some(x => x.pattern === "fixed textScaleFactor")).toBe(true);
+  });
+  test("detects disableAnimations, highContrast, boldText checks", () => {
+    const m = detectPatterns(`if (MediaQuery.of(context).disableAnimations) {}\nfinal hc = MediaQuery.highContrastOf(context);\nfinal bold = MediaQuery.boldTextOf(context);`, "app.dart");
+    expect(m.find(x => x.pattern === "disableAnimations check")?.claims).toEqual(["reduced-motion"]);
+    expect(m.find(x => x.pattern === "highContrast check")?.claims).toEqual(["sufficient-contrast"]);
+    expect(m.find(x => x.pattern === "boldText check")?.claims).toEqual(["larger-text"]);
   });
 });
