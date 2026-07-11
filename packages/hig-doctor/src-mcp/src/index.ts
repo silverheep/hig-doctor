@@ -128,7 +128,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "hig_audit",
       description:
-        "Run a HIG compliance audit on a project directory. Scans source files across SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, and HTML. Returns severity counts (critical/serious/moderate) plus a markdown report with code excerpts and HIG reference material.",
+        "Run a HIG compliance audit on a project directory. Scans source files across SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, and HTML. Returns severity counts (critical/serious/moderate), Accessibility Nutrition Label readiness signals (VoiceOver, Voice Control, Larger Text, Dark Interface, Differentiate Without Color Alone, Sufficient Contrast, Reduced Motion, Captions, Audio Descriptions), plus a markdown report with code excerpts and HIG reference material. Declared claims are read from .hig-doctor/accessibility-claims.json in the audited project when present.",
       inputSchema: {
         type: "object",
         properties: {
@@ -254,6 +254,14 @@ async function handleTool(
       })),
       failOn: failOn ?? null,
       gateTripped,
+      claims: {
+        applicable: result.claims.applicable,
+        declared: result.claims.declaredClaims,
+        signals: Object.fromEntries(result.claims.assessments.map((a) => [a.id, a.signal])),
+        atRiskDeclared: result.claims.assessments
+          .filter((a) => a.declared && a.signal === "at-risk")
+          .map((a) => a.id),
+      },
     };
 
     return {
