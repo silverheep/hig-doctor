@@ -18,12 +18,16 @@ Current versions of all skills. Agents can compare against local versions to che
 | hig-components-system | 2.1.0 | 2026-07-08 |
 | hig-inputs | 2.1.0 | 2026-07-08 |
 | hig-technologies | 2.1.0 | 2026-07-08 |
+| hig-accessibility-audit | 1.0.0 | 2026-07-11 |
 
 ## HIG Source
 
 Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), re-verified against the live site on July 8, 2026. Files updated 2026-07-08 carry that snapshot stamp; files whose content was verified unchanged retain the 2026-06-11 stamp.
 
 ## Recent Changes
+
+### 2026-07-11
+- **New skill: `hig-accessibility-audit` (1.0.0)** — Accessibility Nutrition Label readiness guidance. Pairs with the audit CLI's new claim scanning (claim-tagged rules, `.hig-doctor/accessibility-claims.json`, readiness scoreboard, `--fail-on-claims`) and the `hig_audit` MCP claims summary.
 
 ### 2026-07-08
 - **Corpus re-verified against Apple's live HIG; converter fidelity fixes** — minor version bump (2.1.0) for the 11 skills whose files changed:

@@ -5,13 +5,13 @@
     "email": "hq@zacharyr0th.com"
   },
   "metadata": {
-    "description": "Apple Human Interface Guidelines for AI coding agents \u2014 14 skills, a Model Context Protocol server, and a universal HIG compliance auditor. Snapshot July 2026 (WWDC 2026 / iOS 27 guidance).",
+    "description": "Apple Human Interface Guidelines for AI coding agents \u2014 15 skills, a Model Context Protocol server, and a universal HIG compliance auditor. Snapshot July 2026 (WWDC 2026 / iOS 27 guidance).",
     "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "apple-hig-skills",
-      "description": "14 Apple HIG skills (foundations, platforms, patterns, inputs, technologies, and 8 component categories) plus an MCP server (hig_list_skills / hig_lookup / hig_audit) and a Bun-based CLI auditor that detects 359 HIG patterns across SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Flutter, and React Native.",
+      "description": "15 Apple HIG skills (foundations, platforms, patterns, inputs, technologies, and 8 component categories) plus an MCP server (hig_list_skills / hig_lookup / hig_audit) and a Bun-based CLI auditor that detects 359 HIG patterns across SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Flutter, and React Native.",
       "source": "./",
       "strict": false,
       "skills": [
@@ -28,7 +28,8 @@
         "./skills/hig-components-menus",
         "./skills/hig-components-search",
         "./skills/hig-components-status",
-        "./skills/hig-components-system"
+        "./skills/hig-components-system",
+        "./skills/hig-accessibility-audit"
       ]
     }
   ]
