@@ -774,3 +774,35 @@ describe("regression — Swift @State matcher & severity downgrades", () => {
     expect(css.find(m => m.pattern === "hover without focus")?.severity).toBe("moderate");
   });
 });
+
+// ════════════════════════════════════════════════════════════════
+// NUTRITION LABEL CLAIM TAGS
+// ════════════════════════════════════════════════════════════════
+describe("claim tags", () => {
+  test("propagates claim tags on Swift accessibility positives", () => {
+    const matches = detectPatterns(`.accessibilityLabel("Close")`, "View.swift");
+    const m = matches.find(m => m.pattern === "accessibilityLabel");
+    expect(m?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+  test("claim-tagged concern keeps its severity", () => {
+    const matches = detectPatterns(`.font(.system(size: 14))`, "View.swift");
+    const m = matches.find(m => m.pattern === "hardcodedFontSize");
+    expect(m?.claims).toEqual(["larger-text"]);
+    expect(m?.severity).toBe("moderate");
+  });
+  test("untagged rules carry no claims field", () => {
+    const matches = detectPatterns(`TabView {}`, "View.swift");
+    const m = matches.find(m => m.pattern === "TabView");
+    expect(m?.claims).toBeUndefined();
+  });
+  test("tags React Native and Flutter accessibility rules", () => {
+    const rn = detectPatterns(`<Pressable accessibilityLabel="Send" />`, "App.tsx");
+    expect(rn.find(m => m.pattern === "accessibilityLabel")?.claims).toEqual(["voiceover", "voice-control"]);
+    const fl = detectPatterns(`Semantics(label: "Send", child: button)`, "app.dart");
+    expect(fl.find(m => m.pattern === "Semantics widget")?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+  test("tags dark-interface on Swift color rules", () => {
+    const matches = detectPatterns(`.preferredColorScheme(.dark)`, "View.swift");
+    expect(matches.find(m => m.pattern === "preferredColorScheme")?.claims).toEqual(["dark-interface"]);
+  });
+});
