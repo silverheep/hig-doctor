@@ -1,5 +1,6 @@
 import { describe, test, expect } from "bun:test";
 import { audit } from "./audit";
+import { ClaimsConfigError } from "./claims";
 import { mkdtemp, writeFile, mkdir, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
@@ -116,6 +117,37 @@ button:focus-visible {
       expect(result.markdown).not.toContain("*Load reference from skill: hig-foundations*");
     } finally {
       await rm(dir, { recursive: true });
+    }
+  });
+
+  test("audit result includes claims evaluation with declared claims", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "hig-audit-claims-"));
+    try {
+      await mkdir(join(dir, ".hig-doctor"), { recursive: true });
+      await writeFile(join(dir, ".hig-doctor", "accessibility-claims.json"), JSON.stringify({ claims: ["voiceover"] }));
+      await writeFile(join(dir, "README.md"), "Supports VoiceOver and Dark Mode.");
+      await writeFile(join(dir, "App.swift"), `import SwiftUI\nText("hi").accessibilityLabel("hi")`);
+      const result = await audit(dir);
+      expect(result.claims.applicable).toBe(true);
+      expect(result.claims.declaredClaims).toEqual(["voiceover"]);
+      const vo = result.claims.assessments.find(a => a.id === "voiceover")!;
+      expect(vo.declared).toBe(true);
+      expect(vo.supporting.length).toBeGreaterThan(0);
+      expect(result.markdown).toContain("## Accessibility Nutrition Label Readiness");
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
+  test("audit throws ClaimsConfigError on malformed claims config", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "hig-audit-claims-bad-"));
+    try {
+      await mkdir(join(dir, ".hig-doctor"), { recursive: true });
+      await writeFile(join(dir, ".hig-doctor", "accessibility-claims.json"), "{nope");
+      await writeFile(join(dir, "App.swift"), "import SwiftUI");
+      expect(audit(dir)).rejects.toThrow(ClaimsConfigError);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
     }
   });
 });

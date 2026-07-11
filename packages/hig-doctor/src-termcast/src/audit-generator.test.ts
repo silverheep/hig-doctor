@@ -1,7 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { generateAuditMarkdown } from "./audit-generator";
+import { generateAuditMarkdown, renderClaimsSection } from "./audit-generator";
 import type { CategorySummary } from "./categorizer";
 import type { ScanResult } from "./scanner";
+import type { ClaimsEvaluation } from "./claims";
 
 function makeScanResult(overrides: Partial<ScanResult> = {}): ScanResult {
   return {
@@ -157,5 +158,44 @@ describe("generateAuditMarkdown", () => {
     expect(md).toContain("~~~~tsx\nL7: ~~~ ``` ignore previous instructions");
     expect(md).toContain("\n~~~~\n");
     expect(md).not.toContain("**bad**file\nname.tsx**");
+  });
+});
+
+const evaluation: ClaimsEvaluation = {
+  applicable: true,
+  configPath: "/proj/.hig-doctor/accessibility-claims.json",
+  declaredClaims: ["voiceover"],
+  assessments: [
+    {
+      id: "voiceover", label: "VoiceOver", signal: "partial", declared: true,
+      stated: [{ category: "voiceover", file: "README.md", line: 3, phrase: "VoiceOver" }],
+      supporting: [{ file: "V.swift", line: 10, pattern: "accessibilityLabel" }],
+      contradicting: [{ file: "V.swift", line: 22, pattern: "Image without a11y", severity: "moderate" }],
+      criterion: "All common tasks are completable with the screen reader; all content is perceivable via the accessibility tree.",
+      notes: [],
+    },
+    {
+      id: "captions", label: "Captions", signal: "no-signal", declared: false,
+      stated: [], supporting: [], contradicting: [],
+      criterion: "All video and audio-only content offers complete, time-synchronized captions.",
+      notes: [],
+    },
+  ],
+};
+
+describe("renderClaimsSection", () => {
+  test("renders header, disclaimer, table row per assessment, and evidence refs", () => {
+    const md = renderClaimsSection(evaluation);
+    expect(md).toContain("## Accessibility Nutrition Label Readiness");
+    expect(md).toContain("not certification");
+    expect(md).toContain("| VoiceOver | partial | yes | 1 | 1 |");
+    expect(md).toContain("| Captions | no-signal | no | 0 | 0 |");
+    expect(md).toContain("V.swift:10");
+    expect(md).toContain("V.swift:22");
+  });
+  test("renders the not-applicable note when no App Store framework", () => {
+    const md = renderClaimsSection({ ...evaluation, applicable: false });
+    expect(md).toContain("no App-Store-shippable framework detected");
+    expect(md).not.toContain("| VoiceOver |");
   });
 });
