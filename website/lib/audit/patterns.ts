@@ -154,6 +154,22 @@ const swiftRules: PatternRule[] = [
   { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "onTapGesture without traits", regex: /\.onTapGesture\s*\{/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
   { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "Image without a11y", regex: /\bImage\(\s*systemName:/, fileFilter: SWIFT, claims: ["voiceover"] },
   { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "isAccessibilityElement false on interactive", regex: /\.isAccessibilityElement\s*=\s*false/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  // Nutrition Label claim evidence (Accessibility Nutrition Labels, App Store Connect)
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "dynamicTypeSize", regex: /\.dynamicTypeSize\(|@Environment\(\\\.dynamicTypeSize\)/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "adjustsFontForContentSizeCategory", regex: /adjustsFontForContentSizeCategory\s*=\s*true/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "preferredFont(forTextStyle:)", regex: /UIFont\.preferredFont\(\s*forTextStyle:/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "minimumScaleFactor below 0.5", regex: /\.minimumScaleFactor\(\s*0?\.[0-4]/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "isReduceMotionEnabled (UIKit)", regex: /UIAccessibility\.isReduceMotionEnabled/, fileFilter: SWIFT, claims: ["reduced-motion"] },
+  // Fires once per file that animates without ever consulting Reduce Motion.
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "animation without Reduce Motion check", regex: /\bwithAnimation\b|UIView\.animate\(|\.animation\(/, fileFilter: SWIFT, scope: "document", requireAbsent: /accessibilityReduceMotion|isReduceMotionEnabled/, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "increase contrast check", regex: /accessibilityContrast|isDarkerSystemColorsEnabled|colorSchemeContrast/, fileFilter: SWIFT, claims: ["sufficient-contrast"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "differentiate without color check", regex: /accessibilityDifferentiateWithoutColor|shouldDifferentiateWithoutColor/, fileFilter: SWIFT, claims: ["differentiate-without-color"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "caption media selection", regex: /AVMediaCharacteristic\.legible|textStyleRules/, fileFilter: SWIFT, claims: ["captions"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "audio description media selection", regex: /describesVideo/, fileFilter: SWIFT, claims: ["audio-descriptions"] },
+  // Fires once per file that creates players without any caption plumbing.
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "AVPlayer without caption selection", regex: /\bAVPlayer(?:ViewController)?\b/, fileFilter: SWIFT, scope: "document", requireAbsent: /AVMediaCharacteristic\.legible|textStyleRules|selectMediaOption|select\(/, claims: ["captions"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "VoiceOver announcement", regex: /UIAccessibility\.post\(|AccessibilityNotification\./, fileFilter: SWIFT, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityElement grouping", regex: /\.accessibilityElement\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
 
   // Dark mode
   { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "colorScheme", regex: /@Environment\(\\\.colorScheme\)/, fileFilter: SWIFT, claims: ["dark-interface"] },

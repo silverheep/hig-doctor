@@ -10,7 +10,7 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - website/components/AuditDemo.tsx (the "same N rules" copy)
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
-const EXPECTED_RULE_COUNT = 359;
+const EXPECTED_RULE_COUNT = 372;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
 });
@@ -804,5 +804,57 @@ describe("claim tags", () => {
   test("tags dark-interface on Swift color rules", () => {
     const matches = detectPatterns(`.preferredColorScheme(.dark)`, "View.swift");
     expect(matches.find(m => m.pattern === "preferredColorScheme")?.claims).toEqual(["dark-interface"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// SWIFT — Nutrition Label claim evidence rules
+// ════════════════════════════════════════════════════════════════
+describe("claim evidence — Swift", () => {
+  test("detects dynamicTypeSize as larger-text evidence", () => {
+    const a = detectPatterns(`.dynamicTypeSize(.large ... .accessibility3)`, "V.swift");
+    expect(a.find(m => m.pattern === "dynamicTypeSize")?.claims).toEqual(["larger-text"]);
+    const b = detectPatterns(`@Environment(\\.dynamicTypeSize) var size`, "V.swift");
+    expect(b.some(m => m.pattern === "dynamicTypeSize")).toBe(true);
+  });
+  test("detects UIKit Dynamic Type adoption", () => {
+    const m = detectPatterns(`label.adjustsFontForContentSizeCategory = true\nlabel.font = UIFont.preferredFont(forTextStyle: .body)`, "VC.swift");
+    expect(m.some(x => x.pattern === "adjustsFontForContentSizeCategory")).toBe(true);
+    expect(m.some(x => x.pattern === "preferredFont(forTextStyle:)")).toBe(true);
+  });
+  test("flags aggressive minimumScaleFactor", () => {
+    const bad = detectPatterns(`.minimumScaleFactor(0.4)`, "V.swift");
+    expect(bad.some(m => m.pattern === "minimumScaleFactor below 0.5" && m.type === "concern" && m.severity === "moderate")).toBe(true);
+    const ok = detectPatterns(`.minimumScaleFactor(0.8)`, "V.swift");
+    expect(ok.some(m => m.pattern === "minimumScaleFactor below 0.5")).toBe(false);
+  });
+  test("animation without Reduce Motion check fires once per unguarded file", () => {
+    const bad = detectPatterns(`withAnimation { x = 1 }\nwithAnimation { y = 2 }`, "V.swift");
+    expect(bad.filter(m => m.pattern === "animation without Reduce Motion check").length).toBe(1);
+    const good = detectPatterns(`@Environment(\\.accessibilityReduceMotion) var reduce\nwithAnimation { x = 1 }`, "V.swift");
+    expect(good.some(m => m.pattern === "animation without Reduce Motion check")).toBe(false);
+    const uikit = detectPatterns(`if UIAccessibility.isReduceMotionEnabled { }\nUIView.animate(withDuration: 0.3) {}`, "VC.swift");
+    expect(uikit.some(m => m.pattern === "animation without Reduce Motion check")).toBe(false);
+  });
+  test("detects contrast and differentiate-without-color checks", () => {
+    const m = detectPatterns(`@Environment(\\.accessibilityDifferentiateWithoutColor) var dwc\nif UIAccessibility.isDarkerSystemColorsEnabled {}`, "V.swift");
+    expect(m.find(x => x.pattern === "differentiate without color check")?.claims).toEqual(["differentiate-without-color"]);
+    expect(m.find(x => x.pattern === "increase contrast check")?.claims).toEqual(["sufficient-contrast"]);
+  });
+  test("detects caption/audio-description media selection", () => {
+    const m = detectPatterns(`let g = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible)\nopts.describesVideo`, "Player.swift");
+    expect(m.find(x => x.pattern === "caption media selection")?.claims).toEqual(["captions"]);
+    expect(m.find(x => x.pattern === "audio description media selection")?.claims).toEqual(["audio-descriptions"]);
+  });
+  test("flags AVPlayer without caption selection, once per file", () => {
+    const bad = detectPatterns(`let p = AVPlayer(url: url)\nlet q = AVPlayer(url: other)`, "Player.swift");
+    expect(bad.filter(m => m.pattern === "AVPlayer without caption selection").length).toBe(1);
+    const good = detectPatterns(`let p = AVPlayer(url: url)\nitem.select(option, in: group) // textStyleRules applied\nlet r = AVTextStyleRule(textMarkupAttributes: [:])\nplayer.currentItem?.textStyleRules = [r]`, "Player.swift");
+    expect(good.some(m => m.pattern === "AVPlayer without caption selection")).toBe(false);
+  });
+  test("detects VoiceOver announcements and element grouping", () => {
+    const m = detectPatterns(`UIAccessibility.post(notification: .announcement, argument: "Saved")\n.accessibilityElement(children: .combine)`, "V.swift");
+    expect(m.some(x => x.pattern === "VoiceOver announcement")).toBe(true);
+    expect(m.find(x => x.pattern === "accessibilityElement grouping")?.claims).toEqual(["voiceover", "voice-control"]);
   });
 });
