@@ -119,3 +119,91 @@ export function extractStatedClaims(docFiles: ScannedFile[]): StatedClaim[] {
   }
   return stated;
 }
+
+export interface EvidenceRef {
+  file: string;
+  line: number;
+  pattern: string;
+  severity?: Severity;
+}
+
+export type ReadinessSignal = "ready-signal" | "partial" | "at-risk" | "no-signal";
+
+export interface ClaimAssessment {
+  id: NutritionLabel;
+  label: string;
+  signal: ReadinessSignal;
+  declared: boolean;
+  stated: StatedClaim[];
+  supporting: EvidenceRef[];
+  contradicting: EvidenceRef[];
+  criterion: string;
+  platformNote?: string;
+  notes: string[];
+}
+
+export interface ClaimsEvaluation {
+  applicable: boolean;
+  configPath: string | null;
+  declaredClaims: NutritionLabel[];
+  assessments: ClaimAssessment[];
+}
+
+export function evaluateClaims(input: {
+  matches: PatternMatch[];
+  frameworks: Framework[];
+  declared: NutritionLabel[];
+  configPath: string | null;
+  stated: StatedClaim[];
+}): ClaimsEvaluation {
+  const applicable = input.frameworks.some(f => APP_STORE_FRAMEWORKS.has(f));
+
+  // Bucket evidence once. "pattern"-type matches are inventory, not evidence.
+  const supporting = new Map<NutritionLabel, EvidenceRef[]>();
+  const contradicting = new Map<NutritionLabel, EvidenceRef[]>();
+  for (const m of input.matches) {
+    if (!m.claims || (m.type !== "positive" && m.type !== "concern")) continue;
+    const bucket = m.type === "positive" ? supporting : contradicting;
+    for (const id of m.claims) {
+      if (!bucket.has(id)) bucket.set(id, []);
+      bucket.get(id)!.push({ file: m.file, line: m.line, pattern: m.pattern, severity: m.severity });
+    }
+  }
+
+  const assessments: ClaimAssessment[] = CLAIM_CATEGORIES.map(meta => {
+    const support = supporting.get(meta.id) ?? [];
+    const contra = contradicting.get(meta.id) ?? [];
+    const declared = input.declared.includes(meta.id);
+    const stated = input.stated.filter(s => s.category === meta.id);
+    const claimed = declared || stated.length > 0;
+    const hasCritical = contra.some(e => e.severity === "critical");
+
+    let signal: ReadinessSignal;
+    if (support.length === 0 && contra.length === 0) signal = claimed ? "at-risk" : "no-signal";
+    else if (support.length === 0 || hasCritical) signal = "at-risk";
+    else if (contra.length > 0) signal = "partial";
+    else signal = "ready-signal";
+
+    const notes: string[] = [];
+    if (declared && signal === "at-risk") notes.push("Declared in config but at risk");
+    for (const s of stated) {
+      if (!declared) notes.push(`Stated in ${s.file}:${s.line} ("${s.phrase}") but not declared in ${CLAIMS_CONFIG_RELPATH}`);
+    }
+    if (stated.length > 0 && support.length === 0) notes.push("Stated in app copy with no supporting code evidence");
+
+    return {
+      id: meta.id,
+      label: meta.label,
+      signal,
+      declared,
+      stated,
+      supporting: support,
+      contradicting: contra,
+      criterion: meta.criterion,
+      ...(meta.platformNote ? { platformNote: meta.platformNote } : {}),
+      notes,
+    };
+  });
+
+  return { applicable, configPath: input.configPath, declaredClaims: input.declared, assessments };
+}
