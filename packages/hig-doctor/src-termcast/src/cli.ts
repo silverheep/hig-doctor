@@ -171,6 +171,7 @@ ${c.bold}Examples:${c.reset}
     result = await audit(directory, skillsDir, { exclude });
   } catch (e) {
     if (e instanceof ClaimsConfigError) {
+      if (isTTY) process.stderr.write("\r\x1b[K");
       process.stderr.write(`\n${c.red}Error:${c.reset} ${e.message}\n`);
       process.exit(2);
     }
@@ -189,7 +190,7 @@ ${c.bold}Examples:${c.reset}
   const totalModerate = categories.reduce((s, cat) => s + cat.moderate, 0);
   const totalDetections = allMatches.length;
   const gateTripped = failOn !== null && exceedsThreshold(totalCritical, totalSerious, totalModerate, failOn);
-  const claimsGateTripped = failOnClaims && result.claims.assessments.some(a => a.declared && a.signal === "at-risk");
+  const claimsGateTripped = failOnClaims && result.claims.applicable && result.claims.assessments.some(a => a.declared && a.signal === "at-risk");
   const anyGateTripped = gateTripped || claimsGateTripped;
 
   // ── --stdout mode ───────────────────────────────────────────────
@@ -303,6 +304,9 @@ ${c.bold}Examples:${c.reset}
   process.stdout.write("\n");
   if (!result.claims.applicable) {
     process.stdout.write(`  ${c.dim}Nutrition Labels: n/a — no App-Store-shippable framework detected (SwiftUI/UIKit/React Native/Flutter).${c.reset}\n`);
+    if (failOnClaims) {
+      process.stdout.write(`  ${c.dim}--fail-on-claims: n/a — gate not evaluated for non-App-Store projects.${c.reset}\n`);
+    }
   } else {
     process.stdout.write(`  ${c.bold}Accessibility Nutrition Labels${c.reset} ${c.dim}(readiness signals — verify manually before declaring)${c.reset}\n`);
     for (const a of result.claims.assessments) {
