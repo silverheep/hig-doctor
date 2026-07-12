@@ -1,6 +1,6 @@
 # hig-doctor
 
-Universal **Apple Human Interface Guidelines** compliance auditor for app projects. Scans your source against **359 HIG rules** across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Jetpack Compose, Android XML, React Native, Flutter, CSS, and HTML) and reports concerns by severity — **critical / serious / moderate** — plus positive patterns you already follow.
+Universal **Apple Human Interface Guidelines** compliance auditor for app projects. Scans your source against **380 HIG rules** across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Jetpack Compose, Android XML, React Native, Flutter, CSS, and HTML) and reports concerns by severity — **critical / serious / moderate** — plus positive patterns you already follow.
 
 Runs under Node 20+ (after install) or [Bun](https://bun.sh) (directly from source). Zero runtime dependencies.
 
@@ -24,6 +24,7 @@ hig-doctor ./path/to/project
 | `--stdout` | Print the full markdown report to stdout (pipe it to an AI agent). |
 | `--json` | Emit machine-readable JSON to stdout (progress goes to stderr). For CI. |
 | `--fail-on <level>` | Exit non-zero when a finding at or above `critical`, `serious`, or `moderate` exists. For CI gates. |
+| `--fail-on-claims` | Exit non-zero when a declared Accessibility Nutrition Label claim scans as at-risk. See _Accessibility Nutrition Labels_. |
 | `--exclude <glob>` | Skip paths matching a glob (comma-separated, repeatable). See _Ignoring files_. |
 
 ### CI gate example
@@ -68,6 +69,22 @@ Each rule maps to a HIG topic (Accessibility, Color, Typography, Layout, Buttons
 - **Moderate** — style-level: fixed font sizes, non-Dynamic-Type fonts, gesture-only affordances.
 
 Detection is regex-based and self-contained — no network calls, no source ever leaves your machine.
+
+## Accessibility Nutrition Labels
+
+Every audit also scores readiness for all nine App Store accessibility claims
+(VoiceOver, Voice Control, Larger Text, Dark Interface, Differentiate Without
+Color Alone, Sufficient Contrast, Reduced Motion, Captions, Audio
+Descriptions), built entirely from claim-tagged rule evidence gathered during
+the same scan.
+
+- Declare the claims you intend to make in `.hig-doctor/accessibility-claims.json`:
+  ```json
+  { "claims": ["voiceover", "larger-text"] }
+  ```
+- Gate CI with `--fail-on-claims` — it exits 1 when a **declared** claim scans as at-risk.
+- These are heuristic signals, not certification. Verify manually with Accessibility
+  Inspector and assistive technologies before declaring a claim in App Store Connect.
 
 ## From source (Bun)
 

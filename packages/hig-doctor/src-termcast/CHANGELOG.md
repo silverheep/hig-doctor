@@ -19,8 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.hig-doctor/accessibility-claims.json` for declaring intended App Store
   accessibility claims, plus stated-claim extraction from README and fastlane
   metadata.
-- `--fail-on-claims` CI gate that exits non-zero when a declared or stated
-  claim lacks sufficient rule evidence.
+- `--fail-on-claims` CI gate that exits non-zero when a declared claim scans
+  as at-risk.
 
 ## [1.1.0] - 2026-07-08
 

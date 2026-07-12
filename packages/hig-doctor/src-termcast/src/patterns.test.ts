@@ -10,6 +10,7 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - website/components/AuditDemo.tsx (the "same N rules" copy)
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
+//   - packages/hig-doctor/src-termcast/README.md
 const EXPECTED_RULE_COUNT = 380;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
@@ -898,5 +899,34 @@ describe("claim evidence — Flutter", () => {
     expect(m.find(x => x.pattern === "disableAnimations check")?.claims).toEqual(["reduced-motion"]);
     expect(m.find(x => x.pattern === "highContrast check")?.claims).toEqual(["sufficient-contrast"]);
     expect(m.find(x => x.pattern === "boldText check")?.claims).toEqual(["larger-text"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// REGRESSION CANARIES — claim tags stay off non-App-Store rules
+// ════════════════════════════════════════════════════════════════
+// Nutrition Label claims should only ever attach to rules for frameworks that
+// actually ship to the App Store (see APP_STORE_FRAMEWORKS in claims.ts). These
+// canaries pin a representative rule from three non-App-Store surfaces (web
+// a11y attribute, Android a11y attribute, CSS) so a future edit can't silently
+// tag them with `claims` and change what counts as claim evidence.
+describe("claim tags stay off non-App-Store rules", () => {
+  test("aria-label (web/tsx) has no claims", () => {
+    const m = detectPatterns(`<button aria-label="x" />`, "Button.tsx");
+    const hit = m.find(x => x.pattern === "aria-label");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
+  });
+  test("contentDescription (Kotlin) has no claims", () => {
+    const m = detectPatterns(`contentDescription = "x"`, "View.kt");
+    const hit = m.find(x => x.pattern === "contentDescription");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
+  });
+  test("hardcoded hex in CSS has no claims", () => {
+    const m = detectPatterns(`.a { color: #fff; }`, "styles.css");
+    const hit = m.find(x => x.pattern === "hardcoded hex in CSS");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
   });
 });
