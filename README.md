@@ -2,12 +2,24 @@
 
 Agent-native Apple Human Interface Guidelines: a structured index of Apple's HIG delivered as Claude Skills, with an MCP server and a universal compliance auditor as the verification loop. Built for AI coding agents; usable by humans.
 
+[![GitHub stars](https://img.shields.io/github/stars/raintree-technology/hig-doctor?style=social)](https://github.com/raintree-technology/hig-doctor/stargazers)
+
 - **Skills corpus** — 15 skills and 159 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot re-verified against the live HIG on 2026-07-08; includes the WWDC 2025 "Liquid Glass" overhaul and the WWDC 2026 / iOS 27 day-one updates (Siri AI, Snippets, reintroduced Design principles, Liquid Glass refinements). Canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 - **MCP server** — stdio Model Context Protocol server exposing `hig_list_skills`, `hig_lookup`, and `hig_audit` for Claude Desktop, Cursor, Windsurf, and Claude Code.
 - **Audit CLI** — universal HIG compliance scanner across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, HTML). Emits severity-bucketed markdown/JSON with a pass/fail CI gate.
 - **Accessibility Nutrition Label readiness** — every audit scores all nine App Store accessibility claims (VoiceOver, Voice Control, Larger Text, Dark Interface, Differentiate Without Color Alone, Sufficient Contrast, Reduced Motion, Captions, Audio Descriptions) from claim-tagged rule evidence. Declare intended claims in `.hig-doctor/accessibility-claims.json` and gate CI with `--fail-on-claims`. Signals are heuristics, not certification — verify manually before declaring in App Store Connect.
 
 Content is © Apple Inc.; this repository provides organization, cross-referencing, and detection rules for AI agent use. MIT-licensed for structure and tooling.
+
+## Star History
+
+<a href="https://star-history.com/#raintree-technology/hig-doctor&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=raintree-technology/hig-doctor&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=raintree-technology/hig-doctor&type=Date" />
+    <img alt="Star history chart for raintree-technology/hig-doctor" src="https://api.star-history.com/svg?repos=raintree-technology/hig-doctor&type=Date" />
+  </picture>
+</a>
 
 ## Install as a Claude Code plugin
 
