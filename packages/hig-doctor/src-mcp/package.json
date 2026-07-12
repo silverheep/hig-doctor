@@ -1,6 +1,6 @@
 {
   "name": "hig-mcp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "MCP server exposing Apple HIG skills and audit tool for AI coding agents",
   "type": "module",
   "bin": {

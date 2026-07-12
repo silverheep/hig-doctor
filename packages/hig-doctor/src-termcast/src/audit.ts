@@ -3,6 +3,7 @@ import { scanProject, type ScanResult } from "./scanner";
 import { detectPatterns, type PatternMatch } from "./patterns";
 import { categorizeMatches, type CategorySummary } from "./categorizer";
 import { generateAuditMarkdown, loadSkillContent } from "./audit-generator";
+import { loadDeclaredClaims, extractStatedClaims, evaluateClaims, type ClaimsEvaluation } from "./claims";
 import { resolve, join } from "node:path";
 import { access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -20,6 +21,7 @@ export interface AuditResult {
   scanResult: ScanResult;
   allMatches: PatternMatch[];
   categories: CategorySummary[];
+  claims: ClaimsEvaluation;
   markdown: string;
 }
 
@@ -39,6 +41,19 @@ export async function audit(directory: string, skillsDir?: string, options: Audi
 
   // 3. Categorize
   const categories = categorizeMatches(allMatches);
+
+  // 3b. Evaluate Nutrition Label claim readiness (throws ClaimsConfigError on
+  // a malformed .hig-doctor/accessibility-claims.json — callers surface it as
+  // a usage error, not a crash).
+  const declared = await loadDeclaredClaims(resolvedDir);
+  const stated = extractStatedClaims(scanResult.docFiles);
+  const claims = evaluateClaims({
+    matches: allMatches,
+    frameworks: scanResult.frameworks,
+    declared: declared?.claims ?? [],
+    configPath: declared?.path ?? null,
+    stated,
+  });
 
   // 4. Try to load skill content
   let resolvedSkillsDir: string | null = null;
@@ -72,7 +87,7 @@ export async function audit(directory: string, skillsDir?: string, options: Audi
   }
 
   // 5. Generate markdown
-  const markdown = generateAuditMarkdown(scanResult, categories, resolvedSkillsDir, skillContents);
+  const markdown = generateAuditMarkdown(scanResult, categories, resolvedSkillsDir, skillContents, claims);
 
-  return { scanResult, allMatches, categories, markdown };
+  return { scanResult, allMatches, categories, claims, markdown };
 }

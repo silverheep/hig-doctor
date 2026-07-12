@@ -10,7 +10,8 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - website/components/AuditDemo.tsx (the "same N rules" copy)
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
-const EXPECTED_RULE_COUNT = 359;
+//   - packages/hig-doctor/src-termcast/README.md
+const EXPECTED_RULE_COUNT = 380;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
 });
@@ -772,5 +773,160 @@ describe("regression — Swift @State matcher & severity downgrades", () => {
     expect(swift.find(m => m.pattern === "onTapGesture without traits")?.severity).toBe("moderate");
     const css = detectPatterns(`.a:hover { color: red; }`, "x.css");
     expect(css.find(m => m.pattern === "hover without focus")?.severity).toBe("moderate");
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// NUTRITION LABEL CLAIM TAGS
+// ════════════════════════════════════════════════════════════════
+describe("claim tags", () => {
+  test("propagates claim tags on Swift accessibility positives", () => {
+    const matches = detectPatterns(`.accessibilityLabel("Close")`, "View.swift");
+    const m = matches.find(m => m.pattern === "accessibilityLabel");
+    expect(m?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+  test("claim-tagged concern keeps its severity", () => {
+    const matches = detectPatterns(`.font(.system(size: 14))`, "View.swift");
+    const m = matches.find(m => m.pattern === "hardcodedFontSize");
+    expect(m?.claims).toEqual(["larger-text"]);
+    expect(m?.severity).toBe("moderate");
+  });
+  test("untagged rules carry no claims field", () => {
+    const matches = detectPatterns(`TabView {}`, "View.swift");
+    const m = matches.find(m => m.pattern === "TabView");
+    expect(m?.claims).toBeUndefined();
+  });
+  test("tags React Native and Flutter accessibility rules", () => {
+    const rn = detectPatterns(`<Pressable accessibilityLabel="Send" />`, "App.tsx");
+    expect(rn.find(m => m.pattern === "accessibilityLabel")?.claims).toEqual(["voiceover", "voice-control"]);
+    const fl = detectPatterns(`Semantics(label: "Send", child: button)`, "app.dart");
+    expect(fl.find(m => m.pattern === "Semantics widget")?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+  test("tags dark-interface on Swift color rules", () => {
+    const matches = detectPatterns(`.preferredColorScheme(.dark)`, "View.swift");
+    expect(matches.find(m => m.pattern === "preferredColorScheme")?.claims).toEqual(["dark-interface"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// SWIFT — Nutrition Label claim evidence rules
+// ════════════════════════════════════════════════════════════════
+describe("claim evidence — Swift", () => {
+  test("detects dynamicTypeSize as larger-text evidence", () => {
+    const a = detectPatterns(`.dynamicTypeSize(.large ... .accessibility3)`, "V.swift");
+    expect(a.find(m => m.pattern === "dynamicTypeSize")?.claims).toEqual(["larger-text"]);
+    const b = detectPatterns(`@Environment(\\.dynamicTypeSize) var size`, "V.swift");
+    expect(b.some(m => m.pattern === "dynamicTypeSize")).toBe(true);
+  });
+  test("detects UIKit Dynamic Type adoption", () => {
+    const m = detectPatterns(`label.adjustsFontForContentSizeCategory = true\nlabel.font = UIFont.preferredFont(forTextStyle: .body)`, "VC.swift");
+    expect(m.some(x => x.pattern === "adjustsFontForContentSizeCategory")).toBe(true);
+    expect(m.some(x => x.pattern === "preferredFont(forTextStyle:)")).toBe(true);
+  });
+  test("flags aggressive minimumScaleFactor", () => {
+    const bad = detectPatterns(`.minimumScaleFactor(0.4)`, "V.swift");
+    expect(bad.some(m => m.pattern === "minimumScaleFactor below 0.5" && m.type === "concern" && m.severity === "moderate")).toBe(true);
+    const ok = detectPatterns(`.minimumScaleFactor(0.8)`, "V.swift");
+    expect(ok.some(m => m.pattern === "minimumScaleFactor below 0.5")).toBe(false);
+  });
+  test("animation without Reduce Motion check fires once per unguarded file", () => {
+    const bad = detectPatterns(`withAnimation { x = 1 }\nwithAnimation { y = 2 }`, "V.swift");
+    expect(bad.filter(m => m.pattern === "animation without Reduce Motion check").length).toBe(1);
+    const good = detectPatterns(`@Environment(\\.accessibilityReduceMotion) var reduce\nwithAnimation { x = 1 }`, "V.swift");
+    expect(good.some(m => m.pattern === "animation without Reduce Motion check")).toBe(false);
+    const uikit = detectPatterns(`if UIAccessibility.isReduceMotionEnabled { }\nUIView.animate(withDuration: 0.3) {}`, "VC.swift");
+    expect(uikit.some(m => m.pattern === "animation without Reduce Motion check")).toBe(false);
+  });
+  test("detects contrast and differentiate-without-color checks", () => {
+    const m = detectPatterns(`@Environment(\\.accessibilityDifferentiateWithoutColor) var dwc\nif UIAccessibility.isDarkerSystemColorsEnabled {}`, "V.swift");
+    expect(m.find(x => x.pattern === "differentiate without color check")?.claims).toEqual(["differentiate-without-color"]);
+    expect(m.find(x => x.pattern === "increase contrast check")?.claims).toEqual(["sufficient-contrast"]);
+  });
+  test("detects caption/audio-description media selection", () => {
+    const m = detectPatterns(`let g = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible)\nopts.describesVideo`, "Player.swift");
+    expect(m.find(x => x.pattern === "caption media selection")?.claims).toEqual(["captions"]);
+    expect(m.find(x => x.pattern === "audio description media selection")?.claims).toEqual(["audio-descriptions"]);
+  });
+  test("flags AVPlayer without caption selection, once per file", () => {
+    const bad = detectPatterns(`let p = AVPlayer(url: url)\nlet q = AVPlayer(url: other)`, "Player.swift");
+    expect(bad.filter(m => m.pattern === "AVPlayer without caption selection").length).toBe(1);
+    const good = detectPatterns(`let p = AVPlayer(url: url)\nitem.select(option, in: group) // textStyleRules applied\nlet r = AVTextStyleRule(textMarkupAttributes: [:])\nplayer.currentItem?.textStyleRules = [r]`, "Player.swift");
+    expect(good.some(m => m.pattern === "AVPlayer without caption selection")).toBe(false);
+    const unrelated = detectPatterns(`let p = AVPlayer(url: url)\nviewModel.select(item)`, "Player.swift");
+    expect(unrelated.filter(m => m.pattern === "AVPlayer without caption selection").length).toBe(1);
+  });
+  test("detects VoiceOver announcements and element grouping", () => {
+    const m = detectPatterns(`UIAccessibility.post(notification: .announcement, argument: "Saved")\n.accessibilityElement(children: .combine)`, "V.swift");
+    expect(m.some(x => x.pattern === "VoiceOver announcement")).toBe(true);
+    expect(m.find(x => x.pattern === "accessibilityElement grouping")?.claims).toEqual(["voiceover", "voice-control"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// RN + FLUTTER — Nutrition Label claim evidence rules
+// ════════════════════════════════════════════════════════════════
+describe("claim evidence — React Native", () => {
+  test("flags allowFontScaling={false} as serious larger-text concern", () => {
+    const m = detectPatterns(`<Text allowFontScaling={false}>Hi</Text>`, "App.tsx");
+    const hit = m.find(x => x.pattern === "allowFontScaling false");
+    expect(hit?.type).toBe("concern");
+    expect(hit?.severity).toBe("serious");
+    expect(hit?.claims).toEqual(["larger-text"]);
+  });
+  test("detects RN reduce-motion and font-scale checks", () => {
+    const m = detectPatterns(`const rm = await AccessibilityInfo.isReduceMotionEnabled();\nconst s = PixelRatio.getFontScale();`, "App.ts");
+    expect(m.find(x => x.pattern === "reduce motion check (RN)")?.claims).toEqual(["reduced-motion"]);
+    expect(m.find(x => x.pattern === "font scale awareness (RN)")?.claims).toEqual(["larger-text"]);
+    const web = detectPatterns(`export const fontScale = 1.2;`, "tokens.ts");
+    expect(web.some(x => x.pattern === "font scale awareness (RN)")).toBe(false);
+  });
+});
+
+describe("claim evidence — Flutter", () => {
+  test("detects textScaler awareness, flags pinned scale as serious", () => {
+    const good = detectPatterns(`final scaler = MediaQuery.textScalerOf(context);`, "app.dart");
+    expect(good.find(x => x.pattern === "textScaler awareness")?.claims).toEqual(["larger-text"]);
+    const bad = detectPatterns(`MediaQueryData(textScaleFactor: 1.0)`, "app.dart");
+    const hit = bad.find(x => x.pattern === "fixed textScaleFactor");
+    expect(hit?.severity).toBe("serious");
+    const alsoBad = detectPatterns(`textScaler: TextScaler.noScaling`, "app.dart");
+    expect(alsoBad.some(x => x.pattern === "fixed textScaleFactor")).toBe(true);
+    const legit = detectPatterns(`MediaQueryData(textScaleFactor: 1.5)`, "app.dart");
+    expect(legit.some(x => x.pattern === "fixed textScaleFactor")).toBe(false);
+  });
+  test("detects disableAnimations, highContrast, boldText checks", () => {
+    const m = detectPatterns(`if (MediaQuery.of(context).disableAnimations) {}\nfinal hc = MediaQuery.highContrastOf(context);\nfinal bold = MediaQuery.boldTextOf(context);`, "app.dart");
+    expect(m.find(x => x.pattern === "disableAnimations check")?.claims).toEqual(["reduced-motion"]);
+    expect(m.find(x => x.pattern === "highContrast check")?.claims).toEqual(["sufficient-contrast"]);
+    expect(m.find(x => x.pattern === "boldText check")?.claims).toEqual(["larger-text"]);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// REGRESSION CANARIES — claim tags stay off non-App-Store rules
+// ════════════════════════════════════════════════════════════════
+// Nutrition Label claims should only ever attach to rules for frameworks that
+// actually ship to the App Store (see APP_STORE_FRAMEWORKS in claims.ts). These
+// canaries pin a representative rule from three non-App-Store surfaces (web
+// a11y attribute, Android a11y attribute, CSS) so a future edit can't silently
+// tag them with `claims` and change what counts as claim evidence.
+describe("claim tags stay off non-App-Store rules", () => {
+  test("aria-label (web/tsx) has no claims", () => {
+    const m = detectPatterns(`<button aria-label="x" />`, "Button.tsx");
+    const hit = m.find(x => x.pattern === "aria-label");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
+  });
+  test("contentDescription (Kotlin) has no claims", () => {
+    const m = detectPatterns(`contentDescription = "x"`, "View.kt");
+    const hit = m.find(x => x.pattern === "contentDescription");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
+  });
+  test("hardcoded hex in CSS has no claims", () => {
+    const m = detectPatterns(`.a { color: #fff; }`, "styles.css");
+    const hit = m.find(x => x.pattern === "hardcoded hex in CSS");
+    expect(hit).toBeDefined();
+    expect(hit?.claims).toBeUndefined();
   });
 });

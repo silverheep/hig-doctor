@@ -151,3 +151,22 @@ describe("scanProject — ignore patterns", () => {
     } finally { await rm(dir, { recursive: true }); }
   });
 });
+
+describe("scanProject — doc files", () => {
+  test("collects README and fastlane metadata, not other markdown", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "hig-scan-"));
+    try {
+      await writeFile(join(dir, "README.md"), "# App\nSupports VoiceOver.");
+      await writeFile(join(dir, "CHANGELOG.md"), "# 1.0");
+      await mkdir(join(dir, "fastlane", "metadata", "en-US"), { recursive: true });
+      await writeFile(join(dir, "fastlane", "metadata", "en-US", "description.txt"), "Fully supports Dynamic Type.");
+      await writeFile(join(dir, "App.swift"), "import SwiftUI");
+      const result = await scanProject(dir);
+      const docPaths = result.docFiles.map(f => f.relativePath).sort();
+      expect(docPaths).toEqual(["README.md", join("fastlane", "metadata", "en-US", "description.txt")].sort());
+      expect(result.codeFiles.some(f => f.relativePath === "App.swift")).toBe(true);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});

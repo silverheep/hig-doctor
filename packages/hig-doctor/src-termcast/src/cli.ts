@@ -3,6 +3,7 @@
 // which gets a `#!/usr/bin/env node` banner at build time. Dev usage invokes
 // this file explicitly via `bun src/cli.ts`.
 import { audit } from "./audit";
+import { ClaimsConfigError } from "./claims";
 import type { Severity } from "./patterns";
 import { writeFile } from "node:fs/promises";
 import { join, resolve, basename } from "node:path";
@@ -131,12 +132,14 @@ ${c.bold}Options:${c.reset}
   --json                Print results as JSON
   --fail-on <severity>  Exit 1 if any concern at/above severity is found
                         ${c.dim}(critical | serious | moderate)${c.reset}
+  --fail-on-claims      Exit 1 if a declared Nutrition Label claim is at risk
+                        ${c.dim}(declare claims in .hig-doctor/accessibility-claims.json)${c.reset}
   --exclude <glob>      Skip files matching a path glob ${c.dim}(repeatable, comma-ok)${c.reset}
                         ${c.dim}Also honors a .higauditignore file in the target dir${c.reset}
   --help, -h            Show this help
 
 ${c.bold}Exit codes:${c.reset}
-  ${c.dim}0${c.reset} clean (or no gate)   ${c.dim}1${c.reset} --fail-on gate tripped   ${c.dim}2${c.reset} usage error   ${c.dim}3${c.reset} internal error
+  ${c.dim}0${c.reset} clean (or no gate)   ${c.dim}1${c.reset} --fail-on/--fail-on-claims gate tripped   ${c.dim}2${c.reset} usage error   ${c.dim}3${c.reset} internal error
 
 ${c.bold}Examples:${c.reset}
   ${c.dim}# Audit a Next.js project${c.reset}
@@ -156,13 +159,24 @@ ${c.bold}Examples:${c.reset}
   }
 
   const failOn = parseFailOn(flags, args);
+  const failOnClaims = flags.has("--fail-on-claims");
   const exclude = parseExclude(args);
 
   const s = spinner();
   const appName = basename(resolve(directory));
   s.update(`Scanning ${c.bold}${appName}${c.reset}...`);
 
-  const result = await audit(directory, skillsDir, { exclude });
+  let result;
+  try {
+    result = await audit(directory, skillsDir, { exclude });
+  } catch (e) {
+    if (e instanceof ClaimsConfigError) {
+      if (isTTY) process.stderr.write("\r\x1b[K");
+      process.stderr.write(`\n${c.red}Error:${c.reset} ${e.message}\n`);
+      process.exit(2);
+    }
+    throw e;
+  }
   const { categories, scanResult, allMatches, markdown } = result;
 
   s.done(`Scanned ${c.bold}${scanResult.codeFiles.length}${c.reset} code + ${c.bold}${scanResult.styleFiles.length}${c.reset} style files`);
@@ -176,11 +190,13 @@ ${c.bold}Examples:${c.reset}
   const totalModerate = categories.reduce((s, cat) => s + cat.moderate, 0);
   const totalDetections = allMatches.length;
   const gateTripped = failOn !== null && exceedsThreshold(totalCritical, totalSerious, totalModerate, failOn);
+  const claimsGateTripped = failOnClaims && result.claims.applicable && result.claims.assessments.some(a => a.declared && a.signal === "at-risk");
+  const anyGateTripped = gateTripped || claimsGateTripped;
 
   // ── --stdout mode ───────────────────────────────────────────────
   if (flags.has("--stdout")) {
     process.stdout.write(markdown);
-    process.exit(gateTripped ? 1 : 0);
+    process.exit(anyGateTripped ? 1 : 0);
   }
 
   // ── --export mode ───────────────────────────────────────────────
@@ -188,7 +204,7 @@ ${c.bold}Examples:${c.reset}
     const outPath = join(resolve(directory), "hig-audit.md");
     await writeFile(outPath, markdown);
     process.stderr.write(`${c.green}✓${c.reset} Audit exported to ${c.bold}${outPath}${c.reset}\n`);
-    process.exit(gateTripped ? 1 : 0);
+    process.exit(anyGateTripped ? 1 : 0);
   }
 
   // ── --json mode ─────────────────────────────────────────────────
@@ -205,6 +221,27 @@ ${c.bold}Examples:${c.reset}
       totals: { concerns: totalConcerns, positives: totalPositives, patterns: totalPatterns },
       failOn,
       gateTripped,
+      failOnClaims,
+      claimsGateTripped,
+      claims: {
+        applicable: result.claims.applicable,
+        configPath: result.claims.configPath,
+        declared: result.claims.declaredClaims,
+        assessments: result.claims.assessments.map(a => ({
+          id: a.id,
+          label: a.label,
+          signal: a.signal,
+          declared: a.declared,
+          stated: a.stated.map(s => ({ file: s.file, line: s.line })),
+          supporting: a.supporting.length,
+          contradicting: a.contradicting.length,
+          examples: {
+            supporting: a.supporting.slice(0, 5),
+            contradicting: a.contradicting.slice(0, 5),
+          },
+          notes: a.notes,
+        })),
+      },
       categories: categories.map(cat => ({
         name: cat.label,
         skill: cat.skillName,
@@ -216,7 +253,7 @@ ${c.bold}Examples:${c.reset}
         files: cat.files,
       })),
     }, null, 2));
-    process.exit(gateTripped ? 1 : 0);
+    process.exit(anyGateTripped ? 1 : 0);
   }
 
   // ── Default: rich summary ───────────────────────────────────────
@@ -263,6 +300,37 @@ ${c.bold}Examples:${c.reset}
   if (totalPatterns > 0) process.stdout.write(`${c.dim}${totalPatterns} patterns${c.reset}`);
   process.stdout.write("\n");
 
+  // Nutrition Label scoreboard
+  process.stdout.write("\n");
+  if (!result.claims.applicable) {
+    process.stdout.write(`  ${c.dim}Nutrition Labels: n/a — no App-Store-shippable framework detected (SwiftUI/UIKit/React Native/Flutter).${c.reset}\n`);
+    if (failOnClaims) {
+      process.stdout.write(`  ${c.dim}--fail-on-claims: n/a — gate not evaluated for non-App-Store projects.${c.reset}\n`);
+    }
+  } else {
+    process.stdout.write(`  ${c.bold}Accessibility Nutrition Labels${c.reset} ${c.dim}(readiness signals — verify manually before declaring)${c.reset}\n`);
+    for (const a of result.claims.assessments) {
+      const glyph =
+        a.signal === "ready-signal" ? `${c.green}✓${c.reset}` :
+        a.signal === "partial" ? `${c.yellow}◐${c.reset}` :
+        a.signal === "at-risk" ? `${c.red}✗${c.reset}` :
+        `${c.dim}–${c.reset}`;
+      const label = a.label.length > 34 ? a.label.slice(0, 33) + "…" : a.label.padEnd(34);
+      const declared = a.declared ? `  ${c.cyan}[declared]${c.reset}` : "";
+      const counts = a.signal === "no-signal"
+        ? `${c.dim}no signal${c.reset}`
+        : `${c.green}${a.supporting.length} supporting${c.reset} · ${a.contradicting.length > 0 ? c.yellow : c.dim}${a.contradicting.length} contradicting${c.reset}`;
+      process.stdout.write(`  ${glyph} ${label} ${counts}${declared}\n`);
+      for (const note of a.notes) {
+        process.stdout.write(`      ${c.dim}${note}${c.reset}\n`);
+      }
+    }
+    if (failOnClaims) {
+      process.stdout.write(`  ${c.dim}--fail-on-claims${c.reset} · `);
+      process.stdout.write(claimsGateTripped ? `${c.red}gate tripped${c.reset}\n` : `${c.green}gate clean${c.reset}\n`);
+    }
+  }
+
   // Severity interpretation
   process.stdout.write("\n");
   const totalFiles = scanResult.codeFiles.length + scanResult.styleFiles.length;
@@ -290,7 +358,7 @@ ${c.bold}Examples:${c.reset}
   // Footer
   process.stdout.write(`\n  ${c.dim}Run with --export for a full report, or --stdout to pipe to an AI.${c.reset}\n\n`);
 
-  process.exit(gateTripped ? 1 : 0);
+  process.exit(anyGateTripped ? 1 : 0);
 }
 
 main().catch((e) => {

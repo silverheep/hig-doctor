@@ -2,9 +2,10 @@
 
 Agent-native Apple Human Interface Guidelines: a structured index of Apple's HIG delivered as Claude Skills, with an MCP server and a universal compliance auditor as the verification loop. Built for AI coding agents; usable by humans.
 
-- **Skills corpus** — 14 skills and 157 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot re-verified against the live HIG on 2026-07-08; includes the WWDC 2025 "Liquid Glass" overhaul and the WWDC 2026 / iOS 27 day-one updates (Siri AI, Snippets, reintroduced Design principles, Liquid Glass refinements). Canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
+- **Skills corpus** — 15 skills and 159 reference topics covering the complete HIG (foundations, components, patterns, inputs, platforms, technologies). Snapshot re-verified against the live HIG on 2026-07-08; includes the WWDC 2025 "Liquid Glass" overhaul and the WWDC 2026 / iOS 27 day-one updates (Siri AI, Snippets, reintroduced Design principles, Liquid Glass refinements). Canonical content remains at [developer.apple.com/design/human-interface-guidelines](https://developer.apple.com/design/human-interface-guidelines/).
 - **MCP server** — stdio Model Context Protocol server exposing `hig_list_skills`, `hig_lookup`, and `hig_audit` for Claude Desktop, Cursor, Windsurf, and Claude Code.
 - **Audit CLI** — universal HIG compliance scanner across 12 frameworks (SwiftUI, UIKit, React, Vue, Svelte, Angular, Compose, Android XML, React Native, Flutter, CSS, HTML). Emits severity-bucketed markdown/JSON with a pass/fail CI gate.
+- **Accessibility Nutrition Label readiness** — every audit scores all nine App Store accessibility claims (VoiceOver, Voice Control, Larger Text, Dark Interface, Differentiate Without Color Alone, Sufficient Contrast, Reduced Motion, Captions, Audio Descriptions) from claim-tagged rule evidence. Declare intended claims in `.hig-doctor/accessibility-claims.json` and gate CI with `--fail-on-claims`. Signals are heuristics, not certification — verify manually before declaring in App Store Connect.
 
 Content is © Apple Inc.; this repository provides organization, cross-referencing, and detection rules for AI agent use. MIT-licensed for structure and tooling.
 
@@ -50,7 +51,7 @@ Set `HIG_SKILLS_DIR` if you relocate the `skills/` folder.
 
 ## HIG Audit CLI
 
-Scan any project for Apple HIG compliance. Works with SwiftUI, UIKit, React, Next.js, Vue, Nuxt, Svelte, SvelteKit, Angular, React Native, Flutter, Jetpack Compose, Android XML, and plain HTML/CSS. Detects 359 patterns across accessibility, color systems, typography, responsive layout, dark mode, motion, i18n, and more.
+Scan any project for Apple HIG compliance. Works with SwiftUI, UIKit, React, Next.js, Vue, Nuxt, Svelte, SvelteKit, Angular, React Native, Flutter, Jetpack Compose, Android XML, and plain HTML/CSS. Detects 380 patterns across accessibility, color systems, typography, responsive layout, dark mode, motion, i18n, and more.
 
 Requires [Bun](https://bun.sh).
 
@@ -84,6 +85,7 @@ Example output:
 | `--stdout` | Print raw audit markdown to stdout (pipe to an AI for evaluation) |
 | `--json` | Print structured results as JSON (for CI/scripts) |
 | `--fail-on <severity>` | Exit 1 if any concern at/above `critical`, `serious`, or `moderate` is found |
+| `--fail-on-claims` | Exit 1 if a declared accessibility claim scans as at-risk |
 | `--help` | Show help |
 
 ### Severity model
@@ -208,6 +210,7 @@ npm run render    # out/hig-doctor-showcase.mp4 (1920x1080, 30fps, 21s)
 | `hig-components-search` | Search fields, page controls, path controls |
 | `hig-components-status` | Progress indicators, status bars, activity rings |
 | `hig-components-system` | Widgets, live activities, notifications, complications, app clips, app shortcuts |
+| `hig-accessibility-audit` | Accessibility Nutrition Label readiness: interpreting the audit's claim scoreboard and verifying claims before declaring in App Store Connect |
 
 Skills use progressive disclosure — agents load only the reference files they need.
 
@@ -216,7 +219,7 @@ Skills use progressive disclosure — agents load only the reference files they 
 ```
 hig-doctor/
 ├── .claude-plugin/marketplace.json       # Claude Code plugin manifest
-├── skills/                                # 14 Agent Skills (SKILL.md + references/)
+├── skills/                                # 15 Agent Skills (SKILL.md + references/)
 ├── packages/hig-doctor/
 │   ├── src/                               # Internal skill-structure validator (dev-only)
 │   ├── src-termcast/                      # Audit CLI (Bun, zero deps)

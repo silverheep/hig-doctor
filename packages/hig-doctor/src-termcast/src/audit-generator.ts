@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { ScanResult } from "./scanner";
 import type { CategorySummary } from "./categorizer";
+import { CLAIMS_DISCLAIMER, CLAIMS_CONFIG_RELPATH, type ClaimsEvaluation } from "./claims";
 
 function formatDate(): string {
   return new Date().toISOString().split("T")[0];
@@ -108,6 +109,7 @@ export function generateAuditMarkdown(
   categories: CategorySummary[],
   skillsDir: string | null,
   skillContents?: Map<string, string>,
+  claims?: ClaimsEvaluation,
 ): string {
   const lines: string[] = [];
   const appName = scanResult.directory.split("/").pop() || "App";
@@ -132,6 +134,11 @@ export function generateAuditMarkdown(
   const totalPatterns = categories.reduce((s, c) => s + c.patterns, 0);
   lines.push(`**Quick stats**: ${totalConcerns} potential concerns, ${totalPositives} positive patterns, ${totalPatterns} component usages detected across ${categories.length} HIG categories`);
   lines.push("");
+
+  if (claims) {
+    lines.push(renderClaimsSection(claims));
+    lines.push("");
+  }
 
   // Instructions
   lines.push("## Instructions for AI Evaluator");
@@ -200,6 +207,53 @@ export function generateAuditMarkdown(
   lines.push("| **Overall** | **/10** | |");
   lines.push("");
 
+  return lines.join("\n");
+}
+
+export function renderClaimsSection(claims: ClaimsEvaluation): string {
+  const lines: string[] = [];
+  lines.push("## Accessibility Nutrition Label Readiness");
+  lines.push("");
+  lines.push(`> ${CLAIMS_DISCLAIMER}`);
+  lines.push("");
+  if (!claims.applicable) {
+    lines.push("*Nutrition Labels apply to App Store apps — no App-Store-shippable framework detected (SwiftUI, UIKit, React Native, Flutter). Skipping readiness assessment.*");
+    lines.push("");
+    return lines.join("\n");
+  }
+  if (claims.configPath) {
+    lines.push(`Declared claims (from \`${CLAIMS_CONFIG_RELPATH}\`): ${claims.declaredClaims.length > 0 ? claims.declaredClaims.join(", ") : "none"}`);
+  } else {
+    lines.push(`No \`${CLAIMS_CONFIG_RELPATH}\` found — assessing readiness for all categories without declarations.`);
+  }
+  lines.push("");
+  lines.push("| Feature | Signal | Declared | Supporting | Contradicting |");
+  lines.push("|---------|--------|----------|------------|---------------|");
+  for (const a of claims.assessments) {
+    lines.push(`| ${a.label} | ${a.signal} | ${a.declared ? "yes" : "no"} | ${a.supporting.length} | ${a.contradicting.length} |`);
+  }
+  lines.push("");
+  for (const a of claims.assessments) {
+    if (a.signal === "no-signal" && a.notes.length === 0) continue;
+    lines.push(`### ${a.label} — ${a.signal}`);
+    lines.push("");
+    lines.push(`*Apple's bar: ${a.criterion}*${a.platformNote ? ` (${a.platformNote})` : ""}`);
+    lines.push("");
+    if (a.supporting.length > 0) {
+      lines.push(`Supporting evidence (${a.supporting.length}):`);
+      for (const e of a.supporting.slice(0, 5)) lines.push(`- \`${e.file}:${e.line}\` — ${e.pattern}`);
+      if (a.supporting.length > 5) lines.push(`- ... and ${a.supporting.length - 5} more`);
+      lines.push("");
+    }
+    if (a.contradicting.length > 0) {
+      lines.push(`Contradicting evidence (${a.contradicting.length}):`);
+      for (const e of a.contradicting.slice(0, 5)) lines.push(`- \`${e.file}:${e.line}\` — ${e.pattern}${e.severity ? ` (${e.severity})` : ""}`);
+      if (a.contradicting.length > 5) lines.push(`- ... and ${a.contradicting.length - 5} more`);
+      lines.push("");
+    }
+    for (const note of a.notes) lines.push(`- **Note:** ${note}`);
+    if (a.notes.length > 0) lines.push("");
+  }
   return lines.join("\n");
 }
 

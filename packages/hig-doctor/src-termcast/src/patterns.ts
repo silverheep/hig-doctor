@@ -4,6 +4,22 @@
 // hardcode a count in prose — import RULE_COUNT instead.
 export type Severity = "critical" | "serious" | "moderate";
 
+// App Store Accessibility Nutrition Label categories. Rules tagged with a
+// category contribute claim evidence: positive rules support the claim,
+// concern rules contradict it. Defined here (not in claims.ts) because this
+// module must stay import-free — website/lib/audit/patterns.ts is a
+// byte-identical copy.
+export type NutritionLabel =
+  | "voiceover"
+  | "voice-control"
+  | "larger-text"
+  | "dark-interface"
+  | "differentiate-without-color"
+  | "sufficient-contrast"
+  | "reduced-motion"
+  | "captions"
+  | "audio-descriptions";
+
 export interface PatternMatch {
   category: string;
   subcategory: string;
@@ -13,6 +29,7 @@ export interface PatternMatch {
   lineContent: string;
   file: string;
   severity?: Severity;
+  claims?: NutritionLabel[];
 }
 
 interface PatternRule {
@@ -28,6 +45,7 @@ interface PatternRule {
                       // a child/sibling element (e.g. a <video> with a <track>).
   requireAbsent?: RegExp; // document scope only: fire just once, and only if this
                           // pattern appears nowhere in the file (file-level signal).
+  claims?: NutritionLabel[]; // Nutrition Label categories this rule evidences (positive=supports, concern=contradicts)
 }
 
 // Severity classification for concern-type rules.
@@ -70,6 +88,8 @@ const SERIOUS_CONCERNS = new Set<string>([
   "(click) without (keydown)",
   "clickable without Role",
   "nested touchables",
+  "allowFontScaling false",
+  "fixed textScaleFactor",
 ]);
 
 export function severityFor(pattern: string): Severity {
@@ -110,36 +130,52 @@ const swiftRules: PatternRule[] = [
   { category: "components-layout", subcategory: "layout", type: "positive", pattern: "adaptiveLayout", regex: /\.adaptive\(minimum:/, fileFilter: SWIFT },
 
   // Color
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedColor", regex: /\.(foregroundColor|foregroundStyle|tint)\(\.(red|blue|green|yellow|orange|purple|pink|white|black)\)/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedRGBColor", regex: /Color\(\s*red:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedUIColor", regex: /UIColor\(\s*red:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcoded Color(uiColor:)", regex: /Color\(\s*uiColor:\s*UIColor\(\s*red:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "semanticColor", regex: /\.(primary|secondary)\b|Color\.accentColor|\.tint\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "foregroundStyle", regex: /\.foregroundStyle\(\.(primary|secondary|tertiary|quaternary)\)/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "assetCatalogColor", regex: /Color\(\s*"[^"]+"\s*\)/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedColor", regex: /\.(foregroundColor|foregroundStyle|tint)\(\.(red|blue|green|yellow|orange|purple|pink|white|black)\)/, fileFilter: SWIFT, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedRGBColor", regex: /Color\(\s*red:/, fileFilter: SWIFT, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcodedUIColor", regex: /UIColor\(\s*red:/, fileFilter: SWIFT, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcoded Color(uiColor:)", regex: /Color\(\s*uiColor:\s*UIColor\(\s*red:/, fileFilter: SWIFT, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "semanticColor", regex: /\.(primary|secondary)\b|Color\.accentColor|\.tint\(/, fileFilter: SWIFT, claims: ["dark-interface", "sufficient-contrast"] },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "foregroundStyle", regex: /\.foregroundStyle\(\.(primary|secondary|tertiary|quaternary)\)/, fileFilter: SWIFT, claims: ["dark-interface", "sufficient-contrast"] },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "assetCatalogColor", regex: /Color\(\s*"[^"]+"\s*\)/, fileFilter: SWIFT, claims: ["dark-interface"] },
 
   // Typography
-  { category: "foundations", subcategory: "typography", type: "positive", pattern: "dynamicTypeStyle", regex: /\.font\(\.(extraLargeTitle|extraLargeTitle2|largeTitle|title|title2|title3|headline|subheadline|body|callout|footnote|caption|caption2)\)/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedFontSize", regex: /\.font\(\.system\(size:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedUIFont", regex: /UIFont\.\s*systemFont\(ofSize:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "typography", type: "positive", pattern: "scaledMetric", regex: /@ScaledMetric/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "typography", type: "positive", pattern: "dynamicTypeStyle", regex: /\.font\(\.(extraLargeTitle|extraLargeTitle2|largeTitle|title|title2|title3|headline|subheadline|body|callout|footnote|caption|caption2)\)/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedFontSize", regex: /\.font\(\.system\(size:/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcodedUIFont", regex: /UIFont\.\s*systemFont\(ofSize:/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "typography", type: "positive", pattern: "scaledMetric", regex: /@ScaledMetric/, fileFilter: SWIFT, claims: ["larger-text"] },
 
   // Accessibility
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityLabel", regex: /\.accessibilityLabel\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHint", regex: /\.accessibilityHint\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHidden", regex: /\.accessibilityHidden\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityAddTraits", regex: /\.accessibilityAddTraits\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityValue", regex: /\.accessibilityValue\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityAction", regex: /\.accessibilityAction\(/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "reduceMotion", regex: /accessibilityReduceMotion/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityLabel", regex: /\.accessibilityLabel\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHint", regex: /\.accessibilityHint\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHidden", regex: /\.accessibilityHidden\(/, fileFilter: SWIFT, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityAddTraits", regex: /\.accessibilityAddTraits\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityValue", regex: /\.accessibilityValue\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityAction", regex: /\.accessibilityAction\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "reduceMotion", regex: /accessibilityReduceMotion/, fileFilter: SWIFT, claims: ["reduced-motion"] },
   // Swift accessibility concerns
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "onTapGesture without traits", regex: /\.onTapGesture\s*\{/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "Image without a11y", regex: /\bImage\(\s*systemName:/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "isAccessibilityElement false on interactive", regex: /\.isAccessibilityElement\s*=\s*false/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "onTapGesture without traits", regex: /\.onTapGesture\s*\{/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "Image without a11y", regex: /\bImage\(\s*systemName:/, fileFilter: SWIFT, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "isAccessibilityElement false on interactive", regex: /\.isAccessibilityElement\s*=\s*false/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
+  // Nutrition Label claim evidence (Accessibility Nutrition Labels, App Store Connect)
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "dynamicTypeSize", regex: /\.dynamicTypeSize\(|@Environment\(\\\.dynamicTypeSize\)/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "adjustsFontForContentSizeCategory", regex: /adjustsFontForContentSizeCategory\s*=\s*true/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "preferredFont(forTextStyle:)", regex: /UIFont\.preferredFont\(\s*forTextStyle:/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "minimumScaleFactor below 0.5", regex: /\.minimumScaleFactor\(\s*0?\.[0-4]/, fileFilter: SWIFT, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "isReduceMotionEnabled (UIKit)", regex: /UIAccessibility\.isReduceMotionEnabled/, fileFilter: SWIFT, claims: ["reduced-motion"] },
+  // Fires once per file that animates without ever consulting Reduce Motion.
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "animation without Reduce Motion check", regex: /\bwithAnimation\b|UIView\.animate\(|\.animation\(/, fileFilter: SWIFT, scope: "document", requireAbsent: /accessibilityReduceMotion|isReduceMotionEnabled/, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "increase contrast check", regex: /accessibilityContrast|isDarkerSystemColorsEnabled|colorSchemeContrast/, fileFilter: SWIFT, claims: ["sufficient-contrast"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "differentiate without color check", regex: /accessibilityDifferentiateWithoutColor|shouldDifferentiateWithoutColor/, fileFilter: SWIFT, claims: ["differentiate-without-color"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "caption media selection", regex: /AVMediaCharacteristic\.legible|textStyleRules/, fileFilter: SWIFT, claims: ["captions"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "audio description media selection", regex: /describesVideo/, fileFilter: SWIFT, claims: ["audio-descriptions"] },
+  // Fires once per file that creates players without any caption plumbing.
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "AVPlayer without caption selection", regex: /\bAVPlayer(?:ViewController)?\b/, fileFilter: SWIFT, scope: "document", requireAbsent: /AVMediaCharacteristic\.legible|textStyleRules|selectMediaOption|\.select\([^)]*,\s*in:/, claims: ["captions"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "VoiceOver announcement", regex: /UIAccessibility\.post\(|AccessibilityNotification\./, fileFilter: SWIFT, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityElement grouping", regex: /\.accessibilityElement\(/, fileFilter: SWIFT, claims: ["voiceover", "voice-control"] },
 
   // Dark mode
-  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "colorScheme", regex: /@Environment\(\\\.colorScheme\)/, fileFilter: SWIFT },
-  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "preferredColorScheme", regex: /\.preferredColorScheme\(/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "colorScheme", regex: /@Environment\(\\\.colorScheme\)/, fileFilter: SWIFT, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "preferredColorScheme", regex: /\.preferredColorScheme\(/, fileFilter: SWIFT, claims: ["dark-interface"] },
 
   // Controls
   { category: "components-controls", subcategory: "controls", type: "pattern", pattern: "Button", regex: /\bButton\s*[{(]/, fileFilter: SWIFT },
@@ -600,12 +636,12 @@ const androidXmlRules: PatternRule[] = [
 // REACT NATIVE RULES (~15 rules)
 // ════════════════════════════════════════════════════════════════
 const reactNativeRules: PatternRule[] = [
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityLabel", regex: /accessibilityLabel=/, fileFilter: TSX_JSX },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityRole", regex: /accessibilityRole=/, fileFilter: TSX_JSX },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHint", regex: /accessibilityHint=/, fileFilter: TSX_JSX },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityState", regex: /accessibilityState=/, fileFilter: TSX_JSX },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessible={true}", regex: /accessible=\{true\}/, fileFilter: TSX_JSX },
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "useColorScheme", regex: /useColorScheme\b/, fileFilter: TS_JS },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityLabel", regex: /accessibilityLabel=/, fileFilter: TSX_JSX, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityRole", regex: /accessibilityRole=/, fileFilter: TSX_JSX, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityHint", regex: /accessibilityHint=/, fileFilter: TSX_JSX, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessibilityState", regex: /accessibilityState=/, fileFilter: TSX_JSX, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "accessible={true}", regex: /accessible=\{true\}/, fileFilter: TSX_JSX, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "useColorScheme", regex: /useColorScheme\b/, fileFilter: TS_JS, claims: ["dark-interface"] },
   { category: "foundations", subcategory: "layout", type: "positive", pattern: "useWindowDimensions", regex: /useWindowDimensions\b/, fileFilter: TS_JS },
   { category: "components-layout", subcategory: "navigation", type: "pattern", pattern: "React Navigation", regex: /createNativeStackNavigator|createBottomTabNavigator|NavigationContainer/, fileFilter: TS_JS },
   { category: "components-layout", subcategory: "layout", type: "pattern", pattern: "FlatList", regex: /\bFlatList\b/, fileFilter: TSX_JSX },
@@ -613,7 +649,11 @@ const reactNativeRules: PatternRule[] = [
   { category: "components-layout", subcategory: "layout", type: "pattern", pattern: "SafeAreaView", regex: /\bSafeAreaView\b/, fileFilter: TSX_JSX },
   { category: "inputs", subcategory: "gestures", type: "pattern", pattern: "Gesture handler", regex: /PanGestureHandler|TapGestureHandler|GestureDetector/, fileFilter: TSX_JSX },
   { category: "patterns", subcategory: "haptics", type: "pattern", pattern: "Haptics", regex: /Haptics\.|expo-haptics/, fileFilter: TS_JS },
-  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "nested touchables", regex: /accessible=\{true\}[\s\S]*?<Touchable/, fileFilter: TSX_JSX },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "nested touchables", regex: /accessible=\{true\}[\s\S]*?<Touchable/, fileFilter: TSX_JSX, claims: ["voiceover"] },
+  // Nutrition Label claim evidence
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "allowFontScaling false", regex: /allowFontScaling=\{?\s*false/, fileFilter: TSX_JSX, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "reduce motion check (RN)", regex: /AccessibilityInfo\.isReduceMotionEnabled/, fileFilter: TS_JS, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "font scale awareness (RN)", regex: /PixelRatio\.getFontScale|useWindowDimensions\(\)\.fontScale/, fileFilter: TS_JS, claims: ["larger-text"] },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -621,20 +661,20 @@ const reactNativeRules: PatternRule[] = [
 // ════════════════════════════════════════════════════════════════
 const flutterRules: PatternRule[] = [
   // Accessibility
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "Semantics widget", regex: /\bSemantics\(/, fileFilter: DART },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "ExcludeSemantics", regex: /\bExcludeSemantics\(/, fileFilter: DART },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "MergeSemantics", regex: /\bMergeSemantics\(/, fileFilter: DART },
-  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "semanticLabel", regex: /semanticLabel:/, fileFilter: DART },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "Semantics widget", regex: /\bSemantics\(/, fileFilter: DART, claims: ["voiceover", "voice-control"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "ExcludeSemantics", regex: /\bExcludeSemantics\(/, fileFilter: DART, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "MergeSemantics", regex: /\bMergeSemantics\(/, fileFilter: DART, claims: ["voiceover"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "semanticLabel", regex: /semanticLabel:/, fileFilter: DART, claims: ["voiceover", "voice-control"] },
   // Color
-  { category: "foundations", subcategory: "color", type: "positive", pattern: "Theme color", regex: /Theme\.of\(context\)\.colorScheme/, fileFilter: DART },
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcoded Color", regex: /Color\(0x[0-9a-fA-F]+\)/, fileFilter: DART },
-  { category: "foundations", subcategory: "color", type: "concern", pattern: "Colors.red/blue", regex: /Colors\.(red|blue|green|yellow|orange|purple|pink|white|black|grey)\b/, fileFilter: DART },
+  { category: "foundations", subcategory: "color", type: "positive", pattern: "Theme color", regex: /Theme\.of\(context\)\.colorScheme/, fileFilter: DART, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "hardcoded Color", regex: /Color\(0x[0-9a-fA-F]+\)/, fileFilter: DART, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "color", type: "concern", pattern: "Colors.red/blue", regex: /Colors\.(red|blue|green|yellow|orange|purple|pink|white|black|grey)\b/, fileFilter: DART, claims: ["dark-interface"] },
   // Typography
-  { category: "foundations", subcategory: "typography", type: "positive", pattern: "Theme text style", regex: /Theme\.of\(context\)\.textTheme/, fileFilter: DART },
-  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcoded fontSize", regex: /fontSize:\s*\d+/, fileFilter: DART },
+  { category: "foundations", subcategory: "typography", type: "positive", pattern: "Theme text style", regex: /Theme\.of\(context\)\.textTheme/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "typography", type: "concern", pattern: "hardcoded fontSize", regex: /fontSize:\s*\d+/, fileFilter: DART, claims: ["larger-text"] },
   // Dark mode
-  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "brightness detection", regex: /MediaQuery\.of\(context\)\.platformBrightness/, fileFilter: DART },
-  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "darkTheme", regex: /darkTheme:/, fileFilter: DART },
+  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "brightness detection", regex: /MediaQuery\.of\(context\)\.platformBrightness/, fileFilter: DART, claims: ["dark-interface"] },
+  { category: "foundations", subcategory: "darkMode", type: "positive", pattern: "darkTheme", regex: /darkTheme:/, fileFilter: DART, claims: ["dark-interface"] },
   // Layout
   { category: "foundations", subcategory: "layout", type: "positive", pattern: "MediaQuery responsive", regex: /MediaQuery\.of\(context\)\.size/, fileFilter: DART },
   { category: "foundations", subcategory: "layout", type: "positive", pattern: "LayoutBuilder", regex: /\bLayoutBuilder\b/, fileFilter: DART },
@@ -647,6 +687,12 @@ const flutterRules: PatternRule[] = [
   { category: "components-controls", subcategory: "controls", type: "pattern", pattern: "ElevatedButton", regex: /\bElevatedButton\b/, fileFilter: DART },
   // i18n
   { category: "patterns", subcategory: "i18n", type: "positive", pattern: "Flutter l10n", regex: /AppLocalizations|flutter_localizations|intl/, fileFilter: DART },
+  // Nutrition Label claim evidence
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "textScaler awareness", regex: /MediaQuery\.textScalerOf|\.textScaler\b(?!:)|textScaleFactorOf/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "concern", pattern: "fixed textScaleFactor", regex: /textScale(?:Factor:\s*1(?:\.0)?(?![.\d])|r:\s*TextScaler\.noScaling)/, fileFilter: DART, claims: ["larger-text"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "disableAnimations check", regex: /disableAnimations/, fileFilter: DART, claims: ["reduced-motion"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "highContrast check", regex: /highContrast/, fileFilter: DART, claims: ["sufficient-contrast"] },
+  { category: "foundations", subcategory: "accessibility", type: "positive", pattern: "boldText check", regex: /\bboldText/, fileFilter: DART, claims: ["larger-text"] },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -781,6 +827,7 @@ export function detectPatterns(code: string, file: string): PatternMatch[] {
           lineContent: rawLines[i].trim(),
           file,
           severity: rule.type === "concern" ? severityFor(rule.pattern) : undefined,
+          ...(rule.claims ? { claims: rule.claims } : {}),
         });
       }
     }
@@ -825,6 +872,7 @@ export function detectPatterns(code: string, file: string): PatternMatch[] {
           lineContent: (rawLines[lineNo - 1] ?? "").trim(),
           file,
           severity: rule.type === "concern" ? severityFor(rule.pattern) : undefined,
+          ...(rule.claims ? { claims: rule.claims } : {}),
         });
         if (rule.requireAbsent) break; // file-level: one finding is enough
         if (m.index === re.lastIndex) re.lastIndex++; // never spin on a zero-width match

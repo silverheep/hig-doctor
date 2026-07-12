@@ -5,6 +5,23 @@ All notable changes to `hig-doctor` (the Apple HIG audit CLI) are documented her
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-07-11
+
+### Added
+
+- Accessibility Nutrition Label claim scanning: 21 new claim-tagged rules
+  (RULE_COUNT 359 → 380) evaluating readiness for all nine App Store
+  accessibility claims (VoiceOver, Voice Control, Larger Text, Dark Interface,
+  Differentiate Without Color Alone, Sufficient Contrast, Reduced Motion,
+  Captions, Audio Descriptions).
+- Readiness scoreboard in terminal, markdown, and JSON output, built from
+  claim-tagged rule evidence.
+- `.hig-doctor/accessibility-claims.json` for declaring intended App Store
+  accessibility claims, plus stated-claim extraction from README and fastlane
+  metadata.
+- `--fail-on-claims` CI gate that exits non-zero when a declared claim scans
+  as at-risk.
+
 ## [1.1.0] - 2026-07-08
 
 Rules verified against the post-WWDC 2026 (iOS 27) Human Interface Guidelines.
