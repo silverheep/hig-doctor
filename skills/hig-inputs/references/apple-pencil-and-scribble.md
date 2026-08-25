@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/apple-penc
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Apple Pencil and Scribble
@@ -38,7 +38,7 @@ For details on Apple Pencil features and compatibility, see [Apple Pencil](https
 
 **Consider using hover to support relevant interactions close to where people are marking.** For example, you might respond to hover by displaying a contextual menu of tool sizes when people perform a gesture like [Squeeze](https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble#Squeeze) or press a modifier key on an attached keyboard. Revealing a menu near where people are marking lets them make choices without moving Apple Pencil or their hands to another part of the screen.
 
-**Prefer showing hover previews for Apple Pencil, not for a pointing device.** Although a pointing device can also respond to hover gestures, it might be confusing to provide the same visual feedback for both devices. If it makes sense in your app, you can restrict your hover preview to Apple Pencil only. For developer guidance, see [Adopting hover support for Apple Pencil](https://developer.apple.com/documentation/UIKit/adopting-hover-support-for-apple-pencil).
+**Prefer showing hover previews for Apple Pencil, not for a pointing device.** Although a pointing device can also respond to hover gestures, it might be confusing to provide the same visual feedback for both devices. If it makes sense in your app, you can restrict your hover preview to Apple Pencil only. For developer guidance, see [Adopting hover support for Apple Pencil](https://developer.apple.com/documentation/uikit/adopting-hover-support-for-apple-pencil).
 
 ## Double tap
 
@@ -72,7 +72,7 @@ With Scribble and Apple Pencil, people can simply write wherever text is accepte
 
 **Make text entry feel fluid and effortless.** By default, Scribble works in all standard text components — such as text fields, text views, search fields, and editable fields in web content — except password fields. If you use a custom text field in your app, avoid making people tap or select it before they can begin writing.
 
-**Make Scribble available everywhere people might want to enter text.** Unlike using the keyboard, using Apple Pencil encourages people to treat the screen the way they treat a sheet of paper. Help strengthen this perception in your app by making Scribble consistently available in places where text entry seems natural. For example, in Reminders, it’s natural for people to create a new reminder by writing it in the blank space below the last item, even though the area doesn’t contain a text field. For developer guidance, see [UIIndirectScribbleInteraction](https://developer.apple.com/documentation/UIKit/UIIndirectScribbleInteraction-1nfjm).
+**Make Scribble available everywhere people might want to enter text.** Unlike using the keyboard, using Apple Pencil encourages people to treat the screen the way they treat a sheet of paper. Help strengthen this perception in your app by making Scribble consistently available in places where text entry seems natural. For example, in Reminders, it’s natural for people to create a new reminder by writing it in the blank space below the last item, even though the area doesn’t contain a text field. For developer guidance, see [UIIndirectScribbleInteraction](https://developer.apple.com/documentation/uikit/uiindirectscribbleinteraction-1nfjm).
 
 **Avoid distracting people while they write.** Some text field behaviors work well for keyboard input, but can disrupt the natural writing experience that Apple Pencil provides. For example, it’s best to avoid displaying autocompletion text as people write in a text field because the suggestions can visually interfere with their writing. It’s also a good idea to hide a field’s placeholder text the moment people begin to write so that their input doesn’t appear to overlap it.
 
@@ -80,11 +80,11 @@ With Scribble and Apple Pencil, people can simply write wherever text is accepte
 
 **Prevent autoscrolling text while people are writing and editing in a text field.** When transcribed text autoscrolls, people might try to avoid writing on top of it. Worse, if text scrolls while people are using Apple Pencil to select it, they might select a different range of text than they want.
 
-**Give people enough space to write.** A small text field can feel uncomfortable to write in. When you know that Apple Pencil input is likely, improve the writing experience in your app by increasing the size of the text field before people begin to write in it or when they pause writing; avoid resizing a text field while people are writing. For developer guidance, see [UIScribbleInteraction](https://developer.apple.com/documentation/UIKit/UIScribbleInteraction).
+**Give people enough space to write.** A small text field can feel uncomfortable to write in. When you know that Apple Pencil input is likely, improve the writing experience in your app by increasing the size of the text field before people begin to write in it or when they pause writing; avoid resizing a text field while people are writing. For developer guidance, see [UIScribbleInteraction](https://developer.apple.com/documentation/uikit/uiscribbleinteraction).
 
 ## Custom drawing
 
-Using [PencilKit](https://developer.apple.com/documentation/PencilKit), you can let people take notes, annotate documents and images, and draw with the same low-latency experience that iOS provides. PencilKit also makes it easy to create a custom drawing canvas in your app and offer a state-of-the-art tool picker and ink palette.
+Using [PencilKit](https://developer.apple.com/documentation/pencilkit), you can let people take notes, annotate documents and images, and draw with the same low-latency experience that iOS provides. PencilKit also makes it easy to create a custom drawing canvas in your app and offer a state-of-the-art tool picker and ink palette.
 
 **Help people draw on top of existing content.** By default, the colors on your PencilKit canvas dynamically adjust to Dark Mode, so people can create content in either mode and the results will look great in both. However, when people draw on top of existing content like a PDF or a photo, you want to prevent the dynamic adjustment of colors so that the markup remains sharp and visible.
 
@@ -102,9 +102,9 @@ Using [PencilKit](https://developer.apple.com/documentation/PencilKit), you can 
 
 #### Developer documentation
 
-[PencilKit](https://developer.apple.com/documentation/PencilKit)
+[PencilKit](https://developer.apple.com/documentation/pencilkit)
 
-[PaperKit](https://developer.apple.com/documentation/PaperKit)
+[PaperKit](https://developer.apple.com/documentation/paperkit)
 
 #### Videos
 

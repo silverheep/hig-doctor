@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/charts
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/charts.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Charts
@@ -16,7 +16,7 @@ An effective chart highlights a few key pieces of information in a dataset, help
 * Analyze stock prices to understand past performance and discover trends.
 * Review fitness data to monitor their progress and set new goals.
 
-To learn about designing charts to enhance your experience, see [Charting data](https://developer.apple.com/design/human-interface-guidelines/charting-data); for developer guidance, see [Creating a chart using Swift Charts](https://developer.apple.com/documentation/Charts/Creating-a-chart-using-Swift-Charts).
+To learn about designing charts to enhance your experience, see [Charting data](https://developer.apple.com/design/human-interface-guidelines/charting-data); for developer guidance, see [Creating a chart using Swift Charts](https://developer.apple.com/documentation/charts/creating-a-chart-using-swift-charts).
 
 ## Anatomy
 
@@ -38,7 +38,7 @@ Clear, accurate descriptions can help make a chart more approachable and accessi
 
 ## Marks
 
-**Choose a mark type based on the information you want to communicate about the data.** Some of the most familiar mark types are bar, line, and point; for developer guidance on these and other mark types, see [Swift Charts](https://developer.apple.com/documentation/Charts).
+**Choose a mark type based on the information you want to communicate about the data.** Some of the most familiar mark types are bar, line, and point; for developer guidance on these and other mark types, see [Swift Charts](https://developer.apple.com/documentation/charts).
 
 *Bar* marks work well in charts that help people compare values in different categories or view the relative proportions of various parts in a whole. When used to help people understand data that changes over time, bar charts work especially well when each value can represent a sum, like the total number of steps taken in a day.
 
@@ -72,15 +72,15 @@ In contrast, consider using a dynamic range when the possible data values can va
 
 **In a compact environment, maximize the width of the plot area to give people enough space to comfortably examine a chart.** To help important data fit well in a given width, ensure that labels on a vertical axis are as short as possible without losing clarity. You might also consider describing units in other areas of the chart, such as in a title, and placing a longer axis label, such as a category name, inside the plot area when doing so doesn’t obscure important information.
 
-**Make every chart in your app accessible.** Charts — like all infographics — need to be fully accessible to everyone, regardless of how they perceive content. For example, it’s essential to support VoiceOver, which describes onscreen content to help people get information and navigate without needing to see the screen (to learn more about VoiceOver, see [Vision](https://www.apple.com/accessibility/vision/)). In addition to supplying accessibility labels that describe the components of your chart, you can enhance the VoiceOver experience by also using Audio Graphs. [Audio graphs](https://developer.apple.com/documentation/Accessibility/audio-graphs) provides chart information to VoiceOver, which constructs a set of tones that audibly represent a chart’s data values and their trend; it also lets you present high-level text summaries that provide additional context. For guidance, see [Enhancing the accessibility of a chart](https://developer.apple.com/design/human-interface-guidelines/charts#Enhancing-the-accessibility-of-a-chart).
+**Make every chart in your app accessible.** Charts — like all infographics — need to be fully accessible to everyone, regardless of how they perceive content. For example, it’s essential to support VoiceOver, which describes onscreen content to help people get information and navigate without needing to see the screen (to learn more about VoiceOver, see [Vision](https://www.apple.com/accessibility/vision/)). In addition to supplying accessibility labels that describe the components of your chart, you can enhance the VoiceOver experience by also using Audio Graphs. [Audio graphs](https://developer.apple.com/documentation/accessibility/audio-graphs) provides chart information to VoiceOver, which constructs a set of tones that audibly represent a chart’s data values and their trend; it also lets you present high-level text summaries that provide additional context. For guidance, see [Enhancing the accessibility of a chart](https://developer.apple.com/design/human-interface-guidelines/charts#Enhancing-the-accessibility-of-a-chart).
 
 **Let people interact with the data when it makes sense, but don’t require interaction to reveal critical information.** In Stocks, for example, people are often most interested in a stock’s performance over time, so the app displays a line graph that depicts performance during the time period people choose, such as one day, three months, or five years. If people want to explore additional details, they can drag a vertical indicator through the line graph, revealing the value at the selected time.
 
 **Make it easy for everyone to interact with a chart.** Sometimes, chart marks are too small to target with a finger or a pointer, making your chart hard to use for people with reduced motor control and uncomfortable for everyone. When this is the case, consider expanding the hit target to include the entire plot area, letting people scrub across the area to reveal various values.
 
-**Make an interactive chart easy to navigate when using keyboard commands (including full keyboard access) or Switch Control.** By default, these input types tend to visit individual onscreen elements in a linear sequence, such as the sequence of values in a data file. If you want to provide a custom navigation experience in your chart, here are two main ways to do so. The first way is to use accessibility APIs (such as [accessibilityRespondsToUserInteraction(_:)](https://developer.apple.com/documentation/SwiftUI/View/accessibilityRespondsToUserInteraction(_:))) to specify a logical and predictable path through your chart’s information. For example, you might want to let people navigate along the X axis instead of jumping back and forth. The second way — which is particularly useful if you need to present a very large dataset — is to let people move focus among subsets of values instead of navigating through all individual data points. Note that both of these customizations can also enhance the VoiceOver experience, even when your chart isn’t interactive. For guidance, see [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility).
+**Make an interactive chart easy to navigate when using keyboard commands (including full keyboard access) or Switch Control.** By default, these input types tend to visit individual onscreen elements in a linear sequence, such as the sequence of values in a data file. If you want to provide a custom navigation experience in your chart, here are two main ways to do so. The first way is to use accessibility APIs (such as [accessibilityRespondsToUserInteraction(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilityrespondstouserinteraction(_:))) to specify a logical and predictable path through your chart’s information. For example, you might want to let people navigate along the X axis instead of jumping back and forth. The second way — which is particularly useful if you need to present a very large dataset — is to let people move focus among subsets of values instead of navigating through all individual data points. Note that both of these customizations can also enhance the VoiceOver experience, even when your chart isn’t interactive. For guidance, see [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility).
 
-**Help people notice important changes in a chart.** For example, if people don’t notice when marks or axes change, they can misread a chart. Animating such changes can help people notice them, but you need to highlight the changes in other ways, too, to ensure that VoiceOver users and people who turn off animations know about them. For developer guidance, see [UIAccessibility.Notification](https://developer.apple.com/documentation/UIKit/UIAccessibility/Notification) (UIKit) or [NSAccessibility.Notification](https://developer.apple.com/documentation/AppKit/NSAccessibility-swift.struct/Notification) (AppKit).
+**Help people notice important changes in a chart.** For example, if people don’t notice when marks or axes change, they can misread a chart. Animating such changes can help people notice them, but you need to highlight the changes in other ways, too, to ensure that VoiceOver users and people who turn off animations know about them. For developer guidance, see [UIAccessibility.Notification](https://developer.apple.com/documentation/uikit/uiaccessibility/notification) (UIKit) or [NSAccessibility.Notification](https://developer.apple.com/documentation/appkit/nsaccessibility-swift.struct/notification) (AppKit).
 
 **Align a chart with surrounding interface elements.** For example, it often works well to align the leading edge of a chart with the leading edge of other views in a screen. One way to maintain a clean leading edge in a chart is to display the label for each vertical grid line on its trailing side. You might also consider shifting the Y axis to the trailing side of the chart so that its tick labels don’t protrude past the chart’s leading edge. If you end up with a label that doesn’t appear to be associated with anything, you can use a tick to anchor it to a grid line.
 
@@ -94,7 +94,7 @@ As in all other parts of your interface, using color in a chart can help you cla
 
 ## Enhancing the accessibility of a chart
 
-When you use Swift Charts to create a chart, you get a default implementation of [Audio graphs](https://developer.apple.com/documentation/Accessibility/audio-graphs), in addition to a default accessibility element for each mark (or group of marks) that describes its value.
+When you use Swift Charts to create a chart, you get a default implementation of [Audio graphs](https://developer.apple.com/documentation/accessibility/audio-graphs), in addition to a default accessibility element for each mark (or group of marks) that describes its value.
 
 **Consider using Audio Graphs to give VoiceOver users more information about your chart.** You can customize the default Audio Graphs implementation that Swift Charts provides by supplying a chart title and descriptive summary that VoiceOver speaks to help people understand the purpose and main features of your chart. If you don’t use Audio Graphs, you need to provide an overview of the chart’s structure and purpose. For example, you need to identify the chart’s type — such as bar or line — explain what each axis represents, and describe details like the upper and lower axis bounds.
 
@@ -128,7 +128,7 @@ The following guidelines can help you write useful accessibility labels for char
 
 #### Developer documentation
 
-[Swift Charts](https://developer.apple.com/documentation/Charts)
+[Swift Charts](https://developer.apple.com/documentation/charts)
 
 #### Videos
 

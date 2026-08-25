@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/split-view
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/split-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Split views
@@ -30,11 +30,11 @@ It’s common to use a split view to display a [Sidebars](https://developer.appl
 
 In iPadOS, a split view can include either two vertical panes, like Mail, or three vertical panes, like Keynote.
 
-**Account for narrow, compact, and intermediate window widths.** Since iPad windows are fluidly resizable, it’s important to consider the design of a split view layout at multiple widths. In particular, ensure that it’s possible to navigate between the various panes in a logical way. For guidance, see [Layout](https://developer.apple.com/design/human-interface-guidelines/layout). For developer guidance, see [NavigationSplitView](https://developer.apple.com/documentation/SwiftUI/NavigationSplitView) and [UISplitViewController](https://developer.apple.com/documentation/UIKit/UISplitViewController).
+**Account for narrow, compact, and intermediate window widths.** Since iPad windows are fluidly resizable, it’s important to consider the design of a split view layout at multiple widths. In particular, ensure that it’s possible to navigate between the various panes in a logical way. For guidance, see [Layout](https://developer.apple.com/design/human-interface-guidelines/layout). For developer guidance, see [NavigationSplitView](https://developer.apple.com/documentation/swiftui/navigationsplitview) and [UISplitViewController](https://developer.apple.com/documentation/uikit/uisplitviewcontroller).
 
 ### macOS
 
-In macOS, you can arrange the panes of a split view vertically, horizontally, or both. A split view includes dividers between panes that can support dragging to resize them. For developer guidance, see [VSplitView](https://developer.apple.com/documentation/SwiftUI/VSplitView) and [HSplitView](https://developer.apple.com/documentation/SwiftUI/HSplitView).
+In macOS, you can arrange the panes of a split view vertically, horizontally, or both. A split view includes dividers between panes that can support dragging to resize them. For developer guidance, see [VSplitView](https://developer.apple.com/documentation/swiftui/vsplitview) and [HSplitView](https://developer.apple.com/documentation/swiftui/hsplitview).
 
 **Set reasonable defaults for minimum and maximum pane sizes.** If people can resize the panes in your app’s split view, make sure to use sizes that keep the divider visible. If a pane gets too small, the divider can seem to disappear, becoming difficult to use.
 
@@ -42,7 +42,7 @@ In macOS, you can arrange the panes of a split view vertically, horizontally, or
 
 **Provide multiple ways to reveal hidden panes.** For example, you might provide a toolbar button or a menu command — including a keyboard shortcut — that people can use to restore a hidden pane.
 
-**Prefer the thin divider style.** The thin divider measures one point in width, giving you maximum space for content while remaining easy for people to use. Avoid using thicker divider styles unless you have a specific need. For example, if both sides of a divider present table rows that use strong linear elements that might make a thin divider hard to distinguish, it might work to use a thicker divider. For developer guidance, see [NSSplitView.DividerStyle](https://developer.apple.com/documentation/AppKit/NSSplitView/DividerStyle-swift.enum).
+**Prefer the thin divider style.** The thin divider measures one point in width, giving you maximum space for content while remaining easy for people to use. Avoid using thicker divider styles unless you have a specific need. For example, if both sides of a divider present table rows that use strong linear elements that might make a thin divider hard to distinguish, it might work to use a thicker divider. For developer guidance, see [NSSplitView.DividerStyle](https://developer.apple.com/documentation/appkit/nssplitview/dividerstyle-swift.enum).
 
 ### tvOS
 
@@ -78,11 +78,11 @@ In watchOS, the split view displays either the list view or a detail view as a f
 
 #### Developer documentation
 
-[NavigationSplitView](https://developer.apple.com/documentation/SwiftUI/NavigationSplitView) — SwiftUI
+[NavigationSplitView](https://developer.apple.com/documentation/swiftui/navigationsplitview) — SwiftUI
 
-[UISplitViewController](https://developer.apple.com/documentation/UIKit/UISplitViewController) — UIKit
+[UISplitViewController](https://developer.apple.com/documentation/uikit/uisplitviewcontroller) — UIKit
 
-[NSSplitViewController](https://developer.apple.com/documentation/AppKit/NSSplitViewController) — AppKit
+[NSSplitViewController](https://developer.apple.com/documentation/appkit/nssplitviewcontroller) — AppKit
 
 #### Videos
 

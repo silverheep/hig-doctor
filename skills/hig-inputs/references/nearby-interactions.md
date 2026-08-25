@@ -5,14 +5,14 @@ source: https://developer.apple.com/design/human-interface-guidelines/nearby-int
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/nearby-interactions.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Nearby interactions
 
 A great nearby interaction feels intuitive and natural to people, because it builds on their innate awareness of the world around them. For example, a person playing music on their iPhone can continue listening on their HomePod mini when they bring the devices close together, simply by transferring the audio output from their iPhone to the HomePod mini.
 
-Nearby interactions are available on devices that support Ultra Wideband technology (to learn more, see [Ultra Wideband availability](https://support.apple.com/en-us/HT212274)), and rely on the [Nearby Interaction](https://developer.apple.com/documentation/NearbyInteraction) framework. Before participating in nearby interaction experiences, people grant permission for their device to interact while they’re using your app. The Nearby Interaction APIs help you preserve people’s privacy by relying on randomly generated device identifiers that last only as long as the interaction session your app initiates.
+Nearby interactions are available on devices that support Ultra Wideband technology (to learn more, see [Ultra Wideband availability](https://support.apple.com/en-us/HT212274)), and rely on the [Nearby Interaction](https://developer.apple.com/documentation/nearbyinteraction) framework. Before participating in nearby interaction experiences, people grant permission for their device to interact while they’re using your app. The Nearby Interaction APIs help you preserve people’s privacy by relying on randomly generated device identifiers that last only as long as the interaction session your app initiates.
 
 ## Best practices
 
@@ -56,7 +56,7 @@ On Apple Watch, Nearby Interaction APIs provide a peer device’s distance. Also
 
 #### Developer documentation
 
-[Nearby Interaction](https://developer.apple.com/documentation/NearbyInteraction)
+[Nearby Interaction](https://developer.apple.com/documentation/nearbyinteraction)
 
 #### Videos
 

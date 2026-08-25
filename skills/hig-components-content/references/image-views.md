@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/image-view
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/image-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Image views
@@ -42,13 +42,13 @@ Many tvOS images combine multiple layers with transparency to create a feeling o
 
 ### visionOS
 
-Windows in visionOS apps and games can use image views to display 2D and stereoscopic images, as well as spatial photos. If your app uses RealityKit, you can also display images of any type outside of image views next to 3D content, or generate a spatial scene from an existing 2D image. For design guidance, see [visionOS](https://developer.apple.com/design/human-interface-guidelines/images#visionOS); for developer guidance, see [ImagePresentationComponent](https://developer.apple.com/documentation/RealityKit/ImagePresentationComponent).
+Windows in visionOS apps and games can use image views to display 2D and stereoscopic images, as well as spatial photos. If your app uses RealityKit, you can also display images of any type outside of image views next to 3D content, or generate a spatial scene from an existing 2D image. For design guidance, see [visionOS](https://developer.apple.com/design/human-interface-guidelines/images#visionOS); for developer guidance, see [ImagePresentationComponent](https://developer.apple.com/documentation/realitykit/imagepresentationcomponent).
 
 For guidance on presenting other 3D content in a window or volume, see [visionOS](https://developer.apple.com/design/human-interface-guidelines/windows#visionOS).
 
 ### watchOS
 
-**Use SwiftUI to create animations when possible.** Alternatively, you can use WatchKit to animate a sequence of images within an image element if necessary. For developer guidance, see [WKImageAnimatable](https://developer.apple.com/documentation/WatchKit/WKImageAnimatable).
+**Use SwiftUI to create animations when possible.** Alternatively, you can use WatchKit to animate a sequence of images within an image element if necessary. For developer guidance, see [WKImageAnimatable](https://developer.apple.com/documentation/watchkit/wkimageanimatable).
 
 ## Resources
 
@@ -64,11 +64,11 @@ For guidance on presenting other 3D content in a window or volume, see [visionOS
 
 #### Developer documentation
 
-[Image](https://developer.apple.com/documentation/SwiftUI/Image) — SwiftUI
+[Image](https://developer.apple.com/documentation/swiftui/image) — SwiftUI
 
-[UIImageView](https://developer.apple.com/documentation/UIKit/UIImageView) — UIKit
+[UIImageView](https://developer.apple.com/documentation/uikit/uiimageview) — UIKit
 
-[NSImageView](https://developer.apple.com/documentation/AppKit/NSImageView) — AppKit
+[NSImageView](https://developer.apple.com/documentation/appkit/nsimageview) — AppKit
 
 #### Videos
 

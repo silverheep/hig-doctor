@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/toolbars
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/toolbars.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Toolbars
@@ -30,7 +30,7 @@ In contrast to a toolbar, a [Tab bars](https://developer.apple.com/design/human-
 
 **In iPadOS and macOS apps, consider letting people customize the toolbar to include their most common items.** Toolbar customization is especially useful in apps that provide a lot of items — or that include advanced functionality that not everyone needs — and in apps that people tend to use for long periods of time. For example, it works well to make a range of editing actions available for toolbar customization, because people often use different types of editing commands based on their work style and their current project.
 
-**Reduce the use of toolbar backgrounds and tinted controls.** Any custom backgrounds and appearances you use might overlay or interfere with background effects that the system provides. Instead, use the content layer to inform the color and appearance of the toolbar, and use a [ScrollEdgeEffectStyle](https://developer.apple.com/documentation/SwiftUI/ScrollEdgeEffectStyle) when necessary to distinguish the toolbar area from the content area. This approach helps your app express its unique personality without distracting from content.
+**Reduce the use of toolbar backgrounds and tinted controls.** Any custom backgrounds and appearances you use might overlay or interfere with background effects that the system provides. Instead, use the content layer to inform the color and appearance of the toolbar, and use a [ScrollEdgeEffectStyle](https://developer.apple.com/documentation/swiftui/scrolledgeeffectstyle) when necessary to distinguish the toolbar area from the content area. This approach helps your app express its unique personality without distracting from content.
 
 **Avoid applying a similar color to toolbar item labels and content layer backgrounds.** If your app already has bright, colorful content in the content layer, prefer using the default monochromatic appearance of toolbars. For more guidance, see [Liquid Glass color](https://developer.apple.com/design/human-interface-guidelines/color#Liquid-Glass-color).
 
@@ -80,7 +80,7 @@ To position items in the groupings you want, pin them to the leading edge, cente
 
 **Minimize the number of groups.** Too many groups of controls can make a toolbar feel cluttered and confusing, even with the added space on iPad and Mac. In general, aim for a maximum of three.
 
-**Keep actions with text labels separate.** Placing an action with a text label next to an action with a symbol can create the illusion of a single action with a combined text and symbol, leading to confusion and misinterpretation. If your toolbar includes multiple text-labeled buttons, the text of those buttons may appear to run together, making the buttons indistinguishable. Add separation by inserting fixed space between the buttons. For developer guidance, see [UIBarButtonItem.SystemItem.fixedSpace](https://developer.apple.com/documentation/UIKit/UIBarButtonItem/SystemItem/fixedSpace).
+**Keep actions with text labels separate.** Placing an action with a text label next to an action with a symbol can create the illusion of a single action with a combined text and symbol, leading to confusion and misinterpretation. If your toolbar includes multiple text-labeled buttons, the text of those buttons may appear to run together, making the buttons indistinguishable. Add separation by inserting fixed space between the buttons. For developer guidance, see [UIBarButtonItem.SystemItem.fixedSpace](https://developer.apple.com/documentation/uikit/uibarbuttonitem/systemitem/fixedspace).
 
 ## Platform considerations
 
@@ -90,7 +90,7 @@ To position items in the groupings you want, pin them to the leading edge, cente
 
 **Prioritize only the most important items for inclusion in the main toolbar area.** Because space is so limited, carefully consider which actions are essential to your app and include those first. Create a More menu to include additional items.
 
-**Use a large title to help people stay oriented as they navigate and scroll.** By default, a large title transitions to a standard title as people begin scrolling the content, and transitions back to large when people scroll to the top, reminding them of their current location. For developer guidance, see [prefersLargeTitles](https://developer.apple.com/documentation/UIKit/UINavigationBar/prefersLargeTitles).
+**Use a large title to help people stay oriented as they navigate and scroll.** By default, a large title transitions to a standard title as people begin scrolling the content, and transitions back to large when people scroll to the top, reminding them of their current location. For developer guidance, see [prefersLargeTitles](https://developer.apple.com/documentation/uikit/uinavigationbar/preferslargetitles).
 
 ### iPadOS
 
@@ -124,11 +124,11 @@ In visionOS, you can supply either a symbol or a text label for each toolbar ite
 
 A toolbar button lets you offer important app functionality in a view that displays related content. You can place toolbar buttons in the top corners or along the bottom. If you place these buttons above scrolling content, the buttons always remain visible, as the content scrolls under them.
 
-For developer guidance, see [topBarLeading](https://developer.apple.com/documentation/SwiftUI/ToolbarItemPlacement/topBarLeading), [topBarTrailing](https://developer.apple.com/documentation/SwiftUI/ToolbarItemPlacement/topBarTrailing), or [bottomBar](https://developer.apple.com/documentation/SwiftUI/ToolbarItemPlacement/bottomBar).
+For developer guidance, see [topBarLeading](https://developer.apple.com/documentation/swiftui/toolbaritemplacement/topbarleading), [topBarTrailing](https://developer.apple.com/documentation/swiftui/toolbaritemplacement/topbartrailing), or [bottomBar](https://developer.apple.com/documentation/swiftui/toolbaritemplacement/bottombar).
 
 You can also place a button in the scrolling view. By default, a scrolling toolbar button remains hidden until people reveal it by scrolling up. People frequently scroll to the top of a scrolling view, so discovering a toolbar button is automatic.
 
-For developer guidance, see [primaryAction](https://developer.apple.com/documentation/SwiftUI/ToolbarItemPlacement/primaryAction).
+For developer guidance, see [primaryAction](https://developer.apple.com/documentation/swiftui/toolbaritemplacement/primaryaction).
 
 **Use a scrolling toolbar button for an important action that isn’t a primary app function.** A toolbar button gives you the flexibility to offer important functionality in a view whose primary purpose is related to that functionality, but may not be the same. For example, Mail provides the essential New Message action in a toolbar button at the top of the Inbox view. The primary purpose of the Inbox is to display a scrollable list of email messages, so it makes sense to offer the closely related compose action in a toolbar button at the top of the view.
 
@@ -150,11 +150,11 @@ For developer guidance, see [primaryAction](https://developer.apple.com/document
 
 #### Developer documentation
 
-[Toolbars](https://developer.apple.com/documentation/SwiftUI/Toolbars) — SwiftUI
+[Toolbars](https://developer.apple.com/documentation/swiftui/toolbars) — SwiftUI
 
-[UIToolbar](https://developer.apple.com/documentation/UIKit/UIToolbar) — UIKit
+[UIToolbar](https://developer.apple.com/documentation/uikit/uitoolbar) — UIKit
 
-[NSToolbar](https://developer.apple.com/documentation/AppKit/NSToolbar) — AppKit
+[NSToolbar](https://developer.apple.com/documentation/appkit/nstoolbar) — AppKit
 
 #### Videos
 

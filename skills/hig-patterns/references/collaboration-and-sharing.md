@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/collaborat
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/collaboration-and-sharing.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Collaboration and sharing
@@ -14,13 +14,13 @@ System interfaces and the Messages app can help you provide consistent and conve
 
 After a collaboration begins, people can use the Collaboration button in your app to communicate with others, perform custom actions, and manage details. In addition, people can receive Messages notifications when collaborators mention them, make changes, join, or leave.
 
-You can take advantage of Messages integration and the system-provided sharing interfaces whether you implement collaboration and sharing through CloudKit, iCloud Drive, or a custom solution. To offer these features when you use a custom collaboration infrastructure, make sure your app also supports universal links (for developer guidance, see [Supporting universal links in your app](https://developer.apple.com/documentation/Xcode/supporting-universal-links-in-your-app)).
+You can take advantage of Messages integration and the system-provided sharing interfaces whether you implement collaboration and sharing through CloudKit, iCloud Drive, or a custom solution. To offer these features when you use a custom collaboration infrastructure, make sure your app also supports universal links (for developer guidance, see [Supporting universal links in your app](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)).
 
 In addition to helping people share and collaborate on documents, visionOS supports immersive sharing experiences through SharePlay. For guidance, see [SharePlay](https://developer.apple.com/design/human-interface-guidelines/shareplay).
 
 ## Best practices
 
-**Place the Share button in a convenient location, like a toolbar, to make it easy for people to start sharing or collaborating.** In iOS 16, the system-provided share sheet includes ways to choose a file-sharing method and set permissions for a new collaboration; iPadOS 16 and macOS 13 introduce similar appearance and functionality in the sharing popover. In your SwiftUI app, you can also enable sharing by presenting a share link that opens the system-provided share sheet when people choose it; for developer guidance, see [ShareLink](https://developer.apple.com/documentation/SwiftUI/ShareLink).
+**Place the Share button in a convenient location, like a toolbar, to make it easy for people to start sharing or collaborating.** In iOS 16, the system-provided share sheet includes ways to choose a file-sharing method and set permissions for a new collaboration; iPadOS 16 and macOS 13 introduce similar appearance and functionality in the sharing popover. In your SwiftUI app, you can also enable sharing by presenting a share link that opens the system-provided share sheet when people choose it; for developer guidance, see [ShareLink](https://developer.apple.com/documentation/swiftui/sharelink).
 
 **If necessary, customize the share sheet or sharing popover to offer the types of file sharing your app supports.** If you use CloudKit, you can add support for sending a copy of a file by passing both the file and your collaboration object to the share sheet. Because the share sheet has built-in support for multiple items, it automatically detects the file and makes the “send copy” functionality available. With iCloud Drive, your collaboration object supports “send copy” functionality by default. For custom collaboration, you can support “send copy” functionality in the share sheet by including a file — or a plain text representation of it — in your collaboration object.
 
@@ -34,7 +34,7 @@ In addition to helping people share and collaborate on documents, visionOS suppo
 
 **If it makes sense in your app, customize the title of the modal view’s collaboration-management button.** People choose this button — titled “Manage Shared File” by default — to reveal the collaboration-management view where they can change settings and add or remove collaborators. If you use CloudKit sharing, the system provides a management view for you; otherwise, you create your own.
 
-**Consider posting collaboration event notifications in Messages.** Choose the type of event that occurred — such as a change in the content or the collaboration membership, or the mention of a participant — and include a universal link people can use to open the relevant view in your app. For developer guidance, see [SWHighlightEvent](https://developer.apple.com/documentation/SharedWithYou/SWHighlightEvent).
+**Consider posting collaboration event notifications in Messages.** Choose the type of event that occurred — such as a change in the content or the collaboration membership, or the mention of a participant — and include a universal link people can use to open the relevant view in your app. For developer guidance, see [SWHighlightEvent](https://developer.apple.com/documentation/sharedwithyou/swhighlightevent).
 
 ## Platform considerations
 
@@ -46,7 +46,7 @@ By default, the system supports screen sharing for an app running in the Shared 
 
 ### watchOS
 
-In your SwiftUI app running in watchOS, use [ShareLink](https://developer.apple.com/documentation/SwiftUI/ShareLink) to present the system-provided share sheet.
+In your SwiftUI app running in watchOS, use [ShareLink](https://developer.apple.com/documentation/swiftui/sharelink) to present the system-provided share sheet.
 
 ## Resources
 
@@ -56,9 +56,9 @@ In your SwiftUI app running in watchOS, use [ShareLink](https://developer.apple.
 
 #### Developer documentation
 
-[Shared with You](https://developer.apple.com/documentation/SharedWithYou)
+[Shared with You](https://developer.apple.com/documentation/sharedwithyou)
 
-[ShareLink](https://developer.apple.com/documentation/SwiftUI/ShareLink) — SwiftUI
+[ShareLink](https://developer.apple.com/documentation/swiftui/sharelink) — SwiftUI
 
 #### Videos
 

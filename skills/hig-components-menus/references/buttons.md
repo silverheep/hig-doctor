@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/buttons
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/buttons.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Buttons
@@ -77,7 +77,7 @@ Several specific button types are unique to macOS.
 
 The standard button type in macOS is known as a *push button*. You can configure a push button to display text, a symbol, an icon, or an image, or a combination of text and image content. Push buttons can act as the default button in a view and you can tint them.
 
-**Use a flexible-height push button only when you need to display tall or variable height content.** Flexible-height buttons support the same configurations as regular push buttons — and they use the same corner radius and content padding — so they look consistent with other buttons in your interface. If you need to present a button that contains two lines of text or a tall icon, use a flexible-height button; otherwise, use a standard push button. For developer guidance, see [NSButton.BezelStyle.flexiblePush](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/flexiblePush).
+**Use a flexible-height push button only when you need to display tall or variable height content.** Flexible-height buttons support the same configurations as regular push buttons — and they use the same corner radius and content padding — so they look consistent with other buttons in your interface. If you need to present a button that contains two lines of text or a tall icon, use a flexible-height button; otherwise, use a standard push button. For developer guidance, see [NSButton.BezelStyle.flexiblePush](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/flexiblepush).
 
 **Append a trailing ellipsis to the title when a push button opens another window, view, or app.** Throughout the system, an ellipsis in a control title signals that people can provide additional input. For example, the Edit buttons in the AutoFill pane of Safari Settings include ellipses because they open other views that let people modify autofill values.
 
@@ -95,7 +95,7 @@ Square buttons contain symbols or icons — not text — and you can configure t
 
 **Avoid using labels to introduce square buttons.** Because square buttons are closely connected with a specific view, their purpose is generally clear without the need for descriptive text.
 
-For developer guidance, see [NSButton.BezelStyle.smallSquare](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/smallSquare).
+For developer guidance, see [NSButton.BezelStyle.smallSquare](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/smallsquare).
 
 #### Help buttons
 
@@ -127,7 +127,7 @@ An *image button* appears in a view and displays an image, symbol, or icon. You 
 
 **Use an image button in a view, not in the window frame.** For example, avoid placing an image button in a toolbar or status bar. If you need to use an image as a button in a toolbar, use a toolbar item. See [Toolbars](https://developer.apple.com/design/human-interface-guidelines/toolbars).
 
-**Include about 10 pixels of padding between the edges of the image and the button edges.** An image button’s edges define its clickable area even when they aren’t visible. Including padding ensures that a click registers correctly even if it’s not precisely within the image. In general, avoid including a system-provided border in an image button; for developer guidance, see [isBordered](https://developer.apple.com/documentation/AppKit/NSButton/isBordered).
+**Include about 10 pixels of padding between the edges of the image and the button edges.** An image button’s edges define its clickable area even when they aren’t visible. Including padding ensures that a click registers correctly even if it’s not precisely within the image. In general, avoid including a system-provided border in an image button; for developer guidance, see [isBordered](https://developer.apple.com/documentation/appkit/nsbutton/isbordered).
 
 **If you need to include a label, position it below the image button.** For related guidance, see [Labels](https://developer.apple.com/design/human-interface-guidelines/labels).
 
@@ -135,7 +135,7 @@ An *image button* appears in a view and displays an image, symbol, or icon. You 
 
 A visionOS button typically includes a visible background that can help people see it, and the button plays sound to provide feedback when people interact with it.
 
-There are three standard button shapes in visionOS. Typically, an icon-only button uses a [circle](https://developer.apple.com/documentation/SwiftUI/ButtonBorderShape/circle) shape, a text-only button uses a [roundedRectangle](https://developer.apple.com/documentation/SwiftUI/ButtonBorderShape/roundedRectangle) or [capsule](https://developer.apple.com/documentation/SwiftUI/ButtonBorderShape/capsule) shape, and a button that includes both an icon and text uses the capsule shape.
+There are three standard button shapes in visionOS. Typically, an icon-only button uses a [circle](https://developer.apple.com/documentation/swiftui/buttonbordershape/circle) shape, a text-only button uses a [roundedRectangle](https://developer.apple.com/documentation/swiftui/buttonbordershape/roundedrectangle) or [capsule](https://developer.apple.com/documentation/swiftui/buttonbordershape/capsule) shape, and a button that includes both an icon and text uses the capsule shape.
 
 visionOS buttons use different visual styles to communicate four different interaction states.
 
@@ -154,7 +154,7 @@ In visionOS, buttons can have the following sizes.
 
 **Prefer buttons that have a discernible background shape and fill.** It tends to be easier for people to see a button when it’s enclosed in a shape that uses a contrasting background fill. The exception is a button in a toolbar, context menu, alert, or [Ornaments](https://developer.apple.com/design/human-interface-guidelines/ornaments) where the shape and material of the larger component make the button comfortably visible. The following guidelines can help you ensure that a button looks good in different contexts:
 
-* When a button appears on top of a glass [visionOS](https://developer.apple.com/design/human-interface-guidelines/windows#visionOS), use the [thin](https://developer.apple.com/documentation/SwiftUI/Material/thin) material as the button’s background.
+* When a button appears on top of a glass [visionOS](https://developer.apple.com/design/human-interface-guidelines/windows#visionOS), use the [thin](https://developer.apple.com/documentation/swiftui/material/thin) material as the button’s background.
 * When a button appears floating in space, use the [visionOS](https://developer.apple.com/design/human-interface-guidelines/materials#visionOS) for its background.
 
 **Avoid creating a custom button that uses a white background fill and black text or icons.** The system reserves this visual style to convey the toggled state.
@@ -169,7 +169,7 @@ In visionOS, buttons can have the following sizes.
 
 ### watchOS
 
-watchOS displays all inline buttons using the [capsule](https://developer.apple.com/documentation/SwiftUI/ButtonBorderShape/capsule) button shape. When you place a button inline with content, it gains a material effect that contrasts with the background to ensure legibility.
+watchOS displays all inline buttons using the [capsule](https://developer.apple.com/documentation/swiftui/buttonbordershape/capsule) button shape. When you place a button inline with content, it gains a material effect that contrasts with the background to ensure legibility.
 
 **Use a toolbar to place buttons in the corners.** The system automatically moves the time and title to accommodate toolbar buttons. The system also applies the [Liquid Glass](https://developer.apple.com/design/human-interface-guidelines/materials#Liquid-Glass) appearance to toolbar buttons, providing a clear visual distinction from the content beneath them.
 
@@ -195,11 +195,11 @@ watchOS displays all inline buttons using the [capsule](https://developer.apple.
 
 #### Developer documentation
 
-[Button](https://developer.apple.com/documentation/SwiftUI/Button) — SwiftUI
+[Button](https://developer.apple.com/documentation/swiftui/button) — SwiftUI
 
-[UIButton](https://developer.apple.com/documentation/UIKit/UIButton) — UIKit
+[UIButton](https://developer.apple.com/documentation/uikit/uibutton) — UIKit
 
-[NSButton](https://developer.apple.com/documentation/AppKit/NSButton) — AppKit
+[NSButton](https://developer.apple.com/documentation/appkit/nsbutton) — AppKit
 
 ## Change log
 

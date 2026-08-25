@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/gauges
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/gauges.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Gauges
@@ -56,9 +56,9 @@ Although rarely used, the relevance style can communicate relevancy using a shad
 
 #### Developer documentation
 
-[Gauge](https://developer.apple.com/documentation/SwiftUI/Gauge) — SwiftUI
+[Gauge](https://developer.apple.com/documentation/swiftui/gauge) — SwiftUI
 
-[NSLevelIndicator](https://developer.apple.com/documentation/AppKit/NSLevelIndicator) — AppKit
+[NSLevelIndicator](https://developer.apple.com/documentation/appkit/nslevelindicator) — AppKit
 
 ## Change log
 

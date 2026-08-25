@@ -5,16 +5,16 @@ source: https://developer.apple.com/design/human-interface-guidelines/augmented-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/augmented-reality.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Augmented reality
 
-Using the device’s camera to present the physical world onscreen live, your app can superimpose three-dimensional virtual objects, creating the illusion that these objects actually exist. Depending on the platform and the experiences your app offers, people can reorient the device to explore the objects from different angles, interact with objects using gestures and movement, and even join other people in multiuser AR experiences. For developer guidance, see [ARKit](https://developer.apple.com/documentation/ARKit).
+Using the device’s camera to present the physical world onscreen live, your app can superimpose three-dimensional virtual objects, creating the illusion that these objects actually exist. Depending on the platform and the experiences your app offers, people can reorient the device to explore the objects from different angles, interact with objects using gestures and movement, and even join other people in multiuser AR experiences. For developer guidance, see [ARKit](https://developer.apple.com/documentation/arkit).
 
-**Offer AR features only on capable devices.** If your app’s primary purpose is AR, make your app available only to devices that support ARKit. If your app includes features that require specific AR capabilities, or if AR features are optional in your app, don’t show people an error if they try to use these features on a device that doesn’t support them; instead, simply avoid offering the feature on an unsupported device. For developer guidance, see [Verifying Device Support and User Permission](https://developer.apple.com/documentation/ARKit/verifying-device-support-and-user-permission).
+**Offer AR features only on capable devices.** If your app’s primary purpose is AR, make your app available only to devices that support ARKit. If your app includes features that require specific AR capabilities, or if AR features are optional in your app, don’t show people an error if they try to use these features on a device that doesn’t support them; instead, simply avoid offering the feature on an unsupported device. For developer guidance, see [Verifying Device Support and User Permission](https://developer.apple.com/documentation/arkit/verifying-device-support-and-user-permission).
 
-> **Note:** The following guidance applies to apps that run in iOS and iPadOS. To learn about using ARKit to create immersive augmented reality experiences in visionOS, see [ARKit](https://developer.apple.com/documentation/ARKit).
+> **Note:** The following guidance applies to apps that run in iOS and iPadOS. To learn about using ARKit to create immersive augmented reality experiences in visionOS, see [ARKit](https://developer.apple.com/documentation/arkit).
 
 ## Best practices
 
@@ -42,7 +42,7 @@ Using the device’s camera to present the physical world onscreen live, your ap
 
 ## Providing coaching
 
-Before people can enjoy an AR experience in your app, they need to move their device in ways that lets ARKit evaluate the surroundings and detect surfaces. Consider using the built-in coaching view to show people what to do and provide feedback during the initialization process. You can also use the coaching view to help people reinitialize AR — a process known as *relocalization* — after an AR experience is interrupted by, for example, people switching briefly to a different app. For guidance on relocalization, see [Handling interruptions](https://developer.apple.com/design/human-interface-guidelines/augmented-reality#Handling-interruptions); for developer guidance, see [ARCoachingOverlayView](https://developer.apple.com/documentation/ARKit/ARCoachingOverlayView).
+Before people can enjoy an AR experience in your app, they need to move their device in ways that lets ARKit evaluate the surroundings and detect surfaces. Consider using the built-in coaching view to show people what to do and provide feedback during the initialization process. You can also use the coaching view to help people reinitialize AR — a process known as *relocalization* — after an AR experience is interrupted by, for example, people switching briefly to a different app. For guidance on relocalization, see [Handling interruptions](https://developer.apple.com/design/human-interface-guidelines/augmented-reality#Handling-interruptions); for developer guidance, see [ARCoachingOverlayView](https://developer.apple.com/documentation/arkit/arcoachingoverlayview).
 
 **Hide unnecessary app UI while people are using a coaching view.** By default, the coaching view appears automatically when initialization or relocalization starts, so be prepared to hide unrelated UI to help people concentrate on the coaching view’s instructions.
 
@@ -52,7 +52,7 @@ Before people can enjoy an AR experience in your app, they need to move their de
 
 **Show people when to locate a surface and place an object.** You can use the system-provided coaching view to help people find a horizontal or vertical flat surface on which to place an object. After ARKit detects a surface, your app can display a custom visual indicator to show when object placement is possible. You can help people understand how the placed object will look in the environment by aligning your indicator with the plane of the detected surface.
 
-**When people place an object, immediately integrate that object into the AR environment.** Although surface detection quickly and progressively refines accuracy, it’s best to avoid waiting for more accurate data before placing an object. Use the information available to respond instantly when people place an object; then, when surface detection completes, subtly refine the object’s position if necessary. For example, if people place an object beyond the bounds of the detected surface, gently nudge the object back onto the surface. For developer guidance on refining an object’s position, see [ARTrackedRaycast](https://developer.apple.com/documentation/ARKit/ARTrackedRaycast).
+**When people place an object, immediately integrate that object into the AR environment.** Although surface detection quickly and progressively refines accuracy, it’s best to avoid waiting for more accurate data before placing an object. Use the information available to respond instantly when people place an object; then, when surface detection completes, subtly refine the object’s position if necessary. For example, if people place an object beyond the bounds of the detected surface, gently nudge the object back onto the surface. For developer guidance on refining an object’s position, see [ARTrackedRaycast](https://developer.apple.com/documentation/arkit/artrackedraycast).
 
 **Consider guiding people toward offscreen virtual objects.** Sometimes, it can be difficult for people to locate an object that’s positioned offscreen. When this is the case, you can help people find such objects by offering visual or audible cues. For example, if an object is offscreen to the left, you could display an indicator along the left edge of the screen that guides people to point the camera in that direction.
 
@@ -82,15 +82,15 @@ Before people can enjoy an AR experience in your app, they need to move their de
 
 ## Offering a multiuser experience
 
-When multiple people share your app’s AR experience, each participant maps the environment independently and ARKit automatically merges the maps. For developer guidance, see [isCollaborationEnabled](https://developer.apple.com/documentation/ARKit/ARWorldTrackingConfiguration/isCollaborationEnabled).
+When multiple people share your app’s AR experience, each participant maps the environment independently and ARKit automatically merges the maps. For developer guidance, see [isCollaborationEnabled](https://developer.apple.com/documentation/arkit/arworldtrackingconfiguration/iscollaborationenabled).
 
-**Consider allowing people occlusion.** If your app supports placing virtual objects behind people who appear in the device’s camera feed, enhance the illusion of reality by letting the people occlude the objects. For developer guidance, see [Occluding virtual content with people](https://developer.apple.com/documentation/ARKit/occluding-virtual-content-with-people).
+**Consider allowing people occlusion.** If your app supports placing virtual objects behind people who appear in the device’s camera feed, enhance the illusion of reality by letting the people occlude the objects. For developer guidance, see [Occluding virtual content with people](https://developer.apple.com/documentation/arkit/occluding-virtual-content-with-people).
 
-**When possible, let new participants enter a multiuser AR experience.** Unless your app requires all participants to join before the experience begins, consider using implicit map merging to let new people quickly join an ongoing AR experience. For developer guidance, see [isCollaborationEnabled](https://developer.apple.com/documentation/ARKit/ARWorldTrackingConfiguration/isCollaborationEnabled).
+**When possible, let new participants enter a multiuser AR experience.** Unless your app requires all participants to join before the experience begins, consider using implicit map merging to let new people quickly join an ongoing AR experience. For developer guidance, see [isCollaborationEnabled](https://developer.apple.com/documentation/arkit/arworldtrackingconfiguration/iscollaborationenabled).
 
 ## Reacting to real-world objects
 
-You can enhance an AR experience by using known images and objects in the real-world environment to make virtual content appear. For example, an app that recognizes theater posters for a sci-fi film could cause virtual space ships to emerge from the posters and fly around the environment. Another example is an app for an art museum that presents a virtual tour guide when it recognizes a sculpture. To support experiences like these, your app provides a set of 2D reference images or 3D reference objects, and ARKit indicates when and where it detects any of these items in the current environment. For developer guidance, see [Detecting Images in an AR Experience](https://developer.apple.com/documentation/ARKit/detecting-images-in-an-ar-experience).
+You can enhance an AR experience by using known images and objects in the real-world environment to make virtual content appear. For example, an app that recognizes theater posters for a sci-fi film could cause virtual space ships to emerge from the posters and fly around the environment. Another example is an app for an art museum that presents a virtual tour guide when it recognizes a sculpture. To support experiences like these, your app provides a set of 2D reference images or 3D reference objects, and ARKit indicates when and where it detects any of these items in the current environment. For developer guidance, see [Detecting Images in an AR Experience](https://developer.apple.com/documentation/arkit/detecting-images-in-an-ar-experience).
 
 **When a detected image first disappears, consider delaying the removal of virtual objects that are attached to it.** ARKit doesn’t track changes to the position or orientation of each detected image. To help prevent virtual objects from flickering, consider waiting up to one second before fading them out or removing them.
 
@@ -117,7 +117,7 @@ You can enhance an AR experience by using known images and objects in the real-w
 
 ## Handling interruptions
 
-ARKit can’t track device position and orientation during an interruption, such as when people briefly switch to another app or accept a phone call. After an interruption ends, previously placed virtual objects are likely to appear in the wrong real-world positions. When you support relocalization, ARKit attempts to restore those virtual objects to their original real-world positions using new information. For developer guidance, see [Managing Session Life Cycle and Tracking Quality](https://developer.apple.com/documentation/ARKit/managing-session-life-cycle-and-tracking-quality).
+ARKit can’t track device position and orientation during an interruption, such as when people briefly switch to another app or accept a phone call. After an interruption ends, previously placed virtual objects are likely to appear in the wrong real-world positions. When you support relocalization, ARKit attempts to restore those virtual objects to their original real-world positions using new information. For developer guidance, see [Managing Session Life Cycle and Tracking Quality](https://developer.apple.com/documentation/arkit/managing-session-life-cycle-and-tracking-quality).
 
 **Consider using the system-provided coaching view to help people relocalize.** During relocalization, ARKit attempts to reconcile its previous state with new observations of the current environment. To make these observations more useful, you can use the coaching view to help people return the device to its previous position and orientation.
 
@@ -167,7 +167,7 @@ Apps that include collections of products or other objects can use badging to id
 
 ### visionOS
 
-With the wearer’s [visionOS](https://developer.apple.com/design/human-interface-guidelines/privacy#visionOS), you can use ARKit in your visionOS app to detect surfaces in a person’s surroundings, use a person’s hand and finger postions to inform your [Designing custom gestures in visionOS](https://developer.apple.com/design/human-interface-guidelines/gestures#Designing-custom-gestures-in-visionOS), support interactions that incorporate nearby physical objects into your [Immersive experiences](https://developer.apple.com/design/human-interface-guidelines/immersive-experiences), and more. For developer guidance, see [ARKit](https://developer.apple.com/documentation/ARKit).
+With the wearer’s [visionOS](https://developer.apple.com/design/human-interface-guidelines/privacy#visionOS), you can use ARKit in your visionOS app to detect surfaces in a person’s surroundings, use a person’s hand and finger postions to inform your [Designing custom gestures in visionOS](https://developer.apple.com/design/human-interface-guidelines/gestures#Designing-custom-gestures-in-visionOS), support interactions that incorporate nearby physical objects into your [Immersive experiences](https://developer.apple.com/design/human-interface-guidelines/immersive-experiences), and more. For developer guidance, see [ARKit](https://developer.apple.com/documentation/arkit).
 
 ## Resources
 
@@ -181,7 +181,7 @@ With the wearer’s [visionOS](https://developer.apple.com/design/human-interfac
 
 #### Developer documentation
 
-[ARKit](https://developer.apple.com/documentation/ARKit)
+[ARKit](https://developer.apple.com/documentation/arkit)
 
 #### Videos
 

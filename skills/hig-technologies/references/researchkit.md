@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/researchki
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/researchkit.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # ResearchKit
@@ -83,7 +83,7 @@ ResearchKit offers a profile screen you can use to let participants manage perso
 
 [Research & Care > Developers](https://www.researchandcare.org/developers/)
 
-[Protecting user privacy](https://developer.apple.com/documentation/HealthKit/protecting-user-privacy) — HealthKit
+[Protecting user privacy](https://developer.apple.com/documentation/healthkit/protecting-user-privacy) — HealthKit
 
 [ResearchKit GitHub project](https://github.com/ResearchKit/ResearchKit)
 

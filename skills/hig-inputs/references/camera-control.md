@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/camera-con
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/camera-control.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Camera Control
@@ -29,9 +29,9 @@ In addition to custom controls that you create, the system provides a set of sta
 
 **Keep names of controls short.** Control labels adhere to Dynamic Type sizes, and longer names may obfuscate the camera’s viewfinder.
 
-**Include units or symbols with slider control values to provide context.** Providing descriptive information in the overlay, such as EV, %, or a custom string, helps people understand what the slider controls. For developer guidance, see [localizedValueFormat](https://developer.apple.com/documentation/AVFoundation/AVCaptureSlider/localizedValueFormat).
+**Include units or symbols with slider control values to provide context.** Providing descriptive information in the overlay, such as EV, %, or a custom string, helps people understand what the slider controls. For developer guidance, see [localizedValueFormat](https://developer.apple.com/documentation/avfoundation/avcaptureslider/localizedvalueformat).
 
-**Define prominent values for a slider control.** Prominent values are ones people choose most frequently, or values that are evenly spaced, like the major increments of zoom factor. When a person slides on the Camera Control to adjust a slider control, the system more easily lands on prominent values you define. For developer guidance, see [prominentValues](https://developer.apple.com/documentation/AVFoundation/AVCaptureSlider/prominentValues-199dz).
+**Define prominent values for a slider control.** Prominent values are ones people choose most frequently, or values that are evenly spaced, like the major increments of zoom factor. When a person slides on the Camera Control to adjust a slider control, the system more easily lands on prominent values you define. For developer guidance, see [prominentValues](https://developer.apple.com/documentation/avfoundation/avcaptureslider/prominentvalues-199dz).
 
 **Make space for the overlay in the viewfinder.** The overlay and control labels occupy the screen area adjacent to the Camera Control in both portrait and landscape orientations. To avoid overlapping the interface elements of your camera capture experience, place your UI outside of the overlay areas. Maximize the height and width of the viewfinder and allow the overlay to appear and disappear over it.
 
@@ -57,11 +57,11 @@ In addition to custom controls that you create, the system provides a set of sta
 
 #### Developer documentation
 
-[Enhancing your app experience with the Camera Control](https://developer.apple.com/documentation/AVFoundation/enhancing-your-app-experience-with-the-camera-control) — AVFoundation
+[Enhancing your app experience with the Camera Control](https://developer.apple.com/documentation/avfoundation/enhancing-your-app-experience-with-the-camera-control) — AVFoundation
 
-[AVCaptureControl](https://developer.apple.com/documentation/AVFoundation/AVCaptureControl) — AVFoundation
+[AVCaptureControl](https://developer.apple.com/documentation/avfoundation/avcapturecontrol) — AVFoundation
 
-[LockedCameraCapture](https://developer.apple.com/documentation/LockedCameraCapture)
+[LockedCameraCapture](https://developer.apple.com/documentation/lockedcameracapture)
 
 ## Change log
 

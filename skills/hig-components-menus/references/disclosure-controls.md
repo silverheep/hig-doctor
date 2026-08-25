@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/disclosure
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/disclosure-controls.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Disclosure controls
@@ -22,7 +22,7 @@ A disclosure triangle points inward from the leading edge when its content is hi
 
 **Provide a descriptive label when using a disclosure triangle.** Make sure your labels indicate what is disclosed or hidden, like “Advanced Options.”
 
-For developer guidance, see [NSButton.BezelStyle.disclosure](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/disclosure).
+For developer guidance, see [NSButton.BezelStyle.disclosure](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/disclosure).
 
 ## Disclosure buttons
 
@@ -34,7 +34,7 @@ A disclosure button points down when its content is hidden and up when its conte
 
 **Use no more than one disclosure button in a single view.** Multiple disclosure buttons add complexity and can be confusing.
 
-For developer guidance, see [NSButton.BezelStyle.pushDisclosure](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/pushDisclosure).
+For developer guidance, see [NSButton.BezelStyle.pushDisclosure](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/pushdisclosure).
 
 ## Platform considerations
 
@@ -42,7 +42,7 @@ For developer guidance, see [NSButton.BezelStyle.pushDisclosure](https://develop
 
 ### iOS, iPadOS, visionOS
 
-Disclosure controls are available in iOS, iPadOS, and visionOS with the SwiftUI [DisclosureGroup](https://developer.apple.com/documentation/SwiftUI/DisclosureGroup) view.
+Disclosure controls are available in iOS, iPadOS, and visionOS with the SwiftUI [DisclosureGroup](https://developer.apple.com/documentation/swiftui/disclosuregroup) view.
 
 ## Resources
 
@@ -56,11 +56,11 @@ Disclosure controls are available in iOS, iPadOS, and visionOS with the SwiftUI 
 
 #### Developer documentation
 
-[DisclosureGroup](https://developer.apple.com/documentation/SwiftUI/DisclosureGroup) — SwiftUI
+[DisclosureGroup](https://developer.apple.com/documentation/swiftui/disclosuregroup) — SwiftUI
 
-[NSButton.BezelStyle.disclosure](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/disclosure) — AppKit
+[NSButton.BezelStyle.disclosure](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/disclosure) — AppKit
 
-[NSButton.BezelStyle.pushDisclosure](https://developer.apple.com/documentation/AppKit/NSButton/BezelStyle-swift.enum/pushDisclosure) — AppKit
+[NSButton.BezelStyle.pushDisclosure](https://developer.apple.com/documentation/appkit/nsbutton/bezelstyle-swift.enum/pushdisclosure) — AppKit
 
 #### Videos
 

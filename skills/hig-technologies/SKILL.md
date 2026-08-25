@@ -1,6 +1,6 @@
 ---
 name: hig-technologies
-version: 2.1.0
+version: 2.1.1
 description: >-
   Apple HIG guidance for Apple technology integrations: Siri, Apple Pay, HealthKit,
   HomeKit, ARKit, machine learning, generative AI, iCloud, Sign in with Apple,

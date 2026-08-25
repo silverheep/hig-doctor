@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/icloud
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/icloud.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # iCloud
@@ -32,7 +32,7 @@ A fundamental aspect of iCloud is transparency. People don’t need to know wher
 
 **Include iCloud content in search results.** People with iCloud accounts assume their content is universally available, and they expect search results to reflect this perspective.
 
-**For games, consider saving player progress in iCloud.** Although you can implement this functionality yourself, the GameSave framework offers an efficient solution. It synchronizes save data across devices and offers built-in alerts you can use to help players handle syncing issues during offline play or when conflicts arise. Alternatively, you can implement custom UI that uses GameSave data to resolve these situations. For developer guidance, see [GameSave](https://developer.apple.com/documentation/GameSave).
+**For games, consider saving player progress in iCloud.** Although you can implement this functionality yourself, the GameSave framework offers an efficient solution. It synchronizes save data across devices and offers built-in alerts you can use to help players handle syncing issues during offline play or when conflicts arise. Alternatively, you can implement custom UI that uses GameSave data to resolve these situations. For developer guidance, see [GameSave](https://developer.apple.com/documentation/gamesave).
 
 ## Platform considerations
 
@@ -42,9 +42,9 @@ A fundamental aspect of iCloud is transparency. People don’t need to know wher
 
 #### Developer documentation
 
-[CloudKit](https://developer.apple.com/documentation/CloudKit)
+[CloudKit](https://developer.apple.com/documentation/cloudkit)
 
-[GameSave](https://developer.apple.com/documentation/GameSave)
+[GameSave](https://developer.apple.com/documentation/gamesave)
 
 ## Change log
 

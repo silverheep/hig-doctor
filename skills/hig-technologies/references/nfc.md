@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/nfc
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/nfc.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # NFC
@@ -45,7 +45,7 @@ Background tag reading lets people scan tags quickly any time, without needing t
 
 #### Developer documentation
 
-[Core NFC](https://developer.apple.com/documentation/CoreNFC)
+[Core NFC](https://developer.apple.com/documentation/corenfc)
 
 ---
 

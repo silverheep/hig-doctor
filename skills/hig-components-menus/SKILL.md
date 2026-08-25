@@ -1,6 +1,6 @@
 ---
 name: hig-components-menus
-version: 2.1.0
+version: 2.1.1
 description: >-
   Apple HIG guidance for menu and button components including menus, context menus,
   dock menus, edit menus, the menu bar, toolbars, action buttons, pop-up buttons,

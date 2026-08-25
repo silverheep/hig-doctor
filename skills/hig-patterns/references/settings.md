@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/settings
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/settings.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Settings
@@ -16,7 +16,7 @@ When necessary, you can provide a custom settings area within your app or game t
 
 ## Best practices
 
-**Aim to provide default settings that give the best experience to the largest number of people.** For example, you can automatically maximize performance for the device your game is running on instead of asking players to make this choice after your game launches (for developer guidance, see [Improving your game’s graphics performance and settings](https://developer.apple.com/documentation/Metal/improving-your-games-graphics-performance-and-settings)). When you choose appropriate default settings, people may not have to make any adjustments before they can start enjoying your app or game.
+**Aim to provide default settings that give the best experience to the largest number of people.** For example, you can automatically maximize performance for the device your game is running on instead of asking players to make this choice after your game launches (for developer guidance, see [Improving your game’s graphics performance and settings](https://developer.apple.com/documentation/metal/improving-your-games-graphics-performance-and-settings)). When you choose appropriate default settings, people may not have to make any adjustments before they can start enjoying your app or game.
 
 **Minimize the number of settings you offer.** Although people appreciate having control over an app or game, too many settings can make the experience feel less approachable, while also making it hard to find a particular setting.
 
@@ -70,11 +70,11 @@ In watchOS, apps and games don’t add custom settings to the system-provided Se
 
 #### Developer documentation
 
-[Settings](https://developer.apple.com/documentation/SwiftUI/Settings) — SwiftUI
+[Settings](https://developer.apple.com/documentation/swiftui/settings) — SwiftUI
 
-[UserDefaults](https://developer.apple.com/documentation/Foundation/UserDefaults) — Foundation
+[UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) — Foundation
 
-[Preference Panes](https://developer.apple.com/documentation/PreferencePanes)
+[Preference Panes](https://developer.apple.com/documentation/preferencepanes)
 
 ## Change log
 

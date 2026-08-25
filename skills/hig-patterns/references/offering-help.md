@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/offering-h
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/offering-help.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Offering help
@@ -44,7 +44,7 @@ If the feature is represented by an image that the tip connects to directly, avo
 
 ### macOS, visionOS
 
-A *tooltip* (called a *help tag* in user documentation) displays a small, transient view that briefly describes how to use a component in the interface. In apps that run on a Mac — including iPhone and iPad apps — tooltips can appear when a person holds the pointer over an element; in visionOS apps, a tooltip can appear when a person looks at an element or holds the pointer over it. For developer guidance, see [help(_:)](https://developer.apple.com/documentation/SwiftUI/View/help(_:)-6oiyb).
+A *tooltip* (called a *help tag* in user documentation) displays a small, transient view that briefly describes how to use a component in the interface. In apps that run on a Mac — including iPhone and iPad apps — tooltips can appear when a person holds the pointer over an element; in visionOS apps, a tooltip can appear when a person looks at an element or holds the pointer over it. For developer guidance, see [help(_:)](https://developer.apple.com/documentation/swiftui/view/help(_:)-6oiyb).
 
 **Describe only the control that people indicate interest in.** When people want to know how to use a specific control, they don’t want to learn how to use nearby controls or how to perform a larger task.
 
@@ -72,9 +72,9 @@ A *tooltip* (called a *help tag* in user documentation) displays a small, transi
 
 #### Developer documentation
 
-[TipKit](https://developer.apple.com/documentation/TipKit)
+[TipKit](https://developer.apple.com/documentation/tipkit)
 
-[NSHelpManager](https://developer.apple.com/documentation/AppKit/NSHelpManager) — AppKit
+[NSHelpManager](https://developer.apple.com/documentation/appkit/nshelpmanager) — AppKit
 
 #### Videos
 

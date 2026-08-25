@@ -1,6 +1,6 @@
 ---
 name: hig-inputs
-version: 2.1.0
+version: 2.1.1
 description: >-
   Apple HIG guidance for input methods and interaction patterns: gestures, Apple Pencil,
   keyboards, game controllers, pointers, Digital Crown, eye tracking, focus system,

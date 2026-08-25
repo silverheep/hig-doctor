@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/boxes
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/boxes.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Boxes
@@ -44,9 +44,9 @@ By default, macOS displays a box’s title above it.
 
 #### Developer documentation
 
-[GroupBox](https://developer.apple.com/documentation/SwiftUI/GroupBox) — SwiftUI
+[GroupBox](https://developer.apple.com/documentation/swiftui/groupbox) — SwiftUI
 
-[NSBox](https://developer.apple.com/documentation/AppKit/NSBox) — AppKit
+[NSBox](https://developer.apple.com/documentation/appkit/nsbox) — AppKit
 
 ---
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/outline-vi
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/outline-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Outline views
@@ -56,9 +56,9 @@ Outline views work well to display text-based content and often appear in the le
 
 #### Developer documentation
 
-[OutlineGroup](https://developer.apple.com/documentation/SwiftUI/OutlineGroup) — SwiftUI
+[OutlineGroup](https://developer.apple.com/documentation/swiftui/outlinegroup) — SwiftUI
 
-[NSOutlineView](https://developer.apple.com/documentation/AppKit/NSOutlineView) — AppKit
+[NSOutlineView](https://developer.apple.com/documentation/appkit/nsoutlineview) — AppKit
 
 #### Videos
 

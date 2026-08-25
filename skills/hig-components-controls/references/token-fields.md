@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/token-fiel
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/token-fields.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Token fields
@@ -42,7 +42,7 @@ Tokens can also represent search terms in some situations; for guidance, see [Se
 
 #### Developer documentation
 
-[NSTokenField](https://developer.apple.com/documentation/AppKit/NSTokenField) — AppKit
+[NSTokenField](https://developer.apple.com/documentation/appkit/nstokenfield) — AppKit
 
 ---
 

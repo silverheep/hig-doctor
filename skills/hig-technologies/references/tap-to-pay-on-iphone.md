@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/tap-to-pay
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/tap-to-pay-on-iphone.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Tap to Pay on iPhone
@@ -14,13 +14,13 @@ When you support Tap to Pay on iPhone in your iOS payment app, you help merchant
 
 > **Note:** Tap to Pay on iPhone works alongside your existing payment-acceptance hardware and accessories.
 
-Before you can integrate Tap to Pay on iPhone into your iOS app, you need to work with a supported payment service provider (PSP), request the Tap to Pay on iPhone entitlement, and use [ProximityReader](https://developer.apple.com/documentation/ProximityReader) APIs, either through the PSP’s SDK or by adopting the framework. For high-level guidance — including marketing recommendations for letting people know about your app’s new capabilities — see [Tap to Pay on iPhone](https://developer.apple.com/tap-to-pay/); for developer guidance, see [Setting up Tap to Pay on iPhone](https://developer.apple.com/documentation/ProximityReader/setting-up-the-entitlement-for-tap-to-pay-on-iPhone).
+Before you can integrate Tap to Pay on iPhone into your iOS app, you need to work with a supported payment service provider (PSP), request the Tap to Pay on iPhone entitlement, and use [ProximityReader](https://developer.apple.com/documentation/proximityreader) APIs, either through the PSP’s SDK or by adopting the framework. For high-level guidance — including marketing recommendations for letting people know about your app’s new capabilities — see [Tap to Pay on iPhone](https://developer.apple.com/tap-to-pay/); for developer guidance, see [Setting up Tap to Pay on iPhone](https://developer.apple.com/documentation/proximityreader/setting-up-the-entitlement-for-tap-to-pay-on-iphone).
 
 > **Note:** If your PSP offers an SDK that supplies user interfaces for experiences like showing a tap result, see the documentation the PSP provides.
 
 ## Enabling Tap to Pay on iPhone
 
-Before your app can enable Tap to Pay on iPhone and configure a merchant’s device, the merchant must accept the relevant terms and conditions. Use the ProximityReader API to help you get the current status and present an acceptance flow only when necessary. For developer guidance, see [Adding support for Tap to Pay on iPhone to your app](https://developer.apple.com/documentation/ProximityReader/adding-support-for-tap-to-pay-on-iphone-to-your-app#Display-the-Terms-and-Conditions-interface-to-the-merchant).
+Before your app can enable Tap to Pay on iPhone and configure a merchant’s device, the merchant must accept the relevant terms and conditions. Use the ProximityReader API to help you get the current status and present an acceptance flow only when necessary. For developer guidance, see [Adding support for Tap to Pay on iPhone to your app](https://developer.apple.com/documentation/proximityreader/adding-support-for-tap-to-pay-on-iphone-to-your-app).
 
 **Help merchants accept Tap to Pay on iPhone terms and conditions before they begin interacting with their customers.** Merchants must accept the terms and conditions before you perform the initial device configuration, so it works well when they can do so before they begin a checkout or other customer-facing flow. For example, you can provide buttons that let people accept Tap to Pay on iPhone terms and conditions from within your [in-app messaging](https://developer.apple.com/tap-to-pay/marketing-guidelines/#in-your-app) or onboarding flows.
 
@@ -39,7 +39,7 @@ Some merchants may be unfamiliar with Tap to Pay on iPhone, so it’s important 
 * Automatically presenting it to new users of your app
 * Making it easy to find in a consistent place like your app’s help content or settings area
 
-You can build your app’s tutorial using Apple-approved assets from the [Tap to Pay on iPhone marketing guidelines](https://developer.apple.com/tap-to-pay/marketing-guidelines/), or you can use the [ProximityReaderDiscovery](https://developer.apple.com/documentation/ProximityReader/ProximityReaderDiscovery) API to provide a pre-built merchant education experience. Apple ensures that the API is up to date and is localized for the merchant’s region.
+You can build your app’s tutorial using Apple-approved assets from the [Tap to Pay on iPhone marketing guidelines](https://developer.apple.com/tap-to-pay/marketing-guidelines/), or you can use the [ProximityReaderDiscovery](https://developer.apple.com/documentation/proximityreader/proximityreaderdiscovery) API to provide a pre-built merchant education experience. Apple ensures that the API is up to date and is localized for the merchant’s region.
 
 If you design your own tutorial, make sure it shows how to:
 
@@ -60,9 +60,9 @@ Checking out is a time-sensitive action, and merchants need the process to work 
 
 **Provide Tap to Pay on iPhone as a checkout option whether the feature is enabled or not.** Including a Tap to Pay on iPhone button gives merchants the flexibility to use the feature without exiting the checkout flow. When merchants tap the button, present the terms and conditions if necessary and automatically display the Tap to Pay on iPhone screen when configuration completes.
 
-**Avoid making merchants wait to use Tap to Pay on iPhone.** In addition to performing the initial configuration for each device, you need to perform a subsequent configuration each time your app becomes frontmost. To minimize potential wait times, prepare the feature as soon as your app starts and immediately after each transition to the foreground. For developer guidance, see [prepare(using:)](https://developer.apple.com/documentation/ProximityReader/PaymentCardReader/prepare(using:)).
+**Avoid making merchants wait to use Tap to Pay on iPhone.** In addition to performing the initial configuration for each device, you need to perform a subsequent configuration each time your app becomes frontmost. To minimize potential wait times, prepare the feature as soon as your app starts and immediately after each transition to the foreground. For developer guidance, see [prepare(using:)](https://developer.apple.com/documentation/proximityreader/paymentcardreader/prepare(using:)).
 
-**Make sure the Tap to Pay on iPhone checkout option is available even if configuration is continuing in the background.** Merchants must always be able to select the Tap to Pay on iPhone checkout option in a checkout flow. During configuration, let merchants select the checkout option and then display a progress indicator — avoid waiting for configuration to complete before making the option available. In most scenarios, you can display an indeterminate progress indicator, but if ProximityReader API shows that configuration is ongoing, display a determinate progress indicator. For guidance, see [Progress indicators](https://developer.apple.com/design/human-interface-guidelines/progress-indicators); for developer guidance see [PaymentCardReader.Event.updateProgress(_:)](https://developer.apple.com/documentation/ProximityReader/PaymentCardReader/Event/updateProgress(_:)).
+**Make sure the Tap to Pay on iPhone checkout option is available even if configuration is continuing in the background.** Merchants must always be able to select the Tap to Pay on iPhone checkout option in a checkout flow. During configuration, let merchants select the checkout option and then display a progress indicator — avoid waiting for configuration to complete before making the option available. In most scenarios, you can display an indeterminate progress indicator, but if ProximityReader API shows that configuration is ongoing, display a determinate progress indicator. For guidance, see [Progress indicators](https://developer.apple.com/design/human-interface-guidelines/progress-indicators); for developer guidance see [PaymentCardReader.Event.updateProgress(_:)](https://developer.apple.com/documentation/proximityreader/paymentcardreader/event/updateprogress(_:)).
 
 **If your app supports multiple payment-acceptance methods, make the Tap to Pay on iPhone button easy to find.** Avoid making merchants scroll to access the feature. If your app doesn’t support other payment acceptance options, open Tap to Pay on iPhone automatically when checkout begins.
 
@@ -82,9 +82,9 @@ Checking out is a time-sensitive action, and merchants need the process to work 
 
 Customers pay by *tapping* — that is, bringing a contactless card or digital wallet near the Tap to Pay on iPhone screen in your app. After a successful tap (and after a successful PIN entry, if required), Tap to Pay on iPhone displays a checkmark and gives your app an object that contains the encrypted payment information you send to your PSP for processing. When a tap fails, Tap to Pay on iPhone displays an error screen. Your app is responsible for displaying transaction results after a successful tap or offering alternative payment options after an unsuccessful tap.
 
-**Start processing a transaction as soon as possible.** The system provides API you can use to request the result of a successful tap before the Tap to Pay on iPhone screen finishes displaying the checkmark animation that indicates tap completion. For developer guidance, see [returnReadResultImmediately](https://developer.apple.com/documentation/ProximityReader/PaymentCardReader/Options-swift.struct/returnReadResultImmediately).
+**Start processing a transaction as soon as possible.** The system provides API you can use to request the result of a successful tap before the Tap to Pay on iPhone screen finishes displaying the checkmark animation that indicates tap completion. For developer guidance, see [returnReadResultImmediately](https://developer.apple.com/documentation/proximityreader/paymentcardreader/options-swift.struct/returnreadresultimmediately).
 
-**Display a progress indicator while payment is authorizing before you show your transaction result screen.** Transaction authorization can take several seconds to complete, depending on factors like connectivity for both the PSP and the merchant’s device. To ensure a smooth visual transition, display your authorization [Progress indicators](https://developer.apple.com/design/human-interface-guidelines/progress-indicators) after the Tap to Pay on iPhone screen animation finishes (for developer guidance, see [PaymentCardReader.Event.readyForTap](https://developer.apple.com/documentation/ProximityReader/PaymentCardReader/Event/readyForTap)).
+**Display a progress indicator while payment is authorizing before you show your transaction result screen.** Transaction authorization can take several seconds to complete, depending on factors like connectivity for both the PSP and the merchant’s device. To ensure a smooth visual transition, display your authorization [Progress indicators](https://developer.apple.com/design/human-interface-guidelines/progress-indicators) after the Tap to Pay on iPhone screen animation finishes (for developer guidance, see [PaymentCardReader.Event.readyForTap](https://developer.apple.com/documentation/proximityreader/paymentcardreader/event/readyfortap)).
 
 **Clearly display the result of a transaction, whether it’s declined or successful.** A transaction can be declined for reasons like insufficient funds, suspicion of fraud, or when the customer enters an incorrect PIN. As much as possible, also give the merchant ways to offer customers a digital receipt, such as through a QR code or text message.
 
@@ -99,7 +99,7 @@ After you receive payment card data, you might also encounter scenarios like the
 * Some regions require Strong Customer Authentication (SCA) support, which means that although the payment card might not require a card PIN during a tap, the bank that issues the card can request a PIN after receiving the transaction processing request. In this scenario, your app may need to display the PIN entry screen instead of the transaction result.
 * In some regions your app may need to meet additional requirements to address the limitations of some cards, such as those in Offline PIN markets. Some PSPs support additional PIN fallback functionality to collect partial data from a tap, letting merchants continue the payment with another method such as a payment link.
 
-**If the system returns an error that the merchant must address, display a clear description of the problem and recommend an appropriate resolution.** For example, if the device’s version of iOS doesn’t support Tap to Pay on iPhone, present an [Alerts](https://developer.apple.com/design/human-interface-guidelines/alerts) that recommends updating to the latest version. For developer guidance, see [PaymentCardReaderSession.ReadError](https://developer.apple.com/documentation/ProximityReader/PaymentCardReaderSession/ReadError).
+**If the system returns an error that the merchant must address, display a clear description of the problem and recommend an appropriate resolution.** For example, if the device’s version of iOS doesn’t support Tap to Pay on iPhone, present an [Alerts](https://developer.apple.com/design/human-interface-guidelines/alerts) that recommends updating to the latest version. For developer guidance, see [PaymentCardReaderSession.ReadError](https://developer.apple.com/documentation/proximityreader/paymentcardreadersession/readerror).
 
 **Make it easy for merchants to get help with issues they can’t resolve.** For example, direct merchants to the help content in your app or on your website, and provide an action that contacts your support team.
 
@@ -125,7 +125,7 @@ When customers have other types of NFC-compatible cards or passes in Apple Walle
 
 #### Developer documentation
 
-[Adding support for Tap to Pay on iPhone to your app](https://developer.apple.com/documentation/ProximityReader/adding-support-for-tap-to-pay-on-iphone-to-your-app) — ProximityReader
+[Adding support for Tap to Pay on iPhone to your app](https://developer.apple.com/documentation/proximityreader/adding-support-for-tap-to-pay-on-iphone-to-your-app) — ProximityReader
 
 ## Change log
 

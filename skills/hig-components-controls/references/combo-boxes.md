@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/combo-boxe
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/combo-boxes.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Combo boxes
@@ -38,7 +38,7 @@ For guidance, see [Text fields](https://developer.apple.com/design/human-interfa
 
 #### Developer documentation
 
-[NSComboBox](https://developer.apple.com/documentation/AppKit/NSComboBox) — AppKit
+[NSComboBox](https://developer.apple.com/documentation/appkit/nscombobox) — AppKit
 
 ---
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/printing
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/printing.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Printing
@@ -46,9 +46,9 @@ source: https://developer.apple.com/design/human-interface-guidelines/printing
 
 #### Developer documentation
 
-[UIPrintInteractionController](https://developer.apple.com/documentation/UIKit/UIPrintInteractionController) — UIKit
+[UIPrintInteractionController](https://developer.apple.com/documentation/uikit/uiprintinteractioncontroller) — UIKit
 
-[NSDocument](https://developer.apple.com/documentation/AppKit/NSDocument) — AppKit
+[NSDocument](https://developer.apple.com/documentation/appkit/nsdocument) — AppKit
 
 ---
 

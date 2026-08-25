@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/modality
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/modality.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Modality
@@ -59,11 +59,11 @@ To provide a temporary experience, like viewing media, or to help people perform
 
 #### Developer documentation
 
-[Presentation modifiers](https://developer.apple.com/documentation/SwiftUI/View-Presentation) — SwiftUI
+[Presentation modifiers](https://developer.apple.com/documentation/swiftui/view-presentation) — SwiftUI
 
-[UIModalPresentationStyle](https://developer.apple.com/documentation/UIKit/UIModalPresentationStyle) — UIKit
+[UIModalPresentationStyle](https://developer.apple.com/documentation/uikit/uimodalpresentationstyle) — UIKit
 
-[Modal Windows and Panels](https://developer.apple.com/documentation/AppKit/modal-windows-and-panels) — AppKit
+[Modal Windows and Panels](https://developer.apple.com/documentation/appkit/modal-windows-and-panels) — AppKit
 
 #### Videos
 

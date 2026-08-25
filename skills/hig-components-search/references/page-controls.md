@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/page-contr
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/page-controls.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Page controls
@@ -26,7 +26,7 @@ Page controls appear as a series of small indicator dots by default, representin
 
 By default, a page control uses the system-provided dot image for all indicators, but it can also display a unique image to help people identify a specific page. For example, Weather uses the `location.fill` symbol to distinguish the current location’s page.
 
-If it enhances your app or game, you can provide a custom image to use as the default image for all indicators and you can also supply a different image for a specific page. For developer guidance, see [preferredIndicatorImage](https://developer.apple.com/documentation/UIKit/UIPageControl/preferredIndicatorImage) and [setIndicatorImage(_:forPage:)](https://developer.apple.com/documentation/UIKit/UIPageControl/setIndicatorImage(_:forPage:)).
+If it enhances your app or game, you can provide a custom image to use as the default image for all indicators and you can also supply a different image for a specific page. For developer guidance, see [preferredIndicatorImage](https://developer.apple.com/documentation/uikit/uipagecontrol/preferredindicatorimage) and [setIndicatorImage(_:forPage:)](https://developer.apple.com/documentation/uikit/uipagecontrol/setindicatorimage(_:forpage:)).
 
 **Make sure custom indicator images are simple and clear.** Avoid complex shapes, and don’t include negative space, text, or inner lines, because these details can make an icon muddy and indecipherable at very small sizes. Consider using simple [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols) as indicators or design your own icons. For guidance, see [Icons](https://developer.apple.com/design/human-interface-guidelines/icons).
 
@@ -46,7 +46,7 @@ A page control can adjust the appearance of indicators to provide more informati
 
 People interact with page controls by tapping or scrubbing (to *scrub*, people touch the control and drag left or right). Tapping on the leading or trailing side of the current-page indicator reveals the next or previous page; in iPadOS, people can also use the pointer to target a specific indicator. Scrubbing opens pages in sequence, and scrubbing past the leading or trailing edge of the control helps people quickly reach the first or last page.
 
-> **Developer note:** In the API, *tapping* is a *discrete interaction*, whereas *scrubbing* is a *continuous interaction*; for developer guidance, see [UIPageControl.InteractionState](https://developer.apple.com/documentation/UIKit/UIPageControl/InteractionState-swift.enum).
+> **Developer note:** In the API, *tapping* is a *discrete interaction*, whereas *scrubbing* is a *continuous interaction*; for developer guidance, see [UIPageControl.InteractionState](https://developer.apple.com/documentation/uikit/uipagecontrol/interactionstate-swift.enum).
 
 **Avoid animating page transitions during scrubbing.** People can scrub very quickly, and using the scrolling animation for every transition can make your app lag and cause distracting visual flashes. Use the animated scrolling transition only for tapping.
 
@@ -56,7 +56,7 @@ A page control can include a translucent, rounded-rectangle background appearanc
 * Prominent — Always displays the background. Use this style only when the control is the primary navigational control in the screen.
 * Minimal — Never displays the background. Use this style when you just want to show the position of the current page in the list and you don’t need to provide visual feedback during scrubbing.
 
-For developer guidance, see [backgroundStyle](https://developer.apple.com/documentation/UIKit/UIPageControl/backgroundStyle-swift.property).
+For developer guidance, see [backgroundStyle](https://developer.apple.com/documentation/uikit/uipagecontrol/backgroundstyle-swift.property).
 
 **Avoid supporting the scrubber when you use the minimal background style.** The minimal style doesn’t provide visual feedback during scrubbing. If you want to let people scrub a list of pages in your app, use the automatic or prominent background styles.
 
@@ -84,9 +84,9 @@ In watchOS, page controls can be displayed at the bottom of the screen for horiz
 
 #### Developer documentation
 
-[PageTabViewStyle](https://developer.apple.com/documentation/SwiftUI/PageTabViewStyle) — SwiftUI
+[PageTabViewStyle](https://developer.apple.com/documentation/swiftui/pagetabviewstyle) — SwiftUI
 
-[UIPageControl](https://developer.apple.com/documentation/UIKit/UIPageControl) — UIKit
+[UIPageControl](https://developer.apple.com/documentation/uikit/uipagecontrol) — UIKit
 
 ## Change log
 

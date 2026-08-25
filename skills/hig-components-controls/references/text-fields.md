@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/text-field
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/text-fields.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Text fields
@@ -16,7 +16,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/text-field
 
 **Show a hint in a text field to help communicate its purpose.** A text field can contain placeholder text — such as “Email” or “Password” — when there’s no other text in the field. Because placeholder text disappears when people start typing, it can also be useful to include a separate label describing the field to remind people of its purpose.
 
-**Use secure text fields to hide private data.** Always use a secure text field when your app asks for sensitive data, such as a password. For developer guidance, see [SecureField](https://developer.apple.com/documentation/SwiftUI/SecureField).
+**Use secure text fields to hide private data.** Always use a secure text field when your app asks for sensitive data, such as a password. For developer guidance, see [SecureField](https://developer.apple.com/documentation/swiftui/securefield).
 
 **To the extent possible, match the size of a text field to the quantity of anticipated text.** The size of a text field helps people visually gauge the amount of information to provide.
 
@@ -66,13 +66,13 @@ source: https://developer.apple.com/design/human-interface-guidelines/text-field
 
 #### Developer documentation
 
-[TextField](https://developer.apple.com/documentation/SwiftUI/TextField) — SwiftUI
+[TextField](https://developer.apple.com/documentation/swiftui/textfield) — SwiftUI
 
-[SecureField](https://developer.apple.com/documentation/SwiftUI/SecureField) — SwiftUI
+[SecureField](https://developer.apple.com/documentation/swiftui/securefield) — SwiftUI
 
-[UITextField](https://developer.apple.com/documentation/UIKit/UITextField) — UIKit
+[UITextField](https://developer.apple.com/documentation/uikit/uitextfield) — UIKit
 
-[NSTextField](https://developer.apple.com/documentation/AppKit/NSTextField) — AppKit
+[NSTextField](https://developer.apple.com/documentation/appkit/nstextfield) — AppKit
 
 ## Change log
 

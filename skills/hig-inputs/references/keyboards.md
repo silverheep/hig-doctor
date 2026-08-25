@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/keyboards
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/keyboards.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Keyboards
@@ -18,7 +18,7 @@ Apple defines standard keyboard shortcuts to work consistently across the system
 
 ## Best practices
 
-**Support Full Keyboard Access when possible.** Available in iOS, iPadOS, macOS, and visionOS, Full Keyboard Access lets people navigate and activate windows, menus, controls, and system features using only the keyboard. To test Full Keyboard Access in your app or game, turn it on in the Accessibility area of the system-supplied Settings app. For developer guidance, see [Support Full Keyboard Access in your iOS app](https://developer.apple.com/videos/play/wwdc2021/10120/) and [isFullKeyboardAccessEnabled](https://developer.apple.com/documentation/AppKit/NSApplication/isFullKeyboardAccessEnabled).
+**Support Full Keyboard Access when possible.** Available in iOS, iPadOS, macOS, and visionOS, Full Keyboard Access lets people navigate and activate windows, menus, controls, and system features using only the keyboard. To test Full Keyboard Access in your app or game, turn it on in the Accessibility area of the system-supplied Settings app. For developer guidance, see [Support Full Keyboard Access in your iOS app](https://developer.apple.com/videos/play/wwdc2021/10120/) and [isFullKeyboardAccessEnabled](https://developer.apple.com/documentation/appkit/nsapplication/isfullkeyboardaccessenabled).
 
 > **Important:** Although iPadOS supports keyboard navigation in text fields, text views, and sidebars, and provides APIs you can use to support it in collection views and other custom views, avoid supporting keyboard navigation for controls, such as buttons, segmented controls, and switches. Instead, let people use Full Keyboard Access to activate controls, navigate to all onscreen components, and perform gesture-based interactions like drag and drop. For guidance, see [iPadOS](https://developer.apple.com/design/human-interface-guidelines/focus-and-selection#iPadOS); for developer guidance, see [Focus-based navigation](https://developer.apple.com/documentation/uikit/focus-based_navigation).
 
@@ -192,7 +192,7 @@ Here are the modifier keys and the symbols that represent them.
 
 In visionOS, an app’s keyboard shortcuts appear in the shortcut interface that displays when people hold the Command key on a connected keyboard. Similar in organization to an app’s [The menu bar](https://developer.apple.com/design/human-interface-guidelines/the-menu-bar) on iPad or Mac, the shortcut interface on Apple Vision Pro displays app commands in familiar system-defined menu categories such as File, Edit, and View. Unlike menu bar menus, the shortcut interface displays all relevant categories in one view, listing within each category only available commands that also have shortcuts.
 
-**Write descriptive shortcut titles.** Because the shortcut interface displays a flat list of all items in each category, submenu titles aren’t available to provide context for their child items. Make sure each shortcut title is descriptive enough to convey its action without the additional context a submenu title might provide. For developer guidance, see [discoverabilityTitle](https://developer.apple.com/documentation/UIKit/UIKeyCommand/discoverabilityTitle).
+**Write descriptive shortcut titles.** Because the shortcut interface displays a flat list of all items in each category, submenu titles aren’t available to provide context for their child items. Make sure each shortcut title is descriptive enough to convey its action without the additional context a submenu title might provide. For developer guidance, see [discoverabilityTitle](https://developer.apple.com/documentation/uikit/uikeycommand/discoverabilitytitle).
 
 **Recognize that people see an overlay when they use a physical keyboard with your visionOS app or game.** When people connect a physical keyboard while using your visionOS app or game, the system displays a virtual keyboard overlay that provides typing completion and other controls.
 
@@ -208,13 +208,13 @@ In visionOS, an app’s keyboard shortcuts appear in the shortcut interface that
 
 #### Developer documentation
 
-[KeyboardShortcut](https://developer.apple.com/documentation/SwiftUI/KeyboardShortcut) — SwiftUI
+[KeyboardShortcut](https://developer.apple.com/documentation/swiftui/keyboardshortcut) — SwiftUI
 
-[Input events](https://developer.apple.com/documentation/SwiftUI/Input-events) — SwiftUI
+[Input events](https://developer.apple.com/documentation/swiftui/input-events) — SwiftUI
 
-[Handling key presses made on a physical keyboard](https://developer.apple.com/documentation/UIKit/handling-key-presses-made-on-a-physical-keyboard) — UIKit
+[Handling key presses made on a physical keyboard](https://developer.apple.com/documentation/uikit/handling-key-presses-made-on-a-physical-keyboard) — UIKit
 
-[Mouse, Keyboard, and Trackpad](https://developer.apple.com/documentation/AppKit/mouse-keyboard-and-trackpad) — AppKit
+[Mouse, Keyboard, and Trackpad](https://developer.apple.com/documentation/appkit/mouse-keyboard-and-trackpad) — AppKit
 
 ## Change log
 

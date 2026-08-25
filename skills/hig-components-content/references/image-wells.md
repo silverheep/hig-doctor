@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/image-well
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/image-wells.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Image wells
@@ -32,7 +32,7 @@ For related guidance, see [Image views](https://developer.apple.com/design/human
 
 #### Developer documentation
 
-[NSImageView](https://developer.apple.com/documentation/AppKit/NSImageView) — AppKit
+[NSImageView](https://developer.apple.com/documentation/appkit/nsimageview) — AppKit
 
 ---
 

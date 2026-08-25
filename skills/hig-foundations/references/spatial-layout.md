@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/spatial-la
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/spatial-layout.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Spatial layout
@@ -24,9 +24,9 @@ A person’s *field of view* is the space they can see without moving their head
 
 People rely on visual cues like distance, occlusion, and shadow to perceive depth and make sense of their surroundings. On Apple Vision Pro, the system automatically uses visual effects like color temperature, reflections, and shadow to help people perceive the depth of virtual content. When people move a virtual object in space — or when they change their position relative to that object — the visual effects change the object’s apparent depth, making the experience feel more lifelike.
 
-Because people can view your content from any angle, incorporating small amounts of depth throughout your interface — even in standard windows — can help it look more natural. When you use SwiftUI, the system adds visual effects to views in a 2D window, making them appear to have depth. For developer guidance, see [Adding 3D content to your app](https://developer.apple.com/documentation/visionOS/adding-3d-content-to-your-app).
+Because people can view your content from any angle, incorporating small amounts of depth throughout your interface — even in standard windows — can help it look more natural. When you use SwiftUI, the system adds visual effects to views in a 2D window, making them appear to have depth. For developer guidance, see [Adding 3D content to your app](https://developer.apple.com/documentation/visionos/adding-3d-content-to-your-app).
 
-If you need to present content with additional depth, you use RealityKit to create a 3D object (for developer guidance, see [RealityKit](https://developer.apple.com/documentation/RealityKit)). You can display the 3D object anywhere, or you can use a *volume*, which is a component that displays 3D content. A volume is similar to a window, but without a visible frame. For guidance, see [visionOS volumes](https://developer.apple.com/design/human-interface-guidelines/windows#visionOS-volumes).
+If you need to present content with additional depth, you use RealityKit to create a 3D object (for developer guidance, see [RealityKit](https://developer.apple.com/documentation/realitykit)). You can display the 3D object anywhere, or you can use a *volume*, which is a component that displays 3D content. A volume is similar to a window, but without a visible frame. For guidance, see [visionOS volumes](https://developer.apple.com/design/human-interface-guidelines/windows#visionOS-volumes).
 
 **Provide visual cues that accurately communicate the depth of your content.** If visual cues are missing or they conflict with a person’s real-world experience, people can experience visual discomfort.
 
@@ -80,11 +80,11 @@ To learn more about windows and volumes in visionOS, see [visionOS](https://deve
 
 #### Developer documentation
 
-[Presenting windows and spaces](https://developer.apple.com/documentation/visionOS/presenting-windows-and-spaces) — visionOS
+[Presenting windows and spaces](https://developer.apple.com/documentation/visionos/presenting-windows-and-spaces) — visionOS
 
-[Positioning and sizing windows](https://developer.apple.com/documentation/visionOS/positioning-and-sizing-windows) — visionOS
+[Positioning and sizing windows](https://developer.apple.com/documentation/visionos/positioning-and-sizing-windows) — visionOS
 
-[Adding 3D content to your app](https://developer.apple.com/documentation/visionOS/adding-3d-content-to-your-app) — visionOS
+[Adding 3D content to your app](https://developer.apple.com/documentation/visionos/adding-3d-content-to-your-app) — visionOS
 
 #### Videos
 

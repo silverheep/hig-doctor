@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/text-views
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/text-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Text views
@@ -44,11 +44,11 @@ You can display text in tvOS using a text view. Because text input in tvOS is mi
 
 #### Developer documentation
 
-[Text](https://developer.apple.com/documentation/SwiftUI/Text) — SwiftUI
+[Text](https://developer.apple.com/documentation/swiftui/text) — SwiftUI
 
-[UITextView](https://developer.apple.com/documentation/UIKit/UITextView) — UIKit
+[UITextView](https://developer.apple.com/documentation/uikit/uitextview) — UIKit
 
-[NSTextView](https://developer.apple.com/documentation/AppKit/NSTextView) — AppKit
+[NSTextView](https://developer.apple.com/documentation/appkit/nstextview) — AppKit
 
 ## Change log
 

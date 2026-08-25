@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/rating-ind
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/rating-indicators.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Rating indicators
@@ -30,7 +30,7 @@ A rating indicator doesn’t display partial symbols; it rounds the value to dis
 
 #### Developer documentation
 
-[NSLevelIndicator.Style.rating](https://developer.apple.com/documentation/AppKit/NSLevelIndicator/Style/rating) — AppKit
+[NSLevelIndicator.Style.rating](https://developer.apple.com/documentation/appkit/nslevelindicator/style/rating) — AppKit
 
 ## Change log
 

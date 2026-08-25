@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/menus
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/menus.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Menus
@@ -96,7 +96,7 @@ In iOS and iPadOS, a menu can display items in one of the following three layout
 * **Medium.** A row of three items appears at the top of the menu, above a list that contains the remaining items. For each item in the top row, the menu displays a symbol or icon above a short label.
 * **Large (the default).** The menu displays all items in a list.
 
-For developer guidance, see [preferredElementSize](https://developer.apple.com/documentation/UIKit/UIMenu/preferredElementSize).
+For developer guidance, see [preferredElementSize](https://developer.apple.com/documentation/uikit/uimenu/preferredelementsize).
 
 **Choose a small or medium menu layout when it can help streamline people’s choices.** Consider using the medium layout if your app has three important actions that people often want to perform. For example, Notes uses the medium layout to give people a quick way to perform the Scan, Lock, and Pin actions. Use the small layout only for closely related actions that typically appear as a group, such as Bold, Italic, Underline, and Strikethrough. For each action, use a recognizable symbol that helps people identify the action without a label.
 
@@ -106,7 +106,7 @@ In visionOS, a menu can display items using the small or large layout styles tha
 
 **Prefer displaying a menu near the content it controls.** Because people need to look at a menu item before tapping it, they might miss the item’s effect if the content it controls is too far away.
 
-**Prefer the subtle breakthrough effect in most cases.** This effect blends the presentation with its surrounding content, to maintain legibility and usability while preserving the depth and context of the scene. When you select [automatic](https://developer.apple.com/documentation/SwiftUI/BreakthroughEffect/automatic) for the breakthrough effect of a menu that overlaps with 3D content, the system applies [subtle](https://developer.apple.com/documentation/SwiftUI/BreakthroughEffect/subtle) by default. You can use [prominent](https://developer.apple.com/documentation/SwiftUI/BreakthroughEffect/prominent) if it’s important to display a menu prominently over the entire scene in your app or game, but this can disrupt the experience for people and potentially cause discomfort. Alternatively, you can use [none](https://developer.apple.com/documentation/SwiftUI/BreakthroughEffect/none) to fully occlude your menu behind other 3D content — for example, in a puzzle game that requires people to navigate around barriers — but this may make it difficult for people to see and access the menu.
+**Prefer the subtle breakthrough effect in most cases.** This effect blends the presentation with its surrounding content, to maintain legibility and usability while preserving the depth and context of the scene. When you select [automatic](https://developer.apple.com/documentation/swiftui/breakthrougheffect/automatic) for the breakthrough effect of a menu that overlaps with 3D content, the system applies [subtle](https://developer.apple.com/documentation/swiftui/breakthrougheffect/subtle) by default. You can use [prominent](https://developer.apple.com/documentation/swiftui/breakthrougheffect/prominent) if it’s important to display a menu prominently over the entire scene in your app or game, but this can disrupt the experience for people and potentially cause discomfort. Alternatively, you can use [none](https://developer.apple.com/documentation/swiftui/breakthrougheffect/none) to fully occlude your menu behind other 3D content — for example, in a puzzle game that requires people to navigate around barriers — but this may make it difficult for people to see and access the menu.
 
 ## Resources
 
@@ -122,11 +122,11 @@ In visionOS, a menu can display items using the small or large layout styles tha
 
 #### Developer documentation
 
-[Menu](https://developer.apple.com/documentation/SwiftUI/Menu) — SwiftUI
+[Menu](https://developer.apple.com/documentation/swiftui/menu) — SwiftUI
 
-[Menus and shortcuts](https://developer.apple.com/documentation/UIKit/menus-and-shortcuts) — UIKit
+[Menus and shortcuts](https://developer.apple.com/documentation/uikit/menus-and-shortcuts) — UIKit
 
-[Menus](https://developer.apple.com/documentation/AppKit/menus) — AppKit
+[Menus](https://developer.apple.com/documentation/appkit/menus) — AppKit
 
 ## Change log
 

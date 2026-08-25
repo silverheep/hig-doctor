@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/the-menu-b
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/the-menu-bar.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # The menu bar
@@ -190,7 +190,7 @@ The Help menu — located at the trailing end of the menu bar — provides acces
 | *YourAppName* Help | When the content uses the Help Book format, opens the content in the built-in Help Viewer. |  |
 | *Additional Item* |  | Use a separator between your primary help documentation and additional items, which might include registration information or release notes. Keep the total the number of items you list in the Help menu small to avoid overwhelming people with too many choices when they need help. Alternatively, consider linking to additional items from within your help documentation. |
 
-For guidance, see [Offering help](https://developer.apple.com/design/human-interface-guidelines/offering-help); for developer guidance, see [NSHelpManager](https://developer.apple.com/documentation/AppKit/NSHelpManager).
+For guidance, see [Offering help](https://developer.apple.com/design/human-interface-guidelines/offering-help); for developer guidance, see [NSHelpManager](https://developer.apple.com/documentation/appkit/nshelpmanager).
 
 ## Dynamic menu items
 
@@ -200,7 +200,7 @@ In rare cases, it can make sense to present a *dynamic menu item*, which is a me
 
 **Use dynamic menu items primarily in menu bar menus.** Adding a dynamic menu item to contextual or Dock menus can make the item even harder for people to discover.
 
-**Require only a single modifier key to reveal a dynamic menu item.** It can be physically awkward to press more than one key while simultaneously opening a menu and choosing a menu item, in addition to reducing the discoverability of the dynamic behavior. For developer guidance, see [isAlternate](https://developer.apple.com/documentation/AppKit/NSMenuItem/isAlternate).
+**Require only a single modifier key to reveal a dynamic menu item.** It can be physically awkward to press more than one key while simultaneously opening a menu and choosing a menu item, in addition to reducing the discoverability of the dynamic behavior. For developer guidance, see [isAlternate](https://developer.apple.com/documentation/appkit/nsmenuitem/isalternate).
 
 > **Tip:** macOS automatically sets the width of a menu to hold the widest item, including dynamic menu items.
 
@@ -241,7 +241,7 @@ When people enter full-screen mode, the menu bar typically hides until they reve
 
 #### Menu bar extras
 
-A menu bar extra exposes app-specific functionality using an icon that appears in the menu bar when your app is running, even when it’s not the frontmost app. Menu bar extras are on the opposite side of the menu bar from your app’s menus. For developer guidance, see [MenuBarExtra](https://developer.apple.com/documentation/SwiftUI/MenuBarExtra).
+A menu bar extra exposes app-specific functionality using an icon that appears in the menu bar when your app is running, even when it’s not the frontmost app. Menu bar extras are on the opposite side of the menu bar from your app’s menus. For developer guidance, see [MenuBarExtra](https://developer.apple.com/documentation/swiftui/menubarextra).
 
 When necessary, the system hides menu bar extras to make room for app menus. Similarly, if there are too many menu bar extras, the system may hide some to avoid crowding app menus.
 
@@ -267,11 +267,11 @@ When necessary, the system hides menu bar extras to make room for app menus. Sim
 
 #### Developer documentation
 
-[CommandMenu](https://developer.apple.com/documentation/SwiftUI/CommandMenu) — SwiftUI
+[CommandMenu](https://developer.apple.com/documentation/swiftui/commandmenu) — SwiftUI
 
-[Adding menus and shortcuts to the menu bar and user interface](https://developer.apple.com/documentation/UIKit/adding-menus-and-shortcuts-to-the-menu-bar-and-user-interface) — UIKit
+[Adding menus and shortcuts to the menu bar and user interface](https://developer.apple.com/documentation/uikit/adding-menus-and-shortcuts-to-the-menu-bar-and-user-interface) — UIKit
 
-[NSStatusBar](https://developer.apple.com/documentation/AppKit/NSStatusBar) — AppKit
+[NSStatusBar](https://developer.apple.com/documentation/appkit/nsstatusbar) — AppKit
 
 #### Videos
 

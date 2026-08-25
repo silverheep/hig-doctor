@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/healthkit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/healthkit.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # HealthKit
@@ -16,15 +16,15 @@ When you support HealthKit in your app, you can ask people for permission to acc
 
 For example, a nutrition app might ask for permission to retrieve people’s weight and activity data, so it can define calorie consumption goals and make dietary recommendations. In this scenario, the nutrition app could also send data — such as the calories that people log — to HealthKit, which can include the data in its global progress metrics.
 
-For developer guidance, see [HealthKit](https://developer.apple.com/documentation/HealthKit).
+For developer guidance, see [HealthKit](https://developer.apple.com/documentation/healthkit).
 
 ## Privacy protection
 
-You must request permission to access people’s data, and you must take all necessary steps to protect that data. After you receive permission, it’s essential to maintain people’s trust by clearly showing them how you use their data. For developer guidance, see [Protecting user privacy](https://developer.apple.com/documentation/HealthKit/protecting-user-privacy).
+You must request permission to access people’s data, and you must take all necessary steps to protect that data. After you receive permission, it’s essential to maintain people’s trust by clearly showing them how you use their data. For developer guidance, see [Protecting user privacy](https://developer.apple.com/documentation/healthkit/protecting-user-privacy).
 
 **Provide a coherent privacy policy.** During the app submission process, you must provide a URL to a clearly stated privacy policy, so that people can view the policy when they click the link in the App Store page for your app. For developer guidance, see [App Information > App Store Connect Help](https://help.apple.com/app-store-connect/#/dev219b53a88).
 
-**Request access to health data only when you need it.** It makes sense to request access to weight information when people log their weight, for example, but not immediately after your app launches. When your request is clearly related to the current context, you help people understand your app’s intentions. Also, people can change the permissions they grant, so your app needs to make a request every time it needs access. For developer guidance, see [requestAuthorization(toShare:read:completion:)](https://developer.apple.com/documentation/HealthKit/HKHealthStore/requestAuthorization(toShare:read:completion:)).
+**Request access to health data only when you need it.** It makes sense to request access to weight information when people log their weight, for example, but not immediately after your app launches. When your request is clearly related to the current context, you help people understand your app’s intentions. Also, people can change the permissions they grant, so your app needs to make a request every time it needs access. For developer guidance, see [requestAuthorization(toShare:read:completion:)](https://developer.apple.com/documentation/healthkit/hkhealthstore/requestauthorization(toshare:read:completion:)).
 
 **Clarify your app’s intent by adding descriptive messages to the standard permission screen.** People expect to see the system-provided permission screen when asked to approve access to health data. Write a few succinct sentences that explain why you need the information and how people can benefit from sharing it with your app. Avoid adding custom screens that replicate the standard permission screen’s behavior or content.
 
@@ -50,7 +50,7 @@ You can enhance your app’s health and wellness offerings by displaying the Act
 
 **Provide app-specific information only in Activity notifications.** The system already delivers Move, Exercise, and Stand progress updates. Don’t repeat this same information, and never show an Activity ring element in your app’s notifications. It’s fine to reference Activity progress in a notification, but do so in a way that’s unique to your app and doesn’t replicate the same information provided by the system.
 
-For developer guidance, see [HKActivityRingView](https://developer.apple.com/documentation/HealthKitUI/HKActivityRingView).
+For developer guidance, see [HKActivityRingView](https://developer.apple.com/documentation/healthkitui/hkactivityringview).
 
 ## Apple Health icon
 
@@ -98,9 +98,9 @@ The Apple Health icon shows that an app works with HealthKit and the Health app.
 
 #### Developer documentation
 
-[HealthKit](https://developer.apple.com/documentation/HealthKit)
+[HealthKit](https://developer.apple.com/documentation/healthkit)
 
-[Protecting user privacy](https://developer.apple.com/documentation/HealthKit/protecting-user-privacy) — HealthKit
+[Protecting user privacy](https://developer.apple.com/documentation/healthkit/protecting-user-privacy) — HealthKit
 
 #### Videos
 
