@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/edit-menus
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/edit-menus.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Edit menus
@@ -23,7 +23,7 @@ Editing content is rare in tvOS and watchOS experiences, so the system doesn’t
 
 ## Best practices
 
-**Prefer the system-provided edit menu.** People are familiar with the contents and behavior of the system-provided component, so creating a custom menu that presents the same commands is redundant and likely to be confusing. For a list of standard edit menu commands, see [UIResponderStandardEditActions](https://developer.apple.com/documentation/UIKit/UIResponderStandardEditActions).
+**Prefer the system-provided edit menu.** People are familiar with the contents and behavior of the system-provided component, so creating a custom menu that presents the same commands is redundant and likely to be confusing. For a list of standard edit menu commands, see [UIResponderStandardEditActions](https://developer.apple.com/documentation/uikit/uiresponderstandardeditactions).
 
 **Let people reveal an edit menu using the system-defined interactions they already know.** For example, people expect to touch and hold on a touchscreen, pinch and hold in visionOS, or use a secondary click with an attached trackpad or keyboard. Although the interactions to reveal an edit menu can differ based on platform, people don’t appreciate having to learn a custom interaction to perform a standard task.
 
@@ -71,9 +71,9 @@ To learn about the order of items in a macOS app’s Edit menu, see [Edit menu](
 
 #### Developer documentation
 
-[UIEditMenuInteraction](https://developer.apple.com/documentation/UIKit/UIEditMenuInteraction) — UIKit
+[UIEditMenuInteraction](https://developer.apple.com/documentation/uikit/uieditmenuinteraction) — UIKit
 
-[NSMenu](https://developer.apple.com/documentation/AppKit/NSMenu) — AppKit
+[NSMenu](https://developer.apple.com/documentation/appkit/nsmenu) — AppKit
 
 ## Change log
 

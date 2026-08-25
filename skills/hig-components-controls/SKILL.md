@@ -1,6 +1,6 @@
 ---
 name: hig-components-controls
-version: 2.0.0
+version: 2.0.1
 description: >-
   Apple HIG guidance for selection and input controls including pickers, toggles,
   sliders, steppers, segmented controls, combo boxes, text fields, text views,

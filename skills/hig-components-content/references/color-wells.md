@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/color-well
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/color-wells.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Color wells
@@ -34,11 +34,11 @@ Color wells also support drag and drop, so people can drag colors from one color
 
 #### Developer documentation
 
-[UIColorWell](https://developer.apple.com/documentation/UIKit/UIColorWell) — UIKit
+[UIColorWell](https://developer.apple.com/documentation/uikit/uicolorwell) — UIKit
 
-[UIColorPickerViewController](https://developer.apple.com/documentation/UIKit/UIColorPickerViewController) — UIKit
+[UIColorPickerViewController](https://developer.apple.com/documentation/uikit/uicolorpickerviewcontroller) — UIKit
 
-[NSColorWell](https://developer.apple.com/documentation/AppKit/NSColorWell) — AppKit
+[NSColorWell](https://developer.apple.com/documentation/appkit/nscolorwell) — AppKit
 
 [Color Programming Topics](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/DrawColor/DrawColor.html)
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/activity-r
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/activity-rings.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Activity rings
@@ -51,7 +51,7 @@ In watchOS, the Activity ring element always contains three rings, whose colors 
 
 ### iOS
 
-Activity rings are available in iOS with [HKActivityRingView](https://developer.apple.com/documentation/HealthKitUI/HKActivityRingView). The appearance of the Activity ring element changes automatically depending on whether an Apple Watch is paired:
+Activity rings are available in iOS with [HKActivityRingView](https://developer.apple.com/documentation/healthkitui/hkactivityringview). The appearance of the Activity ring element changes automatically depending on whether an Apple Watch is paired:
 
 * With an Apple Watch paired, iOS shows all three Activity rings.
 * Without an Apple Watch paired, iOS shows the Move ring only, which represents an approximation of a person’s activity based on their steps and workout information from other apps.
@@ -66,7 +66,7 @@ Because iOS shows Activity rings whether or not an Apple Watch is paired, activi
 
 #### Developer documentation
 
-[HKActivityRingView](https://developer.apple.com/documentation/HealthKitUI/HKActivityRingView) — HealthKit
+[HKActivityRingView](https://developer.apple.com/documentation/healthkitui/hkactivityringview) — HealthKit
 
 #### Videos
 

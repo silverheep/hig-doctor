@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/app-clips
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/app-clips.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # App Clips
@@ -30,7 +30,7 @@ Consider creating an App Clip to let people experience your app or game before c
 * A fitness app might offer an App Clip with a free workout and a guided meditation.
 * A text editor might allow people to create and save a document using the demo App Clip.
 
-For developer guidance, see [App Clips](https://developer.apple.com/documentation/AppClip).
+For developer guidance, see [App Clips](https://developer.apple.com/documentation/appclip).
 
 ## Designing your App Clip
 
@@ -60,7 +60,7 @@ For developer guidance, see [App Clips](https://developer.apple.com/documentatio
 
 ### Preserving privacy
 
-The system imposes limits on App Clips to ensure people’s privacy. For example, App Clips can’t perform background operations. For developer guidance, see [Choosing the right functionality for your App Clip](https://developer.apple.com/documentation/AppClip/choosing-the-right-functionality-for-your-app-clip).
+The system imposes limits on App Clips to ensure people’s privacy. For example, App Clips can’t perform background operations. For developer guidance, see [Choosing the right functionality for your App Clip](https://developer.apple.com/documentation/appclip/choosing-the-right-functionality-for-your-app-clip).
 
 **Limit the amount of data you store and handle yourself.** If you need to store people’s data — for example, login information — store it securely. In addition, don’t rely on the availability of data you previously stored on the device — the system may have removed the App Clip from the device between launches and deleted all of its data. If you store login information, securely store it off the device.
 
@@ -81,11 +81,11 @@ In addition, you can display an overlay in your App Clip that allows people to d
 
 **Don’t compromise the user experience by asking people to install the full app.** If your App Clip offers an on-the-go experience, consider whether the App Clip card and the system-provided app banner provide enough incentive for people to download the full app. If your App Clip offers a demo experience, let people fully experience the demo before asking them to install the full app.
 
-**Pick the right time to recommend your app.**  When someone completes a task or reaches a natural pause, display an [SKOverlay](https://developer.apple.com/documentation/StoreKit/SKOverlay) that allows people to initiate a download of your full app or game from the context of the App Clip.
+**Pick the right time to recommend your app.**  When someone completes a task or reaches a natural pause, display an [SKOverlay](https://developer.apple.com/documentation/storekit/skoverlay) that allows people to initiate a download of your full app or game from the context of the App Clip.
 
 **Recommend your app in a nonintrusive, polite way.** Don’t ask people to install the full app repeatedly or interrupt them during a task. Push notifications aren’t a good way to ask people to install the app either. Clearly communicate your app’s additional features.
 
-For developer guidance, see [Recommending your app to App Clip users](https://developer.apple.com/documentation/AppClip/recommending-your-app-to-app-clip-users).
+For developer guidance, see [Recommending your app to App Clip users](https://developer.apple.com/documentation/appclip/recommending-your-app-to-app-clip-users).
 
 ### Limiting notifications
 
@@ -97,7 +97,7 @@ App Clips provide the option to schedule and receive notifications for up to 8 h
 
 **Use notifications to help people complete a task.** Notifications for an App Clip relate directly to the task the App Clip helps to accomplish. For example, an App Clip that helps people order food could send notifications related to a scheduled delivery.
 
-For developer guidance, see [Enabling notifications in App Clips](https://developer.apple.com/documentation/AppClip/enabling-notifications-in-app-clips).
+For developer guidance, see [Enabling notifications in App Clips](https://developer.apple.com/documentation/appclip/enabling-notifications-in-app-clips).
 
 ### Creating App Clips for businesses
 
@@ -107,7 +107,7 @@ If you’re a platform provider who services businesses, you may create several 
 
 **Consider multiple businesses.** An App Clip may power many different businesses or a business that has multiple locations. In both scenarios, people may end up using the App Clip for more than one business or location at a time. The App Clip must handle this use case and update its user interface accordingly. For example, consider a way to switch between recent businesses or locations within your App Clip, and verify a person’s location when they launch it.
 
-For developer guidance, see [Configuring App Clip experiences](https://developer.apple.com/documentation/AppClip/configuring-the-launch-experience-of-your-app-clip).
+For developer guidance, see [Configuring App Clip experiences](https://developer.apple.com/documentation/appclip/configuring-the-launch-experience-of-your-app-clip).
 
 ## Creating content for an App Clip card
 
@@ -129,7 +129,7 @@ The system-provided App Clip card is people’s first interaction with your App 
 
 App Clip Codes are the best way for people to discover your App Clip. Their distinct design is immediately recognizable, and they offer a fast, secure way to launch your App Clip.
 
-App Clip Codes always use the designs Apple provides and follow size, placement, and printing guidelines. Choose between the badge design that uses the App Clip logo ( App Clip) or, when space is at a premium, a design without it. Create App Clip Codes that use a default color pair, or choose custom foreground and background colors. For developer guidance, see [Creating App Clip Codes](https://developer.apple.com/documentation/AppClip/creating-app-clip-codes).
+App Clip Codes always use the designs Apple provides and follow size, placement, and printing guidelines. Choose between the badge design that uses the App Clip logo ( App Clip) or, when space is at a premium, a design without it. Create App Clip Codes that use a default color pair, or choose custom foreground and background colors. For developer guidance, see [Creating App Clip Codes](https://developer.apple.com/documentation/appclip/creating-app-clip-codes).
 
 ### Interacting with App Clip Codes
 
@@ -209,7 +209,7 @@ Use [App Store Connect](https://appstoreconnect.apple.com) or the [App Clip Code
 
 **Always use the generated App Clip Code.** Don’t create your own App Clip Code design or modify a generated App Clip Code in any way. Don’t apply filters, augment its colors, or add glows, shadows, gradients, or reflections. They negatively impact people’s scanning experience. When scaling a generated App Clip Code, don’t change the generated code’s aspect ratio, and be sure to scale all attributes of the App Clip Code — for example the stroke widths.
 
-**Choose colors with enough contrast that ensure accurate scanning.** Each App Clip Code uses three colors: a foreground color, a background color, and a third color that’s generated for you based on the foreground and background colors. Both [App Store Connect](https://appstoreconnect.apple.com) and the [App Clip Code Generator](https://developer.apple.com/app-clips/resources/) command-line tool offer a selection of default color pairs. Alternatively, you can choose custom foreground and background colors. Note that you can’t choose custom colors that will lead to a suboptimal scanning experience. If your color selection doesn’t work well, neither App Store Connect nor the command-line tool will generate an App Clip Code. To help you choose a color combination that works well, both tools contain functionality to suggest a different foreground color based on your custom background color. For more information, see [Creating App Clip Codes with the App Clip Code Generator](https://developer.apple.com/documentation/AppClip/creating-app-clip-codes-with-the-app-clip-code-generator) and [Creating App Clip Codes with App Store Connect](https://developer.apple.com/documentation/AppClip/creating-app-clip-codes-with-app-store-connect).
+**Choose colors with enough contrast that ensure accurate scanning.** Each App Clip Code uses three colors: a foreground color, a background color, and a third color that’s generated for you based on the foreground and background colors. Both [App Store Connect](https://appstoreconnect.apple.com) and the [App Clip Code Generator](https://developer.apple.com/app-clips/resources/) command-line tool offer a selection of default color pairs. Alternatively, you can choose custom foreground and background colors. Note that you can’t choose custom colors that will lead to a suboptimal scanning experience. If your color selection doesn’t work well, neither App Store Connect nor the command-line tool will generate an App Clip Code. To help you choose a color combination that works well, both tools contain functionality to suggest a different foreground color based on your custom background color. For more information, see [Creating App Clip Codes with the App Clip Code Generator](https://developer.apple.com/documentation/appclip/creating-app-clip-codes-with-the-app-clip-code-generator) and [Creating App Clip Codes with App Store Connect](https://developer.apple.com/documentation/appclip/creating-app-clip-codes-with-app-store-connect).
 
 ## Printing guidelines
 
@@ -229,7 +229,7 @@ Always test printed App Clip Codes before you distribute them to be sure they’
 
 **If you create large batches of App Clip Codes, thoroughly test your printing workflow, and verify printed App Clip Codes.** For example, conduct small, inexpensive print runs using a subset of codes. Print your App Clip Codes on print templates with additional padded regions that allow you to display the encoded invocation URL and the SVG filename alongside each code for validation at the time of print.
 
-If you create many App Clip Codes with the [App Clip Code Generator](https://developer.apple.com/app-clips/resources/) tool or [App Store Connect](https://appstoreconnect.apple.com), you’ll likely work with a professional printing service. If this is the case, you need to handle a lot of SVG files. Because you have no way of knowing which App Clip Code encodes which URL by looking at an App Clip Code, you need to use a file that contains information about which SVG file maps to which invocation URL. Under any circumstance, careful file management, versioning, and change tracking are key to avoiding faulty print runs. For more information, see [Preparing multiple App Clip Codes for production](https://developer.apple.com/documentation/AppClip/preparing-multiple-app-clip-codes-for-production).
+If you create many App Clip Codes with the [App Clip Code Generator](https://developer.apple.com/app-clips/resources/) tool or [App Store Connect](https://appstoreconnect.apple.com), you’ll likely work with a professional printing service. If this is the case, you need to handle a lot of SVG files. Because you have no way of knowing which App Clip Code encodes which URL by looking at an App Clip Code, you need to use a file that contains information about which SVG file maps to which invocation URL. Under any circumstance, careful file management, versioning, and change tracking are key to avoiding faulty print runs. For more information, see [Preparing multiple App Clip Codes for production](https://developer.apple.com/documentation/appclip/preparing-multiple-app-clip-codes-for-production).
 
 ### Verifying your printer’s calibration
 
@@ -275,7 +275,7 @@ For more information about using Apple trademarks, see [Guidelines for Using App
 
 #### Developer documentation
 
-[App Clips](https://developer.apple.com/documentation/AppClip)
+[App Clips](https://developer.apple.com/documentation/appclip)
 
 [App Store Connect](https://appstoreconnect.apple.com/)
 

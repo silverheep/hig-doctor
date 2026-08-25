@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/shareplay
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/shareplay.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # SharePlay
@@ -26,7 +26,7 @@ When someone shares content during a FaceTime call, the system asks each partici
 
 ## Sharing activities
 
-An *activity* is an app-defined type of shareable experience. For example, an app that lets people view videos might define a separate activity for viewing each type of content — like movies, TV shows, and uploaded videos — and display a different description for each activity. You can define as many different activities as make sense in your app. For developer guidance, see [Defining your app’s SharePlay activities](https://developer.apple.com/documentation/GroupActivities/defining-your-apps-shareplay-activities).
+An *activity* is an app-defined type of shareable experience. For example, an app that lets people view videos might define a separate activity for viewing each type of content — like movies, TV shows, and uploaded videos — and display a different description for each activity. You can define as many different activities as make sense in your app. For developer guidance, see [Defining your app’s SharePlay activities](https://developer.apple.com/documentation/groupactivities/defining-your-apps-shareplay-activities).
 
 **Briefly describe each activity.** When people receive an invitation to participate in an activity, your description helps them understand the experience they’re about to share. For example, a video-viewing app might associate its descriptive movie view with a movie-viewing activity. In this case, the descriptive view might display a movie’s title, a plot summary, and a poster image. Write a simple, meaningful description that’s short enough to avoid truncation.
 
@@ -60,7 +60,7 @@ The system-applied surround template arranges participants all the way around th
 
 The conversational template also groups participants around a center point, but places your content along the circle, not at its center. Because of this position, not everyone has the same view of your content, and it might not be convenient for everyone to interact with it. Consider using the conversational arrangement if your experience is more about people being together while your app performs a task in the background like playing music.
 
-For developer guidance, see [SystemCoordinator](https://developer.apple.com/documentation/GroupActivities/SystemCoordinator) and [SpatialTemplatePreference](https://developer.apple.com/documentation/GroupActivities/SpatialTemplatePreference).
+For developer guidance, see [SystemCoordinator](https://developer.apple.com/documentation/groupactivities/systemcoordinator) and [SpatialTemplatePreference](https://developer.apple.com/documentation/groupactivities/spatialtemplatepreference).
 
 **Be prepared to launch directly into your shared activity.** When one person shares your activity with others on a FaceTime call, the system minimizes friction by automatically launching your app for everyone. In this scenario, you want to avoid displaying any windows that aren’t related to the shared activity. For example, if people need to sign in before joining the activity, be sure to present this task in an autodismissible window that disappears as soon as people finish providing the required input.
 
@@ -98,7 +98,7 @@ Sometimes, it makes sense to adjust the shared context of a shared activity so e
 
 #### Developer documentation
 
-[Group Activities](https://developer.apple.com/documentation/GroupActivities)
+[Group Activities](https://developer.apple.com/documentation/groupactivities)
 
 #### Videos
 

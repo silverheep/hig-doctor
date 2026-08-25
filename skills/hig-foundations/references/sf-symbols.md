@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/sf-symbols
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/sf-symbols.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # SF Symbols
@@ -14,7 +14,7 @@ You can use a symbol to convey an object or concept wherever interface icons can
 
 Availability of individual symbols and features varies based on the version of the system you’re targeting. Symbols and symbol features introduced in a given year aren’t available in earlier operating systems.
 
-Visit [SF Symbols](https://developer.apple.com/sf-symbols/) to download the app and browse the full set of symbols. Be sure to understand the terms and conditions for using SF Symbols, including the prohibition against using symbols — or images that are confusingly similar — in app icons, logos, or any other trademarked use. For developer guidance, see [Configuring and displaying symbol images in your UI](https://developer.apple.com/documentation/UIKit/configuring-and-displaying-symbol-images-in-your-ui).
+Visit [SF Symbols](https://developer.apple.com/sf-symbols/) to download the app and browse the full set of symbols. Be sure to understand the terms and conditions for using SF Symbols, including the prohibition against using symbols — or images that are confusingly similar — in app icons, logos, or any other trademarked use. For developer guidance, see [Configuring and displaying symbol images in your UI](https://developer.apple.com/documentation/uikit/configuring-and-displaying-symbol-images-in-your-ui).
 
 ## Rendering modes
 
@@ -62,7 +62,7 @@ Each of the nine symbol weights — from ultralight to black — corresponds to 
 
 Each symbol is also available in three scales: small, medium (the default), and large. The scales are defined relative to the cap height of the San Francisco system font.
 
-Specifying a scale lets you adjust a symbol’s emphasis compared to adjacent text, without disrupting the weight matching with text that uses the same point size. For developer guidance, see [imageScale(_:)](https://developer.apple.com/documentation/SwiftUI/View/imageScale(_:)) (SwiftUI), [UIImage.SymbolScale](https://developer.apple.com/documentation/UIKit/UIImage/SymbolScale) (UIKit), and [NSImage.SymbolConfiguration](https://developer.apple.com/documentation/AppKit/NSImage/SymbolConfiguration-swift.class) (AppKit).
+Specifying a scale lets you adjust a symbol’s emphasis compared to adjacent text, without disrupting the weight matching with text that uses the same point size. For developer guidance, see [imageScale(_:)](https://developer.apple.com/documentation/swiftui/view/imagescale(_:)) (SwiftUI), [UIImage.SymbolScale](https://developer.apple.com/documentation/uikit/uiimage/symbolscale) (UIKit), and [NSImage.SymbolConfiguration](https://developer.apple.com/documentation/appkit/nsimage/symbolconfiguration-swift.class) (AppKit).
 
 ## Design variants
 
@@ -86,7 +86,7 @@ In many cases, the view that displays a symbol determines whether to use outline
 
 SF Symbols provides a collection of expressive, configurable animations that enhance your interface and add vitality to your app. Symbol animations help communicate ideas, provide feedback in response to people’s actions, and signal changes in status or ongoing activities.
 
-Animations work on all SF Symbols in the library, in all rendering modes, weights, and scales, and on custom symbols. For considerations when animating custom symbols, see [Custom symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols#Custom-symbols). You can control the playback of an animation, whether you want the animation to run from start to finish, or run indefinitely, repeating its effect until a condition is met. You can customize behaviors, like changing the playback speed of an animation or determining whether to reverse an animation before repeating it. For developer guidance, see [Symbols](https://developer.apple.com/documentation/Symbols) and [SymbolEffect](https://developer.apple.com/documentation/Symbols/SymbolEffect).
+Animations work on all SF Symbols in the library, in all rendering modes, weights, and scales, and on custom symbols. For considerations when animating custom symbols, see [Custom symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols#Custom-symbols). You can control the playback of an animation, whether you want the animation to run from start to finish, or run indefinitely, repeating its effect until a condition is met. You can customize behaviors, like changing the playback speed of an animation or determining whether to reverse an animation before repeating it. For developer guidance, see [Symbols](https://developer.apple.com/documentation/symbols) and [SymbolEffect](https://developer.apple.com/documentation/symbols/symboleffect).
 
 **Appear** — Causes a symbol to gradually emerge into view.
 
@@ -128,7 +128,7 @@ The arrangement of layers within a symbol determines how variable color behaves 
 
 ## Custom symbols
 
-If you need a symbol that SF Symbols doesn’t provide, you can create your own. To create a custom symbol, first export the template for a symbol that’s similar to the design you want, then use a vector-editing tool to modify it. For developer guidance, see [Creating custom symbol images for your app](https://developer.apple.com/documentation/UIKit/creating-custom-symbol-images-for-your-app).
+If you need a symbol that SF Symbols doesn’t provide, you can create your own. To create a custom symbol, first export the template for a symbol that’s similar to the design you want, then use a vector-editing tool to modify it. For developer guidance, see [Creating custom symbol images for your app](https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app).
 
 > **Important:** SF Symbols includes copyrighted symbols that depict Apple products and features. You can display these symbols in your app, but you can’t customize them. To help you identify a noncustomizable symbol, the SF Symbols app badges it with an Info icon; to help you use the symbol correctly, the inspector pane describes its usage restrictions.
 
@@ -171,11 +171,11 @@ For guidance, see [Icons](https://developer.apple.com/design/human-interface-gui
 
 #### Developer documentation
 
-[Symbols](https://developer.apple.com/documentation/Symbols) — Symbols framework
+[Symbols](https://developer.apple.com/documentation/symbols) — Symbols framework
 
-[Configuring and displaying symbol images in your UI](https://developer.apple.com/documentation/UIKit/configuring-and-displaying-symbol-images-in-your-ui) — UIKit
+[Configuring and displaying symbol images in your UI](https://developer.apple.com/documentation/uikit/configuring-and-displaying-symbol-images-in-your-ui) — UIKit
 
-[Creating custom symbol images for your app](https://developer.apple.com/documentation/UIKit/creating-custom-symbol-images-for-your-app) — UIKit
+[Creating custom symbol images for your app](https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app) — UIKit
 
 #### Videos
 

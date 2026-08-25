@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/popovers
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/popovers.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Popovers
@@ -66,11 +66,11 @@ You can make a popover detachable in macOS, which becomes a separate panel when 
 
 #### Developer documentation
 
-[popover(isPresented:attachmentAnchor:arrowEdge:content:)](https://developer.apple.com/documentation/SwiftUI/View/popover(isPresented:attachmentAnchor:arrowEdge:content:)) — SwiftUI
+[popover(isPresented:attachmentAnchor:arrowEdge:content:)](https://developer.apple.com/documentation/swiftui/view/popover(ispresented:attachmentanchor:arrowedge:content:)) — SwiftUI
 
-[UIPopoverPresentationController](https://developer.apple.com/documentation/UIKit/UIPopoverPresentationController) — UIKit
+[UIPopoverPresentationController](https://developer.apple.com/documentation/uikit/uipopoverpresentationcontroller) — UIKit
 
-[NSPopover](https://developer.apple.com/documentation/AppKit/NSPopover) — AppKit
+[NSPopover](https://developer.apple.com/documentation/appkit/nspopover) — AppKit
 
 ---
 

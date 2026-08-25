@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/game-contr
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/game-controls.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Game controls
@@ -19,7 +19,7 @@ To reach the widest audience and provide the best experience for each platform, 
 
 ## Touch controls
 
-For iOS and iPadOS games, supporting touch interaction means that you can provide virtual controls on top of game content while also letting players interact with game elements by touching them directly. You can use the [Touch Controller](https://developer.apple.com/documentation/TouchController) framework to add these virtual controls to your game. Keep the following guidelines in mind to create an enjoyable touch control experience.
+For iOS and iPadOS games, supporting touch interaction means that you can provide virtual controls on top of game content while also letting players interact with game elements by touching them directly. You can use the [Touch Controller](https://developer.apple.com/documentation/touchcontroller) framework to add these virtual controls to your game. Keep the following guidelines in mind to create an enjoyable touch control experience.
 
 **Determine whether it makes sense to display virtual controls on top of game content.** In general, virtual game controls benefit games that offer a large number of actions or require players to control movement. However, sometimes gameplay is more immersive and effective when players can interact directly with in-game objects. Look for opportunities to reduce the amount of virtual controls that overlap your game content by associating actions with in-game gestures instead. For example, consider letting players tap objects to select them instead of adding a virtual selection button.
 
@@ -39,13 +39,13 @@ For iOS and iPadOS games, supporting touch interaction means that you can provid
 
 ## Physical controllers
 
-**Support the platform’s default interaction method.** A game controller is an optional purchase, but every iPhone and iPad has a touchscreen, every Mac has a keyboard and a trackpad or mouse, every Apple TV has a remote, and every Apple Vision Pro responds to gestures people make with their eyes and hands. If you support game controllers, try to make sure there’s a fallback for using the platform’s default interaction method. For developer guidance, see [Adding virtual controls to games that support game controllers in iOS](https://developer.apple.com/documentation/GameController/adding-virtual-controls-to-games-that-support-game-controllers-in-ios).
+**Support the platform’s default interaction method.** A game controller is an optional purchase, but every iPhone and iPad has a touchscreen, every Mac has a keyboard and a trackpad or mouse, every Apple TV has a remote, and every Apple Vision Pro responds to gestures people make with their eyes and hands. If you support game controllers, try to make sure there’s a fallback for using the platform’s default interaction method. For developer guidance, see [Adding virtual controls to games that support game controllers in iOS](https://developer.apple.com/documentation/gamecontroller/adding-virtual-controls-to-games-that-support-game-controllers-in-ios).
 
-**Tell people about game controller requirements.** In tvOS and visionOS, you can require the use of a physical game controller. The App Store displays a “Game Controller Required” badge to help people identify such apps. Remember that people can open your game at any time, even without a connected controller. If your app requires a game controller, check for its presence and gracefully prompt people to connect one. For developer guidance, see [GCRequiresControllerUserInteraction](https://developer.apple.com/documentation/BundleResources/Information-Property-List/GCRequiresControllerUserInteraction).
+**Tell people about game controller requirements.** In tvOS and visionOS, you can require the use of a physical game controller. The App Store displays a “Game Controller Required” badge to help people identify such apps. Remember that people can open your game at any time, even without a connected controller. If your app requires a game controller, check for its presence and gracefully prompt people to connect one. For developer guidance, see [GCRequiresControllerUserInteraction](https://developer.apple.com/documentation/bundleresources/information-property-list/gcrequirescontrolleruserinteraction).
 
-**Automatically detect whether a controller is paired.** Instead of having players manually set up a physical game controller, you can automatically detect whether a controller is paired and get its profile. For developer documentation, see [Game Controller](https://developer.apple.com/documentation/GameController).
+**Automatically detect whether a controller is paired.** Instead of having players manually set up a physical game controller, you can automatically detect whether a controller is paired and get its profile. For developer documentation, see [Game Controller](https://developer.apple.com/documentation/gamecontroller).
 
-**Customize onscreen content to match the connected game controller.** To simplify your game’s code, the Game Controller framework assigns standard names to controller elements based on their placement, but the colors and symbols on an actual game controller may differ. Be sure to use the connected controller’s labeling scheme when referring to controls or displaying related content in your interface. For developer guidance, see [GCControllerElement](https://developer.apple.com/documentation/GameController/GCControllerElement).
+**Customize onscreen content to match the connected game controller.** To simplify your game’s code, the Game Controller framework assigns standard names to controller elements based on their placement, but the colors and symbols on an actual game controller may differ. Be sure to use the connected controller’s labeling scheme when referring to controls or displaying related content in your interface. For developer guidance, see [GCControllerElement](https://developer.apple.com/documentation/gamecontroller/gccontrollerelement).
 
 **Map controller buttons to expected UI behavior.** Outside of gameplay, players expect to navigate your game’s UI in a way that matches the familiar behavior of the platform they’re playing on. When not controlling gameplay, follow these conventions across all Apple platforms:
 
@@ -104,9 +104,9 @@ Keyboard players appreciate using keyboard bindings to speed up their interactio
 
 [Create games for Apple platforms](https://developer.apple.com/games/)
 
-[Touch Controller](https://developer.apple.com/documentation/TouchController)
+[Touch Controller](https://developer.apple.com/documentation/touchcontroller)
 
-[Game Controller](https://developer.apple.com/documentation/GameController)
+[Game Controller](https://developer.apple.com/documentation/gamecontroller)
 
 #### Videos
 

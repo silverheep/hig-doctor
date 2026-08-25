@@ -5,18 +5,18 @@ source: https://developer.apple.com/design/human-interface-guidelines/snippets
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/snippets.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Snippets
 
 Snippets are compact views that appear in response to an action that someone takes using [Siri](https://developer.apple.com/design/human-interface-guidelines/siri), Spotlight, or the Shortcuts app.
 
-You can present a snippet related to one of your app’s actions by including it with an [App Intents](https://developer.apple.com/documentation/AppIntents) that you design to meet the specific needs of a task. For example, you might design a snippet for checking the weather forecast or updating progress toward a daily goal.
+You can present a snippet related to one of your app’s actions by including it with an [App Intents](https://developer.apple.com/documentation/appintents) that you design to meet the specific needs of a task. For example, you might design a snippet for checking the weather forecast or updating progress toward a daily goal.
 
 There are two snippet types: confirmation and result. A *confirmation* snippet lets people confirm or cancel an action, and may include options that affect the result. By contrast, a *result* snippet provides information — possibly as the outcome of a confirmation — that doesn’t require further action. An app intent that displays a snippet always shows a result, while the confirmation step is optional.
 
-For developer guidance, see [Displaying static and interactive snippets](https://developer.apple.com/documentation/AppIntents/displaying-static-and-interactive-snippets).
+For developer guidance, see [Displaying static and interactive snippets](https://developer.apple.com/documentation/appintents/displaying-static-and-interactive-snippets).
 
 ## Anatomy
 
@@ -32,7 +32,7 @@ A snippet consists of the following elements:
 
 **Keep content concise.** Snippets exist to facilitate lightweight, quick interactions, so it’s important to keep their content short and easily legible. To ensure all content is visible, create custom views that are no taller than the 400-point maximum height. When considering the amount of text to include, be mindful that fonts draw at various sizes based on a person’s preferred text size setting. For a result snippet, if you need to provide more detail, deep-link to the content in your app instead of including it in the custom view.
 
-**Choose a descriptive label for a confirmation snippet’s primary button.** You can choose an appropriate label from among those that the [ConfirmationActionName](https://developer.apple.com/documentation/AppIntents/ConfirmationActionName), or you can supply a custom label. For example, when designing a snippet to order coffee, labeling the primary button Order is clearer than labeling it OK or Proceed. If you don’t specify a label, the system default is Continue.
+**Choose a descriptive label for a confirmation snippet’s primary button.** You can choose an appropriate label from among those that the [ConfirmationActionName](https://developer.apple.com/documentation/appintents/confirmationactionname), or you can supply a custom label. For example, when designing a snippet to order coffee, labeling the primary button Order is clearer than labeling it OK or Proceed. If you don’t specify a label, the system default is Continue.
 
 **Communicate a snippet’s purpose visually.** Don’t rely on showing the dialogue text to convey a snippet’s purpose. While the spoken app intent dialogue is essential for interactions when someone isn’t looking at the screen, prefer to omit it from a snippet’s visual representation and use the custom view to convey its information instead.
 
@@ -52,7 +52,7 @@ A snippet consists of the following elements:
 
 #### Developer documentation
 
-[App Intents](https://developer.apple.com/documentation/AppIntents)
+[App Intents](https://developer.apple.com/documentation/appintents)
 
 #### Videos
 

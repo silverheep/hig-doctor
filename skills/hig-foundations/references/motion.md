@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/motion
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/motion.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Motion
@@ -62,7 +62,7 @@ In addition to subtly communicating context, drawing attention to information, a
 
 ### watchOS
 
-SwiftUI provides a powerful and streamlined way to add motion to your app. If you need to use WatchKit to animate layout and appearance changes — or create animated image sequences — see [WKInterfaceImage](https://developer.apple.com/documentation/WatchKit/WKInterfaceImage#1652345).
+SwiftUI provides a powerful and streamlined way to add motion to your app. If you need to use WatchKit to animate layout and appearance changes — or create animated image sequences — see [WKInterfaceImage](https://developer.apple.com/documentation/watchkit/wkinterfaceimage).
 
 > **Note:** All layout- and appearance-based animations automatically include built-in easing that plays at the start and end of the animation. You can’t turn off or customize easing.
 
@@ -80,7 +80,7 @@ SwiftUI provides a powerful and streamlined way to add motion to your app. If yo
 
 #### Developer documentation
 
-[Animating views and transitions](https://developer.apple.com/tutorials/SwiftUI/animating-views-and-transitions) — SwiftUI
+[Animating views and transitions](https://developer.apple.com/tutorials/swiftui/animating-views-and-transitions) — SwiftUI
 
 #### Videos
 

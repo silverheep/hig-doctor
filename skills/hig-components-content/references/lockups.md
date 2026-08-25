@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/lockups
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/lockups.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Lockups
@@ -20,13 +20,13 @@ According to the needs of your app, you can combine four types of lockup: cards,
 
 **Use consistent lockup sizes within a row or group.** A group of buttons or a row of content images is more visually appealing when the widths and heights of all elements match.
 
-For developer guidance, see [TVLockupView](https://developer.apple.com/documentation/TVUIKit/TVLockupView) and [TVLockupHeaderFooterView](https://developer.apple.com/documentation/TVUIKit/TVLockupHeaderFooterView).
+For developer guidance, see [TVLockupView](https://developer.apple.com/documentation/tvuikit/tvlockupview) and [TVLockupHeaderFooterView](https://developer.apple.com/documentation/tvuikit/tvlockupheaderfooterview).
 
 ## Cards
 
 A card combines a header, footer, and content view to present ratings and reviews for media items.
 
-For developer guidance, see [TVCardView](https://developer.apple.com/documentation/TVUIKit/TVCardView).
+For developer guidance, see [TVCardView](https://developer.apple.com/documentation/tvuikit/tvcardview).
 
 ## Caption buttons
 
@@ -34,7 +34,7 @@ A caption button can include a title and a subtitle beneath the button. A captio
 
 Make sure that when people focus on them, caption buttons tilt with the motion that they swipe. When aligned vertically, caption buttons tilt up and down. When aligned horizontally, caption buttons tilt left and right. When displayed in a grid, caption buttons tilt both vertically and horizontally.
 
-For developer guidance, see [TVCaptionButtonView](https://developer.apple.com/documentation/TVUIKit/TVCaptionButtonView).
+For developer guidance, see [TVCaptionButtonView](https://developer.apple.com/documentation/tvuikit/tvcaptionbuttonview).
 
 ## Monograms
 
@@ -42,13 +42,13 @@ Monograms identify people, usually the cast and crew for a media item. Each mono
 
 **Prefer images over initials.** An image of a person creates a more intimate connection than text.
 
-For developer guidance, see [TVMonogramContentView](https://developer.apple.com/documentation/TVUIKit/TVMonogramContentView).
+For developer guidance, see [TVMonogramContentView](https://developer.apple.com/documentation/tvuikit/tvmonogramcontentview).
 
 ## Posters
 
 Posters consist of an image and an optional title and subtitle, which are hidden until the poster comes into focus. Posters can be any size, but the size needs to be appropriate for their content. For related guidance, see [Image views](https://developer.apple.com/design/human-interface-guidelines/image-views).
 
-For developer guidance, see [TVPosterView](https://developer.apple.com/documentation/TVUIKit/TVPosterView).
+For developer guidance, see [TVPosterView](https://developer.apple.com/documentation/tvuikit/tvposterview).
 
 ## Platform considerations
 
@@ -64,9 +64,9 @@ For developer guidance, see [TVPosterView](https://developer.apple.com/documenta
 
 #### Developer documentation
 
-[TVLockupView](https://developer.apple.com/documentation/TVUIKit/TVLockupView) — TVUIKit
+[TVLockupView](https://developer.apple.com/documentation/tvuikit/tvlockupview) — TVUIKit
 
-[TVLockupHeaderFooterView](https://developer.apple.com/documentation/TVUIKit/TVLockupHeaderFooterView) — TVUIKit
+[TVLockupHeaderFooterView](https://developer.apple.com/documentation/tvuikit/tvlockupheaderfooterview) — TVUIKit
 
 ---
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/game-cente
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/game-center.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Game Center
@@ -18,7 +18,7 @@ Supporting Game Center in your game allows players to:
 
 By enabling the player activities listed above, supporting Game Center also helps surface your game to more players across Apple platforms.
 
-You can add Game Center into your game using the GameKit framework, which provides a full-featured UI that makes it easy for players to access and view their Game Center data within your game. Alternatively, you can also use GameKit to present this data within your own custom UI. For developer guidance, see [GameKit](https://developer.apple.com/documentation/GameKit).
+You can add Game Center into your game using the GameKit framework, which provides a full-featured UI that makes it easy for players to access and view their Game Center data within your game. Alternatively, you can also use GameKit to present this data within your own custom UI. For developer guidance, see [GameKit](https://developer.apple.com/documentation/gamekit).
 
 ## Accessing Game Center
 
@@ -26,7 +26,7 @@ To provide the best Game Center experience for your players, begin by determinin
 
 ### Integrating the access point
 
-The Game Center *access point* is an Apple-designed UI element that lets players view their Game Center profile and information without leaving your game. For developer guidance, see [Adding an access point to your game](https://developer.apple.com/documentation/GameKit/adding-an-access-point-to-your-game).
+The Game Center *access point* is an Apple-designed UI element that lets players view their Game Center profile and information without leaving your game. For developer guidance, see [Adding an access point to your game](https://developer.apple.com/documentation/gamekit/adding-an-access-point-to-your-game).
 
 In iOS, iPadOS, and macOS the access point leads players to the Game Overlay, a system overlay that allows players to view their progress and start game activities.
 
@@ -36,7 +36,7 @@ In visionOS and tvOS, the access point leads players to the in-game dashboard, a
 
 **Avoid placing controls near the access point.** You can choose to present the access point at any of the four corners of the screen in a fixed position. Remember that the access point has both a collapsed and expanded version, so check whether the access point overlaps any important UI and controls and adjust your layout accordingly.
 
-> **Note:** In visionOS, the locations of the access point vary based on game type, such as immersive or volume-based. For developer guidance, see [Adding an access point to your game](https://developer.apple.com/documentation/GameKit/adding-an-access-point-to-your-game#Configure-the-access-point-on-visionOS).
+> **Note:** In visionOS, the locations of the access point vary based on game type, such as immersive or volume-based. For developer guidance, see [Adding an access point to your game](https://developer.apple.com/documentation/gamekit/adding-an-access-point-to-your-game).
 
 **Consider pausing your game while the Game Overlay or dashboard is present.** Pausing your game can help players view their Game Center information without feeling like the game is continuing without them.
 
@@ -59,7 +59,7 @@ Your game can include custom links into the Game Overlay (in iOS, iPadOS, macOS)
 
 ## Achievements
 
-Achievements give players an added incentive to stay engaged with your game. Game Center achievements appear in a collectible card format that highlights the player’s progress and showcases your artwork. For developer guidance, see [Rewarding players with achievements](https://developer.apple.com/documentation/GameKit/rewarding-players-with-achievements).
+Achievements give players an added incentive to stay engaged with your game. Game Center achievements appear in a collectible card format that highlights the player’s progress and showcases your artwork. For developer guidance, see [Rewarding players with achievements](https://developer.apple.com/documentation/gamekit/rewarding-players-with-achievements).
 
 ### Integrating achievements into your game
 
@@ -99,7 +99,7 @@ Achievements give players an added incentive to stay engaged with your game. Gam
 
 ## Leaderboards
 
-Leaderboards are a great way to encourage friendly competition within your game. When you adopt Game Center, players can easily check their ranking against friends and global players as well as receive notifications when their friends challenge them or pass their score on a leaderboard. You can take advantage of the system-designed UI or present leaderboard information within custom UI. For developer guidance, see [Encourage progress and competition with leaderboards](https://developer.apple.com/documentation/GameKit/encourage-progress-and-competition-with-leaderboards).
+Leaderboards are a great way to encourage friendly competition within your game. When you adopt Game Center, players can easily check their ranking against friends and global players as well as receive notifications when their friends challenge them or pass their score on a leaderboard. You can take advantage of the system-designed UI or present leaderboard information within custom UI. For developer guidance, see [Encourage progress and competition with leaderboards](https://developer.apple.com/documentation/gamekit/encourage-progress-and-competition-with-leaderboards).
 
 **Choose a leaderboard type.** Game Center supports two types of leaderboards: *classic* and *recurring*.
 
@@ -149,7 +149,7 @@ For games that run in iOS, iPadOS, and macOS, use a single image for your leader
 
 ## Challenges
 
-Challenges turn single player activities into multiplayer experiences with friends. Challenges are built on top of leaderboards and allow players to connect with their friends and participate in competitions with time limits. For developer documentation, see [Creating engaging challenges from leaderboards](https://developer.apple.com/documentation/GameKit/creating-engaging-challenges-from-leaderboards).
+Challenges turn single player activities into multiplayer experiences with friends. Challenges are built on top of leaderboards and allow players to connect with their friends and participate in competitions with time limits. For developer documentation, see [Creating engaging challenges from leaderboards](https://developer.apple.com/documentation/gamekit/creating-engaging-challenges-from-leaderboards).
 
 **Create engaging challenges.** Challenges are great for short, skill-based gameplay activities that have a clear way of gauging players’ accomplishments. Create challenges that take 1-5 minutes to play, with gameplay that players can complete individually. Examples of compelling challenges are:
 
@@ -173,7 +173,7 @@ Challenges turn single player activities into multiplayer experiences with frien
 
 ## Multiplayer activities
 
-Game Center supports both real-time and turn-based multiplayer activities that make it easy to connect players with friends or other players. Players can access multiplayer gameplay through party codes, the Game Overlay, the dashboard, or in the Games app. For developer documentation, see [Creating activities for your game](https://developer.apple.com/documentation/GameKit/creating-activities-for-your-game).
+Game Center supports both real-time and turn-based multiplayer activities that make it easy to connect players with friends or other players. Players can access multiplayer gameplay through party codes, the Game Overlay, the dashboard, or in the Games app. For developer documentation, see [Creating activities for your game](https://developer.apple.com/documentation/gamekit/creating-activities-for-your-game).
 
 **Use party codes to invite players to multiplayer activities.** Game Center party codes are a great way to coordinate real-time multiplayer sessions whether you use Game Center matchmaking and networking facilities or provide your own. Game Center generates alpha-numeric party codes that are typically eight characters long, such as “2MP4-9CMF.”  When integrating party codes into your multiplayer games, consider the following guidelines for the best player experience:
 
@@ -181,7 +181,7 @@ Game Center supports both real-time and turn-based multiplayer activities that m
 * Provide a way for players to view the current party code in your game.
 * Allow players to enter a party code manually.
 
-**Support multiplayer activities through in-game UI.** The Game Overlay and Game Center dashboard help players find other people for a multiplayer match without leaving your game. Game Center’s default multiplayer interface lets a player invite nearby or recent players, Game Center friends, and contacts. You can also choose to present multiplayer functionality within your custom UI. For developer guidance, see [Finding multiple players for a game](https://developer.apple.com/documentation/GameKit/finding-multiple-players-for-a-game).
+**Support multiplayer activities through in-game UI.** The Game Overlay and Game Center dashboard help players find other people for a multiplayer match without leaving your game. Game Center’s default multiplayer interface lets a player invite nearby or recent players, Game Center friends, and contacts. You can also choose to present multiplayer functionality within your custom UI. For developer guidance, see [Finding multiple players for a game](https://developer.apple.com/documentation/gamekit/finding-multiple-players-for-a-game).
 
 **Provide engaging activity artwork.** Players see the preview image for a multiplayer activity throughout the system, such as in a party code, the Games app, or in-game UI. Use the following specifications to create your artwork.
 
@@ -224,11 +224,11 @@ Game Center supports both real-time and turn-based multiplayer activities that m
 
 #### Developer documentation
 
-[GameKit](https://developer.apple.com/documentation/GameKit)
+[GameKit](https://developer.apple.com/documentation/gamekit)
 
-[Creating activities for your game](https://developer.apple.com/documentation/GameKit/creating-activities-for-your-game)
+[Creating activities for your game](https://developer.apple.com/documentation/gamekit/creating-activities-for-your-game)
 
-[Creating engaging challenges from leaderboards](https://developer.apple.com/documentation/GameKit/creating-engaging-challenges-from-leaderboards)
+[Creating engaging challenges from leaderboards](https://developer.apple.com/documentation/gamekit/creating-engaging-challenges-from-leaderboards)
 
 [Create games for Apple platforms](https://developer.apple.com/games/)
 

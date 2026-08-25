@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/undo-and-r
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/undo-and-redo.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Undo and redo
@@ -52,7 +52,7 @@ People expect undo and redo to let them reverse their recent actions, so they’
 
 #### Developer documentation
 
-[UndoManager](https://developer.apple.com/documentation/Foundation/UndoManager) — Foundation
+[UndoManager](https://developer.apple.com/documentation/foundation/undomanager) — Foundation
 
 #### Videos
 

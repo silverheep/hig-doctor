@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/tab-views
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/tab-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Tab views
@@ -22,7 +22,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/tab-views
 
 **Avoid providing more than six tabs in a tab view.** Having more than six tabs can be overwhelming and create layout issues. If you need to present six or more tabs, consider another way to implement the interface. For example, you could instead present each tab as a view option in a pop-up button menu.
 
-For developer guidance, see [NSTabView](https://developer.apple.com/documentation/AppKit/NSTabView).
+For developer guidance, see [NSTabView](https://developer.apple.com/documentation/appkit/nstabview).
 
 ## Anatomy
 
@@ -42,7 +42,7 @@ For similar functionality, consider using a [segmented control](https://develope
 
 ### watchOS
 
-watchOS displays tab views using [page controls](https://developer.apple.com/design/human-interface-guidelines/components/presentation/page-controls). For developer guidance, see [TabView](https://developer.apple.com/documentation/SwiftUI/TabView).
+watchOS displays tab views using [page controls](https://developer.apple.com/design/human-interface-guidelines/components/presentation/page-controls). For developer guidance, see [TabView](https://developer.apple.com/documentation/swiftui/tabview).
 
 ## Resources
 
@@ -54,9 +54,9 @@ watchOS displays tab views using [page controls](https://developer.apple.com/des
 
 #### Developer documentation
 
-[TabView](https://developer.apple.com/documentation/SwiftUI/TabView) — SwiftUI
+[TabView](https://developer.apple.com/documentation/swiftui/tabview) — SwiftUI
 
-[NSTabView](https://developer.apple.com/documentation/AppKit/NSTabView) — AppKit
+[NSTabView](https://developer.apple.com/documentation/appkit/nstabview) — AppKit
 
 ## Change log
 

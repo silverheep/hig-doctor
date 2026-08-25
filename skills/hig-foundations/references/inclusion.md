@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/inclusion
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/inclusion.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Inclusion
@@ -121,7 +121,7 @@ To learn more about making your app or game accessible, see [Accessibility](http
 
 ## Languages
 
-People expect to customize their device by choosing a language for text and a region for formatting values like date, time, and money. To welcome a global audience, first prepare your software to handle languages and regions other than your own — a process called *internationalization* — and provide translated text and resources for specific locales. For an overview of internationalization, see [Expanding your app to new markets](https://developer.apple.com/localization/); for developer guidance on localization, see [Localization](https://developer.apple.com/documentation/Xcode/localization).
+People expect to customize their device by choosing a language for text and a region for formatting values like date, time, and money. To welcome a global audience, first prepare your software to handle languages and regions other than your own — a process called *internationalization* — and provide translated text and resources for specific locales. For an overview of internationalization, see [Expanding your app to new markets](https://developer.apple.com/localization/); for developer guidance on localization, see [Localization](https://developer.apple.com/documentation/xcode/localization).
 
 Creating an inclusive experience can also help you prepare for localization. For example, using plain language, avoiding unnecessary gender references, representing a variety of people, and avoiding stereotypes and culture-specific content, can put you in a good position to create versions of your software localized into more languages. Using [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols) for the glyphs in your app or game can also help streamline localization. In addition to providing many language-specific glyphs, SF Symbols includes glyphs you can use in both left-to-right and right-to-left contexts; for guidance, see [Right to left](https://developer.apple.com/design/human-interface-guidelines/right-to-left).
 
@@ -141,7 +141,7 @@ As you localize your app or game and related content, also be aware of the ways 
 
 #### Developer documentation
 
-[Localization](https://developer.apple.com/documentation/Xcode/localization) — Xcode
+[Localization](https://developer.apple.com/documentation/xcode/localization) — Xcode
 
 #### Videos
 

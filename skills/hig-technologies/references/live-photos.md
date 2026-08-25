@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/live-photo
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/live-photos.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Live Photos
@@ -42,9 +42,9 @@ In visionOS, people can view a Live Photo, but they can’t capture one.
 
 #### Developer documentation
 
-[PHLivePhoto](https://developer.apple.com/documentation/Photos/PHLivePhoto) — PhotoKit
+[PHLivePhoto](https://developer.apple.com/documentation/photos/phlivephoto) — PhotoKit
 
-[LivePhotosKit JS](https://developer.apple.com/documentation/LivePhotosKitJS) — LivePhotosKit JS
+[LivePhotosKit JS](https://developer.apple.com/documentation/livephotoskitjs) — LivePhotosKit JS
 
 #### Videos
 

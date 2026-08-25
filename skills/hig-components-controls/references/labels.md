@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/labels
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/labels.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Labels
@@ -18,7 +18,7 @@ The term *label* refers to uneditable text that can appear in various places. Fo
 * Within many lists, a label can describe each item, often accompanied by a symbol or an image.
 * Within a view, a label might provide additional context by introducing a control or describing a common action or task that people can perform in the view.
 
-> **Developer note:** To display uneditable text, SwiftUI defines two components: [Label](https://developer.apple.com/documentation/SwiftUI/Label) and [Text](https://developer.apple.com/documentation/SwiftUI/Text).
+> **Developer note:** To display uneditable text, SwiftUI defines two components: [Label](https://developer.apple.com/documentation/swiftui/label) and [Text](https://developer.apple.com/documentation/swiftui/text).
 
 The guidance below can help you use a label to display text. In some cases, guidance for specific components — such as [action buttons](https://developer.apple.com/design/human-interface-guidelines/buttons), [menus](https://developer.apple.com/design/human-interface-guidelines/menus), and [lists and tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables) — includes additional recommendations for using text.
 
@@ -32,10 +32,10 @@ The guidance below can help you use a label to display text. In some cases, guid
 
 | System color | Example usage | iOS, iPadOS, tvOS, visionOS | macOS |
 | --- | --- | --- | --- |
-| Label | Primary information | [label](https://developer.apple.com/documentation/UIKit/UIColor/label) | [labelColor](https://developer.apple.com/documentation/AppKit/NSColor/labelColor) |
-| Secondary label | A subheading or supplemental text | [secondaryLabel](https://developer.apple.com/documentation/UIKit/UIColor/secondaryLabel) | [secondaryLabelColor](https://developer.apple.com/documentation/AppKit/NSColor/secondaryLabelColor) |
-| Tertiary label | Text that describes an unavailable item or behavior | [tertiaryLabel](https://developer.apple.com/documentation/UIKit/UIColor/tertiaryLabel) | [tertiaryLabelColor](https://developer.apple.com/documentation/AppKit/NSColor/tertiaryLabelColor) |
-| Quaternary label | Watermark text | [quaternaryLabel](https://developer.apple.com/documentation/UIKit/UIColor/quaternaryLabel) | [quaternaryLabelColor](https://developer.apple.com/documentation/AppKit/NSColor/quaternaryLabelColor) |
+| Label | Primary information | [label](https://developer.apple.com/documentation/uikit/uicolor/label) | [labelColor](https://developer.apple.com/documentation/appkit/nscolor/labelcolor) |
+| Secondary label | A subheading or supplemental text | [secondaryLabel](https://developer.apple.com/documentation/uikit/uicolor/secondarylabel) | [secondaryLabelColor](https://developer.apple.com/documentation/appkit/nscolor/secondarylabelcolor) |
+| Tertiary label | Text that describes an unavailable item or behavior | [tertiaryLabel](https://developer.apple.com/documentation/uikit/uicolor/tertiarylabel) | [tertiaryLabelColor](https://developer.apple.com/documentation/appkit/nscolor/tertiarylabelcolor) |
+| Quaternary label | Watermark text | [quaternaryLabel](https://developer.apple.com/documentation/uikit/uicolor/quaternarylabel) | [quaternaryLabelColor](https://developer.apple.com/documentation/appkit/nscolor/quaternarylabelcolor) |
 
 **Make useful label text selectable.** If a label contains useful information — like an error message, a location, or an IP address — consider letting people select and copy it for pasting elsewhere.
 
@@ -45,7 +45,7 @@ The guidance below can help you use a label to display text. In some cases, guid
 
 ### macOS
 
-> **Developer note:** To display uneditable text in a label, use the [isEditable](https://developer.apple.com/documentation/AppKit/NSTextField/isEditable) property of [NSTextField](https://developer.apple.com/documentation/AppKit/NSTextField).
+> **Developer note:** To display uneditable text in a label, use the [isEditable](https://developer.apple.com/documentation/appkit/nstextfield/iseditable) property of [NSTextField](https://developer.apple.com/documentation/appkit/nstextfield).
 
 ### watchOS
 
@@ -53,7 +53,7 @@ Date and time text components (shown below on the left) display the current date
 
 When you use the system-provided date and timer text components, watchOS automatically adjusts the label’s presentation to fit the available space. The system also updates the content without further input from your app.
 
-Consider using date and timer components in complications. For design guidance, see [Complications](https://developer.apple.com/design/human-interface-guidelines/components/system-experiences/complications); for developer guidance, see [Text](https://developer.apple.com/documentation/SwiftUI/Text).
+Consider using date and timer components in complications. For design guidance, see [Complications](https://developer.apple.com/design/human-interface-guidelines/components/system-experiences/complications); for developer guidance, see [Text](https://developer.apple.com/documentation/swiftui/text).
 
 ## Resources
 
@@ -65,13 +65,13 @@ Consider using date and timer components in complications. For design guidance, 
 
 #### Developer documentation
 
-[Label](https://developer.apple.com/documentation/SwiftUI/Label) — SwiftUI
+[Label](https://developer.apple.com/documentation/swiftui/label) — SwiftUI
 
-[Text](https://developer.apple.com/documentation/SwiftUI/Text) — SwiftUI
+[Text](https://developer.apple.com/documentation/swiftui/text) — SwiftUI
 
-[UILabel](https://developer.apple.com/documentation/UIKit/UILabel) — UIKit
+[UILabel](https://developer.apple.com/documentation/uikit/uilabel) — UIKit
 
-[NSTextField](https://developer.apple.com/documentation/AppKit/NSTextField) — AppKit
+[NSTextField](https://developer.apple.com/documentation/appkit/nstextfield) — AppKit
 
 ## Change log
 

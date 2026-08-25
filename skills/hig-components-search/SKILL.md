@@ -1,6 +1,6 @@
 ---
 name: hig-components-search
-version: 2.1.0
+version: 2.1.1
 description: >-
   Apple HIG guidance for navigation-related components including search fields,
   page controls, and path controls. Use this skill when the user says "how should

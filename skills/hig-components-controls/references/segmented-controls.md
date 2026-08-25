@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/segmented-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/segmented-controls.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Segmented controls
@@ -14,7 +14,7 @@ Within a segmented control, all segments are usually equal in width. Like [Butto
 
 A segmented control offers a single choice from among a set of options, or in macOS, either a single choice or multiple choices. For example, in macOS Keynote people can select only one segment in the alignment options control to align selected text. In contrast, people can choose multiple segments in the font attributes control to combine styles like bold, italics, and underline. The toolbar of a Keynote window also uses a segmented control to let people show and hide various editing panes within the main window area.
 
-In addition to representing the state of a single or multiple-choice selection, a segmented control can function as a set of buttons that perform actions without showing a selection state. For example, the Reply, Reply all, and Forward buttons in macOS Mail. For developer guidance, see [isMomentary](https://developer.apple.com/documentation/UIKit/UISegmentedControl/isMomentary) and [NSSegmentedControl.SwitchTracking.momentary](https://developer.apple.com/documentation/AppKit/NSSegmentedControl/SwitchTracking/momentary).
+In addition to representing the state of a single or multiple-choice selection, a segmented control can function as a set of buttons that perform actions without showing a selection state. For example, the Reply, Reply all, and Forward buttons in macOS Mail. For developer guidance, see [isMomentary](https://developer.apple.com/documentation/uikit/uisegmentedcontrol/ismomentary) and [NSSegmentedControl.SwitchTracking.momentary](https://developer.apple.com/documentation/appkit/nssegmentedcontrol/switchtracking/momentary).
 
 ## Best practices
 
@@ -70,11 +70,11 @@ When people look at a segmented control that uses icons, the system displays a t
 
 #### Developer documentation
 
-[segmented](https://developer.apple.com/documentation/SwiftUI/PickerStyle/segmented) — SwiftUI
+[segmented](https://developer.apple.com/documentation/swiftui/pickerstyle/segmented) — SwiftUI
 
-[UISegmentedControl](https://developer.apple.com/documentation/UIKit/UISegmentedControl) — UIKit
+[UISegmentedControl](https://developer.apple.com/documentation/uikit/uisegmentedcontrol) — UIKit
 
-[NSSegmentedControl](https://developer.apple.com/documentation/AppKit/NSSegmentedControl) — AppKit
+[NSSegmentedControl](https://developer.apple.com/documentation/appkit/nssegmentedcontrol) — AppKit
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/home-scree
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/home-screen-quick-actions.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Home Screen quick actions
@@ -40,7 +40,7 @@ If you design your own interface icon, use the Quick Action Icon Template that�
 
 #### Developer documentation
 
-[Add Home Screen quick actions](https://developer.apple.com/documentation/UIKit/add-home-screen-quick-actions) — UIKit
+[Add Home Screen quick actions](https://developer.apple.com/documentation/uikit/add-home-screen-quick-actions) — UIKit
 
 ---
 

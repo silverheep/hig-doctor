@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/homekit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/homekit.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # HomeKit
@@ -20,7 +20,7 @@ Your iOS, tvOS, or watchOS app can integrate with HomeKit (and by extension the 
 * Show people how to create powerful, hands-free automations
 * Provide support
 
-For developer guidance, see [HomeKit](https://developer.apple.com/documentation/HomeKit). If you’re an MFi licensee, visit the [MFi portal](https://mfi.apple.com) for guidance on naming and messaging for accessory packaging.
+For developer guidance, see [HomeKit](https://developer.apple.com/documentation/homekit). If you’re an MFi licensee, visit the [MFi portal](https://mfi.apple.com) for guidance on naming and messaging for accessory packaging.
 
 ## Terminology and layout
 
@@ -74,7 +74,7 @@ A *zone* represents an area in the home that contains multiple rooms, such as *u
 
 ## Setup
 
-**Use the system-provided setup flow to give people a familiar experience.** The HomeKit setup flow works more quickly than traditional setup flows because it lets people name accessories, join networks, pair with HomeKit, assign room and service categories, and designate favorites in just a few steps. Using the system-provided setup flow lets you concentrate on promoting the custom functionality that makes your accessory unique. For developer guidance, see [performAccessorySetup(using:completionHandler:)](https://developer.apple.com/documentation/HomeKit/HMAccessorySetupManager/performAccessorySetup(using:completionHandler:)).
+**Use the system-provided setup flow to give people a familiar experience.** The HomeKit setup flow works more quickly than traditional setup flows because it lets people name accessories, join networks, pair with HomeKit, assign room and service categories, and designate favorites in just a few steps. Using the system-provided setup flow lets you concentrate on promoting the custom functionality that makes your accessory unique. For developer guidance, see [performAccessorySetup(using:completionHandler:)](https://developer.apple.com/documentation/homekit/hmaccessorysetupmanager/performaccessorysetup(using:completionhandler:)).
 
 **Provide context to explain why you need access to people’s Home data.** Create a purpose string with a phrase that describes why you’re asking for permission to access data, such as “Lets you control this accessory with the Apple Home app and Siri across your Apple devices.”
 
@@ -273,7 +273,7 @@ See [Guidelines for Using Apple Trademarks](https://www.apple.com/legal/intellec
 
 #### Developer documentation
 
-[HomeKit](https://developer.apple.com/documentation/HomeKit)
+[HomeKit](https://developer.apple.com/documentation/homekit)
 
 #### Videos
 

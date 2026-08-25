@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/photo-edit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/photo-editing.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Photo editing
@@ -34,7 +34,7 @@ To access a photo editing extension, a photo must be in edit mode. While in edit
 
 [App extensions](https://developer.apple.com/app-extensions/)
 
-[PhotoKit](https://developer.apple.com/documentation/PhotoKit)
+[PhotoKit](https://developer.apple.com/documentation/photokit)
 
 #### Videos
 

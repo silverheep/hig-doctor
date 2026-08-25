@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/progress-i
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/progress-indicators.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Progress indicators
@@ -21,7 +21,7 @@ Both determinate and indeterminate progress indicators can have different appear
 
 An indeterminate progress indicator — also called an *activity indicator* — uses an animated image to indicate progress. All platforms support a circular image that appears to spin; however, macOS also supports an indeterminate progress bar.
 
-For developer guidance, see [ProgressView](https://developer.apple.com/documentation/SwiftUI/ProgressView).
+For developer guidance, see [ProgressView](https://developer.apple.com/documentation/swiftui/progressview).
 
 ## Best practices
 
@@ -57,7 +57,7 @@ A refresh control lets people immediately reload content, typically in a table v
 
 **Supply a short title only if it adds value.** Optionally, a refresh control can include a title. In most cases, this is unnecessary, as the animation of the control indicates that content is loading. If you do include a title, don’t use it to explain how to perform a refresh. Instead, provide information of value about the content being refreshed. A refresh control in Podcasts, for example, uses a title to tell people when the last podcast update occurred.
 
-For developer guidance, see [UIRefreshControl](https://developer.apple.com/documentation/UIKit/UIRefreshControl).
+For developer guidance, see [UIRefreshControl](https://developer.apple.com/documentation/uikit/uirefreshcontrol).
 
 ### macOS
 
@@ -75,15 +75,15 @@ By default the system displays the progress indicators in white over the scene�
 
 #### Developer documentation
 
-[ProgressView](https://developer.apple.com/documentation/SwiftUI/ProgressView) — SwiftUI
+[ProgressView](https://developer.apple.com/documentation/swiftui/progressview) — SwiftUI
 
-[UIProgressView](https://developer.apple.com/documentation/UIKit/UIProgressView) — UIKit
+[UIProgressView](https://developer.apple.com/documentation/uikit/uiprogressview) — UIKit
 
-[UIActivityIndicatorView](https://developer.apple.com/documentation/UIKit/UIActivityIndicatorView) — UIKit
+[UIActivityIndicatorView](https://developer.apple.com/documentation/uikit/uiactivityindicatorview) — UIKit
 
-[UIRefreshControl](https://developer.apple.com/documentation/UIKit/UIRefreshControl) — UIKit
+[UIRefreshControl](https://developer.apple.com/documentation/uikit/uirefreshcontrol) — UIKit
 
-[NSProgressIndicator](https://developer.apple.com/documentation/AppKit/NSProgressIndicator) — AppKit
+[NSProgressIndicator](https://developer.apple.com/documentation/appkit/nsprogressindicator) — AppKit
 
 ## Change log
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/drag-and-d
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/drag-and-drop.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Drag and drop
@@ -25,7 +25,7 @@ People use different interactions to perform drag and drop depending on platform
 
 **As much as possible, support drag and drop throughout your app.** Most people are familiar with drag and drop and they often try it everywhere. When you use system-provided components — such as text fields and text views — you get built-in support for drag and drop.
 
-**Offer alternative ways to accomplish drag-and-drop actions.** Sometimes, drag-and-drop operations are inconvenient or impossible for people to perform, so it’s important to provide other ways to do the same things. For example, you can include menu commands that people can use to copy an item and move it to another location. In iOS and iPadOS, you can use accessibility APIs to identify sources and destinations so that people can use assistive technologies to drag and drop in your app (for developer guidance, see [accessibilityDragSourceDescriptors](https://developer.apple.com/documentation/ObjectiveC/NSObject-swift.class/accessibilityDragSourceDescriptors) and [accessibilityDropPointDescriptors](https://developer.apple.com/documentation/ObjectiveC/NSObject-swift.class/accessibilityDropPointDescriptors)).
+**Offer alternative ways to accomplish drag-and-drop actions.** Sometimes, drag-and-drop operations are inconvenient or impossible for people to perform, so it’s important to provide other ways to do the same things. For example, you can include menu commands that people can use to copy an item and move it to another location. In iOS and iPadOS, you can use accessibility APIs to identify sources and destinations so that people can use assistive technologies to drag and drop in your app (for developer guidance, see [accessibilityDragSourceDescriptors](https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilitydragsourcedescriptors) and [accessibilityDropPointDescriptors](https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilitydroppointdescriptors)).
 
 **Determine when dragging and dropping content within your app results in a move or a copy.** In general, a move makes sense when the source and destination containers are the same — such as dragging text from one location to another within a document — and a copy makes sense when they’re different, like dragging an image from one document to another. Before you change these defaults, consider the behavior that most people expect and prefer the one that is least likely to result in frustration or data loss.
 
@@ -91,7 +91,7 @@ Drag and drop is a dynamic process that can result in multiple outcomes. To help
 
 ### visionOS
 
-**When possible, launch your app to handle content that people drop into empty space.** When you associate a user activity with draggable app content, your app can open a window or scene that handles the content when people drop it. For example, when people drop a URL into empty space, it launches Safari; when people drop Quick Look–supported content, Quick Look launches to display it. For developer guidance, see [NSUserActivity](https://developer.apple.com/documentation/Foundation/NSUserActivity).
+**When possible, launch your app to handle content that people drop into empty space.** When you associate a user activity with draggable app content, your app can open a window or scene that handles the content when people drop it. For example, when people drop a URL into empty space, it launches Safari; when people drop Quick Look–supported content, Quick Look launches to display it. For developer guidance, see [NSUserActivity](https://developer.apple.com/documentation/foundation/nsuseractivity).
 
 ## Resources
 
@@ -101,11 +101,11 @@ Drag and drop is a dynamic process that can result in multiple outcomes. To help
 
 #### Developer documentation
 
-[Drag and drop](https://developer.apple.com/documentation/UIKit/drag-and-drop) — UIKit
+[Drag and drop](https://developer.apple.com/documentation/uikit/drag-and-drop) — UIKit
 
-[Drag and Drop](https://developer.apple.com/documentation/AppKit/drag-and-drop) — AppKit
+[Drag and Drop](https://developer.apple.com/documentation/appkit/drag-and-drop) — AppKit
 
-[File Provider](https://developer.apple.com/documentation/FileProvider)
+[File Provider](https://developer.apple.com/documentation/fileprovider)
 
 #### Videos
 

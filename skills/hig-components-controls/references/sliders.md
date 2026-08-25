@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/sliders
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/sliders.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Sliders
@@ -66,11 +66,11 @@ A slider is a horizontal track — appearing as a set of discrete steps or as a 
 
 #### Developer documentation
 
-[Slider](https://developer.apple.com/documentation/SwiftUI/Slider) — SwiftUI
+[Slider](https://developer.apple.com/documentation/swiftui/slider) — SwiftUI
 
-[UISlider](https://developer.apple.com/documentation/UIKit/UISlider) — UIKit
+[UISlider](https://developer.apple.com/documentation/uikit/uislider) — UIKit
 
-[NSSlider](https://developer.apple.com/documentation/AppKit/NSSlider) — AppKit
+[NSSlider](https://developer.apple.com/documentation/appkit/nsslider) — AppKit
 
 ## Change log
 

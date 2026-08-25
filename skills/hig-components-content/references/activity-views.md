@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/activity-v
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/activity-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Activity views
@@ -61,11 +61,11 @@ The system presents share and action extensions differently depending on the pla
 
 #### Developer documentation
 
-[UIActivityViewController](https://developer.apple.com/documentation/UIKit/UIActivityViewController) — UIKit
+[UIActivityViewController](https://developer.apple.com/documentation/uikit/uiactivityviewcontroller) — UIKit
 
-[UIActivity](https://developer.apple.com/documentation/UIKit/UIActivity) — UIKit
+[UIActivity](https://developer.apple.com/documentation/uikit/uiactivity) — UIKit
 
-[App Extension Support](https://developer.apple.com/documentation/Foundation/app-extension-support) — Foundation
+[App Extension Support](https://developer.apple.com/documentation/foundation/app-extension-support) — Foundation
 
 #### Videos
 

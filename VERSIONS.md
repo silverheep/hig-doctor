@@ -5,26 +5,36 @@ Current versions of all skills. Agents can compare against local versions to che
 | Skill | Version | Last Updated |
 |-------|---------|--------------|
 | hig-project-context | 1.0.0 | 2025-02-02 |
-| hig-platforms | 2.1.0 | 2026-07-08 |
-| hig-foundations | 2.1.0 | 2026-07-08 |
-| hig-patterns | 2.1.0 | 2026-07-08 |
-| hig-components-content | 2.1.0 | 2026-07-08 |
-| hig-components-layout | 2.1.0 | 2026-07-08 |
-| hig-components-menus | 2.1.0 | 2026-07-08 |
-| hig-components-search | 2.1.0 | 2026-07-08 |
-| hig-components-dialogs | 2.0.0 | 2026-06-11 |
-| hig-components-controls | 2.0.0 | 2026-06-11 |
-| hig-components-status | 2.1.0 | 2026-07-08 |
-| hig-components-system | 2.1.0 | 2026-07-08 |
-| hig-inputs | 2.1.0 | 2026-07-08 |
-| hig-technologies | 2.1.0 | 2026-07-08 |
+| hig-platforms | 2.1.1 | 2026-08-24 |
+| hig-foundations | 2.1.1 | 2026-08-24 |
+| hig-patterns | 2.1.1 | 2026-08-24 |
+| hig-components-content | 2.1.1 | 2026-08-24 |
+| hig-components-layout | 2.1.1 | 2026-08-24 |
+| hig-components-menus | 2.1.1 | 2026-08-24 |
+| hig-components-search | 2.1.1 | 2026-08-24 |
+| hig-components-dialogs | 2.0.1 | 2026-08-24 |
+| hig-components-controls | 2.0.1 | 2026-08-24 |
+| hig-components-status | 2.1.1 | 2026-08-24 |
+| hig-components-system | 2.1.1 | 2026-08-24 |
+| hig-inputs | 2.1.1 | 2026-08-24 |
+| hig-technologies | 2.1.1 | 2026-08-24 |
 | hig-accessibility-audit | 1.0.0 | 2026-07-11 |
 
 ## HIG Source
 
-Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), re-verified against the live site on July 8, 2026. Files updated 2026-07-08 carry that snapshot stamp; files whose content was verified unchanged retain the 2026-06-11 stamp.
+Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), re-verified against the live site on August 24, 2026. Files updated 2026-08-24 carry that snapshot stamp; files whose content was verified unchanged retain their earlier (2026-07-08 or 2026-06-11) stamp.
 
 ## Recent Changes
+
+### 2026-08-24
+- **Corpus re-verified against Apple's live HIG** — patch bump (2.1.1; 2.0.1 for `hig-components-controls` and `hig-components-dialogs`) for all 13 content skills:
+  - Full re-crawl (172 topics) found the **topic tree unchanged** and no page with a change-log entry newer than June 8, 2026. Apple made a small number of silent edits since 2026-07-08:
+    - `ornaments` — typo fix ("hover affect" → "hover effect").
+    - `app-icons` — new sentence pointing to the Parallax Previewer and Parallax Exporter plug-in on Apple Design Resources for tvOS/visionOS layered icons.
+    - `searching` — "toolbar" and "tab bars" now cross-link to the Toolbars and Tab bars HIG pages.
+    - `generative-ai` — Resources "Videos" block reordered (no link changes).
+  - Apple normalized developer-documentation links across the corpus: framework paths are now lowercase (`/documentation/UIKit/...` → `/documentation/uikit/...`) and in-page `#anchor` fragments were dropped from several "For developer guidance" links (`complications`, `live-activities`, `motion`, `game-center`, `tap-to-pay-on-iphone`, `voiceover`). 144 of 157 reference files changed; 13 were byte-identical and keep their earlier snapshot stamp.
+  - No converter changes. MCP server snapshot constant bumped to 2026-08-24.
 
 ### 2026-07-11
 - **New skill: `hig-accessibility-audit` (1.0.0)** — Accessibility Nutrition Label readiness guidance. Pairs with the audit CLI's new claim scanning (claim-tagged rules, `.hig-doctor/accessibility-claims.json`, readiness scoreboard, `--fail-on-claims`) and the `hig_audit` MCP claims summary.

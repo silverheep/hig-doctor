@@ -5,14 +5,14 @@ source: https://developer.apple.com/design/human-interface-guidelines/status-bar
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/status-bars.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Status bars
 
 ## Best practices
 
-**Obscure content under the status bar.** By default, the background of the status bar is transparent, allowing content beneath to show through. This transparency can make it difficult to see information presented in the status bar. If controls are visible behind the status bar, people may attempt to interact with them and be unable to do so. Be sure to keep the status bar readable, and don’t imply that content behind it is interactive. Prefer using a scroll edge effect to place a blurred view behind the status bar. For developer guidance, see [ScrollEdgeEffectStyle](https://developer.apple.com/documentation/SwiftUI/ScrollEdgeEffectStyle) and [UIScrollEdgeEffect](https://developer.apple.com/documentation/UIKit/UIScrollEdgeEffect).
+**Obscure content under the status bar.** By default, the background of the status bar is transparent, allowing content beneath to show through. This transparency can make it difficult to see information presented in the status bar. If controls are visible behind the status bar, people may attempt to interact with them and be unable to do so. Be sure to keep the status bar readable, and don’t imply that content behind it is interactive. Prefer using a scroll edge effect to place a blurred view behind the status bar. For developer guidance, see [ScrollEdgeEffectStyle](https://developer.apple.com/documentation/swiftui/scrolledgeeffectstyle) and [UIScrollEdgeEffect](https://developer.apple.com/documentation/uikit/uiscrolledgeeffect).
 
 **Consider temporarily hiding the status bar when displaying full-screen media.** A status bar can be distracting when people are paying attention to media. Temporarily hide these elements to provide a more immersive experience. The Photos app, for example, hides the status bar and other interface elements when people browse full-screen photos.
 
@@ -26,9 +26,9 @@ source: https://developer.apple.com/design/human-interface-guidelines/status-bar
 
 #### Developer documentation
 
-[UIStatusBarStyle](https://developer.apple.com/documentation/UIKit/UIStatusBarStyle) — UIKit
+[UIStatusBarStyle](https://developer.apple.com/documentation/uikit/uistatusbarstyle) — UIKit
 
-[preferredStatusBarStyle](https://developer.apple.com/documentation/UIKit/UIViewController/preferredStatusBarStyle) — UIKit
+[preferredStatusBarStyle](https://developer.apple.com/documentation/uikit/uiviewcontroller/preferredstatusbarstyle) — UIKit
 
 ---
 

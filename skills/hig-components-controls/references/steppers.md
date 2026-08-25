@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/steppers
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/steppers.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Steppers
@@ -36,9 +36,9 @@ A stepper sits next to a field that displays its current value, because the step
 
 #### Developer documentation
 
-[UIStepper](https://developer.apple.com/documentation/UIKit/UIStepper) — UIKit
+[UIStepper](https://developer.apple.com/documentation/uikit/uistepper) — UIKit
 
-[NSStepper](https://developer.apple.com/documentation/AppKit/NSStepper) — AppKit
+[NSStepper](https://developer.apple.com/documentation/appkit/nsstepper) — AppKit
 
 ---
 

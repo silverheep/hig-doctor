@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/pull-down-
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Pull-down buttons
@@ -54,11 +54,11 @@ If you need to provide a list of mutually exclusive choices that aren’t comman
 
 #### Developer documentation
 
-[MenuPickerStyle](https://developer.apple.com/documentation/SwiftUI/MenuPickerStyle) — SwiftUI
+[MenuPickerStyle](https://developer.apple.com/documentation/swiftui/menupickerstyle) — SwiftUI
 
-[showsMenuAsPrimaryAction](https://developer.apple.com/documentation/UIKit/UIControl/showsMenuAsPrimaryAction) — UIKit
+[showsMenuAsPrimaryAction](https://developer.apple.com/documentation/uikit/uicontrol/showsmenuasprimaryaction) — UIKit
 
-[pullsDown](https://developer.apple.com/documentation/AppKit/NSPopUpButton/pullsDown) — AppKit
+[pullsDown](https://developer.apple.com/documentation/appkit/nspopupbutton/pullsdown) — AppKit
 
 ## Change log
 

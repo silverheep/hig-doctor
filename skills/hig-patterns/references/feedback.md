@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/feedback
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/feedback.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Feedback
@@ -53,7 +53,7 @@ The most effective feedback tends to match the significance of the information t
 
 #### Developer documentation
 
-[Animation and haptics](https://developer.apple.com/documentation/UIKit/animation-and-haptics) — UIKit
+[Animation and haptics](https://developer.apple.com/documentation/uikit/animation-and-haptics) — UIKit
 
 #### Videos
 

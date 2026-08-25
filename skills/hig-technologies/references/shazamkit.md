@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/shazamkit
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/shazamkit.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # ShazamKit
@@ -34,7 +34,7 @@ After you receive permission to access the microphone for features that use Shaz
 
 #### Developer documentation
 
-[ShazamKit](https://developer.apple.com/documentation/ShazamKit)
+[ShazamKit](https://developer.apple.com/documentation/shazamkit)
 
 #### Videos
 

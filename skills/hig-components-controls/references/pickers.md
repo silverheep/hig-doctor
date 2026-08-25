@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/pickers
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/pickers.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Pickers
@@ -54,21 +54,21 @@ Here are several examples of date pickers showing different combinations of styl
 
 **Choose a date picker style that suits your app.** There are two styles of date pickers in macOS: textual and graphical. The textual style is useful when you’re working with limited space and you expect people to make specific date and time selections. The graphical style is useful when you want to give people the option of browsing through days in a calendar or selecting a range of dates, or when the look of a clock face is appropriate for your app.
 
-For developer guidance, see [NSDatePicker](https://developer.apple.com/documentation/AppKit/NSDatePicker).
+For developer guidance, see [NSDatePicker](https://developer.apple.com/documentation/appkit/nsdatepicker).
 
 ### tvOS
 
-Pickers are available in tvOS with SwiftUI. For developer guidance, see [Picker](https://developer.apple.com/documentation/SwiftUI/Picker).
+Pickers are available in tvOS with SwiftUI. For developer guidance, see [Picker](https://developer.apple.com/documentation/swiftui/picker).
 
 ### watchOS
 
 Pickers display lists of items that people navigate using the Digital Crown, which helps people manage selections in a precise and engaging way.
 
-A picker can display a list of items using the wheels style. watchOS can also display date and time pickers using the wheels style. For developer guidance, see [Picker](https://developer.apple.com/documentation/SwiftUI/Picker) and [DatePicker](https://developer.apple.com/documentation/SwiftUI/DatePicker).
+A picker can display a list of items using the wheels style. watchOS can also display date and time pickers using the wheels style. For developer guidance, see [Picker](https://developer.apple.com/documentation/swiftui/picker) and [DatePicker](https://developer.apple.com/documentation/swiftui/datepicker).
 
 You can configure a picker to display an outline, caption, and scrolling indicator.
 
-For longer lists, the navigation link displays the picker as a button. When someone taps the button, the system shows the list of options. The person can also scrub through the options using the Digital Crown without tapping the button. For developer guidance, see [navigationLink](https://developer.apple.com/documentation/SwiftUI/PickerStyle/navigationLink).
+For longer lists, the navigation link displays the picker as a button. When someone taps the button, the system shows the list of options. The person can also scrub through the options using the Digital Crown without tapping the button. For developer guidance, see [navigationLink](https://developer.apple.com/documentation/swiftui/pickerstyle/navigationlink).
 
 ## Resources
 
@@ -80,13 +80,13 @@ For longer lists, the navigation link displays the picker as a button. When some
 
 #### Developer documentation
 
-[Picker](https://developer.apple.com/documentation/SwiftUI/Picker) — SwiftUI
+[Picker](https://developer.apple.com/documentation/swiftui/picker) — SwiftUI
 
-[UIDatePicker](https://developer.apple.com/documentation/UIKit/UIDatePicker) — UIKit
+[UIDatePicker](https://developer.apple.com/documentation/uikit/uidatepicker) — UIKit
 
-[UIPickerView](https://developer.apple.com/documentation/UIKit/UIPickerView) — UIKit
+[UIPickerView](https://developer.apple.com/documentation/uikit/uipickerview) — UIKit
 
-[NSDatePicker](https://developer.apple.com/documentation/AppKit/NSDatePicker) — AppKit
+[NSDatePicker](https://developer.apple.com/documentation/appkit/nsdatepicker) — AppKit
 
 ## Change log
 

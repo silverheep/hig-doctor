@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/typography
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/typography.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Typography
@@ -58,9 +58,9 @@ The system defines a set of typographic attributes — called text styles — th
 
 **Consider using the built-in text styles.** The system-defined text styles give you a convenient and consistent way to convey your information hierarchy through font size and weight. Using text styles with the system fonts also ensures support for Dynamic Type and larger accessibility type sizes (where available), which let people choose the text size that works for them. For guidance, see [Supporting Dynamic Type](https://developer.apple.com/design/human-interface-guidelines/typography#Supporting-Dynamic-Type).
 
-**Modify the built-in text styles if necessary.** System APIs define font adjustments — called *symbolic traits* — that let you modify some aspects of a text style. For example, the bold trait adds weight to text, letting you create another level of hierarchy. You can also use symbolic traits to adjust leading if you need to improve readability or conserve space. For example, when you display text in wide columns or long passages, more space between lines (*loose leading*) can make it easier for people to keep their place while moving from one line to the next. Conversely, if you need to display multiple lines of text in an area where height is constrained — for example, in a list row — decreasing the space between lines (*tight leading*) can help the text fit well. If you need to display three or more lines of text, avoid tight leading even in areas where height is limited. For developer guidance, see [leading(_:)](https://developer.apple.com/documentation/SwiftUI/Font/leading(_:)).
+**Modify the built-in text styles if necessary.** System APIs define font adjustments — called *symbolic traits* — that let you modify some aspects of a text style. For example, the bold trait adds weight to text, letting you create another level of hierarchy. You can also use symbolic traits to adjust leading if you need to improve readability or conserve space. For example, when you display text in wide columns or long passages, more space between lines (*loose leading*) can make it easier for people to keep their place while moving from one line to the next. Conversely, if you need to display multiple lines of text in an area where height is constrained — for example, in a list row — decreasing the space between lines (*tight leading*) can help the text fit well. If you need to display three or more lines of text, avoid tight leading even in areas where height is limited. For developer guidance, see [leading(_:)](https://developer.apple.com/documentation/swiftui/font/leading(_:)).
 
-> **Developer note:** You can use the constants defined in [Font.Design](https://developer.apple.com/documentation/SwiftUI/Font/Design) to access all system fonts — don’t embed system fonts in your app or game. For example, use [Font.Design.default](https://developer.apple.com/documentation/SwiftUI/Font/Design/default) to get the system font on all platforms; use [Font.Design.serif](https://developer.apple.com/documentation/SwiftUI/Font/Design/serif) to get the New York font.
+> **Developer note:** You can use the constants defined in [Font.Design](https://developer.apple.com/documentation/swiftui/font/design) to access all system fonts — don’t embed system fonts in your app or game. For example, use [Font.Design.default](https://developer.apple.com/documentation/swiftui/font/design/default) to get the system font on all platforms; use [Font.Design.serif](https://developer.apple.com/documentation/swiftui/font/design/serif) to get the New York font.
 
 **If necessary, adjust tracking in interface mockups.** In a running app, the system font dynamically adjusts tracking at every point size. To produce an accurate interface mockup of an interface that uses the variable system fonts, you don’t have to choose a discrete optical size at certain point sizes, but you might need to adjust the tracking. For guidance, see [Tracking values](https://developer.apple.com/design/human-interface-guidelines/typography#Tracking-values).
 
@@ -68,7 +68,7 @@ The system defines a set of typographic attributes — called text styles — th
 
 **Make sure custom fonts are legible.** People need to be able to read your custom font easily at various viewing distances and under a variety of conditions. While using a custom font, be guided by the recommended minimum font sizes for various styles and weights in [Specifications](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications).
 
-**Implement accessibility features for custom fonts.** System fonts automatically support Dynamic Type (where available) and respond when people turn on accessibility features, such as Bold Text. If you use a custom font, make sure it implements the same behaviors. For developer guidance, see [Applying custom fonts to text](https://developer.apple.com/documentation/SwiftUI/Applying-Custom-Fonts-to-Text). In a Unity-based game, you can use [Apple’s Unity plug-ins](https://github.com/apple/unityplugins) to support Dynamic Type. If the plug-in isn’t appropriate for your game, be sure to let players adjust text size in other ways.
+**Implement accessibility features for custom fonts.** System fonts automatically support Dynamic Type (where available) and respond when people turn on accessibility features, such as Bold Text. If you use a custom font, make sure it implements the same behaviors. For developer guidance, see [Applying custom fonts to text](https://developer.apple.com/documentation/swiftui/applying-custom-fonts-to-text). In a Unity-based game, you can use [Apple’s Unity plug-ins](https://github.com/apple/unityplugins) to support Dynamic Type. If the plug-in isn’t appropriate for your game, be sure to let players adjust text size in other ways.
 
 ## Supporting Dynamic Type
 
@@ -76,15 +76,15 @@ Dynamic Type is a system-level feature in iOS, iPadOS, tvOS, visionOS, and watch
 
 For a list of available Dynamic Type sizes, see [Specifications](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications). You can also download Dynamic Type size tables in the [Apple Design Resources](https://developer.apple.com/design/resources/) for each platform.
 
-For developer guidance, see [Text input and output](https://developer.apple.com/documentation/SwiftUI/Text-input-and-output). To support Dynamic Type in Unity-based games, use [Apple’s Unity plug-ins](https://github.com/apple/unityplugins).
+For developer guidance, see [Text input and output](https://developer.apple.com/documentation/swiftui/text-input-and-output). To support Dynamic Type in Unity-based games, use [Apple’s Unity plug-ins](https://github.com/apple/unityplugins).
 
 **Make sure your app’s layout adapts to all font sizes.** Verify that your design scales, and that text and glyphs are legible at all font sizes. On iPhone or iPad, turn on Larger Accessibility Text Sizes in Settings > Accessibility > Display & Text Size > Larger Text, and confirm that your app remains comfortably readable.
 
 **Increase the size of meaningful interface icons as font size increases.** If you use interface icons to communicate important information, make sure they’re easy to view at larger font sizes too. When you use [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols), you get icons that scale automatically with Dynamic Type size changes.
 
-**Keep text truncation to a minimum as font size increases.** In general, aim to display as much useful text at the largest accessibility font size as you do at the largest standard font size. Avoid truncating text in scrollable regions unless people can open a separate view to read the rest of the content. You can prevent text truncation in a label by configuring it to use as many lines as needed to display a useful amount of text. For developer guidance, see [numberOfLines](https://developer.apple.com/documentation/UIKit/UILabel/numberOfLines).
+**Keep text truncation to a minimum as font size increases.** In general, aim to display as much useful text at the largest accessibility font size as you do at the largest standard font size. Avoid truncating text in scrollable regions unless people can open a separate view to read the rest of the content. You can prevent text truncation in a label by configuring it to use as many lines as needed to display a useful amount of text. For developer guidance, see [numberOfLines](https://developer.apple.com/documentation/uikit/uilabel/numberoflines).
 
-**Consider adjusting your layout at large font sizes.** When font size increases in a horizontally constrained context, inline items (like glyphs and timestamps) and container boundaries can crowd text and cause truncation or overlapping. To improve readability, consider using a stacked layout where text appears above secondary items. Multicolumn text can also be less readable at large sizes due to horizontal space constraints. Reduce the number of columns when the font size increases to avoid truncation and enhance readability. For developer guidance, see [isAccessibilityCategory](https://developer.apple.com/documentation/UIKit/UIContentSizeCategory/isAccessibilityCategory).
+**Consider adjusting your layout at large font sizes.** When font size increases in a horizontally constrained context, inline items (like glyphs and timestamps) and container boundaries can crowd text and cause truncation or overlapping. To improve readability, consider using a stacked layout where text appears above secondary items. Multicolumn text can also be less readable at large sizes due to horizontal space constraints. Reduce the number of columns when the font size increases to avoid truncation and enhance readability. For developer guidance, see [isAccessibilityCategory](https://developer.apple.com/documentation/uikit/uicontentsizecategory/isaccessibilitycategory).
 
 **Maintain a consistent information hierarchy regardless of the current font size.** For example, keep primary elements toward the top of a view even when the font size is very large, so that people don’t lose track of these elements.
 
@@ -102,18 +102,18 @@ SF Pro is the system font in macOS. NY is available for Mac apps built with Mac 
 
 | Dynamic font variant | API |
 | --- | --- |
-| Control content | [controlContentFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/controlContentFont(ofSize:)) |
-| Label | [labelFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/labelFont(ofSize:)) |
-| Menu | [menuFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/menuFont(ofSize:)) |
-| Menu bar | [menuBarFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/menuBarFont(ofSize:)) |
-| Message | [messageFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/messageFont(ofSize:)) |
-| Palette | [paletteFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/paletteFont(ofSize:)) |
-| Title | [titleBarFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/titleBarFont(ofSize:)) |
-| Tool tips | [toolTipsFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/toolTipsFont(ofSize:)) |
-| Document text (user) | [userFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/userFont(ofSize:)) |
-| Monospaced document text (user fixed pitch) | [userFixedPitchFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/userFixedPitchFont(ofSize:)) |
-| Bold system font | [boldSystemFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/boldSystemFont(ofSize:)) |
-| System font | [systemFont(ofSize:)](https://developer.apple.com/documentation/AppKit/NSFont/systemFont(ofSize:)) |
+| Control content | [controlContentFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/controlcontentfont(ofsize:)) |
+| Label | [labelFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/labelfont(ofsize:)) |
+| Menu | [menuFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/menufont(ofsize:)) |
+| Menu bar | [menuBarFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/menubarfont(ofsize:)) |
+| Message | [messageFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/messagefont(ofsize:)) |
+| Palette | [paletteFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/palettefont(ofsize:)) |
+| Title | [titleBarFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/titlebarfont(ofsize:)) |
+| Tool tips | [toolTipsFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/tooltipsfont(ofsize:)) |
+| Document text (user) | [userFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/userfont(ofsize:)) |
+| Monospaced document text (user fixed pitch) | [userFixedPitchFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/userfixedpitchfont(ofsize:)) |
+| Bold system font | [boldSystemFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/boldsystemfont(ofsize:)) |
+| System font | [systemFont(ofSize:)](https://developer.apple.com/documentation/appkit/nsfont/systemfont(ofsize:)) |
 
 ### tvOS
 
@@ -141,7 +141,7 @@ SF Compact is the system font in watchOS, and apps can also use NY. In complicat
 
 ## Specifications
 
-You can display emphasized variants of system text styles using symbolic traits. In SwiftUI, use the [bold()](https://developer.apple.com/documentation/SwiftUI/Text/bold()) modifier; in UIKit, use [traitBold](https://developer.apple.com/documentation/UIKit/UIFontDescriptor/SymbolicTraits-swift.struct/traitBold) in the [UIFontDescriptor](https://developer.apple.com/documentation/UIKit/UIFontDescriptor) API. The emphasized weights can be medium, semibold, bold, or heavy. The following specifications include the emphasized weight for each text style.
+You can display emphasized variants of system text styles using symbolic traits. In SwiftUI, use the [bold()](https://developer.apple.com/documentation/swiftui/text/bold()) modifier; in UIKit, use [traitBold](https://developer.apple.com/documentation/uikit/uifontdescriptor/symbolictraits-swift.struct/traitbold) in the [UIFontDescriptor](https://developer.apple.com/documentation/uikit/uifontdescriptor) API. The emphasized weights can be medium, semibold, bold, or heavy. The following specifications include the emphasized weight for each text style.
 
 ### iOS, iPadOS Dynamic Type sizes
 
@@ -1042,11 +1042,11 @@ You can display emphasized variants of system text styles using symbolic traits.
 
 #### Developer documentation
 
-[Text input and output](https://developer.apple.com/documentation/SwiftUI/Text-input-and-output) — SwiftUI
+[Text input and output](https://developer.apple.com/documentation/swiftui/text-input-and-output) — SwiftUI
 
-[Text display and fonts](https://developer.apple.com/documentation/UIKit/text-display-and-fonts) — UIKit
+[Text display and fonts](https://developer.apple.com/documentation/uikit/text-display-and-fonts) — UIKit
 
-[Fonts](https://developer.apple.com/documentation/AppKit/fonts) — AppKit
+[Fonts](https://developer.apple.com/documentation/appkit/fonts) — AppKit
 
 #### Videos
 

@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/digit-entr
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/digit-entry-views.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Digit entry views
@@ -30,7 +30,7 @@ You can add an optional title and prompt above the line of digits.
 
 #### Developer documentation
 
-[TVDigitEntryViewController](https://developer.apple.com/documentation/TVUIKit/TVDigitEntryViewController) — TVUIKit
+[TVDigitEntryViewController](https://developer.apple.com/documentation/tvuikit/tvdigitentryviewcontroller) — TVUIKit
 
 ---
 

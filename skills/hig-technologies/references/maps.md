@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/maps
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/maps.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Maps
@@ -21,7 +21,7 @@ A map uses a familiar interface that supports much of the same functionality as 
 * The *default* style presents a version of the map with fully saturated colors, and is a good option for most standard map applications without a lot of custom elements. This style is also useful for keeping visual alignment between your map and the Maps app, in situations when people might switch between them.
 * The *muted* style, by contrast, presents a desaturated version of the map. This style is great if you have a lot of information-rich content that you want to stand out against the map.
 
-For developer guidance, see [MKStandardMapConfiguration.EmphasisStyle](https://developer.apple.com/documentation/MapKit/MKStandardMapConfiguration/EmphasisStyle-swift.enum).
+For developer guidance, see [MKStandardMapConfiguration.EmphasisStyle](https://developer.apple.com/documentation/mapkit/mkstandardmapconfiguration/emphasisstyle-swift.enum).
 
 **Help people find places in your map.** Consider offering a search feature combined with a way to filter locations by category. The search field for a shopping mall map, for example, might include filters that make it easy to find common store types, like clothing, housewares, electronics, jewelry, and toys.
 
@@ -39,16 +39,16 @@ For developer guidance, see [MKStandardMapConfiguration.EmphasisStyle](https://d
 
 ## Custom information
 
-**Use annotations that match the visual style of your app.** Annotations identify custom points of interest on your map. The default annotation marker has a red tint and a white pin icon. You can change the tint to match the color scheme of your app. You can also change the icon to a string or image, like a logo. An icon string can contain any characters, including Unicode characters, but keep it to two to three characters in length for readability. For developer guidance, see [MKAnnotationView](https://developer.apple.com/documentation/MapKit/MKAnnotationView).
+**Use annotations that match the visual style of your app.** Annotations identify custom points of interest on your map. The default annotation marker has a red tint and a white pin icon. You can change the tint to match the color scheme of your app. You can also change the icon to a string or image, like a logo. An icon string can contain any characters, including Unicode characters, but keep it to two to three characters in length for readability. For developer guidance, see [MKAnnotationView](https://developer.apple.com/documentation/mapkit/mkannotationview).
 
-**If you want to display custom information that’s related to standard map features, consider making them independently selectable.** When you support selectable map features, the system treats Apple-provided features (including points of interest, territories, and physical features) independently from other annotations that you add. You can configure custom appearances and information to represent these features when people select them. For developer guidance, see [MKMapFeatureOptions](https://developer.apple.com/documentation/MapKit/MKMapFeatureOptions).
+**If you want to display custom information that’s related to standard map features, consider making them independently selectable.** When you support selectable map features, the system treats Apple-provided features (including points of interest, territories, and physical features) independently from other annotations that you add. You can configure custom appearances and information to represent these features when people select them. For developer guidance, see [MKMapFeatureOptions](https://developer.apple.com/documentation/mapkit/mkmapfeatureoptions).
 
 **Use overlays to define map areas with a specific relationship to your content.**
 
 * *Above roads*, the default level, places the overlay above roads but below buildings, trees, and other features. This is great for situations where you want people to have an idea of what’s below the overlay, while still clearly understanding that it’s a defined space.
 * *Above labels* places the overlay above both roads and labels, hiding everything beneath it. This is useful for content that you want to be fully abstracted from the features of the map, or when you want to hide areas of the map that aren’t relevant.
 
-For developer guidance, see [Displaying overlays on a map](https://developer.apple.com/documentation/MapKit/displaying-overlays-on-a-map) and [MKOverlayLevel](https://developer.apple.com/documentation/MapKit/MKOverlayLevel).
+For developer guidance, see [Displaying overlays on a map](https://developer.apple.com/documentation/mapkit/displaying-overlays-on-a-map) and [MKOverlayLevel](https://developer.apple.com/documentation/mapkit/mkoverlaylevel).
 
 **Make sure there’s enough contrast between custom controls and the map.** Insufficient contrast makes controls hard to see and can cause them to blend in with the map. Consider using a thin stroke or light drop shadow to help a custom control stand out, or applying blend modes to the map area to increase its contrast with the controls atop it.
 
@@ -58,11 +58,11 @@ Place cards display rich place information in your app or website, such as opera
 
 ### Displaying place cards in a map
 
-You can present a place card that appears directly in your map anytime someone selects a place. This is a great way to provide place information in a map with multiple places that you specify, like a map of bookstores that an author plans to visit on their book signing tour. For developer guidance, see [mapItemDetailSelectionAccessory(_:)](https://developer.apple.com/documentation/MapKit/MapContent/mapItemDetailSelectionAccessory(_:)), [mapView(_:selectionAccessoryFor:)](https://developer.apple.com/documentation/MapKit/MKMapViewDelegate/mapView(_:selectionAccessoryFor:)), and [selectionAccessory](https://developer.apple.com/documentation/MapKitJS/Annotation/selectionAccessory).
+You can present a place card that appears directly in your map anytime someone selects a place. This is a great way to provide place information in a map with multiple places that you specify, like a map of bookstores that an author plans to visit on their book signing tour. For developer guidance, see [mapItemDetailSelectionAccessory(_:)](https://developer.apple.com/documentation/mapkit/mapcontent/mapitemdetailselectionaccessory(_:)), [mapView(_:selectionAccessoryFor:)](https://developer.apple.com/documentation/mapkit/mkmapviewdelegate/mapview(_:selectionaccessoryfor:)), and [selectionAccessory](https://developer.apple.com/documentation/mapkitjs/annotation/selectionaccessory).
 
-You can also display place cards for other places on a map, such as points of interest, territories, and physical features, to provide valuable context to people about nearby places. For developer guidance, see [mapFeatureSelectionAccessory(_:)](https://developer.apple.com/documentation/SwiftUI/View/mapFeatureSelectionAccessory(_:)), [mapView(_:selectionAccessoryFor:)](https://developer.apple.com/documentation/MapKit/MKMapViewDelegate/mapView(_:selectionAccessoryFor:)), and [selectableMapFeatureSelectionAccessory](https://developer.apple.com/documentation/MapKitJS/Map/selectableMapFeatureSelectionAccessory).
+You can also display place cards for other places on a map, such as points of interest, territories, and physical features, to provide valuable context to people about nearby places. For developer guidance, see [mapFeatureSelectionAccessory(_:)](https://developer.apple.com/documentation/swiftui/view/mapfeatureselectionaccessory(_:)), [mapView(_:selectionAccessoryFor:)](https://developer.apple.com/documentation/mapkit/mkmapviewdelegate/mapview(_:selectionaccessoryfor:)), and [selectableMapFeatureSelectionAccessory](https://developer.apple.com/documentation/mapkitjs/map/selectablemapfeatureselectionaccessory).
 
-> **Developer note:** In websites, you can embed a custom map that displays a place card by default for a single place that you specify. For developer guidance, see [Displaying place information using the Maps Embed API](https://developer.apple.com/documentation/MapKitJS/displaying-place-information-using-the-maps-embed-api).
+> **Developer note:** In websites, you can embed a custom map that displays a place card by default for a single place that you specify. For developer guidance, see [Displaying place information using the Maps Embed API](https://developer.apple.com/documentation/mapkitjs/displaying-place-information-using-the-maps-embed-api).
 
 The system defines several place card styles, which specify the size, appearance, and information included in a place card.
 
@@ -71,7 +71,7 @@ The system defines several place card styles, which specify the size, appearance
 * The *caption* style displays an “Open in Apple Maps” link.
 * The *sheet* style displays a place card in a [sheet](https://developer.apple.com/design/human-interface-guidelines/sheets).
 
-For developer guidance, see [MapItemDetailSelectionAccessoryStyle](https://developer.apple.com/documentation/MapKit/MapItemDetailSelectionAccessoryStyle), [MKSelectionAccessory.MapItemDetailPresentationStyle](https://developer.apple.com/documentation/MapKit/MKSelectionAccessory/MapItemDetailPresentationStyle), and [PlaceSelectionAccessoryStyle](https://developer.apple.com/documentation/MapKitJS/PlaceSelectionAccessoryStyle).
+For developer guidance, see [MapItemDetailSelectionAccessoryStyle](https://developer.apple.com/documentation/mapkit/mapitemdetailselectionaccessorystyle), [MKSelectionAccessory.MapItemDetailPresentationStyle](https://developer.apple.com/documentation/mapkit/mkselectionaccessory/mapitemdetailpresentationstyle), and [PlaceSelectionAccessoryStyle](https://developer.apple.com/documentation/mapkitjs/placeselectionaccessorystyle).
 
 Full callout style place cards appear differently depending on a person’s device. The system presents the full callout style place card in a popover style in iPadOS and macOS, and as a [sheet](https://developer.apple.com/design/human-interface-guidelines/sheets) in iOS.
 
@@ -81,13 +81,13 @@ Full callout style place cards appear differently depending on a person’s devi
 
 **Avoid duplicating information.** Consider what information you already display in your app or website when you choose a place card style. For example, the full callout style place card might display information that your app already shows. In this case, the compact callout or caption style might be a better complement.
 
-**Keep the location on your map visible when displaying a place card.** This helps people maintain a sense of where the location is on your map while getting detailed place information. You can set an offset distance for your place card and point it to the selected location. For developer guidance, see [offset(_:)](https://developer.apple.com/documentation/SwiftUI/View/offset(_:)), [accessoryOffset](https://developer.apple.com/documentation/MapKit/MKAnnotationView/accessoryOffset), and [selectionAccessoryOffset](https://developer.apple.com/documentation/MapKitJS/Annotation/selectionAccessoryOffset).
+**Keep the location on your map visible when displaying a place card.** This helps people maintain a sense of where the location is on your map while getting detailed place information. You can set an offset distance for your place card and point it to the selected location. For developer guidance, see [offset(_:)](https://developer.apple.com/documentation/swiftui/view/offset(_:)), [accessoryOffset](https://developer.apple.com/documentation/mapkit/mkannotationview/accessoryoffset), and [selectionAccessoryOffset](https://developer.apple.com/documentation/mapkitjs/annotation/selectionaccessoryoffset).
 
 ### Adding place cards outside of a map
 
-You can also display place information outside of a map in your app or website. For example, you might want to display a list of places rather than a map, like in search results or a store locator, and present a place card when people select one. For developer guidance, see [mapItemDetailSelectionAccessory(_:)](https://developer.apple.com/documentation/MapKit/MapContent/mapItemDetailSelectionAccessory(_:)), [mapItemDetail(_:)](https://developer.apple.com/documentation/MapKit/MKSelectionAccessory/mapItemDetail(_:)), and [PlaceDetail](https://developer.apple.com/documentation/MapKitJS/PlaceDetail).
+You can also display place information outside of a map in your app or website. For example, you might want to display a list of places rather than a map, like in search results or a store locator, and present a place card when people select one. For developer guidance, see [mapItemDetailSelectionAccessory(_:)](https://developer.apple.com/documentation/mapkit/mapcontent/mapitemdetailselectionaccessory(_:)), [mapItemDetail(_:)](https://developer.apple.com/documentation/mapkit/mkselectionaccessory/mapitemdetail(_:)), and [PlaceDetail](https://developer.apple.com/documentation/mapkitjs/placedetail).
 
-> **Important:** If you don’t display a place card directly within a map view, you must include a map in the place card. For developer guidance, see [mapItemDetailSheet(item:displaysMap:)](https://developer.apple.com/documentation/SwiftUI/View/mapItemDetailSheet(item:displaysMap:)) and [init(mapItem:displaysMap:)](https://developer.apple.com/documentation/MapKit/MKMapItemDetailViewController/init(mapItem:displaysMap:)).
+> **Important:** If you don’t display a place card directly within a map view, you must include a map in the place card. For developer guidance, see [mapItemDetailSheet(item:displaysMap:)](https://developer.apple.com/documentation/swiftui/view/mapitemdetailsheet(item:displaysmap:)) and [init(mapItem:displaysMap:)](https://developer.apple.com/documentation/mapkit/mkmapitemdetailviewcontroller/init(mapitem:displaysmap:)).
 
 **Use location-related cues in surrounding content to help communicate that people can open a place card.** For example, you can display place names and addresses alongside a button for more details to help indicate that people can interact with it to get place information. For a space-efficient design, you can include a map pin icon with a place name to help communicate that people can open a place card.
 
@@ -115,21 +115,21 @@ Apps connected with specific venues like shopping malls and stadiums can design 
 
 ### watchOS
 
-On Apple Watch, maps are static snapshots of geographic locations. Place a map in your interface at design time and show the appropriate region at runtime. The displayed region isn’t interactive; tapping it opens the Maps app on Apple Watch. You can add up to five annotations to a map to highlight points of interest or other relevant information. For developer guidance, see [WKInterfaceMap](https://developer.apple.com/documentation/WatchKit/WKInterfaceMap).
+On Apple Watch, maps are static snapshots of geographic locations. Place a map in your interface at design time and show the appropriate region at runtime. The displayed region isn’t interactive; tapping it opens the Maps app on Apple Watch. You can add up to five annotations to a map to highlight points of interest or other relevant information. For developer guidance, see [WKInterfaceMap](https://developer.apple.com/documentation/watchkit/wkinterfacemap).
 
 **Fit the map interface element to the screen.** The entire element needs to be visible on the Apple Watch display without requiring scrolling.
 
 **Show the smallest region that encompasses the points of interest.** The content within a map interface element doesn’t scroll, so all key content must be visible within the displayed region.
 
-For developer guidance, see [WKInterfaceMap](https://developer.apple.com/documentation/WatchKit/WKInterfaceMap).
+For developer guidance, see [WKInterfaceMap](https://developer.apple.com/documentation/watchkit/wkinterfacemap).
 
 ## Resources
 
 #### Developer documentation
 
-[MapKit](https://developer.apple.com/documentation/MapKit)
+[MapKit](https://developer.apple.com/documentation/mapkit)
 
-[MapKit JS](https://developer.apple.com/documentation/MapKitJS)
+[MapKit JS](https://developer.apple.com/documentation/mapkitjs)
 
 [Indoor Mapping Data Format](https://register.apple.com/resources/imdf/)
 

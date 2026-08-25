@@ -5,14 +5,14 @@ source: https://developer.apple.com/design/human-interface-guidelines/search-fie
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/search-fields.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Search fields
 
 A search field is an editable text field that displays a Search icon, a Clear button, and placeholder text where people can enter what they are searching for. Search fields can use a [Scope bars and tokens](https://developer.apple.com/design/human-interface-guidelines/search-fields#Scope-bars-and-tokens) as well as [Scope bars and tokens](https://developer.apple.com/design/human-interface-guidelines/search-fields#Scope-bars-and-tokens) to help filter and refine the scope of their search. Across each platform, there are different patterns for accessing search based on the goals and design of your app.
 
-For developer guidance, see [Adding a search interface to your app](https://developer.apple.com/documentation/SwiftUI/Adding-a-search-interface-to-your-app); for guidance related to systemwide search, see [Searching](https://developer.apple.com/design/human-interface-guidelines/searching).
+For developer guidance, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app); for guidance related to systemwide search, see [Searching](https://developer.apple.com/design/human-interface-guidelines/searching).
 
 ## Best practices
 
@@ -33,7 +33,7 @@ Scope bars and tokens are components you can use to let someone narrow the param
 * A *scope bar* is a control for filtering and adjusting the scope of a search.
 * A *token* is a visual representation of a search term that someone can select and edit, and acts as a filter for any additional terms in the search.
 
-**Use a scope bar to filter among clearly defined search categories.** A scope bar can help someone move from a broader scope to a narrower one. For example, in Mail on iPhone, a scope bar helps people move from searching their entire mailbox to just the specific mailbox they’re viewing. For developer guidance, see [Scoping a search operation](https://developer.apple.com/documentation/SwiftUI/Scoping-a-search-operation).
+**Use a scope bar to filter among clearly defined search categories.** A scope bar can help someone move from a broader scope to a narrower one. For example, in Mail on iPhone, a scope bar helps people move from searching their entire mailbox to just the specific mailbox they’re viewing. For developer guidance, see [Scoping a search operation](https://developer.apple.com/documentation/swiftui/scoping-a-search-operation).
 
 **Default to a broader scope and let people refine it as they need.** A broader scope provides context for the full set of available results, which helps guide people in a useful direction when they choose to narrow the scope.
 
@@ -101,9 +101,9 @@ The placement and behavior of the search field in iPadOS and macOS is similar. I
 
 ### tvOS
 
-A search screen is a specialized keyboard screen that helps people enter search text, displaying search results beneath the keyboard in a fully customizable view. For developer guidance, see [UISearchController](https://developer.apple.com/documentation/UIKit/UISearchController).
+A search screen is a specialized keyboard screen that helps people enter search text, displaying search results beneath the keyboard in a fully customizable view. For developer guidance, see [UISearchController](https://developer.apple.com/documentation/uikit/uisearchcontroller).
 
-**Provide suggestions to make searching easier.** People typically don’t want to do a lot of typing in tvOS. To improve the search experience, provide popular and context-specific search suggestions, including recent searches when available. For developer guidance, see [Using suggested searches with a search controller](https://developer.apple.com/documentation/UIKit/using-suggested-searches-with-a-search-controller).
+**Provide suggestions to make searching easier.** People typically don’t want to do a lot of typing in tvOS. To improve the search experience, provide popular and context-specific search suggestions, including recent searches when available. For developer guidance, see [Using suggested searches with a search controller](https://developer.apple.com/documentation/uikit/using-suggested-searches-with-a-search-controller).
 
 ### watchOS
 
@@ -119,15 +119,15 @@ When someone taps the search field, the system displays a text-input control tha
 
 #### Developer documentation
 
-[Adding a search interface to your app](https://developer.apple.com/documentation/SwiftUI/Adding-a-search-interface-to-your-app) — SwiftUI
+[Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app) — SwiftUI
 
-[searchable(text:placement:prompt:)](https://developer.apple.com/documentation/SwiftUI/View/searchable(text:placement:prompt:)) — SwiftUI
+[searchable(text:placement:prompt:)](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) — SwiftUI
 
-[UISearchBar](https://developer.apple.com/documentation/UIKit/UISearchBar) — UIKit
+[UISearchBar](https://developer.apple.com/documentation/uikit/uisearchbar) — UIKit
 
-[UISearchTextField](https://developer.apple.com/documentation/UIKit/UISearchTextField) — UIKit
+[UISearchTextField](https://developer.apple.com/documentation/uikit/uisearchtextfield) — UIKit
 
-[NSSearchField](https://developer.apple.com/documentation/AppKit/NSSearchField) — AppKit
+[NSSearchField](https://developer.apple.com/documentation/appkit/nssearchfield) — AppKit
 
 #### Videos
 

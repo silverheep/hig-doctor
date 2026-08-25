@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/gestures
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/gestures.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Gestures
@@ -90,7 +90,7 @@ Here are the standard direct gestures people use in visionOS; see [Specification
 
 #### Designing custom gestures in visionOS
 
-If you want to offer a specific interaction for your experience that people can’t perform using an existing system gesture, consider designing a custom gesture. To offer this type of interaction, your app needs to be running in a Full Space, and you must request people’s permission to access information about their hands. For developer guidance, see [Setting up access to ARKit data](https://developer.apple.com/documentation/visionOS/setting-up-access-to-arkit-data).
+If you want to offer a specific interaction for your experience that people can’t perform using an existing system gesture, consider designing a custom gesture. To offer this type of interaction, your app needs to be running in a Full Space, and you must request people’s permission to access information about their hands. For developer guidance, see [Setting up access to ARKit data](https://developer.apple.com/documentation/visionos/setting-up-access-to-arkit-data).
 
 **Prioritize comfort.** Continually test ergonomics of all interactions that require custom gestures. A custom interaction that requires people to keep their arms raised for even a little while can be physically tiring, and repeating very similar movements many times in succession can stress people’s muscles and joints.
 
@@ -108,7 +108,7 @@ When designing apps and games that use custom gestures or anchor content to a pe
 
 **Reserve the area around a person’s hand for system overlays and their related gestures.** If possible, don’t anchor content to a person’s hands or wrists. If you’re designing a game that involves hand-anchored content, place it outside of the immediate area of someone’s hand to avoid colliding with the Home indicator.
 
-**Consider deferring the system overlay behavior when designing an immersive app or game.** In certain circumstances, you may not want the Home indicator to appear when someone looks at the palm of their hand. For example, a game that uses virtual hands or gloves may want to keep someone within the world of the story, even if they happen to look at their hands from different angles. In such cases, when your app is running in a Full Space, you can choose to require a tap to reveal the Home indicator instead. For developer guidance, see [persistentSystemOverlays(_:)](https://developer.apple.com/documentation/SwiftUI/View/persistentSystemOverlays(_:)).
+**Consider deferring the system overlay behavior when designing an immersive app or game.** In certain circumstances, you may not want the Home indicator to appear when someone looks at the palm of their hand. For example, a game that uses virtual hands or gloves may want to keep someone within the world of the story, even if they happen to look at their hands from different angles. In such cases, when your app is running in a Full Space, you can choose to require a tap to reveal the Home indicator instead. For developer guidance, see [persistentSystemOverlays(_:)](https://developer.apple.com/documentation/swiftui/view/persistentsystemoverlays(_:)).
 
 > **Note:** Apps and games that you built for visionOS 1 defer the system overlay behavior by default. When a person looks at their palm with your app running in a Full Space, the Home indicator won’t appear unless they tap first.
 
@@ -122,13 +122,13 @@ In watchOS 11 and later, people can use the double-tap gesture to scroll through
 
 **Avoid setting a primary action in views with lists, scroll views, or vertical tabs.** This conflicts with the default navigation behaviors that people expect when they double-tap.
 
-**Choose the button that people use most commonly as the primary action in a view.** Double tap is helpful in a nonscrolling view when it performs the action that people use the most. For example, in a media controls view, you could assign the primary action to the play/pause button. For developer guidance, see [handGestureShortcut(_:isEnabled:)](https://developer.apple.com/documentation/SwiftUI/View/handGestureShortcut(_:isEnabled:)) and [primaryAction](https://developer.apple.com/documentation/SwiftUI/HandGestureShortcut/primaryAction).
+**Choose the button that people use most commonly as the primary action in a view.** Double tap is helpful in a nonscrolling view when it performs the action that people use the most. For example, in a media controls view, you could assign the primary action to the play/pause button. For developer guidance, see [handGestureShortcut(_:isEnabled:)](https://developer.apple.com/documentation/swiftui/view/handgestureshortcut(_:isenabled:)) and [primaryAction](https://developer.apple.com/documentation/swiftui/handgestureshortcut/primaryaction).
 
 ## Specifications
 
 ### Standard gestures
 
-The system provides APIs that support the familiar gestures people use with their devices, whether they use a touchscreen, an indirect gesture in visionOS, or an input device like a trackpad, mouse, remote, or game controller. For developer guidance, see [Gestures](https://developer.apple.com/documentation/SwiftUI/Gestures).
+The system provides APIs that support the familiar gestures people use with their devices, whether they use a touchscreen, an indirect gesture in visionOS, or an input device like a trackpad, mouse, remote, or game controller. For developer guidance, see [Gestures](https://developer.apple.com/documentation/swiftui/gestures).
 
 | Gesture | Supported in | Common action |
 | --- | --- | --- |
@@ -154,9 +154,9 @@ For guidance on supporting additional gestures and button presses on specific in
 
 #### Developer documentation
 
-[Gestures](https://developer.apple.com/documentation/SwiftUI/Gestures) — SwiftUI
+[Gestures](https://developer.apple.com/documentation/swiftui/gestures) — SwiftUI
 
-[UITouch](https://developer.apple.com/documentation/UIKit/UITouch) — UIKit
+[UITouch](https://developer.apple.com/documentation/uikit/uitouch) — UIKit
 
 #### Videos
 

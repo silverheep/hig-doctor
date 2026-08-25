@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/panels
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/panels.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Panels
@@ -48,7 +48,7 @@ A HUD-style panel serves the same function as a standard panel, but its appearan
 
 **Keep HUDs small.** HUDs are designed to be unobtrusively useful, so letting them grow too large defeats their primary purpose. Don’t let a HUD obscure the content it adjusts, and make sure it doesn’t compete with the content for people’s attention.
 
-For developer guidance, see [hudWindow](https://developer.apple.com/documentation/AppKit/NSWindow/StyleMask-swift.struct/hudWindow).
+For developer guidance, see [hudWindow](https://developer.apple.com/documentation/appkit/nswindow/stylemask-swift.struct/hudwindow).
 
 ## Platform considerations
 
@@ -64,9 +64,9 @@ For developer guidance, see [hudWindow](https://developer.apple.com/documentatio
 
 #### Developer documentation
 
-[NSPanel](https://developer.apple.com/documentation/AppKit/NSPanel) — AppKit
+[NSPanel](https://developer.apple.com/documentation/appkit/nspanel) — AppKit
 
-[hudWindow](https://developer.apple.com/documentation/AppKit/NSWindow/StyleMask-swift.struct/hudWindow) — AppKit
+[hudWindow](https://developer.apple.com/documentation/appkit/nswindow/stylemask-swift.struct/hudwindow) — AppKit
 
 ---
 

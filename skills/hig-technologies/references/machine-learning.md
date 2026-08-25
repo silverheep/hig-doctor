@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/machine-le
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/machine-learning.
-> This file reproduces that content for AI agent reference, snapshot 2026-07-08.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Machine learning
@@ -16,7 +16,7 @@ For related guidance on how to use machine learning models to enable intelligent
 
 ## Planning your design
 
-Features powered by machine learning use *models* to perform tasks that make people’s experiences more unique, like curated feeds, customized trip itineraries, and personalized search suggestions. These features depend on well-designed models as much as they depend on a well-designed UI and user experience. For insights into the process of designing models, see [Create ML](https://developer.apple.com/documentation/CreateML).
+Features powered by machine learning use *models* to perform tasks that make people’s experiences more unique, like curated feeds, customized trip itineraries, and personalized search suggestions. These features depend on well-designed models as much as they depend on a well-designed UI and user experience. For insights into the process of designing models, see [Create ML](https://developer.apple.com/documentation/createml).
 
 As you design your models, keep the intended experience of your app in mind. It can take a long time to adjust the behavior of models, so be prepared to change the way you use data and metrics if the app experience needs to change.
 
@@ -288,11 +288,11 @@ An important part of the design process is to identify the scenarios where limit
 
 #### Developer documentation
 
-[Apple Intelligence and machine learning](https://developer.apple.com/documentation/TechnologyOverviews/ai-machine-learning)
+[Apple Intelligence and machine learning](https://developer.apple.com/documentation/technologyoverviews/ai-machine-learning)
 
-[Create ML](https://developer.apple.com/documentation/CreateML)
+[Create ML](https://developer.apple.com/documentation/createml)
 
-[Core ML](https://developer.apple.com/documentation/CoreML)
+[Core ML](https://developer.apple.com/documentation/coreml)
 
 #### Videos
 

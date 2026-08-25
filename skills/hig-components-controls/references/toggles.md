@@ -5,14 +5,14 @@ source: https://developer.apple.com/design/human-interface-guidelines/toggles
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/toggles.
-> This file reproduces that content for AI agent reference, snapshot 2026-06-11.
+> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Toggles
 
 A toggle can have various styles, such as switch and checkbox, and different platforms can use these styles in different ways. For guidance, see [Platform considerations](https://developer.apple.com/design/human-interface-guidelines/toggles#Platform-considerations).
 
-In addition to toggles, all platforms also support buttons that behave like toggles by using a different appearance for each state. For developer guidance, see [ToggleStyle](https://developer.apple.com/documentation/SwiftUI/ToggleStyle).
+In addition to toggles, all platforms also support buttons that behave like toggles by using a different appearance for each state. For developer guidance, see [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle).
 
 ## Best practices
 
@@ -34,7 +34,7 @@ In addition to toggles, all platforms also support buttons that behave like togg
 
 **Outside of a list, use a button that behaves like a toggle, not a switch.** For example, the Phone app uses a toggle on the filter button to let users filter their recent calls.  The app adds a blue highlight to indicate when the toggle is active, and removes it when the toggle is inactive.
 
-**Avoid supplying a label that explains the button’s purpose.** The interface icon you create — combined with the alternative background appearances you supply — help people understand what the button does. For developer guidance, see [changesSelectionAsPrimaryAction](https://developer.apple.com/documentation/UIKit/UIButton/changesSelectionAsPrimaryAction).
+**Avoid supplying a label that explains the button’s purpose.** The interface icon you create — combined with the alternative background appearances you supply — help people understand what the button does. For developer guidance, see [changesSelectionAsPrimaryAction](https://developer.apple.com/documentation/uikit/uibutton/changesselectionasprimaryaction).
 
 ### macOS
 
@@ -44,9 +44,9 @@ In addition to the switch toggle style, macOS supports the checkbox style and al
 
 #### Switches
 
-**Prefer a switch for settings that you want to emphasize.** A switch has more visual weight than a checkbox, so it looks better when it controls more functionality than a checkbox typically does. For example, you might use a switch to let people turn on or off a group of settings, instead of just one setting. For developer guidance, see [switch](https://developer.apple.com/documentation/SwiftUI/ToggleStyle/switch).
+**Prefer a switch for settings that you want to emphasize.** A switch has more visual weight than a checkbox, so it looks better when it controls more functionality than a checkbox typically does. For example, you might use a switch to let people turn on or off a group of settings, instead of just one setting. For developer guidance, see [switch](https://developer.apple.com/documentation/swiftui/togglestyle/switch).
 
-**Within a grouped form, consider using a mini switch to control the setting in a single row.** The height of a mini switch is similar to the height of buttons and other controls, resulting in rows that have a consistent height. If you need to present a hierarchy of settings within a grouped form, you can use a regular switch for the primary setting and mini switches for the subordinate settings. For developer guidance, see [GroupedFormStyle](https://developer.apple.com/documentation/SwiftUI/GroupedFormStyle) and [ControlSize](https://developer.apple.com/documentation/SwiftUI/ControlSize).
+**Within a grouped form, consider using a mini switch to control the setting in a single row.** The height of a mini switch is similar to the height of buttons and other controls, resulting in rows that have a consistent height. If you need to present a hierarchy of settings within a grouped form, you can use a regular switch for the primary setting and mini switches for the subordinate settings. For developer guidance, see [GroupedFormStyle](https://developer.apple.com/documentation/swiftui/groupedformstyle) and [ControlSize](https://developer.apple.com/documentation/swiftui/controlsize).
 
 **In general, don’t replace a checkbox with a switch.** If you’re already using a checkbox in your interface, it’s probably best to keep using it.
 
@@ -60,7 +60,7 @@ A checkbox is a small, square button that’s empty when the button is off, cont
 
 **Consider using a label to introduce a group of checkboxes if their relationship isn’t clear.** Describe the set of options, and align the label’s baseline with the first checkbox in the group.
 
-**Accurately reflect a checkbox’s state in its appearance.** A checkbox’s state can be on, off, or mixed. If you use a checkbox to globally turn on and off multiple subordinate checkboxes, show a mixed state when the subordinate checkboxes have different states. For example, you might need to present a text-style setting that turns all styles on or off, but also lets people choose a subset of individual style settings like bold, italic, or underline. For developer guidance, see [allowsMixedState](https://developer.apple.com/documentation/AppKit/NSButton/allowsMixedState).
+**Accurately reflect a checkbox’s state in its appearance.** A checkbox’s state can be on, off, or mixed. If you use a checkbox to globally turn on and off multiple subordinate checkboxes, show a mixed state when the subordinate checkboxes have different states. For example, you might need to present a text-style setting that turns all styles on or off, but also lets people choose a subset of individual style settings like bold, italic, or underline. For developer guidance, see [allowsMixedState](https://developer.apple.com/documentation/appkit/nsbutton/allowsmixedstate).
 
 #### Radio buttons
 
@@ -84,13 +84,13 @@ A radio button’s state is either selected (a filled circle) or deselected (an 
 
 #### Developer documentation
 
-[Toggle](https://developer.apple.com/documentation/SwiftUI/Toggle) — SwiftUI
+[Toggle](https://developer.apple.com/documentation/swiftui/toggle) — SwiftUI
 
-[UISwitch](https://developer.apple.com/documentation/UIKit/UISwitch) — UIKit
+[UISwitch](https://developer.apple.com/documentation/uikit/uiswitch) — UIKit
 
-[NSButton.ButtonType.toggle](https://developer.apple.com/documentation/AppKit/NSButton/ButtonType/toggle) — AppKit
+[NSButton.ButtonType.toggle](https://developer.apple.com/documentation/appkit/nsbutton/buttontype/toggle) — AppKit
 
-[NSSwitch](https://developer.apple.com/documentation/AppKit/NSSwitch) — AppKit
+[NSSwitch](https://developer.apple.com/documentation/appkit/nsswitch) — AppKit
 
 ## Change log
 
