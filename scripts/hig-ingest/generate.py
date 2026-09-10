@@ -21,6 +21,8 @@ NEW_TOPIC_PLACEMENT = {
     "design-principles": "hig-foundations",
     # snippets: Apple hierarchy is components > system-experiences
     "snippets": "hig-components-system",
+    # designing-for-iphone-duo: new platform page (Sept 2026) -> platforms skill
+    "designing-for-iphone-duo": "hig-platforms",
 }
 # Live collection/navigation pages with no leaf prose — skip (handled by SKILL.md).
 SKIP_SLUGS = {

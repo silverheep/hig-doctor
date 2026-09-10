@@ -1,6 +1,6 @@
 ---
 name: hig-technologies
-version: 2.1.1
+version: 2.2.0
 description: >-
   Apple HIG guidance for Apple technology integrations: Siri, Apple Pay, HealthKit,
   HomeKit, ARKit, machine learning, generative AI, iCloud, Sign in with Apple,
@@ -65,7 +65,7 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [icloud.md](references/icloud.md) | iCloud | CloudKit, cross-device sync, conflict resolution |
 | [sign-in-with-apple.md](references/sign-in-with-apple.md) | Sign in with Apple | Authentication, privacy, button styles |
 | [id-verifier.md](references/id-verifier.md) | ID Verifier | Identity verification, document scanning |
-| [shareplay.md](references/shareplay.md) | SharePlay | Shared experiences, participant presence |
+| [shareplay.md](references/shareplay.md) | SharePlay | Real-time shared activities, joining and leaving, visionOS spatial Personas, spatial and custom seat templates |
 | [airplay.md](references/airplay.md) | AirPlay | Media streaming, Now Playing, wireless display |
 | [carplay.md](references/carplay.md) | CarPlay | Driver safety, permitted app types, large targets |
 | [game-center.md](references/game-center.md) | Game Center | Achievements, leaderboards, multiplayer |

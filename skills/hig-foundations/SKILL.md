@@ -1,6 +1,6 @@
 ---
 name: hig-foundations
-version: 2.1.1
+version: 2.2.0
 description: >-
   Apple Human Interface Guidelines design foundations. Use this skill when the user asks about
   "HIG color", "Apple typography", "SF Symbols", "dark mode guidelines", "accessible design",
@@ -41,7 +41,7 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 |---|---|---|
 | [accessibility.md](references/accessibility.md) | Accessibility | VoiceOver, Dynamic Type, color contrast, motor accessibility, Switch Control, audio descriptions |
 | [app-icons.md](references/app-icons.md) | App Icons | Icon grid, platform-specific sizes, single focal point, no transparency |
-| [branding.md](references/branding.md) | Branding | Integrating brand identity within Apple's design language, subtle branding, custom tints |
+| [branding.md](references/branding.md) | Branding | Integrating brand identity within Apple's design language, judicious accent color, brand color in the content layer, familiar components |
 | [color.md](references/color.md) | Color | System colors, Dynamic Colors, semantic colors, custom palettes, contrast ratios |
 | [dark-mode.md](references/dark-mode.md) | Dark Mode | Elevated surfaces, semantic colors, adapted palettes, vibrancy, testing in both modes |
 | [design-principles.md](references/design-principles.md) | Design principles | Foundational cross-platform principles guiding HIG guidance: purpose, clarity, deference, depth |
@@ -49,7 +49,7 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [images.md](references/images.md) | Images | Image resolution, @2x/@3x assets, vector assets, image accessibility |
 | [immersive-experiences.md](references/immersive-experiences.md) | Immersive Experiences | AR/VR design, spatial immersion, comfort zones, progressive immersion levels |
 | [inclusion.md](references/inclusion.md) | Inclusion | Diverse representation, non-gendered language, cultural sensitivity, inclusive defaults |
-| [layout.md](references/layout.md) | Layout | Margins, spacing, alignment, safe areas, adaptive layouts, readable content guides |
+| [layout.md](references/layout.md) | Layout | Visual hierarchy, size classes, adaptability, guides and safe areas, platform considerations |
 | [materials.md](references/materials.md) | Materials | Vibrancy, blur, translucency, system materials, material thickness |
 | [motion.md](references/motion.md) | Motion | Animation curves, transitions, continuity, Reduce Motion support, physics-based motion |
 | [privacy.md](references/privacy.md) | Privacy | Permission requests, usage descriptions, privacy nutrition labels, minimal data collection |
