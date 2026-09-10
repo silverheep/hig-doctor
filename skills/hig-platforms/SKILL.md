@@ -50,6 +50,8 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [designing-for-watchos.md](references/designing-for-watchos.md) | watchOS | Glanceable UI, Digital Crown, complications, notifications, haptics |
 | [designing-for-games.md](references/designing-for-games.md) | Games | Controllers, immersive experiences, platform-specific conventions, accessibility |
 
+**Per-device dimensions live outside this corpus.** The HIG no longer publishes screen sizes, margins, or safe-area insets per device. Design by size class, and point people to [Apple Design Resources](https://developer.apple.com/design/resources/) for device templates, bezels, and layout specs, including iPhone Duo.
+
 ## Decision Framework
 
 1. **Identify the primary use context.** On the go (iOS/watchOS), at a desk (macOS), on the couch (tvOS), spatial environment (visionOS)?

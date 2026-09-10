@@ -268,7 +268,7 @@ function getEvaluationChecklist(skillName: string): string[] {
     ],
     "hig-components-layout": [
       "Navigation pattern matches app structure (prefer tab bar; sidebar-adaptable tab bar or NavigationSplitView for complex hierarchies)",
-      "Adaptive layout: responds to size classes, multitasking",
+      "Adaptive layout: driven by size classes (not device type, screen bounds, or orientation); handles multitasking and iPhone Duo poses",
       "Standard navigation components (NavigationSplitView, not deprecated NavigationView)",
       "Consistent back navigation and spatial hierarchy",
     ],

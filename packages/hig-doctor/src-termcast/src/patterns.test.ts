@@ -11,7 +11,7 @@ import { detectPatterns, RULE_COUNT } from "./patterns";
 //   - demos/remotion-hig-doctor/README.md
 //   - demos/remotion-hig-doctor/src/data/report-data.json ("totalRules")
 //   - packages/hig-doctor/src-termcast/README.md
-const EXPECTED_RULE_COUNT = 380;
+const EXPECTED_RULE_COUNT = 382;
 test(`rule count is exactly ${EXPECTED_RULE_COUNT}`, () => {
   expect(RULE_COUNT).toBe(EXPECTED_RULE_COUNT);
 });
@@ -104,6 +104,33 @@ describe("detectPatterns — Liquid Glass era", () => {
     expect(nudges.length).toBe(1);
     const withTab = without.replace(`Tab("Home")`, `Tab(role: .search)`);
     expect(detectPatterns(withTab, "View.swift").some(m => m.pattern.includes("consider a search tab"))).toBe(false);
+  });
+  test("flags device-based layout branching as a concern (Layout: size classes, Sept 2026)", () => {
+    const samples = [
+      `let width = UIScreen.main.bounds.width`,
+      `if UIDevice.current.userInterfaceIdiom == .pad { columns = 3 }`,
+      `let isPhone = traitCollection.userInterfaceIdiom == .phone`,
+      `if UIDevice.current.orientation.isLandscape { showSidebar = true }`,
+      `let model = UIDevice.current.model`,
+    ];
+    for (const src of samples) {
+      const matches = detectPatterns(src, "View.swift");
+      expect(matches.some(m => m.category === "foundations" && m.subcategory === "layout" && m.type === "concern" && m.pattern.startsWith("device-based layout"))).toBe(true);
+    }
+    const clean = detectPatterns(`@Environment(\\.horizontalSizeClass) private var sizeClass`, "View.swift");
+    expect(clean.some(m => m.pattern.startsWith("device-based layout"))).toBe(false);
+  });
+  test("detects size-class-driven layout as positive (SwiftUI and UIKit)", () => {
+    const samples = [
+      `@Environment(\\.horizontalSizeClass) private var sizeClass`,
+      `if traitCollection.verticalSizeClass == .compact {`,
+      `registerForTraitChanges([UITraitHorizontalSizeClass.self]) { (self: Self, _) in`,
+      `ViewThatFits { WideRow(); NarrowRow() }`,
+    ];
+    for (const src of samples) {
+      const matches = detectPatterns(src, "View.swift");
+      expect(matches.some(m => m.category === "foundations" && m.subcategory === "layout" && m.type === "positive" && m.pattern.startsWith("size class"))).toBe(true);
+    }
   });
   test("detects AppShortcutsProvider", () => {
     const matches = detectPatterns(`struct MyShortcuts: AppShortcutsProvider {`, "Shortcuts.swift");
