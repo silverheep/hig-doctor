@@ -5,6 +5,22 @@ All notable changes to `hig-doctor` (the Apple HIG audit CLI) are documented her
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-09-10
+
+### Added
+
+- Two Swift layout rules grounded in the September 9, 2026 HIG Layout rewrite
+  ("Determine layout based on size classes, not device type or orientation";
+  see also Designing for iPhone Duo). RULE_COUNT 380 → 382.
+  - Concern `device-based layout`: flags `UIScreen.main.bounds`/`nativeBounds`,
+    `UIDevice.current.userInterfaceIdiom`/`model`/`orientation`, and
+    `userInterfaceIdiom ==` comparisons. These break under iPhone Duo poses,
+    Split View, and resizable windows.
+  - Positive `size class adaptive layout`: credits `horizontalSizeClass`,
+    `verticalSizeClass`, `UITraitHorizontalSizeClass`/`UITraitVerticalSizeClass`,
+    `UIUserInterfaceSizeClass`, and `ViewThatFits`.
+- Layout checklist item now names size classes and iPhone Duo poses explicitly.
+
 ## [1.2.0] - 2026-07-11
 
 ### Added

@@ -244,6 +244,10 @@ const swiftRules: PatternRule[] = [
   { category: "platforms", subcategory: "multiplatform", type: "positive", pattern: "conditionalPlatform", regex: /#if\s+(os\(iOS\)|os\(macOS\)|os\(watchOS\)|os\(tvOS\)|os\(visionOS\))/, fileFilter: SWIFT },
 
   // UIKit concerns
+  // HIG Layout "Size classes" (Sept 2026): "Determine layout based on size classes, not device type or orientation."
+  // Screen bounds, idiom, device model, and orientation checks all break on iPhone Duo poses and Split View.
+  { category: "foundations", subcategory: "layout", type: "concern", pattern: "device-based layout (branch on size classes, not screen bounds, idiom, model, or orientation)", regex: /UIScreen\.main\.(?:bounds|nativeBounds)|UIDevice\.current\.(?:userInterfaceIdiom|model|orientation)|\.userInterfaceIdiom\s*[!=]=/, fileFilter: SWIFT },
+  { category: "foundations", subcategory: "layout", type: "positive", pattern: "size class adaptive layout", regex: /\bhorizontalSizeClass\b|\bverticalSizeClass\b|\bUITraitHorizontalSizeClass\b|\bUITraitVerticalSizeClass\b|\bUIUserInterfaceSizeClass\b|\bViewThatFits\b/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "layout", type: "concern", pattern: "hardcoded CGRect", regex: /CGRect\(\s*x:\s*\d/, fileFilter: SWIFT },
   { category: "foundations", subcategory: "layout", type: "concern", pattern: "ignoresSafeArea (backgrounds OK; keep controls/text in safe area)", regex: /\.ignoresSafeArea\(/, fileFilter: SWIFT },
   { category: "patterns", subcategory: "state", type: "concern", pattern: "non-private @State", regex: /@State\b(?!\s+private\b)\s+(?:var|let)\b/, fileFilter: SWIFT },

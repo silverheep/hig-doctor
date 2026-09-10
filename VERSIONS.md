@@ -35,6 +35,8 @@ Content sourced from [Apple's Human Interface Guidelines](https://developer.appl
   - `collaboration-and-sharing` — SharePlay now described as cross-device rather than visionOS-specific (one sentence).
   - `wallet` — developer link retargeted to "Creating a poster generic pass".
   - MCP server snapshot constant bumped to 2026-09-10.
+  - `hig-foundations` and `hig-platforms` gained a pointer note under their reference indexes: device dimensions, margins, and safe areas are no longer in the HIG; agents should design by size class and refer people to Apple Design Resources rather than invent numbers.
+- **Audit CLI 1.2.0 → 1.3.0** (`website/lib/audit/patterns.ts` kept in sync): two Swift layout rules grounded in the Layout rewrite (RULE_COUNT 380 → 382). Concern `device-based layout` flags `UIScreen.main.bounds`, `UIDevice.current.userInterfaceIdiom`/`model`/`orientation`, and idiom comparisons; positive `size class adaptive layout` credits `horizontalSizeClass`/`verticalSizeClass`, the `UITrait*SizeClass` trait types, `UIUserInterfaceSizeClass`, and `ViewThatFits`. Layout checklist wording updated.
 
 ### 2026-08-24
 - **Corpus re-verified against Apple's live HIG** — patch bump (2.1.1; 2.0.1 for `hig-components-controls` and `hig-components-dialogs`) for all 13 content skills:

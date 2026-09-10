@@ -59,6 +59,8 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 | [typography.md](references/typography.md) | Typography | SF Pro, Dynamic Type sizes, text styles, custom fonts, font weight hierarchy, line spacing |
 | [writing.md](references/writing.md) | Writing | UI copy guidelines, tone, capitalization rules, error messages, button labels, conciseness |
 
+**Device specifications are not in this corpus.** In September 2026 Apple removed the device screen-dimension and size-class tables from the Layout page. Do not invent point sizes, margins, or safe-area insets. Design by size class rather than by device, and send people to [Apple Design Resources](https://developer.apple.com/design/resources/) for per-device margins, safe areas, and bezels.
+
 ## Applying Foundations Together
 
 Consider how principles interact:
