@@ -5,9 +5,9 @@ Current versions of all skills. Agents can compare against local versions to che
 | Skill | Version | Last Updated |
 |-------|---------|--------------|
 | hig-project-context | 1.0.0 | 2025-02-02 |
-| hig-platforms | 2.1.1 | 2026-08-24 |
-| hig-foundations | 2.1.1 | 2026-08-24 |
-| hig-patterns | 2.1.1 | 2026-08-24 |
+| hig-platforms | 2.2.0 | 2026-09-10 |
+| hig-foundations | 2.2.0 | 2026-09-10 |
+| hig-patterns | 2.1.2 | 2026-09-10 |
 | hig-components-content | 2.1.1 | 2026-08-24 |
 | hig-components-layout | 2.1.1 | 2026-08-24 |
 | hig-components-menus | 2.1.1 | 2026-08-24 |
@@ -17,14 +17,24 @@ Current versions of all skills. Agents can compare against local versions to che
 | hig-components-status | 2.1.1 | 2026-08-24 |
 | hig-components-system | 2.1.1 | 2026-08-24 |
 | hig-inputs | 2.1.1 | 2026-08-24 |
-| hig-technologies | 2.1.1 | 2026-08-24 |
+| hig-technologies | 2.2.0 | 2026-09-10 |
 | hig-accessibility-audit | 1.0.0 | 2026-07-11 |
 
 ## HIG Source
 
-Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), re-verified against the live site on August 24, 2026. Files updated 2026-08-24 carry that snapshot stamp; files whose content was verified unchanged retain their earlier (2026-07-08 or 2026-06-11) stamp.
+Content sourced from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), re-verified against the live site on September 10, 2026. Files updated 2026-09-10 carry that snapshot stamp; files whose content was verified unchanged retain their earlier (2026-08-24, 2026-07-08, or 2026-06-11) stamp.
 
 ## Recent Changes
+
+### 2026-09-10
+- **September 2026 event updates (iPhone Duo)** — full re-crawl (173 topics, 166 leaf) picked up Apple's September 9, 2026 change-log entries. Minor bump for `hig-platforms`, `hig-foundations`, and `hig-technologies` (2.2.0); patch bump for `hig-patterns` (2.1.2). All other skills are unchanged and keep their 2026-08-24 stamp.
+  - **New topic: `designing-for-iphone-duo`** (`hig-platforms`) — Apple's dual-display, hinged iPhone. Covers device poses, inner/outer displays, *reserved regions* (outer camera, inner camera, folding region), the new *arrangement view* layout container (split and overlay), and the system's vertical placement of toolbars, tab bars, status bar, and Dynamic Island along the side edge. Links three new tech talks. Mapped via `NEW_TOPIC_PLACEMENT` in `generate.py`; new Key Principle and reference-index row in `hig-platforms`.
+  - `layout` — substantial rewrite ("Updated guidance to reflect current best practices"). New **Size classes** subsection: determine layout by size class, not device type or orientation, and consider all size-class combinations. The iOS and iPadOS platform subsections and the **Specifications** section (device screen-dimension and size-class tables) were removed. visionOS guidance now prefers an adjacent window over an ornament for supplemental content.
+  - `shareplay` — reorganized best practices, expanded visionOS guidance, and a new **Custom templates** section for spatial Persona seating (up to five seats, at least a meter apart, roles independent of seats).
+  - `branding` — "Refined guidance for using brand color": apply accent color judiciously, move brand color into the content layer beneath Liquid Glass; new "Express your brand with familiar components" principle.
+  - `collaboration-and-sharing` — SharePlay now described as cross-device rather than visionOS-specific (one sentence).
+  - `wallet` — developer link retargeted to "Creating a poster generic pass".
+  - MCP server snapshot constant bumped to 2026-09-10.
 
 ### 2026-08-24
 - **Corpus re-verified against Apple's live HIG** — patch bump (2.1.1; 2.0.1 for `hig-components-controls` and `hig-components-dialogs`) for all 13 content skills:

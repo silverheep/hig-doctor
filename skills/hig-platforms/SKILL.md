@@ -1,9 +1,10 @@
 ---
 name: hig-platforms
-version: 2.1.1
+version: 2.2.0
 description: >-
   Apple Human Interface Guidelines for platform-specific design. Use this skill when the user asks about
-  "designing for iOS", "iPad app design", "macOS design", "tvOS", "visionOS", "watchOS", "Apple platform",
+  "designing for iOS", "iPhone Duo", "foldable iPhone", "dual display", "iPad app design", "macOS design",
+  "tvOS", "visionOS", "watchOS", "Apple platform",
   "which platform", platform differences, platform-specific conventions, or multi-platform app design.
   Also use when the user says "should I design differently for iPad vs iPhone", "how does my app work
   on visionOS", "what's different about macOS apps", "porting my app to another platform",
@@ -22,23 +23,26 @@ Check for `.claude/apple-design-context.md` before asking questions. Use existin
 
 2. **iOS: touch-first.** Direct manipulation on a handheld screen. Optimize for one-handed use. Navigation uses tab bars and push/pop stacks.
 
-3. **iPadOS: expanded canvas.** Support Split View, Slide Over, and Stage Manager. Use sidebars and multi-column layouts. Support pointer and keyboard alongside touch.
+3. **iPhone Duo: adapt by size class, not pose.** Two displays and a hinge mean many sizes and poses. Build layouts on size classes, layout margins, and safe areas; keep controls clear of reserved regions (cameras, fold); accept the system's vertical toolbar and tab bar placement.
 
-4. **macOS: pointer and keyboard.** Dense information display is acceptable. Use menu bars, toolbars, and keyboard shortcuts extensively. Windows are resizable with precise control.
+4. **iPadOS: expanded canvas.** Support Split View, Slide Over, and Stage Manager. Use sidebars and multi-column layouts. Support pointer and keyboard alongside touch.
 
-5. **tvOS: remote and focus.** Viewed from a distance. Design for the Siri Remote with focus-based navigation. Large text, simple layouts, linear navigation.
+5. **macOS: pointer and keyboard.** Dense information display is acceptable. Use menu bars, toolbars, and keyboard shortcuts extensively. Windows are resizable with precise control.
 
-6. **visionOS: spatial interaction.** 3D environment using windows, volumes, and spaces. Eye tracking for targeting, indirect gestures for interaction. Respect ergonomic comfort zones.
+6. **tvOS: remote and focus.** Viewed from a distance. Design for the Siri Remote with focus-based navigation. Large text, simple layouts, linear navigation.
 
-7. **watchOS: glanceable and brief.** Information consumable at a glance. Brief interactions. Digital Crown, haptics, and complications for timely content.
+7. **visionOS: spatial interaction.** 3D environment using windows, volumes, and spaces. Eye tracking for targeting, indirect gestures for interaction. Respect ergonomic comfort zones.
 
-8. **Games: own paradigm.** Free to define in-game interaction models, but still respect platform conventions for system interactions (notifications, accessibility, controllers).
+8. **watchOS: glanceable and brief.** Information consumable at a glance. Brief interactions. Digital Crown, haptics, and complications for timely content.
+
+9. **Games: own paradigm.** Free to define in-game interaction models, but still respect platform conventions for system interactions (notifications, accessibility, controllers).
 
 ## Reference Index
 
 | Reference | Topic | Key content |
 |---|---|---|
 | [designing-for-ios.md](references/designing-for-ios.md) | iOS | Touch, tab bars, navigation stacks, gestures, screen sizes, safe areas |
+| [designing-for-iphone-duo.md](references/designing-for-iphone-duo.md) | iPhone Duo | Dual displays, device poses, reserved regions, arrangement views, vertical toolbars and tab bars, overflow priority |
 | [designing-for-ipados.md](references/designing-for-ipados.md) | iPadOS | Multitasking, sidebars, pointer, keyboard, Apple Pencil, Stage Manager |
 | [designing-for-macos.md](references/designing-for-macos.md) | macOS | Menu bars, toolbars, window management, keyboard shortcuts, dense layouts, Dock |
 | [designing-for-tvos.md](references/designing-for-tvos.md) | tvOS | Focus engine, Siri Remote, lean-back experience, content-forward, parallax |

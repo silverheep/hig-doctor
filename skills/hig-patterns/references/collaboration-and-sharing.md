@@ -5,7 +5,7 @@ source: https://developer.apple.com/design/human-interface-guidelines/collaborat
 
 <!-- hig-doctor:attribution -->
 > **Source**: Apple Inc. Canonical content at https://developer.apple.com/design/human-interface-guidelines/collaboration-and-sharing.
-> This file reproduces that content for AI agent reference, snapshot 2026-08-24.
+> This file reproduces that content for AI agent reference, snapshot 2026-09-10.
 > Apple HIG text is © Apple Inc.; imagery is omitted. This repository provides organization and cross-referencing for AI agent consumption only.
 
 # Collaboration and sharing
@@ -16,7 +16,7 @@ After a collaboration begins, people can use the Collaboration button in your ap
 
 You can take advantage of Messages integration and the system-provided sharing interfaces whether you implement collaboration and sharing through CloudKit, iCloud Drive, or a custom solution. To offer these features when you use a custom collaboration infrastructure, make sure your app also supports universal links (for developer guidance, see [Supporting universal links in your app](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)).
 
-In addition to helping people share and collaborate on documents, visionOS supports immersive sharing experiences through SharePlay. For guidance, see [SharePlay](https://developer.apple.com/design/human-interface-guidelines/shareplay).
+With SharePlay, people can also take part in your app’s activities together in real time, from their own devices. For guidance, see [SharePlay](https://developer.apple.com/design/human-interface-guidelines/shareplay).
 
 ## Best practices
 
